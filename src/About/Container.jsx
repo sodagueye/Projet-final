@@ -6,10 +6,9 @@ import { PiWarningCircleLight } from "react-icons/pi";
 import { RiMapPin2Line } from "react-icons/ri";
 import { LuClock } from "react-icons/lu";
 import { GrGallery } from "react-icons/gr";
-// import img1 from "./pictures/img1.jpg";
+
 import img1 from "./img4.jpg"
-// import img3 from 
-// import img5 from 
+
 export default function Container() {
   return (
     <div className="bg-white p-3">
