@@ -14,11 +14,12 @@ function ReservationPage() {
     // Envoi de la requête de réservation
   };
 
-  const [hour, setHour] = useState(6); // Initialiser l'heure à 6h00
+  const [hour, setHour] = useState();
 
   const handleHourChange = (hour) => {
     setHour(hour);
   };
+  
 
   const hours = [6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -36,7 +37,12 @@ function ReservationPage() {
                 onChange={(e) => setInvites(e.target.value)}
               >
                 {[...Array(8).keys()].map((i) => (
-                  <option className="option-back" key={i + 1} value={i + 1}>
+                  <option
+                    selected
+                    className="option-back"
+                    key={i + 1}
+                    value={i + 1}
+                  >
                     {i + 1}
                   </option>
                 ))}
@@ -52,6 +58,8 @@ function ReservationPage() {
               >
                 {Array.from({ length: 7 }, (_, i) => (
                   <option
+                    selected
+                    className="option-back"
                     key={i}
                     value={new Date(Date.now() + i * 24 * 60 * 60 * 1000)}
                   >
@@ -73,8 +81,8 @@ function ReservationPage() {
                 type="email"
                 class="form-control"
                 id="floatingInputDisabled"
-                placeholder="name@example.com"
                 disabled
+                value={hour}
               />
               <label for="floatingInputDisabled">Time</label>
             </div>
