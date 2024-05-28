@@ -12,11 +12,6 @@
     background-color: #FFF;
 }
 
-#reservation .form-select {
-    border-radius: 0;
-    outline: none;
-}
-
 #reservation .form-floating{
     font-size: 13px;
 }
@@ -24,7 +19,7 @@
 #reservation .form-floating label:focus {
     outline: none;
     border: none;
-    color: #f1c646;
+    color: #E7272D;
 }
 
 #reservation .floatingSelect:focus{
@@ -33,13 +28,18 @@
 
 #reservation .form-select{
     outline: none;
+    border-radius: 0;
     height: 10px;
     margin-bottom: 10px;
 }
 
+#reservation .form-select option{
+    color: #E7272D;
+}
+
 #reservation .form-select:focus{
     outline: none;
-    border-bottom: 2px solid #f1c646;
+    border-bottom: 2px solid #E7272D;
 }
 
 #reservation form select {
@@ -58,7 +58,7 @@
 
 #reservation form select:focus {
     border: none;
-    border-bottom: 2px solid #f1c646;
+    border-bottom: 2px solid #E7272D;
     outline: none;
 }
 
@@ -72,12 +72,12 @@
 }
 
 #reservation .option-back[selected] {
-    background: #f1c646;
+    background: #E7272D;
     color: #fff;
 }
 
 #reservation .option-back:hover {
-    background-color: #f1c646;
+    background-color: #E7272D;
     color: #fff;
 }
 
@@ -99,7 +99,7 @@
     margin: 15px;
     border: none;
     border-radius: 40px;
-    background-color: #f1c646;
+    background-color: #E7272D;
     font-size: 20px;
     font-weight: 600;
 }
@@ -113,7 +113,7 @@
 }
 
 #reservation .secondaire:focus {
-    background-color: #f1c646;
+    background-color: #E7272D;
     border: none;
     color: #fff;
 }

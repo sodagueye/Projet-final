@@ -4,7 +4,6 @@ import "./Reservation.css";
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
-  // const [hour, setHour] = useState('');
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -70,7 +69,7 @@ function ReservationPage() {
               <label for="floatingSelect">Date</label>
             </div>
             <div class="form-floating mx-2 my-3">
-        <input
+              <input
                 type="email"
                 class="form-control"
                 id="floatingInputDisabled"
