@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
 import bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Title from './About/Title';
 import Container from './About/Container';
+import  Connexion  from './Inscription/Connexion';
+import  Inscrire  from './Inscription/Inscrire';
 function App() {
   return (
     <div>
@@ -16,6 +18,12 @@ function App() {
               <Container />
             </div>
           } />
+          <Route path='/connexion' element={
+              <Connexion />
+          }/>
+          <Route path='/inscrire' element={
+              <Inscrire />
+          }/>
         </Routes>
       </Router>
 
