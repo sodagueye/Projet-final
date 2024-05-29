@@ -44,24 +44,24 @@ export function Presentation() {
             prix: "12.000fr"
         },
         {
-            img: jus5,
-            title: "Jus d'orange",
-            prix: "500fr"
+            img: poulet1,
+            title: "Cuisese",
+            prix: "3.500fr"
         },
         {
-            img: jus7,
-            title: "Jus Bissap",
-            prix: "500fr"
+            img: poulet2,
+            title: "Cuisse",
+            prix: "4.500fr"
         },
         {
-            img: jusOrange,
-            title: "Jus d'orange et Citron",
-            prix: "500fr"
+            img: frire3,
+            title: "Frite",
+            prix: "1.000fr"
         },
         {
-            img: jusDitakh,
-            title: "Jus Ditakh",
-            prix: "500fr"
+            img: frite1,
+            title: "frite",
+            prix: "1.500fr"
         },
         {
             img: soupYapp,
@@ -84,24 +84,24 @@ export function Presentation() {
             prix: "1.500fr"
         },
         {
-            img: poulet1,
-            title: "Cuisese",
-            prix: "3.500fr"
+            img: jus5,
+            title: "Jus d'orange",
+            prix: "500fr"
         },
         {
-            img: poulet2,
-            title: "Cuisse",
-            prix: "4.500fr"
+            img: jus7,
+            title: "Jus Bissap",
+            prix: "500fr"
         },
         {
-            img: frire3,
-            title: "Frite",
-            prix: "1.000fr"
+            img: jusOrange,
+            title: "Jus d'orange et Citron",
+            prix: "500fr"
         },
         {
-            img: frite1,
-            title: "frite",
-            prix: "1.500fr"
+            img: jusDitakh,
+            title: "Jus Ditakh",
+            prix: "500fr"
         }
 
     ]

@@ -3,24 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-ul li{
+footer  li{
     list-style: none;
     font-size: 12px;
     cursor: pointer;
 }
-h6{
+footer {
     font-size: 14px;
 }
-i{
+footer i{
     margin: 0 5px;
     cursor: pointer;
     color: #ffcc00;
 }
-p{
+footer p{
     font-size: 12px;
     cursor: pointer;
 }
-h2,h1{
+footer h2 ,footer h1{
     cursor: pointer;
 }
 @media screen and (max-width: 776px) {
