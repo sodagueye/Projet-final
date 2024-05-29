@@ -2,6 +2,7 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './Styles/style.css';
 import Essaie from './Components/Essaie.js'
+import Maps from './Components/Maps';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     
     <div>
       <Essaie />
+      <Maps />
     </div>
 
   )
