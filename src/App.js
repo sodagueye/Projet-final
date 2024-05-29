@@ -5,14 +5,16 @@ import Title from "./About/About/Title";
 import Container from "./About/About/Container";
 import Dashboard from "./Dashboard/Dashboard";
 import Navbar from "./Dashboard/Navbar";
+import Produits from "./Catégories/Produits";
 import "./styles/style.css";
 function App() {
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/" />
-          <Route path="/Dashboard" element={<Dashboard/>} />
+          <Route path="/"/>
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Produits" element={<Produits />} />
           <Route
             path="/About"
             element={
