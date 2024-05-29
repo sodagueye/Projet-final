@@ -1,4 +1,5 @@
 import React from 'react'
+import './produits.css'
 import p1 from '../mes-images/p1.png'
 import pa2 from '../mes-images/pa2.png'
 import p3 from '../mes-images/p3.jpg'
@@ -38,44 +39,56 @@ import jusb from '../mes-images/jusb.jpg'
         <h1 className='my-3'>Pizzas</h1>
         <div className='container '>
           <div className='row d-flex justify-content-around'>
-               <div class="card col-md-3 " >
-            <img src={p1} className="card-img-top" alt="..."/>
+               <div className="card col-md-3 " >
+                  <div className='div-image'>
+                     <img src={p1} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Pizza à la viande</h5>
             <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
-               <div class="card col-md-3" >
-               <img src={pa2} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                      <img src={pa2} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Pizza au poulet</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
-               <div class="card col-md-3" >
-            <img src={p3} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                      <img src={p3} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Pizza au thon</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div className='row  d-flex justify-content-around mt-5'>
-               <div class="card col-md-3 " >
-            <img src={p4} className="card-img-top" alt="..."/>
+               <div className="card col-md-3 " >
+                  <div className='div-image'>
+                      <img src={p4} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Pizza au Saucisse</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
-               <div class="card col-md-3" >
-               <img src={p5} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                      <img src={p5} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Pizza au champignon </h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
-               <div class="card col-md-3" >
-            <img src={p6} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                     <img src={p6} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Pizza viande hachée</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -91,21 +104,27 @@ import jusb from '../mes-images/jusb.jpg'
         <div className='container '>
           <div className='row d-flex justify-content-around'>
                <div class="card col-md-3 " >
-            <img src={a2} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                    <img src={a2} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Burgers Simple</h5>
             <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div class="card col-md-3 " >
-               <img src={bur2} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                       <img src={bur2} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Burgers poulet-pané</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
                <div class="card col-md-3 " >
-            <img src={bur3} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                    <img src={bur3} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Burgers Steck-frite</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -113,21 +132,27 @@ import jusb from '../mes-images/jusb.jpg'
                </div>
                <div className='row  d-flex justify-content-around mt-5'>
                <div class="card col-md-3" >
-            <img src={bur4} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                    <img src={bur4} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Burgers Steck</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div class="card col-md-3 " >
-               <img src={bur5} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                       <img src={bur5} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Double Burgers</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
                <div class="card col-md-3 " >
-            <img src={a9} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                    <img src={a9} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Burgers Complet</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -143,21 +168,27 @@ import jusb from '../mes-images/jusb.jpg'
         <div className='container '>
           <div className='row d-flex justify-content-around'>
                <div class="card col-md-3 " >
-            <img src={tac1} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                    <img src={tac1} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Tacos à la viande</h5>
             <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div class="card col-md-3" >
-               <img src={tac2} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                       <img src={tac2} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Tacos au poulet</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
                <div class="card col-md-3" >
-            <img src={tac4} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                    <img src={tac4} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Tacos Panée</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -165,21 +196,27 @@ import jusb from '../mes-images/jusb.jpg'
                </div>
                <div className='row  d-flex justify-content-around mt-5'>
                <div class="card col-md-3 " >
-            <img src={a1} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                  <img src={a1} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Tacos viande hachée</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div class="card col-md-3" >
-               <img src={tac3} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                   <img src={tac3} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Tacos poulet-dibi</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
                <div class="card col-md-3" >
-            <img src={a7} className="card-img-top" alt="..."/>
+                  <div className='div-image'>
+                  <img src={a7} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Tacos poutin </h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -194,44 +231,56 @@ import jusb from '../mes-images/jusb.jpg'
         <h1 className='my-3'>Plats-Sénégalais</h1>
         <div className='container '>
           <div className='row d-flex justify-content-around'>
-               <div class="card col-md-3 " >
-            <img src={tb1} className="card-img-top" alt="..."/>
+               <div className="card col-md-3 " >
+                  <div className='div-image'>
+                     <img src={tb1} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Thiébou-Diaga</h5>
             <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
-               <div class="card col-md-3" >
-               <img src={tb4} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                        <img src={tb4} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Thiéb-bou-xonk</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
-               <div class="card col-md-3" >
-            <img src={tb5} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                     <img src={tb5} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Mafé</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div className='row  d-flex justify-content-around mt-5'>
-               <div class="card col-md-3 " >
-            <img src={tb6} className="card-img-top" alt="..."/>
+               <div className="card col-md-3 " >
+                  <div className='div-image'>
+                    <img src={tb6} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Dakhine</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
-               <div class="card col-md-3" >
-               <img src={tb7} className="card-img-top" alt="..."/>
+               <div className="card col-md-3">
+                  <div className='div-image'>
+                    <img src={tb7} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">C'est Bon</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
-               <div class="card col-md-3" >
-            <img src={tb8} className="card-img-top" alt="..."/>
+               <div className="card col-md-3">
+                  <div className='div-image'>
+                    <img src={tb8} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Yassa Poulet</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -246,44 +295,56 @@ import jusb from '../mes-images/jusb.jpg'
         <h1 className='my-3'>Boissons Locales</h1>
         <div className='container '>
           <div className='row d-flex justify-content-around'>
-               <div class="card col-md-3 " >
-            <img src={jus1} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                    <img src={jus1} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Jus ditakh-orange-bissabe</h5>
             <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
-               <div class="card col-md-3" >
-               <img src={jus3} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                       <img src={jus3} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Jus Goyave</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
-               <div class="card col-md-3" >
-            <img src={jus4} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                    <img src={jus4} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Coktail de jus</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
                <div className='row  d-flex justify-content-around mt-5'>
-               <div class="card col-md-3 " >
+               <div className="card col-md-3 " >
+                  <div className='div-image'>
             <img src={jus5} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Jus Bouye</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
             </div>
                </div>
-               <div class="card col-md-3" >
+               <div className="card col-md-3" >
+                  <div className='div-image'>
                <img src={jus6} className="card-img-top" alt="..."/>
+                  </div>
                <div className="card-body">
                <h5 className="card-title">Jus Mange</h5>
                <a href="#" className="btn btn-danger">Ajouter au panier</a>
                </div>
                </div>
-               <div class="card col-md-3" >
-            <img src={jusb} className="card-img-top" alt="..."/>
+               <div className="card col-md-3" >
+                  <div className='div-image'>
+                      <img src={jusb} className="card-img-top" alt="..."/>
+                  </div>
             <div className="card-body">
              <h5 className="card-title">Jus Bissabe</h5>
              <a href="#" className="btn btn-danger">Ajouter au panier</a>
@@ -293,8 +354,8 @@ import jusb from '../mes-images/jusb.jpg'
             </div>
         </div>
       </section>
-  
  </div>
   )
 }
 export default Produits;
+
