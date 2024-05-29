@@ -1,0 +1,137 @@
+*:focus {
+    outline: none;
+}
+
+#reservation {
+    background-color: #f5f5f5;
+}
+
+#reservation h1{
+    font-size: 30px;
+}
+
+#reservation .reservation-body {
+    width: 75%;
+    margin: 50px auto;
+}
+
+
+#reservation form {
+    background-color: #FFF;
+}
+
+#reservation .form-floating {
+    font-size: 13px;
+}
+
+#reservation .form-floating label:focus {
+    outline: none;
+    border: none;
+    color: #E7272D;
+}
+
+#reservation .floatingSelect:focus {
+    outline: none;
+}
+
+#reservation .form-select {
+    outline: none;
+    border-radius: 0;
+    height: 10px;
+    margin-bottom: 10px;
+}
+
+#reservation .form-select .option-back{
+    height: 30px;
+}
+
+#reservation .form-select [selected]{
+    color: #111111;
+    height: 50px;
+    background: #E7272D !important;
+}
+
+#reservation .form-select [selected]:focus{
+    background: #E7272D !important;
+}
+
+#reservation .form-select [selected]:hover{
+    background: #E7272D !important;
+}
+
+#reservation .form-select:focus {
+    outline: none;
+    border-bottom: 2px solid #E7272D;
+}
+
+#reservation form select {
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+#floatingSelect:focus {
+    outline: none;
+}
+
+#reservation form select:hover {
+    border: none;
+    border-bottom: 2px solid #000;
+}
+
+#reservation form select:focus {
+    border: none;
+    border-bottom: 2px solid #E7272D;
+    outline: none;
+}
+
+#reservation form input {
+    border: none;
+    outline: none;
+}
+
+#reservation .reservation-select {
+    height: 30px;
+}
+
+
+#reservation .option-back:hover {
+    background-color: #E7272D;
+    color: #fff;
+}
+
+#reservation select option::selection {
+    background-color: #ccc;
+}
+
+#reservation select {
+    background-color: #FFF;
+}
+
+#reservation .form-control {
+    height: 30px;
+}
+
+#reservation .btnsend {
+    width: 95%;
+    height: 50px;
+    margin: 15px;
+    border: none;
+    border-radius: 40px;
+    background-color: #E7272D;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#reservation .secondaire {
+    height: 35px;
+    margin: 5px 5px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#reservation .secondaire:focus {
+    background-color: #E7272D;
+    border: none;
+    color: #fff;
+}

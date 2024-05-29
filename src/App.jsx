@@ -9,6 +9,7 @@ import Produits from "./Catégories/Produits";
 import Connexion from "./Inscription/Connexion"
 import Inscrire from "./Inscription/Inscrire"
 import MotdepassOublié from "./Inscription/MotdepassOublié"
+import Reservation from "./Reservation/Reservation"
 import "./styles/style.css";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Connexion" element={<Connexion />} />
           <Route path="/Inscrire" element={<Inscrire />} />
           <Route path="/MotDePassOublié" element={<MotdepassOublié />} />
+          <Route path="/Reservation" element={<Reservation />} />
           <Route
             path="/About"
             element={
