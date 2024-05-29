@@ -19,7 +19,6 @@ function ReservationPage() {
   const handleHourChange = (hour) => {
     setHour(hour);
   };
-  
 
   const hours = [6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -28,11 +27,10 @@ function ReservationPage() {
       <div className="row reservation-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
-          <div className="d-flex justify-space-between">
+          <div className="form-head justify-space-between">
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
-                id="floatingSelect"
                 value={invites}
                 onChange={(e) => setInvites(e.target.value)}
               >
@@ -47,12 +45,11 @@ function ReservationPage() {
                   </option>
                 ))}
               </select>
-              <label for="floatingSelect">Guest</label>
+              <label>Guest</label>
             </div>
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
-                id="floatingSelect"
                 value={date}
                 onChange={handleDateChange}
               >
@@ -78,7 +75,7 @@ function ReservationPage() {
             </div>
             <div class="form-floating mx-2 my-3">
               <input
-                type="email"
+                type="text"
                 class="form-control"
                 id="floatingInputDisabled"
                 disabled
