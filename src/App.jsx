@@ -10,6 +10,7 @@ import Connexion from "./Inscription/Connexion"
 import Inscrire from "./Inscription/Inscrire"
 import MotdepassOublié from "./Inscription/MotdepassOublié"
 import Reservation from "./Reservation/Reservation"
+import Appreciation from "./Appreciation/Appreciation"
 import "./styles/style.css";
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Inscrire" element={<Inscrire />} />
           <Route path="/MotDePassOublié" element={<MotdepassOublié />} />
           <Route path="/Reservation" element={<Reservation />} />
+          <Route path="/Appreciation" element={<Appreciation />} />
           <Route
             path="/About"
             element={
