@@ -11,7 +11,7 @@ function Connexion() {
             {/* <p className='text-center'></p> */}
             <div className='backCConnexion  d-flex justify-content-center align-items-center '>
                 <form className='form  align-items-center'>
-                <h2 className='text-center fw-bold fs-2 color'>Connecter</h2>
+                <h2 className='text-center fw-bold fs-2 color mt-5'>Connecter</h2>
 
                     <div className=' inscript1'>
                         <input class=" input  email my-3" type="email" placeholder="Email" required />

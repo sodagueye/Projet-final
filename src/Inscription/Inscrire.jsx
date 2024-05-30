@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../Inscription/inscrire.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Inscrire() {
 
@@ -10,21 +11,48 @@ function Inscrire() {
   const [telephone, setTelephone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmpassword] = useState('');
+  // const[tableau ,setTableau]=useState([]);
+
+
+
+  useEffect(() => {
+    if (firstname && lastname && email && telephone && password && password === confirmpassword) {
+      const data = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        telephone: telephone,
+        password: password
+      };
+      axios.post('https://localhost:8000/users/register', data)
+        .then(response => {
+
+          console.log('Inscription réussie:', response.data);
+          // Rediriger l'utilisateur vers une autre page par exemple '/connexion'
+        })
+        .catch(error => {
+
+          console.error('Erreur lors de l\'inscription:', error);
+        });
+    }
+  }, [firstname, lastname, email, telephone, password, confirmpassword]);
 
 
   return (
     <div className=''>
-      
+
       <div className='back  d-flex justify-content-center align-items-center '>
-        
+
         <form className='form '>
-        <h2 className='text-center color fs-2'>Inscription</h2>
+          <h2 className='text-center color fs-2'>Inscription</h2>
           <div className='d-flex  gap-4 justify-content-center inscript'>
+
             <div className='my-4'>
-              
+
               <input class=" input " type="text" placeholder="Prenom" required value={firstname} onChange={(e) => {
                 setFirstname(e.target.value);
-                console.log("hello")}} />
+                console.log("hello")
+              }} />
             </div>
             <div className='my-4'>
               <input class=" input  number" type="text" placeholder="Nom" value={lastname} required onChange={e => setLastname(e.target.value)} />
@@ -48,7 +76,7 @@ function Inscrire() {
             </div>
           </div>
           <p className='m-3 text-center'>By clicking "Submit," you agree to <span className='terms'> E-delivery General Terms and Conditions </span> and acknowledge you have read the  <span className='terms'>Privacy Policy.</span></p>
-          <div className=' creer'>
+          <div className=' creer '>
             <Link to='/connexion' className='liens'> <button type='submit' className='creer liens' >Creer un compte</button></Link>
           </div>
         </form>
