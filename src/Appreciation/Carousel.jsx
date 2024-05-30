@@ -29,7 +29,11 @@ const CarouselComponent = () => {
       carouselState: { currentSlide, deviceType },
     } = rest;
 
-    return <button onClick={() => onClick()} className="right-arrow"><FaArrowRight /></button>;
+    return (
+      <button onClick={() => onClick()} className="right-arrow">
+        <FaArrowRight />
+      </button>
+    );
   };
 
   const CustomLeftArrow = ({ onClick, ...rest }) => {
@@ -38,11 +42,14 @@ const CarouselComponent = () => {
       carouselState: { currentSlide, deviceType },
     } = rest;
 
-    return <button onClick={() => onClick()} className="left-arrow"><FaArrowLeft /></button>;
+    return (
+      <button onClick={() => onClick()} className="left-arrow">
+        <FaArrowLeft />
+      </button>
+    );
   };
 
   return (
-    
     <Carousel
       responsive={responsive}
       swipeable={false}
