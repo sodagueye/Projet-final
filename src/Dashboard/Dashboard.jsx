@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Card from "./Card";
 import TableProduct from "./TableProduct";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 export default function Dashboard() {
   return (
     <div className="container-fluid">

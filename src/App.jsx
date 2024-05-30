@@ -10,6 +10,10 @@ import "./styles/style.css";
 import Inscrire from "./Inscription/Inscrire";
 import Connexion from "./Inscription/Connexion";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
+
+// import Dropdown from 'react-bootstrap/Dropdown';
+import Menu from  './Componentnav/Menu';
+
 function App() {
   return (
     <div>
@@ -21,6 +25,7 @@ function App() {
           <Route path="/connexion" element={<Connexion/> }></Route>
           <Route path="/inscrire" element={<Inscrire/>}></Route>
           <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
+          <Route path="/menu" element={ <Menu/>}></Route>
           <Route
             path="/About"
             element={
