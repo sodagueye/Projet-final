@@ -1,29 +1,33 @@
-
-import './App.css';
-import Inscrire from './Inscription/Inscrire';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Connexion from './Inscription/Connexion';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MotdepassOublié from './Inscription/MotdepassOublié';
-
-function App(){
-
+import "./App.css";
+import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Title from "./About/About/Title";
+import Container from "./About/About/Container";
+import Dashboard from "./Dashboard/Dashboard";
+import Navbar from "./Dashboard/Navbar";
+import Test from "./Dashboard/Test";
+import "./styles/style.css";
+function App() {
   return (
-    <div className="App">
-    
-    <BrowserRouter>
+    <div>
+      <Router>
         <Routes>
-
-          <Route path="/connexion" element={<Connexion/> }></Route>
-          <Route path="/" element={<Inscrire/>}></Route>
-          <Route path="/inscrire" element={<Inscrire/>}></Route>
-          <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
-
+          <Route path="/" />
+          <Route path="/Admin" element={<Dashboard />} />
+          <Route path="/Test" element={<Test />} />
+          <Route
+            path="/About"
+            element={
+              <div className="container ">
+                <Title title="About us" />
+                <Container />
+              </div>
+            }
+          />
         </Routes>
-      </BrowserRouter>
-   
+      </Router>
     </div>
-  )
+  );
 }
 
 export default App;
