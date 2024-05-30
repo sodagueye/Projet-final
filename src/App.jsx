@@ -13,6 +13,7 @@ import MotdepassOublié from "./Inscription/MotdepassOublié";
 
 // import Dropdown from 'react-bootstrap/Dropdown';
 import Menu from  './Componentnav/Menu';
+import ReservationPage from "./Reservation/Reservation";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/inscrire" element={<Inscrire/>}></Route>
           <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
           <Route path="/menu" element={ <Menu/>}></Route>
+          <Route path="/reservation" element={ <ReservationPage/>}></Route>
+
           <Route
             path="/About"
             element={
