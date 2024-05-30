@@ -27,7 +27,7 @@ export function Commende() {
             paiment: orangeMoney,
         }
     ]
-    return <div className="container commende pb-5">
+    return <div className="container commende pb-5 my-4">
         <h6 className="ms-2 py-2">Historique des commendes</h6>
         <div style={{ borderTop: "2px solid gray" }}></div>
         <div className="d-flex justify-content-end">

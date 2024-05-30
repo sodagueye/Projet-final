@@ -52,7 +52,7 @@ export function Pannier() {
     const totalGeneral = totalPrix + totalFraisLivraison;
 
     return (
-        <div className="container">
+        <div className="container my-4">
             <div className="row pannier g-3">
                 <div className="col-12 col-md-6 Details-des-produit-achete">
                     <h6 className='ms-1'>Pannier</h6>
