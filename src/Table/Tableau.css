@@ -1,0 +1,50 @@
+.table-container {
+    padding: 0 25px;
+    width: 50%;
+    margin-left: auto;
+    margin-top: 60px;
+}
+
+.table {
+    font-size: 11px;   
+    border: 3px solid #E7272D;
+}
+
+.table thead .entete th {
+    background-color: #E7272D;
+    color: white;
+    padding: 16px;
+    height: 56px;
+}
+
+.table tbody tr {
+    height: 60px;
+}
+
+td {
+    border: none;
+}
+
+.table thead .entete th:first-child,
+.table tbody tr td:first-child {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .table thead .entete th,
+    .table tbody tr {
+        font-size: 7px;
+        width: auto;
+        text-align: left;
+    }
+
+    .table tbody tr {
+        height: auto;
+    }
+
+    .table-container {
+        padding: 0 25px;
+        width: 100%;
+        margin-left: 0; 
+    }
+}
