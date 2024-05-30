@@ -1,0 +1,11 @@
+.commende{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.commende th{
+    font-size: 12px;
+    font-weight: normal;
+}
+.commende td{
+    font-size: 10px;
+    font-weight: normal;
+}

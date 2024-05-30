@@ -1,12 +1,15 @@
-import { Accueil } from "./Accueil/Accueil";
-import { Footer } from "./Footer/Footer";
-import { Pannier } from "./Pannier/Pannier";
+import { Accueil } from "./khadyComponent/Accueil/Accueil";
+import { Commende } from "./khadyComponent/Commende/Commende";
+import { Footer } from "./khadyComponent/Footer/Footer";
+import { Pannier } from "./khadyComponent/Pannier/Pannier";
 
 function App() {
   return <div>
-    {/* <Accueil/> */}
-    {/* <Footer/> */}
+    <Commende/>
+    <Accueil/>
     <Pannier/>
+    <Footer/>
+    
   </div>
 }
 

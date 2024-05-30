@@ -3,7 +3,7 @@ import googleplay from "../Footer-img/goole-play.png"
 import "../Footer/Footer.css"
 export function Footer() {
     return <footer>
-        <div className="container">
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-12 col-sm-6 text-left">
                     <div className="cen">
