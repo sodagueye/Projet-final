@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Card from "./Card";
+import TableProduct from "./TableProduct";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default function Dashboard() {
   return (
     <div className="container-fluid">
@@ -13,6 +15,9 @@ export default function Dashboard() {
           <Navbar />
           <div>
             <Card />
+          </div>
+          <div className="container ">
+            <TableProduct />
           </div>
         </div>
       </div>

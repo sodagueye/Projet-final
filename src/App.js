@@ -5,6 +5,7 @@ import Title from "./About/About/Title";
 import Container from "./About/About/Container";
 import Dashboard from "./Dashboard/Dashboard";
 import Navbar from "./Dashboard/Navbar";
+import Test from "./Dashboard/Test";
 import "./styles/style.css";
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" />
-          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Admin" element={<Dashboard />} />
+          <Route path="/Test" element={<Test />} />
           <Route
             path="/About"
             element={
