@@ -3,11 +3,11 @@ import { Modal, Button, Carousel } from 'react-bootstrap';
 import bur4 from '../assets/bur4.png';
 import img7 from '../assets/img7.png';
 import img10 from '../assets/img10.png';
-import pa2 from '../assets/pa2.png';
-import tb4 from '../assets/tb4.jpg';
+import img3 from '../assets/img3.png';
+import jus6 from '../assets/jus6.jpg';
 import jus4 from '../assets/jus4.jpg';
 import gl from '../assets/gl.png';
-import tac4 from '../assets/tac4.png';
+import glace from '../assets/glace.png';
 import jus11 from '../assets/jus11.png';
 import './Section1.css';
 
@@ -17,9 +17,9 @@ const products = [
   { name: 'Burger', price: 4000, image: bur4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
   { name: 'Burger + KFC', price: 13000, image: img7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
   { name: 'Frite avec Sauce tomate', price: 3500, image: img10, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Pizza', price: 4000, image: pa2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Tacos', price: 2000, image: tac4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Riz au poisson Rouge', price: 2000, image: tb4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Salade+Poulet', price: 4000, image: img3, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Glace', price: 2000, image: glace, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Jus naturelle', price: 1500, image: jus6, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
   { name: 'Jus naturelle', price: 2000, image: jus11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
 ];
 

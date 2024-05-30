@@ -21,3 +21,12 @@
   margin: 10px 0;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .section2-container {
+    background-color: #E7272D;
+    color: white;
+    padding: 20px;
+    position: relative;
+    left: 30px;
+  }
+}

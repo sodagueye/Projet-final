@@ -37,3 +37,53 @@
     }
   }
   
+
+
+  
+
+  /* Section1.css */
+.card-container {
+  width: 100%;
+  max-width: 220px;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 140px;
+}
+
+.card-title, .card-text {
+  font-size: 1rem;
+}
+
+.card-button {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .product-image {
+    max-width: 30px;
+  }
+
+  .card-title, .card-text {
+    font-size: 10px;
+  }
+
+  .card-button {
+    font-size: 6px
+  }
+}
+
+/*@media (max-width: 576px) {
+  .product-image {
+    max-width: 80px;
+  }
+
+  .card-title, .card-text {
+    font-size: 0.8rem;
+  }
+
+  .card-button {
+    font-size: 0.6rem;
+  }
+} */
