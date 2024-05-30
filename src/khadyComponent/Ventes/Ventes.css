@@ -1,14 +1,18 @@
-.commende{
+.vente{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.commende th{
+.vente th{
     font-size: 14px;
     font-weight: normal;
 }
-.commende td{
+.vente td{
     font-size: 12px;
     font-weight: normal;
 }
-.commende input{
+.vente i{
+    font-size: 15px;
+    cursor: pointer;
+}
+.vente input{
     border: 1px solid gray;
 }
