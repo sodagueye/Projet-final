@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, FormControl, Container } from 'react-bootstrap';
 import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
 import './Navbar.css';
 import logo1 from '../assets/logo1.png';
-import Dropdown from 'react-bootstrap/Dropdown';
+
 
 const CustomNavbar = () => {
   const [activeLink, setActiveLink] = useState('');
@@ -36,7 +36,7 @@ const CustomNavbar = () => {
           </Form>
           <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
             <Nav.Link href="#menu" className={`text-white ${activeLink === '#menu' ? 'active' : ''}`} onClick={() => setActiveLink('#menu')}>Menu</Nav.Link>
-            <Nav.Link href="#reservation" className={`text-white ${activeLink === '#reservation' ? 'active' : ''}`} onClick={() => setActiveLink('#reservation')}>Reservation</Nav.Link>
+            <Nav.Link href="#reservation" className={`text-white ${activeLink === '/reservation' ? 'active' : ''}`} onClick={() => setActiveLink('#reservation')}>Reservation</Nav.Link>
             <Nav.Link href="#about" className={`text-white ${activeLink === '#about' ? 'active' : ''}`} onClick={() => setActiveLink('#about')}>About</Nav.Link>
             <FaUser className="text-white" style={{ fontSize: "19px" }} />
             <Nav.Link href="#cart" className={`text-white ${activeLink === '#cart' ? 'active' : ''}`} onClick={() => setActiveLink('#cart')}>

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer  li{
+    list-style: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+footer {
+    font-size: 14px;
+}
+footer i{
+    margin: 0 5px;
+    cursor: pointer;
+    color: #ffcc00;
+}
+footer p{
+    font-size: 12px;
+    cursor: pointer;
+}
+footer h2 ,footer h1{
+    cursor: pointer;
+}
+@media screen and (max-width: 776px) {
+    .cen{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

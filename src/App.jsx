@@ -10,24 +10,29 @@ import "./styles/style.css";
 import Inscrire from "./Inscription/Inscrire";
 import Connexion from "./Inscription/Connexion";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
-
-// import Dropdown from 'react-bootstrap/Dropdown';
-import Menu from  './Componentnav/Menu';
+import Menu from './Componentnav/Menu';
 import ReservationPage from "./Reservation/Reservation";
+import { Accueil } from "./khadyComponent/Accueil/Accueil";
+import { Commende } from "./khadyComponent/Commende/Commende";
+//  import { Footer } from "./khadyComponent/Footer/Footer";
+import { Pannier } from "./khadyComponent/Pannier/Pannier";
 
 function App() {
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/" />
+          <Route path="/" element={<Accueil />} />
+          <Route path="/Pannier" element={<Pannier />} />
+          <Route path="/Commende" element={<Commende />} />
+          {/* <Route path="/Footer" element={<Footer />} /> */}
           <Route path="/Admin" element={<Dashboard />} />
           <Route path="/Test" element={<Test />} />
-          <Route path="/connexion" element={<Connexion/> }></Route>
-          <Route path="/inscrire" element={<Inscrire/>}></Route>
-          <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
-          <Route path="/menu" element={ <Menu/>}></Route>
-          <Route path="/reservation" element={ <ReservationPage/>}></Route>
+          <Route path="/connexion" element={<Connexion />}></Route>
+          <Route path="/inscrire" element={<Inscrire />}></Route>
+          <Route path="/reinitialiser" element={<MotdepassOublié />}></Route>
+          <Route path="/menu" element={<Menu />}></Route>
+          <Route path="/reservation" element={<ReservationPage />}></Route>
 
           <Route
             path="/About"

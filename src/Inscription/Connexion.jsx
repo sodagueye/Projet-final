@@ -2,7 +2,7 @@ import React from 'react'
 import '../Inscription/inscrire.css';
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+ import { Link } from 'react-router-dom';
 
 function Connexion() {
     return (
