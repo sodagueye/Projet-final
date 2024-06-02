@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Reservation.css";
 
-function ReservationPage() {
+function Reservation() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
 
@@ -134,4 +134,4 @@ function ReservationPage() {
   );
 }
 
-export default ReservationPage;
+export default Reservation;

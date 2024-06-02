@@ -82,7 +82,7 @@ img,
 .input-search {
     width: 350px;
     background-color: #a9b3c1;
-  
+
 }
 
 .input {
@@ -109,4 +109,30 @@ img,
     border-left: 3px solid #E7272D !important;
 }
 
-.input-search::placeholder {}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+table,
+
+td,
+th {
+    border: 1px solid #ecf0f1;
+   
+
+}
+
+th,
+td {
+    padding: 10px;
+    /* text-align: left; */
+}
+
+th {
+    background-color: #E7272D;
+    color: #fff;
+
+}

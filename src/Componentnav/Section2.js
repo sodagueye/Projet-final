@@ -26,22 +26,6 @@ const Section2 = () => {
 
   return (
     <div>
-      {/* Première section en haut 
-      <div className="section2-container bg-#E7272E" style={{width:"250px",marginLeft:"40px"}}>
-        <h6 className="text-white">Catégories</h6>
-        <ul className="category-list">
-          <hr className="trait-horizontal" style={{border:"white solid 1px",fontWeight:"bold",opacity:"0.9",width:"200px"}}></hr>
-          <li>Tout</li>
-          <hr className="trait-horizontal" style={{border:"white solid 1px",fontWeight:"bold",opacity:"0.9",width:"200px"}}></hr>
-          <li>Pizzas</li>
-          <li>Burgers</li>
-          <li>Tacos</li>
-          <li>Plat Sénégal</li>
-          <li>Boissons Locales</li>
-        </ul>
-      </div>*/}
-
-      {/* Espace blanc */}
       <div style={{height: "20px"}}></div>
 
       
