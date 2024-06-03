@@ -77,7 +77,7 @@ function Inscrire() {
           </div>
           <p className='m-3 text-center'>By clicking "Submit," you agree to <span className='terms'> E-delivery General Terms and Conditions </span> and acknowledge you have read the  <span className='terms'>Privacy Policy.</span></p>
           <div className=' creer '>
-            <Link to='/connexion' className='liens'> <button type='submit' className='creer liens' >Creer un compte</button></Link>
+            <Link to='/' className='liens'> <button type='submit' className='creer liens' >Creer un compte</button></Link>
           </div>
         </form>
 
