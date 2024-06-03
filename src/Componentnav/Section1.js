@@ -72,14 +72,7 @@ const Section1 = ({ updateCartQuantity }) => {
 
   return (
     <div className="section1-container">
-        <p style={{background:"#E7272D",color:"white",font:"5px",paddingLeft:"20px",paddingRight:"20px",marginTop:"25px"}}>
-      <img src={logo1} alt="Burger 1" className="me-2" style={{ width: "120px" }} />
-Bienvenue chez Teranga FOOD, un restaurant en ligne aux délices culinaires locaux !
- Explorez notre carte diversifiée, où chaque plat est préparé avec des ingrédients
-  frais et de saison, directement issus des fermes et des marchés locaux. 
-  Découvrez la richesse de notre terroir à travers des spécialités régionales,
- des recettes traditionnelles revisitées et des créations.
-      </p>
+      
       <div className="slider">
         <div className="slider-track">
           <div className="slider-row">
