@@ -15,8 +15,7 @@ const Btn = () => {
         </div>
       </div>
 
-      {/* Ajoutez ici les autres cartes de manière similaire */}
-      {/* Exemple : */}
+  
       <div className="card card-spacing card-container">
         <img src={jus4} alt="Jus de Fruit" className="mx-auto d-block" style={{ width: "140px" }} />
         <div className="card-body">

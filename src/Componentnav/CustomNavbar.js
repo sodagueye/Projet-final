@@ -4,9 +4,8 @@ import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
 import './Navbar.css';
 import logo1 from '../assets/logo1.png';
 
-const CustomNavbar = () => {
+const CustomNavbar = ({ cartQuantity }) => {
   const [activeLink, setActiveLink] = useState('');
-  const [cartQuantity, setCartQuantity] = useState(0);
   const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
 
   const toggleNavbar = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Carousel } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import bur4 from '../assets/bur4.png';
 import img7 from '../assets/img7.png';
 import img10 from '../assets/img10.png';
@@ -9,7 +9,14 @@ import jus4 from '../assets/jus4.jpg';
 import gl from '../assets/gl.png';
 import glace from '../assets/glace.png';
 import jus11 from '../assets/jus11.png';
+import tb2 from '../assets/tb2.jpg';
+import tb7 from '../assets/tb7.jpg';
+import tb8 from '../assets/tb8.jpg';
+import tb11 from '../assets/tb11.png';
 import './Section1.css';
+
+import logo1 from '../assets/logo1.png';
+//import Icons from './Icons';  
 
 const products = [
   { name: 'Creme Glace', price: 2000, image: gl, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
@@ -19,8 +26,13 @@ const products = [
   { name: 'Frite avec Sauce tomate', price: 3500, image: img10, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
   { name: 'Salade+Poulet', price: 4000, image: img3, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
   { name: 'Glace', price: 2000, image: glace, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Jus naturelle', price: 1500, image: jus6, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Jus naturelle', price: 2000, image: jus11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Jus naturelle', price: 1000, image: jus6, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Jus naturelle', price: 1000, image: jus11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Theboudjeune', price: 1500, image: tb2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Cest Bon', price: 2000, image: tb7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Vermiselle', price: 2000, image: tb8, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { name: 'Theboudjeune', price: 1500, image: tb11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+
 ];
 
 const Section1 = ({ updateCartQuantity }) => {
@@ -54,46 +66,51 @@ const Section1 = ({ updateCartQuantity }) => {
     setTotalPrice(updatedQuantity * selectedProduct.price);
   };
 
-  const renderProductCards = () => {
-    const chunkedProducts = chunkArray(products, 3); 
-    return chunkedProducts.map((group, index) => (
-      <Carousel.Item key={index}>
-        <div className="d-flex justify-content-between">
-          {group.map(product => (
-            <div key={product.name} className="card card-spacing card-container">
-              <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
-              <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">{product.price} FCFA</p>
-                <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Carousel.Item>
-    ));
-  };
-
-  const chunkArray = (arr, size) => {
-    return arr.reduce((chunks, el, i) => {
-      if (i % size === 0) {
-        chunks.push([el]);
-      } else {
-        chunks[chunks.length - 1].push(el);
-      }
-      return chunks;
-    }, []);
-  };
+  const halfLength = Math.ceil(products.length / 2);
+  const firstRow = products.slice(0, halfLength);
+  const secondRow = products.slice(halfLength);
 
   return (
-    <div className="d-flex justify-content-center" style={{ marginLeft: "40px" }}>
-      <Carousel interval={3000} pause={false}>
-        {renderProductCards()}
-      </Carousel>
-
-      <Carousel interval={3000} pause={false}>
-        {renderProductCards()}
-      </Carousel>
+    <div className="section1-container">
+        <p style={{background:"#E7272D",color:"white",font:"5px",paddingLeft:"20px",paddingRight:"20px",marginTop:"25px"}}>
+      <img src={logo1} alt="Burger 1" className="me-2" style={{ width: "120px" }} />
+Bienvenue chez Teranga FOOD, un restaurant en ligne aux délices culinaires locaux !
+ Explorez notre carte diversifiée, où chaque plat est préparé avec des ingrédients
+  frais et de saison, directement issus des fermes et des marchés locaux. 
+  Découvrez la richesse de notre terroir à travers des spécialités régionales,
+ des recettes traditionnelles revisitées et des créations.
+      </p>
+      <div className="slider">
+        <div className="slider-track">
+          <div className="slider-row">
+            {firstRow.map((product, index) => (
+              <div key={index} className="card card-spacing card-container">
+                <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
+                <div className="card-body" style={{textAlign:"center"}}>
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.price} FCFA</p>
+                  <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
+                  {/**<Icons comments={[]} />  */}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="slider-row">
+            {secondRow.map((product, index) => (
+              <div key={index} className="card card-spacing card-container">
+                <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.price} FCFA</p>
+                  <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
+                 {/** <Icons comments={[]} />  */}
+                  
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {selectedProduct && (
         <Modal show={showModal} onHide={handleCloseModal}>
@@ -116,6 +133,8 @@ const Section1 = ({ updateCartQuantity }) => {
           </Modal.Footer>
         </Modal>
       )}
+   
+    
     </div>
   );
 };

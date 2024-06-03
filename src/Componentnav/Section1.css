@@ -1,12 +1,4 @@
-/*.card-spacing {
-    margin-right: 20px; 
-  }
-  
-  .card-spacing:last-child {
-    margin-right: 0;
-  }
-  */
-  /* Section1.css */
+
 .card-container {
   margin: 5px; 
 }
@@ -29,6 +21,83 @@
   justify-content: space-between;
   height: 100%; 
 }
+.section1-container {
+  position: relative;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 20s linear infinite;
+}
+
+.slider-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.contact-whatsapp {
+  display: flex;
+  justify-content: center;
+
+}
+
+.contact-button {
+  background-color: #E7272D;
+  color: #fff;
+  border: 2px solid #E7272D;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #fff;
+  color: #E7272D;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.card {
+  flex: 0 0 auto;
+  margin: 10px;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 0 5px;
+}
+
+.icon:hover {
+  color: #e7272d;
+}
+
 
   @media only screen and (max-width: 600px) {
     .header-container {

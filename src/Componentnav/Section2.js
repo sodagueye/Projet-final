@@ -1,74 +1,69 @@
 import React, { useState } from 'react';
 import './Section2.css';
+import ContactWhatsApp from './ContactWhatsApp';
 
 const Section2 = () => {
   const [filterLetter, setFilterLetter] = useState('');
+  const [filterPrice, setFilterPrice] = useState('');
+
   const products = [
-    "Pizza Margherita",
-    "Pizza Pepperoni",
-    "Burger Classic",
-    "Burger Double",
-    "Tacos Chicken",
-    "Tacos Beef",
-    "Thieboudienne",
-    "Yassa Chicken",
-    "Bissap Juice",
-    "Ginger Juice"
+    { name: "Pizza Margherita", price: 2500 },
+    { name: "Pizza Pepperoni", price: 2500 },
+    { name: "Burger Classic", price: 3000 },
+    { name: "Burger Double", price: 4000 },
+    { name: "Tacos Chicken", price: 2500 },
+    { name: "Tacos Beef", price: 2000 },
+    { name: "Thieboudienne", price: 150 },
+    { name: "Yassa Chicken", price: 2000 },
+    { name: "Bissap Juice", price: 1000 },
+    { name: "Ginger Juice", price: 1000}
   ];
 
   const handleFilterChange = (event) => {
     setFilterLetter(event.target.value);
   };
 
-  const filteredProducts = products.filter(product =>
-    product.toLowerCase().startsWith(filterLetter.toLowerCase())
-  );
+  const handlePriceFilterChange = (event) => {
+    setFilterPrice(event.target.value);
+  };
+
+  const filteredProducts = products.filter(product => {
+    const matchesName = product.name.toLowerCase().startsWith(filterLetter.toLowerCase());
+    const matchesPrice = filterPrice ? product.price <= parseFloat(filterPrice) : true;
+    return matchesName && matchesPrice;
+  });
 
   return (
     <div>
-      {/* Première section en haut 
-      <div className="section2-container bg-#E7272E" style={{width:"250px",marginLeft:"40px"}}>
-        <h6 className="text-white">Catégories</h6>
-        <ul className="category-list">
-          <hr className="trait-horizontal" style={{border:"white solid 1px",fontWeight:"bold",opacity:"0.9",width:"200px"}}></hr>
-          <li>Tout</li>
-          <hr className="trait-horizontal" style={{border:"white solid 1px",fontWeight:"bold",opacity:"0.9",width:"200px"}}></hr>
-          <li>Pizzas</li>
-          <li>Burgers</li>
-          <li>Tacos</li>
-          <li>Plat Sénégal</li>
-          <li>Boissons Locales</li>
-        </ul>
-      </div>*/}
-
       {/* Espace blanc */}
-      <div style={{height: "20px"}}></div>
+      <div style={{ height: "20px" }}></div>
 
-      
-      <div className="section2-container" style={{width:"250px",marginLeft:"40px"}}>
+      <div className="section2-container" style={{ width: "250px", marginLeft: "40px" }}>
         <div className="partie2">
           <div>
-            <input 
-              type="text" 
-              className="" 
+            <input
+              type="text"
+              className=""
               placeholder="Search"
               value={filterLetter}
               onChange={handleFilterChange}
-              style={{width:"228px",border:"none",padding:"3px",position:"relative",right:"10px",borderRadius:"10px",border:"1px solid white "}}
+              style={{ width: "228px", border: "none", padding: "3px", position: "relative", right: "10px", borderRadius: "10px", border: "1px solid white " }}
             />
           </div>
+         
         </div>
       </div>
 
-      
-      <div className="section2-container" style={{width:"250px",marginLeft:"40px",}}>
-        <h6 className="text-black"><strong>Filter par Nom de Produits</strong></h6>
+      <div className="section2-container" style={{ width: "250px", marginLeft: "40px" }}>
+        <h6 className="text-black"><strong>Filter par Nom de Produits et Prix</strong></h6>
         <ul className="product-list">
           {filteredProducts.map((product, index) => (
-            <li key={index}>{product}</li>
+            <li key={index}>{product.name} - {product.price} FCFA</li>
           ))}
         </ul>
       </div>
+
+      <ContactWhatsApp />
     </div>
   );
 };
