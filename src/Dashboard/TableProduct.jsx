@@ -8,15 +8,6 @@ export default function TableProduct() {
     backgroundColor: "white",
     width: "100%",
   };
-  // async function handleAdd() {
-  //   try {
-  //     const test = await axios.post("http://localhost:4000/ajout");
-  //     const teste = await test.data;
-  //     setData(teste);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
   useEffect(() => {
     async function connect() {
       try {
@@ -30,6 +21,7 @@ export default function TableProduct() {
     }
     connect();
   });
+  
   return (
     <div className="row mt-5 p-3">
       <h5>Produit</h5>
@@ -52,7 +44,9 @@ export default function TableProduct() {
               </td>
               <td>{item.id}</td>
               <td>
-                <button className="btn btn-success">Ajouter</button>
+                <button className="btn btn-success">
+                  Ajouter
+                </button>
                 <button className="btn btn-danger">Supprimer</button>
                 <button className="btn btn-warning">Modifier</button>
               </td>
@@ -60,6 +54,7 @@ export default function TableProduct() {
           ))}
         </tbody>
       </table>
+     
     </div>
   );
 }
