@@ -14,7 +14,6 @@ function App() {
         <Routes>
           <Route path="/" />
           <Route path="/Admin" element={<Dashboard />} />
-          <Route path="/Test" element={<Test />} />
           <Route
             path="/About"
             element={
