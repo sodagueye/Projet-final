@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Connexion from './Inscription/Connexion';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MotdepassOublié from './Inscription/MotdepassOublié';
+import ListeUtilisateur from './Inscription/ListeUtilisateur';
 
 function App(){
 
@@ -18,10 +19,11 @@ function App(){
           <Route path="/" element={<Inscrire/>}></Route>
           <Route path="/inscrire" element={<Inscrire/>}></Route>
           <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
+          <Route path="/listerUsers" element={ <ListeUtilisateur/>}></Route>
 
         </Routes>
       </BrowserRouter>
-   
+     
     </div>
   )
 }
