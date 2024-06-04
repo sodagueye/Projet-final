@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Title from "./About/About/Title";
 import Container from "./About/About/Container";
 import Dashboard from "./Dashboard/Dashboard";
+import Accueil from "./khadyComponent/Accueil/Accueil";
 import Navbar from "./Dashboard/Navbar";
 import "./styles/style.css";
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" />
           <Route path="/Admin" element={<Dashboard />} />
+          <Route path="/Accueil" element={<Accueil />} />
           <Route
             path="/About"
             element={
