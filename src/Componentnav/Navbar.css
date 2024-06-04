@@ -112,6 +112,8 @@ option {
 
   .hamburger-button {
     display: block; 
+    background-color: white;
+    color:red;
   }
 
 }

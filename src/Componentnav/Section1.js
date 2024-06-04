@@ -14,7 +14,6 @@ import tb7 from '../assets/tb7.jpg';
 import tb8 from '../assets/tb8.jpg';
 import tb11 from '../assets/tb11.png';
 import './Section1.css';
-
 import ContactWhatsApp from './ContactWhatsApp';
 import logo1 from '../assets/logo1.png';
 //import Icons from './Icons';  

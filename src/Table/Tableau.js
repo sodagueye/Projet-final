@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
@@ -13,12 +14,13 @@ const Tableau = () => {
     const [showAddModal, setShowAddModal] = useState(false);
     const [selectedIngredient, setSelectedIngredient] = useState(null);
     const [ingredients, setIngredients] = useState([
-        { id: 1, name: "Tomates", nombredekilo: '6 Kilogrammes', pricePerKilo: 500, Datedepaiement: '06-21-24', Prixtotal: 3000 },
-        { id: 2, name: "Oignons", nombredekilo: '6 Kilogrammes', pricePerKilo: 300, Datedepaiement: '06-21-24', Prixtotal: 1800 },
-        { id: 3, name: "Poulet", nombredekilo: '6 Kilogrammes', pricePerKilo: 2000, Datedepaiement: '06-21-24', Prixtotal: 12000 },
-        { id: 4, name: "Poisson", nombredekilo: '6 Kilogrammes', pricePerKilo: 1500, Datedepaiement: '06-21-24', Prixtotal: 9000 },
-        { id: 5, name: "Viande de bœuf", nombredekilo: '6 Kilogrammes', pricePerKilo: 2500, Datedepaiement: '06-21-24', Prixtotal: 15000 },
+        { id: 1, name: "Tomates", nombredekilo: '6', pricePerKilo: 500, Datedepaiement: '06-21-24', Prixtotal: 3000 },
+        { id: 2, name: "Oignons", nombredekilo: '15', pricePerKilo: 800, Datedepaiement: '06-21-24', Prixtotal: 40.000 },
+        { id: 3, name: "Poivre", nombredekilo: '2', pricePerKilo: 1000, Datedepaiement: '06-21-24', Prixtotal: 1.000 },
+        { id: 4, name: "riz", nombredekilo: '10', pricePerKilo: 500, Datedepaiement: '06-21-24', Prixtotal: 5.000 },
+        { id: 5, name: "Viande de bœuf", nombredekilo: '20', pricePerKilo: 4000, Datedepaiement: '06-21-24', Prixtotal: 80.000 },
     ]);
+
 
     const [formData, setFormData] = useState({
         id: null,
@@ -29,28 +31,34 @@ const Tableau = () => {
         Prixtotal: ''
     });
 
+
     const handleViewDetails = (ingredient) => {
         setSelectedIngredient(ingredient);
         setShowModal(true);
     };
+
 
     const handleEdit = (ingredient) => {
         setFormData(ingredient);
         setShowAddModal(true);
     };
 
+
     const handleDelete = (id) => {
         setIngredients(ingredients.filter(ingredient => ingredient.id !== id));
     };
+
 
     const handleCloseModal = () => {
         setShowModal(false);
     };
 
+
     const handleCloseAddModal = () => {
         setShowAddModal(false);
         setFormData({ id: null, name: '', nombredekilo: '', pricePerKilo: '', Datedepaiement: '', Prixtotal: '' });
     };
+
 
     const handleAddOrUpdate = () => {
         if (formData.id) {
@@ -62,11 +70,15 @@ const Tableau = () => {
         handleCloseAddModal();
     };
 
+
     return (
         <Container fluid className="table-container">
-            <div className="d-flex justify-content-start mb-3">
-                <Button variant="outline-primary" onClick={() => setShowAddModal(true)} d-flex justify-content-flex-end>Ajouter</Button>
+            <h6 className='text-center'>Historique des ingredients</h6>
+            <hr style={{ background: "#70726E", borderBottom: "3px solid #70726E" }}></hr>
+            <div className="d-flex justify-content-end mb-3 btnajout">
+                <Button className="btnAjouter" variant="outline-primary" onClick={() => setShowAddModal(true)}>Ajouter</Button>
             </div>
+
             <Table responsive className='table'>
                 <thead>
                     <tr className='entete'>
@@ -80,22 +92,24 @@ const Tableau = () => {
                 </thead>
                 <tbody>
                     {ingredients.map((ingredient, index) => (
-                        <tr key={index} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
+                        <tr key={index}>
                             <td style={{ paddingLeft: "20px" }}>{ingredient.name}</td>
-                            <td>{ingredient.nombredekilo}</td>
-                            <td style={{ paddingLeft: "20px" }}>{ingredient.pricePerKilo} FCFA</td>
+                            <td>{ingredient.nombredekilo}Kilogramme</td>
+                            <td style={{ paddingLeft: "20px", }}>{ingredient.pricePerKilo} FCFA</td>
                             <td style={{ paddingLeft: "25px" }}>{ingredient.Datedepaiement}</td>
                             <td style={{ paddingRight: "10px" }}>{ingredient.Prixtotal} FCFA</td>
                             <td style={{ paddingLeft: "20px" }}>
-                                <AiFillEye onClick={() => handleViewDetails(ingredient)} />
-                                <AiFillEdit onClick={() => handleEdit(ingredient)} />
-                                <AiFillDelete onClick={() => handleDelete(ingredient.id)} />
+
+                                <AiFillEye onClick={() => handleViewDetails(ingredient)} className='icone1' />
+                                <AiFillEdit onClick={() => handleEdit(ingredient)} className='icone2' />
+                                <AiFillDelete onClick={() => handleDelete(ingredient.id)} className='icone3' />
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
 
+            {/*  Ms détails */}
             <Modal show={showModal} onHide={handleCloseModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>Détails de l'ingrédient</Modal.Title>
@@ -104,7 +118,7 @@ const Tableau = () => {
                     {selectedIngredient && (
                         <div>
                             <p>Nom: {selectedIngredient.name}</p>
-                            <p>Nombre de kilos: {selectedIngredient.nombredekilo}</p>
+                            <p>Nombre de kilos: {selectedIngredient.nombredekilo}Kilogramme</p>
                             <p>Prix par kilo: {selectedIngredient.pricePerKilo} FCFA</p>
                             <p>Date de paiement: {selectedIngredient.Datedepaiement}</p>
                             <p>Prix Total: {selectedIngredient.Prixtotal} FCFA</p>
@@ -129,46 +143,50 @@ const Tableau = () => {
                             <Form.Control
                                 type="text"
                                 placeholder="Entrer le nom"
-                                value={formData.name}
+                                value={formData.name || ''}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
                         </Form.Group>
-                        <Form.Group controlId="formNombreDeKilo">
-                            <Form.Label>Nombre de kilos</Form.Label>
+                        <Form.Group controlId='formNombreDeKilo'>
+                            <Form.Label>Nombre de Kilo</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Entrer le nombre de kilos"
-                                value={formData.nombredekilo}
+                                placeholder="Entrer le nombre de Kilo"
+                                value={formData.nombredekilo || ''}
                                 onChange={(e) => setFormData({ ...formData, nombredekilo: e.target.value })}
                             />
                         </Form.Group>
-                        <Form.Group controlId="formPricePerKilo">
-                            <Form.Label>Prix par kilo</Form.Label>
+
+
+                        <Form.Group controlId=' pricePerKilo'>
+                            <Form.Label>Prix par Kilo</Form.Label>
                             <Form.Control
-                                type="number"
-                                placeholder="Entrer le prix par kilo"
-                                value={formData.pricePerKilo}
-                                onChange={(e) => setFormData({ ...formData, pricePerKilo: e.target.value })}
-                            />
+                                type="text"
+                                placeholder="Entrer le Prix par Kilo"
+                                value={formData.pricePerKilo || ''}
+                                onChange={(e) => setFormData({ ...formData, pricePerKilo: e.target.value })} />
                         </Form.Group>
-                        <Form.Group controlId="formDateDePaiement">
-                            <Form.Label>Date de paiement</Form.Label>
-                            <Form.Control
+
+                        <Form.Group controlId='duedate'>
+                            <Form.Label>Date de Paiement</Form.Label>
+            
+                        </Form.Group>
+                        <input
                                 type="date"
                                 placeholder="Entrer la date de paiement"
-                                value={formData.Datedepaiement}
+                                value={formData.Datedepaiement || ''}
                                 onChange={(e) => setFormData({ ...formData, Datedepaiement: e.target.value })}
-                            />
-                        </Form.Group>
-                        <Form.Group controlId="formPrixTotal">
-                            <Form.Label>Prix total</Form.Label>
+                               />
+
+                        <Form.Group>
+                            <Form.Label>Prix Total</Form.Label>
                             <Form.Control
-                                type="number"
-                                placeholder="Entrer le prix total"
-                                value={formData.Prixtotal}
-                                onChange={(e) => setFormData({ ...formData, Prixtotal: e.target.value })}
-                            />
+                                type="text"
+                                placeholder='Entrer le prix Total'
+                                value={formData.Prixtotal || ''}
+                                onChange={(e) => setFormData({ ...formData, Prixtotal: e.target.value })} />
                         </Form.Group>
+                        {/*----------------------------------------------------- */}
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>

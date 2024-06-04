@@ -31,21 +31,11 @@ const CustomNavbar = ({ cartQuantity }) => {
             ☰
           </Button>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form className="d-flex search-bar mx-auto">
-              <div className="search-input-container">
-                <FaSearch className="search-icon recherche" />
-                <FormControl
-                  type="text"
-                  placeholder="Search"
-                  className="search-input"
-                  aria-label="Search"
-                />
-              </div>
-            </Form>
+         
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
               <Nav.Link href="#menu">Menu</Nav.Link>
               <Nav.Link href="#reservation">Reservation</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#about">A-Propos</Nav.Link>
               <FaUser className="text-white" style={{ fontSize: "19px" }} />
               <Nav.Link href="#cart">
                 <FaShoppingCart className="cart-icon" />
@@ -55,6 +45,7 @@ const CustomNavbar = ({ cartQuantity }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
 
       <Offcanvas show={showOffcanvas} onHide={handleCloseOffcanvas} placement="end">
         <Offcanvas.Header closeButton>
