@@ -8,15 +8,7 @@ export default function TableProduct() {
     backgroundColor: "white",
     width: "100%",
   };
-  // async function handleAdd() {
-  //   try {
-  //     const test = await axios.post("http://localhost:4000/ajout");
-  //     const teste = await test.data;
-  //     setData(teste);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
+
   useEffect(() => {
     async function connect() {
       try {
