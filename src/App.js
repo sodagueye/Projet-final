@@ -1,6 +1,6 @@
 import "./App.css";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Title from "./About/About/Title";
 import Container from "./About/About/Container";
 import Dashboard from "./Dashboard/Dashboard";
@@ -9,6 +9,7 @@ import "./styles/style.css";
 function App() {
   return (
     <div>
+      <Router>
         <Routes>
           <Route path="/" />
           <Route path="/Admin" element={<Dashboard />} />
@@ -22,6 +23,7 @@ function App() {
             }
           />
         </Routes>
+      </Router>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 export default function TableProduct() {
   const [data, setData] = useState([]);
   const tableStyle = {
@@ -11,8 +12,8 @@ export default function TableProduct() {
   useEffect(() => {
     async function connect() {
       try {
-        const response = await fetch("http://localhost:4000/recup");
-        const resultat = await response.json();
+        const response = await axios.get("http://localhost:4000/recup");
+        const resultat = await response.data;
         console.log(resultat);
         setData(resultat);
       } catch (e) {
@@ -21,7 +22,7 @@ export default function TableProduct() {
     }
     connect();
   });
-  
+
   return (
     <div className="row mt-5 p-3">
       <h5>Produit</h5>
@@ -44,9 +45,7 @@ export default function TableProduct() {
               </td>
               <td>{item.id}</td>
               <td>
-                <button className="btn btn-success">
-                  Ajouter
-                </button>
+                <button className="btn btn-success">Ajouter</button>
                 <button className="btn btn-danger">Supprimer</button>
                 <button className="btn btn-warning">Modifier</button>
               </td>
@@ -54,7 +53,6 @@ export default function TableProduct() {
           ))}
         </tbody>
       </table>
-     
     </div>
   );
 }
