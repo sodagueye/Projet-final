@@ -37,7 +37,7 @@ async function submit(e) {
 
 
   return (
-    <div className=''>
+    <div className='justify-content-center'>
 
       <div className='back shadow  d-flex justify-content-center align-items-center '>
 
