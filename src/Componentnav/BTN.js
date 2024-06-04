@@ -25,7 +25,7 @@ const Btn = () => {
         </div>
       </div>
 
-      {/* Répétez cette structure pour les autres cartes */}
+      
     </div>
   );
 };

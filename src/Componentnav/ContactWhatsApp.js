@@ -14,10 +14,7 @@ const ContactWhatsApp = () => {
           background: "#E7272D",
           color: "#fff",
           border: "2px solid #E7272D",
-          display: "flex",
-      marginTop:"30px",
-          alignItems: "center",
-          padding: "10px 20px",
+          padding: "5px 5px",
           fontSize: "16px",
           
         }} 

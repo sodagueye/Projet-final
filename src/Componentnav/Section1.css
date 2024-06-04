@@ -35,7 +35,7 @@
 .slider-track {
   display: flex;
   flex-direction: column;
-  animation: scroll 20s linear infinite;
+  animation: scroll 12s linear infinite;
 }
 
 .slider-row {

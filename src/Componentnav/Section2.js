@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Section2.css';
-import ContactWhatsApp from './ContactWhatsApp';
 
 const Section2 = () => {
   const [filterLetter, setFilterLetter] = useState('');
@@ -63,7 +62,6 @@ const Section2 = () => {
         </ul>
       </div>
 
-      <ContactWhatsApp />
     </div>
   );
 };
