@@ -11,19 +11,5 @@
 
 }
 .card-accueil div img{
-    height: 100px;
-}
-@media screen and (max-width:350px) {
-    .row-accueil{
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-    }
-    .card-accueil{
-        width: 80%;
-    }
-    .card-accueil div img{
-        height: 200px;
-    }
-    
+    height: 160px;
 }

@@ -109,7 +109,7 @@ export function Presentation() {
         <div className="row g-3 row-accueil">
             {
                 imgInfo.map((info, index) => (
-                    <div class=" col-6 col-sm-4 col-md-3" key={index}>
+                    <div class="col-12 col-sm-4 col-md-3" key={index}>
                         <div className="card card-accueil rounded">
                             <div>
                                 <img src={info.img} class="card-img-top" alt="Plat" />
