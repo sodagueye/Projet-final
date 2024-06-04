@@ -11,7 +11,7 @@
 
 }
 .card-accueil div img{
-    height: 100px;
+    height: 150px;
 }
 @media screen and (max-width:350px) {
     .row-accueil{

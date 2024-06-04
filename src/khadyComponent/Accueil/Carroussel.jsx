@@ -3,7 +3,7 @@ import banner3 from"../Footer-img/banner3.jpg"
 import banniere4 from"../Footer-img/banniere4.jpg"
 
 export function Carroussel(){
-    return <div className="container py-4">
+    return <div className="container pb-4" style={{marginTop:100}}>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
