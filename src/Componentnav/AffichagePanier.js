@@ -54,7 +54,9 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                         <td>Total: {totalPrice} FCFA</td>
                       </tr>
                       <tr>
-                        <td><Button variant="primary" onClick={handleOrder}>Commander</Button></td>
+                        <td>
+                            <Button variant="primary" onClick={handleOrder}>Commander</Button>
+                            </td>
                       </tr>
                     </tbody>
                   </table>
