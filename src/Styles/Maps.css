@@ -1,5 +1,7 @@
 .maps{
     display: flex;
     justify-content: center;
-    /* padding-top: 8rem; */
+    padding-top: 8rem;
+    margin-left: 8rem;
+    width: 50rem;
 }

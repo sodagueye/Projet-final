@@ -1,8 +1,11 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import './Styles/style.css';
-import Essaie from './Components/Essaie.js'
+import {Routes, Route } from 'react-router-dom';
+// import './Styles/style.css';
 import Maps from './Components/Maps';
+import Modification from './Components/Modification';
+import Map from './Components/Map';
+import ProductSearch from './Components/Recherche/ProductSearch';
 
 
 function App() {
@@ -10,8 +13,14 @@ function App() {
   return (
     
     <div>
-      <Essaie />
-      <Maps />
+      {/* <Maps /> */}
+      {/* <Modification /> */}
+      <Routes>
+          <Route path='/' element={ <Modification />} />
+          <Route path='/Maps' element={ <Maps />} />
+          <Route path='/Map' element= { <Map />} />
+          <Route path='/Recherche' element = { <ProductSearch />} />
+      </Routes>
     </div>
 
   )

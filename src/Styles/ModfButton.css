@@ -1,0 +1,20 @@
+.modbtn{
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: brown;
+}
+.modbtn:hover{
+    background-color: brown;
+}
+.dim{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:920px) {
+    .modbtn{
+        width: 100%;
+    }
+
+}

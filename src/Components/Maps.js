@@ -8,8 +8,8 @@ const mapContainerStyle = {
   height: '140rem',
 };
 const center = {
-  lat: 7.2905715, // default latitude
-  lng: 80.6337262, // default longitude
+  lat: 14.737557, // default latitude
+  lng: -17.461164, // default longitude http://localhost:8000/admin/liste-produits
 };
 
 const Maps = () => {
