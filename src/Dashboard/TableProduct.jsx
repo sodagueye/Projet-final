@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function TableProduct() {
@@ -9,23 +10,28 @@ export default function TableProduct() {
     backgroundColor: "white",
     width: "100%",
   };
-  useEffect(() => {
-    async function connect() {
-      try {
-        const response = await axios.get("http://localhost:4000/recup");
-        const resultat = await response.data;
-        console.log(resultat);
-        setData(resultat);
-      } catch (e) {
-        console.log(e);
-      }
+  async function connect() {
+    try {
+      const response = await axios.get("http://localhost:4000/recup");
+      const resultat = await response.data;
+      console.log(resultat);
+      setData(resultat);
+    } catch (e) {
+      console.log(e);
     }
+  }
+ 
+  useEffect(() => {
     connect();
-  });
+    // edit()
+  }, []);
 
   return (
     <div className="row mt-5 p-3">
-      <h5>Produit</h5>
+      <div className="d-flex align-items-center justify-content-between">
+        <h5>Produit</h5>
+        <button className="btn btn-success">Ajouter</button>
+      </div>
       <table style={tableStyle}>
         <thead>
           <tr>
@@ -45,9 +51,8 @@ export default function TableProduct() {
               </td>
               <td>{item.id}</td>
               <td>
-                <button className="btn btn-success">Ajouter</button>
                 <button className="btn btn-danger">Supprimer</button>
-                <button className="btn btn-warning">Modifier</button>
+               <button className="btn btn-warning text-white"><Link to={`/update/${item._id}`}>Update</Link></button> 
               </td>
             </tr>
           ))}

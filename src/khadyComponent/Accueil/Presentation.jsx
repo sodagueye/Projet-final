@@ -1,44 +1,47 @@
-import { useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom"
-import axios from "axios";
-export function Presentation() {
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./Presentation.css"
+
+function Presentation() {
   const [data, setData] = useState([]);
-  const navigation = useNavigate()
-  useEffect(() => {
-    async function getAllProducts() {
-      const response = await axios.get("http://localhost:4000/recup");
-      const resultat = await response.data;
-      console.log(resultat);
+
+  async function getData() {
+    try {
+      const response = await fetch("http://localhost:4000/recup");
+      if (!response.ok) {
+        throw new Error(`Error fetching products: ${response.statusText}`);
+      }
+      const resultat = await response.json();
       setData(resultat);
+    } catch (e) {
+      console.error("Failed to fetch products:", e);
     }
-    getAllProducts();
+  }
+
+  useEffect(() => {
+    getData();
   }, []);
 
-  const details = async ()=>{
-    // const test = await axios.post("http://localhost:4000/recup/:id")
-    navigation("/details")
-  }
-  // useEffect(()=>{
-  //   details()
-  // },[])
   return (
-    <div className="container py-3">
-      <div className="row">
-        {data.map((item) => (
-          <div className="col-lg-3">
-            <div class="card">
-              <img src={item.description} className="card-img-top"  alt="..." />
-              <div class="card-body">
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <button onClick={details}>Test</button>
+    <div>
+      {/* <h1 className="text-center">Home</h1> */}
+      <div className="container">
+        <div className="row">
+          {data.map((item) => (
+            <div className="col-lg-3">
+              <div className="card border-0 shadow" key={item._id}>
+                <img src={item.description} className="teste" alt="" />
+                <p>{item.title}</p>
+                <p>{item.price}</p>
+                <Link to={`/detail/${item._id}`}>
+                  <button className="btn btn-danger">Voir</button>
+                </Link>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+export default Presentation;

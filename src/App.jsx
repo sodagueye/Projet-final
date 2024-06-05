@@ -17,6 +17,7 @@ import { Commende } from "./khadyComponent/Commende/Commende";
 import { Vente } from "./khadyComponent/Ventes/Ventes";
 //  import { Footer } from "./khadyComponent/Footer/Footer";
 import { Pannier } from "./khadyComponent/Pannier/Pannier";
+import Details from "./Details";
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
           <Route path="/Pannier" element={<Pannier />} />
           <Route path="/Commende" element={<Commende />} />
           <Route path="/Vente" element={<Vente/>} />
-          {/* <Route path="/Footer" element={<Footer />} /> */}
+          <Route path="/Details" element={<Details />} />
           <Route path="/Admin" element={<Dashboard />} />
           <Route path="/Test" element={<Test />} />
           <Route path="/connexion" element={<Connexion />}></Route>
@@ -36,7 +37,6 @@ function App() {
           <Route path="/reinitialiser" element={<MotdepassOublié />}></Route>
           <Route path="/menu" element={<Menu />}></Route>
           <Route path="/reservation" element={<ReservationPage />}></Route>
-
           <Route
             path="/About"
             element={

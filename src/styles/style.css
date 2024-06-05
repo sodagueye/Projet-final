@@ -5,7 +5,9 @@
 .accordion-button {
     color: gray;
 }
-
+a{
+    color: #fff;
+}
 .text {
     font-size: 15px;
 }
@@ -14,14 +16,14 @@
     font-size: 18px;
 }
 
-img,
+/* img,
 .div-img {
     width: 100px;
-}
+} */
 
 .sidebar {
     height: 100vh;
-    background: #E7272D;
+    background: #502314;
     color: #fff;
 }
 
@@ -36,7 +38,7 @@ img,
 }
 
 .bell {
-    background-color: #E7272D;
+    background-color: #502314 ;
     color: #fff;
     width: 15px;
     height: 15px;
@@ -55,7 +57,7 @@ img,
 }
 
 .mail {
-    background-color: #E7272D;
+    background-color: #502314;
     color: #fff;
     width: 15px;
     height: 15px;
@@ -96,7 +98,7 @@ img,
 }
 
 .navbar-icon {
-    background-color: #E7272D;
+    background-color: #502314;
     height: 41px;
     width: 40px;
     border-top-right-radius: 10px;
@@ -106,7 +108,7 @@ img,
 }
 
 .card-border {
-    border-left: 3px solid #E7272D !important;
+    border-left: 3px solid #502314 !important;
 }
 
 
@@ -132,7 +134,7 @@ td {
 }
 
 th {
-    background-color: #E7272D;
+    background-color: #502314;
     color: #fff;
 
 }

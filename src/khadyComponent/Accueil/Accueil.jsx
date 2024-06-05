@@ -1,5 +1,5 @@
 import { Carroussel } from "./Carroussel";
-import { Presentation } from "./Presentation";
+import Presentation from "./Presentation";
 import CustomNavbar from "../../Componentnav/CustomNavbar";
 import { Footer } from "../Footer/Footer";
 
@@ -9,7 +9,7 @@ export default function Accueil() {
       <CustomNavbar />
       <Carroussel />
       <Presentation />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
