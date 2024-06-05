@@ -14,7 +14,6 @@
     width: 90%;
     margin-left: 35px;
     font-size: 12px;
- /*   border: 2px solid #343a40;*/
     
 }
 
@@ -57,8 +56,7 @@ td {
         padding: 0px;
         margin-left: 0;
         margin-right: 60;
-          }
-
+    }
     .table {
         width: 92%;
         position: relative;

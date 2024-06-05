@@ -1,3 +1,4 @@
+// Section1.js
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import bur4 from '../assets/bur4.png';
@@ -14,25 +15,21 @@ import tb7 from '../assets/tb7.jpg';
 import tb8 from '../assets/tb8.jpg';
 import tb11 from '../assets/tb11.png';
 import './Section1.css';
-import ContactWhatsApp from './ContactWhatsApp';
-import logo1 from '../assets/logo1.png';
-//import Icons from './Icons';  
 
 const products = [
-  { name: 'Creme Glace', price: 2000, image: gl, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Jus de Fruit', price: 1000, image: jus4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Burger', price: 4000, image: bur4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Burger + KFC', price: 13000, image: img7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Frite avec Sauce tomate', price: 3500, image: img10, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Salade+Poulet', price: 4000, image: img3, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Glace', price: 2000, image: glace, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Jus naturelle', price: 1000, image: jus6, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Jus naturelle', price: 1000, image: jus11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Theboudjeune', price: 1500, image: tb2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Cest Bon', price: 2000, image: tb7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Vermiselle', price: 2000, image: tb8, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { name: 'Theboudjeune', price: 1500, image: tb11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-
+  { id: 1, name: 'Creme Glace', price: 2000, image: gl, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 2, name: 'Jus de Fruit', price: 1000, image: jus4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 3, name: 'Burger', price: 4000, image: bur4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 4, name: 'Burger + KFC', price: 13000, image: img7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 5, name: 'Frite avec Sauce tomate', price: 3500, image: img10, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 6, name: 'Salade+Poulet', price: 4000, image: img3, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 7, name: 'Glace', price: 2000, image: glace, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 8, name: 'Jus naturelle', price: 1000, image: jus6, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 9, name: 'Jus naturelle', price: 1000, image: jus11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 10, name: 'Theboudjeune', price: 1500, image: tb2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 11, name: 'Cest Bon', price: 2000, image: tb7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 12, name: 'Vermiselle', price: 2000, image: tb8, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 13, name: 'Theboudjeune', price: 1500, image: tb11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
 ];
 
 const Section1 = ({ updateCartQuantity }) => {
@@ -56,11 +53,12 @@ const Section1 = ({ updateCartQuantity }) => {
   };
 
   const handleAddToCart = () => {
-    updateCartQuantity(quantity);
+    updateCartQuantity(selectedProduct, quantity);
     handleCloseModal();
   };
 
-  const handleQuantityChange = (newQuantity) => {
+  const handleQuantityChange = (newQuantity
+  ) => {
     const updatedQuantity = Math.max(1, newQuantity);
     setQuantity(updatedQuantity);
     setTotalPrice(updatedQuantity * selectedProduct.price);
@@ -72,18 +70,16 @@ const Section1 = ({ updateCartQuantity }) => {
 
   return (
     <div className="section1-container">
-      
       <div className="slider">
         <div className="slider-track">
           <div className="slider-row">
             {firstRow.map((product, index) => (
               <div key={index} className="card card-spacing card-container">
                 <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
-                <div className="card-body" style={{textAlign:"center"}}>
+                <div className="card-body" style={{ textAlign: "center" }}>
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.price} FCFA</p>
                   <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
-                  {/**<Icons comments={[]} />  */}
                 </div>
               </div>
             ))}
@@ -96,8 +92,6 @@ const Section1 = ({ updateCartQuantity }) => {
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.price} FCFA</p>
                   <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
-                 {/** <Icons comments={[]} />  */}
-                  
                 </div>
               </div>
             ))}
@@ -122,16 +116,12 @@ const Section1 = ({ updateCartQuantity }) => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
-            <Button variant="" style={{backgroundColor:"#E7272D", color:"white"}} onClick={handleAddToCart}>Ajouter au panier</Button>
+            <Button variant="" style={{ backgroundColor: "#E7272D", color: "white" }} onClick={handleAddToCart}>Ajouter au panier</Button>
           </Modal.Footer>
         </Modal>
       )}
-   
-<ContactWhatsApp />
     </div>
-    
   );
-  
 };
 
 export default Section1;
