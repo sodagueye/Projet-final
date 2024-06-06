@@ -20,7 +20,11 @@ export default function TableProduct() {
       console.log(e);
     }
   }
- 
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:4000/delete/${id}`);
+    const tabDelete = data.filter((item) => id !== item._id);
+    setData(tabDelete);
+  };
   useEffect(() => {
     connect();
     // edit()
@@ -37,7 +41,7 @@ export default function TableProduct() {
           <tr>
             <th scope="col">Titre</th>
             <th scope="col">Prix</th>
-            <th scope="col">Description</th>
+            <th scope="col">Plats</th>
             <th scope="col">ID</th>
             <th scope="col">Actions</th>
           </tr>
@@ -45,14 +49,22 @@ export default function TableProduct() {
         <tbody>
           {data.map((item, index) => (
             <tr>
-              <td>{item.title}</td> <td>{item.price}</td>
+              <td>{item.title}</td> <td>{item.price} FCFA</td>
               <td>
-                <img src={item.description} alt="" />
+                <img src={item.description} className="plat" alt="" />
               </td>
               <td>{item.id}</td>
-              <td>
-                <button className="btn btn-danger">Supprimer</button>
-               <button className="btn btn-warning text-white"><Link to={`/update/${item._id}`}>Update</Link></button> 
+              <td className="d-flex flex-row justify-content-center">
+                <button
+                  onClick={() => handleDelete(item._id)}
+                  className="btn btn-danger me-1"
+                >
+                  Supprimer
+                </button>
+                <button className="btn btn-warning text-white me-1">
+                  <Link to={`/update/${item._id}`}>Modifier</Link>
+                </button>
+                <button className="btn btn-success">Archiver</button>
               </td>
             </tr>
           ))}

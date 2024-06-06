@@ -25,8 +25,12 @@ a{
     height: 100vh;
     background: #502314;
     color: #fff;
+    position: fixed;
+    width: 16.6%;
 }
-
+.text-plat{
+    color: #502314;
+}
 .trait {
     background-color: gray;
     width: 100%;

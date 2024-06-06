@@ -9,12 +9,10 @@ import IconDash from "./IconDash";
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <h5>R ADMIN</h5>
       <div className="d-flex p-3">
         <IconDash icon={<AiFillDashboard />} />
         <h6 className="ms-3">Dashboard</h6>
       </div>
-      <div className="trait"></div>
       <div>
         <div className="d-flex p-3">
           <IconDash icon={<IoIosSettings />} />
@@ -27,34 +25,25 @@ export default function Sidebar() {
           <h6 className="ms-3">Utilities</h6>
         </div>
       </div>
-      <div className="trait"></div>
+  
       <div>
         <div className="d-flex p-3">
           <IconDash icon={<FaChartArea />} />
           <h6 className="ms-3">Charts</h6>
         </div>
-        <div className="d-flex p-3">
-          <IconDash icon={<FaFolder />} />
-          <h6 className="ms-3">Pages</h6>
-        </div>
+       
         <div className="d-flex p-3">
           <IconDash icon={<LiaTableSolid />} />
           <h6 className="ms-3">Tables</h6>
         </div>
-        <div className="trait"></div>
-        <div className="d-flex p-3">
-          <IconDash icon={<LiaTableSolid />} />
-          <h6 className="ms-3">Tables</h6>
-        </div>
+       
+       
         <div className="d-flex p-3">
           <IconDash icon={<FaFolder />} />
           <h6 className="ms-3">Pages</h6>
         </div>
-        <div className="d-flex p-3">
-          <IconDash icon={<FaChartArea />} />
-          <h6 className="ms-3">Charts</h6>
-        </div>
-        <div className="trait"></div>
+       
+     
       </div>
     </div>
   );
