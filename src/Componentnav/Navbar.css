@@ -99,7 +99,9 @@ option {
   font-size: 19px;
   text-decoration: none;color: black;
 }
-
+.search-input-container{
+display: none;
+}
 .user{color: black;}
   .search-icon.recherche {
     color: black; 
