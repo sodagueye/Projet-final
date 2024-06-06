@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import CustomNavbar from './CustomNavbar';
-//je vais cree 1 etat pr stocker les produits du panier 
+
 const Menu = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
-  const [cartProducts,setCartProducts]=useState([])
+  const [cartProducts, setCartProducts] = useState([]);
 
   const updateCartQuantity = (product, quantity) => {
     setCartQuantity(prevQuantity => prevQuantity + quantity);
@@ -22,7 +22,11 @@ const Menu = () => {
 
   return (
     <div className="container mt-4">
-      <CustomNavbar cartQuantity={cartQuantity} cartProducts={cartProducts} />
+      <CustomNavbar 
+        cartQuantity={cartQuantity} 
+        cartProducts={cartProducts} 
+        setCartProducts={setCartProducts}
+      />
       <div className="row">
         <div className="col-md-8">
           <Section1 updateCartQuantity={updateCartQuantity} />

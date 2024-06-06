@@ -16,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Menu />
         <Routes>
+          
           <Route exact path="/connexion" element={<Connexion />} />
           <Route path="/inscrire" element={<Inscrire />} />
           <Route path="/reinitialiser" element={<MotdepassOublié />} />

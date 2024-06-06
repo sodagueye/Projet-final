@@ -1,3 +1,4 @@
+// CustomNavbar.js
 import React, { useState } from 'react';
 import { Navbar, Nav, Form, FormControl, Container, Offcanvas, Button } from 'react-bootstrap';
 import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
@@ -45,14 +46,19 @@ const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
           : product
       )
     );
-  };
+  };console.log("setCartProducts:", setCartProducts);
+
 
   const removeProduct = (productId) => {
-    setCartProducts(prevCartProducts => 
-      prevCartProducts.filter(product => product.id !== productId)
-    );
+    console.log("Product ID to remove:", productId);
+    setCartProducts(prevCartProducts => {
+      console.log("Previous Cart Products:", prevCartProducts);
+      const updatedCartProducts = prevCartProducts.filter(product => product.id !== productId);
+      console.log("Updated Cart Products:", updatedCartProducts);
+      return updatedCartProducts;
+    });
   };
-
+  
   return (
     <>
       <Navbar bg="custom" variant="dark" expand="lg" className="navbar-custom fixed-top">
@@ -138,4 +144,4 @@ const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
   );
 };
 
-export default CustomNavbar;
+export default CustomNavbar
