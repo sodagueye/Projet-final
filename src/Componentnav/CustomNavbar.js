@@ -1,5 +1,4 @@
-// CustomNavbar.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Form, FormControl, Container, Offcanvas, Button } from 'react-bootstrap';
 import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
 import AffichagePanier from './AffichagePanier';
@@ -7,10 +6,16 @@ import AffichagePanier from './AffichagePanier';
 import './Navbar.css';
 import logo1 from '../assets/logo1.png';
 
-const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
+const CustomNavbar = ({ cartProducts, setCartProducts }) => {
   const [activeLink, setActiveLink] = useState('');
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  useEffect(() => {
+    const totalQuantity = cartProducts.reduce((total, product) => total + product.quantity, 0);
+    setCartQuantity(totalQuantity);
+  }, [cartProducts]);
 
   const handleToggle = () => {
     setShowOffcanvas(!showOffcanvas);
@@ -46,19 +51,14 @@ const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
           : product
       )
     );
-  };console.log("setCartProducts:", setCartProducts);
-
+  };
 
   const removeProduct = (productId) => {
-    console.log("Product ID to remove:", productId);
-    setCartProducts(prevCartProducts => {
-      console.log("Previous Cart Products:", prevCartProducts);
-      const updatedCartProducts = prevCartProducts.filter(product => product.id !== productId);
-      console.log("Updated Cart Products:", updatedCartProducts);
-      return updatedCartProducts;
-    });
+    setCartProducts(prevCartProducts => 
+      prevCartProducts.filter(product => product.id !== productId)
+    );
   };
-  
+
   return (
     <>
       <Navbar bg="custom" variant="dark" expand="lg" className="navbar-custom fixed-top">
@@ -67,21 +67,11 @@ const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
             <img src={logo1} alt="Burger 1" className="me-2" style={{ width: "80px" }} />
             Teranga FOOD
           </Navbar.Brand>
-          <Button
-            className="hamburger-button"
-            onClick={handleToggle}
-          >
-            ☰
-          </Button>
+          <Button className="hamburger-button" onClick={handleToggle}>☰</Button>
           <Form className="d-flex search-bar mx-auto">
             <div className="search-input-container">
               <FaSearch className="search-icon recherche fs-5" />
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="search-input"
-                aria-label="Search"
-              />
+              <FormControl type="text" placeholder="Search" className="search-input" aria-label="Search" />
             </div>
           </Form>
           <Navbar.Collapse id="basic-navbar-nav">
@@ -107,12 +97,7 @@ const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
           <Form className="d-flex search-bar mx-auto">
             <div className="search-input-container">
               <FaSearch className="search-icon recherche fs-5" />
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="search-input"
-                aria-label="Search"
-              />
+              <FormControl type="text" placeholder="Search" className="search-input" aria-label="Search" />
             </div>
           </Form>
           <Nav className="flex-column">
@@ -144,4 +129,4 @@ const CustomNavbar = ({ cartQuantity, cartProducts, setCartProducts }) => {
   );
 };
 
-export default CustomNavbar
+export default CustomNavbar;

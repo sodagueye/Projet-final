@@ -21,17 +21,17 @@ const Menu = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-5">
       <CustomNavbar 
         cartQuantity={cartQuantity} 
         cartProducts={cartProducts} 
         setCartProducts={setCartProducts}
       />
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-8 mt-4">
           <Section1 updateCartQuantity={updateCartQuantity} />
         </div>
-        <div className="col-md-4">
+        <div className="col-md-4 mt-4">
           <Section2 />
         </div>
       </div>

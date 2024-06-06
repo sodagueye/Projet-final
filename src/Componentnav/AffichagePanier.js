@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
-import Connexion from '../Inscription/Connexion'; 
+import Connexion from '../Inscription/Connexion';
 
 const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [totalItems, setTotalItems] = useState(0);
-
-  useEffect(() => {
-    // Calculer le nombre total d'articles dans le panier
-    let total = 0;
-    cartProducts.forEach(product => {
-      total += product.quantity;
-    });
-    setTotalItems(total);
-  }, [cartProducts]); // Mettre à jour lorsque le contenu du panier change
+  const [cartItemCount, setCartItemCount] = useState(cartProducts.length);
 
   // Calcul du total
   const totalPrice = cartProducts.reduce((total, product) => total + (product.price * product.quantity), 0);
+
+  // Mettre à jour le nombre d'articles dans le panier lorsque cartProducts change
+  useEffect(() => {
+    setCartItemCount(cartProducts.length);
+  }, [cartProducts]);
 
   // Faire commande
   const handleOrder = () => {
@@ -50,7 +46,7 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                     </div>
                   </Col>
                   <Col md={2} className="d-flex align-items-center">
-                    <Button variant="danger" onClick={() => removeProduct(product.id)}>Supprimer</Button>
+                    <Button className='sup' variant="danger" onClick={() => removeProduct(product.id)}>Supprimer</Button>
                   </Col>
                   <Col md={4} className="d-flex align-items-center">
                     <table>
@@ -59,7 +55,7 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                           <td>Recapitulatif</td>
                         </tr>
                         <tr>
-                          <td>Nombre d'articles: {totalItems}</td>
+                          <td>Nombre d'articles: {cartItemCount}</td>
                         </tr>
                         <tr>
                           <td>Prix de la livraison:</td> 

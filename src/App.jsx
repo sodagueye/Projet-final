@@ -32,7 +32,7 @@ function App() {
 }
 
 function Home() {
-  return <h2>Bienvenue à la page d'accueil</h2>; 
+
 }
 
 export default App;
