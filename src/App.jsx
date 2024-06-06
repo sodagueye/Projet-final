@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MotdepassOublié from './Inscription/MotdepassOublié';
 import ListeUtilisateur from './Inscription/ListeUtilisateur';
 import ModifierPassword from './Inscription/ModifierPassword';
+// import Notification from './Inscription/Notification';
 
 function App(){
 
@@ -22,6 +23,9 @@ function App(){
           <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
           <Route path="/modifier" element={ <ModifierPassword/>}></Route>
           <Route path="/listerUsers" element={ <ListeUtilisateur/>}></Route>
+          {/* <Route path="/notification" element={ <Notification/>}></Route>  */}
+
+
 
         </Routes>
       </BrowserRouter>
