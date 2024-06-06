@@ -11,6 +11,8 @@ function Inscrire() {
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [userId, setUserId] = useState('');
+
   
 async function submit(e) {
   e.preventDefault();
@@ -35,6 +37,24 @@ async function submit(e) {
   }
 }
 
+
+
+  async function deleteUser(e) {
+    e.preventDefault();
+
+    try {
+      const res = await axios.delete(`http://localhost:8000/users/${userId}`);
+      if (res.status === 200) {
+        alert('Utilisateur supprimé avec succès');
+      } else {
+        alert('Erreur lors de la suppression de l\'utilisateur');
+      }
+    } catch (error) {
+      console.log(error);
+      alert('Erreur lors de la suppression de l\'utilisateur');
+    }
+    
+  }
 
   return (
     <div className='justify-content-center'>
