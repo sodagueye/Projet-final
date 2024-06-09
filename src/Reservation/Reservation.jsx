@@ -1,26 +1,39 @@
 import React, { useState } from "react";
 import "./Reservation.css";
+import axios from "axios";
 
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
+  const [hour, setHour] = useState("");
 
   const handleDateChange = (event) => {
-    setDate(event.target.value);
+    setDate(new Date(event.target.value));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Envoi de la requête de réservation
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      invites: invites,
+      date: date.toISOString(),
+      hour: hour,
+    };
 
-  const [hour, setHour] = useState();
+    try {
+      const response = await axios.post("http://localhost:5000/api/reservation", formData);
+      console.log(response.data);
+      alert("Réservation réussie !");
+    } catch (err) {
+      console.error(err);
+      alert("Erreur lors de la demande de réservation");
+    }
+  };
 
   const handleHourChange = (hour) => {
     setHour(hour);
   };
 
-  const hours = [6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const hours = Array.from({ length: 24 }, (_, i) => i);
 
   return (
     <section id="reservation">
@@ -32,11 +45,10 @@ function ReservationPage() {
               <select
                 className="form-select"
                 value={invites}
-                onChange={(e) => setInvites(e.target.value)}
+                onChange={(e) => setInvites(Number(e.target.value))}
               >
                 {[...Array(8).keys()].map((i) => (
                   <option
-                    selected
                     className="option-back"
                     key={i + 1}
                     value={i + 1}
@@ -50,82 +62,64 @@ function ReservationPage() {
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
-                value={date}
+                value={date.toISOString()}
                 onChange={handleDateChange}
               >
-                {Array.from({ length: 7 }, (_, i) => (
-                  <option
-                    selected
-                    className="option-back"
-                    key={i}
-                    value={new Date(Date.now() + i * 24 * 60 * 60 * 1000)}
-                  >
-                    {new Date(
-                      Date.now() + i * 24 * 60 * 60 * 1000
-                    ).toLocaleDateString("fr-FR", {
-                      weekday: "short",
-                      day: "2-digit",
-                      month: "2-digit",
-                      year: "numeric",
-                    })}
-                  </option>
-                ))}
+                {Array.from({ length: 7 }, (_, i) => {
+                  const newDate = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
+                  return (
+                    <option
+                      className="option-back"
+                      key={i}
+                      value={newDate.toISOString()}
+                    >
+                      {newDate.toLocaleDateString("fr-FR", {
+                        weekday: "short",
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
+                    </option>
+                  );
+                })}
               </select>
-              <label for="floatingSelect">Date</label>
+              <label htmlFor="floatingSelect">Date</label>
             </div>
-            <div class="form-floating mx-2 my-3">
+            <div className="form-floating mx-2 my-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="floatingInputDisabled"
                 disabled
                 value={hour}
               />
-              <label for="floatingInputDisabled">Time</label>
+              <label htmlFor="floatingInputDisabled">Time</label>
             </div>
           </div>
           <label>
             <div className="row reservation-heure">
               {hours.map((hour, index) => (
-                <>
+                <React.Fragment key={index}>
                   <button
                     className="col-md-2 secondaire"
-                    key={index}
-                    onClick={() => handleHourChange(hour)}
+                    type="button"
+                    onClick={() => handleHourChange(`${hour}:00`)}
                   >
-                    {hour}:00 AM
+                    {hour === 0 ? `12:00 AM` : hour < 12 ? `${hour}:00 AM` : hour === 12 ? `12:00 PM` : `${hour - 12}:00 PM`}
                   </button>
                   <button
                     className="col-md-2 secondaire"
-                    key={index}
-                    onClick={() => handleHourChange(hour)}
+                    type="button"
+                    onClick={() => handleHourChange(`${hour}:30`)}
                   >
-                    {hour}:30 PM
+                    {hour === 0 ? `12:30 AM` : hour < 12 ? `${hour}:30 AM` : hour === 12 ? `12:30 PM` : `${hour - 12}:30 PM`}
                   </button>
-                </>
+                </React.Fragment>
               ))}
             </div>
           </label>
           <br />
-          <button
-            className="btn btnsend"
-            onClick={() => {
-              const formData = {
-                invites: invites,
-                date: date.toISOString(),
-                hour: hour,
-              };
-              // Envoi de la réservation au serveur
-              fetch("/api/reservation", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-              })
-                .then((response) => response.json())
-                .then((data) => console.log(data))
-                .catch((error) => console.error(error));
-            }}
-          >
+          <button className="btn btnsend" type="submit">
             Continue
           </button>
         </form>
