@@ -1,43 +1,65 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-export default function Products() {
-  const [product, setProduct] = useState([]);
-  async function getProducts() {
-    try {
-      const response = await axios.get("http://localhost:4000/recup");
-      const resultat = await response.data;
-      setProduct(resultat);
-    } catch {
-      console.log("Erreur lors de la recupération");
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./styles.css"
+// import { CiBellOn } from "react-icons/ci";
+// import Button from "react-bootstrap/Button";
+// import Modal from "react-bootstrap/Modal";
+
+export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch("http://localhost:4000/recup");
+        const resultat = await response.json();
+        setData(resultat);
+      } catch {
+        console.log("error");
+      }
+    }
+
+    getData();
+  }, []);
+
+  async function handleSubmit(id) {
+    const conf = window.confirm("Do you want to delete?");
+    if (conf) {
+      try {
+        await axios.delete(`http://localhost:4000/delete/${id}`);
+        alert("Deleted successfully");
+        setData(data.filter((item) => item._id !== id));
+      } catch (error) {
+        console.error("There was an error deleting the item!", error);
+      }
     }
   }
-  useEffect(() => {
-    getProducts();
-  }, []);
+
   return (
-    <div className="container">
-      <table>
+    <div>
+      <table className="table">
         <thead>
           <tr>
-            <th>Titre</th>
-            <th>Prix</th>
-            <th>Description</th>
-            <th>Actions</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {product.map((produit) => (
-            <tr>
-              <td>{produit.title}</td>
-              <td>{produit.price}</td>
+          {data.map((item) => (
+            <tr key={item._id}>
+              <td>{item.title}</td>
               <td>
-                <img src={produit.description} alt="" />
+                <img src={item.description} alt={item.title} />
               </td>
+              <td>{item.price}</td>
               <td>
-                <button className="btn btn-danger">Supprimer</button>
-                <button className="btn btn-warning">Modifier</button>
-                <button className="btn btn-secondary">Archiver</button>
+               <button className="btn btn-warning"><Link to={`/update/${item._id}`}>Update</Link></button> 
+               <button className="btn btn-danger" onClick={() => handleSubmit(item._id)}>Delete</button>
               </td>
+            
             </tr>
           ))}
         </tbody>
