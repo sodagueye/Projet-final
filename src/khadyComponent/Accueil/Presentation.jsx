@@ -106,17 +106,17 @@ export function Presentation() {
 
     ]
     return <div className="container py-3">
-        <div className="row g-3 row-accueil">
+        <div className="row gx-2 gy-3 myrow">
             {
                 imgInfo.map((info, index) => (
-                    <div class=" col-6 col-sm-4 col-md-3" key={index}>
-                        <div className="card card-accueil rounded">
+                    <div class="col-6 col-sm-4 col-md-3 mycol" key={index}>
+                        <div className="card rounded mycard">
                             <div>
                                 <img src={info.img} class="card-img-top" alt="Plat" />
                                 <div class="card-body d-flex flex-column align-items-center">
                                     <h6 class="card-title fw-bold">{info.title}</h6>
                                     <p class="card-text">{info.prix}</p>
-                                    <a href="#" class="btn btn-danger" style={{ fontSize: 10 }}>Ajouter au Panier</a>
+                                    <a href="#" class="btn btn-danger" style={{ fontSize: 12 }}>Ajouter au Panier</a>
                                 </div>
                             </div>
                         </div>

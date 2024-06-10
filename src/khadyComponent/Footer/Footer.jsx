@@ -9,8 +9,8 @@ export function Footer() {
             <p>Abonnez-vous à notre newsletter</p>
             <div>
                 <form className="d-flex align-items-center">
-                    <input type="text" placeholder="E-mail" className="rounded border-0" style={{ backgroundColor: "#ddd",height:30  }} />
-                    <button className="rounded bg-warning border-0 px-2" style={{ position: "relative", right: 8,height:30 }}>Abonnez-vous</button>
+                    <input type="text" placeholder="E-mail" className="rounded border-0" style={{ backgroundColor: "#ddd",height:40}} />
+                    <button className="rounded bg-warning border-0 px-2" style={{ position: "relative", right: 8,height:40}}>Abonnez-vous</button>
                 </form>
             </div>
         </div>
