@@ -1,13 +1,21 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
-import Card from './Card'
+import React from "react";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import Card from "./Card";
+import "./styles.css";
 export default function Dashboard() {
   return (
-    <div>
-        <Navbar/>
-        <Sidebar/>
-        <Card/>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-2 p-0">
+          <Sidebar />
+        </div>
+        <div className="col-10 p-0">
+          <Navbar />
+          <Card />
+        </div>
+      </div>
+      {/* <Card /> */}
     </div>
-  )
+  );
 }
