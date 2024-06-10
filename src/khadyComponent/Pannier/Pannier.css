@@ -1,0 +1,19 @@
+.Details-des-produit-achete{
+    height: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.pannier i{
+    color: black;
+} 
+.pannier p, .pannier button{
+ font-size: 10px;
+ font-family: sans-serif;
+}
+.pannier h6{
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.pannier i{
+    cursor: pointer;
+    font-family: sans-serif;
+}

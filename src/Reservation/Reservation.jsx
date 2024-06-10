@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Reservation.css";
+import "../Reservation-Table/ReservationTable.css";
 import axios from "axios";
 
 function ReservationPage() {
