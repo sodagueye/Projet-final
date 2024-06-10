@@ -1,0 +1,18 @@
+input{
+    width: 40%;
+}
+.btn-mail{
+    background-color: brown;
+    color: azure;
+    border: none;
+}
+.btn-mail:hover{
+    background-color: brown;
+    color: azure;
+}
+@media screen and (max-width:769px) {
+    input{
+        width: 150%;
+        margin-top: 10px;
+    }
+}
