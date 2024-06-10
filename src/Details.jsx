@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CustomNavbar from "./Componentnav/CustomNavbar";
 export default function Details() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);

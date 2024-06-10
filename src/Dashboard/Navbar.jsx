@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import IconDash from "./IconDash";
 import { FaBell } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import vector from "../pictures/vector.jpg";
+// import vector from "../pictures/vector.jpg";
 export default function Navbar() {
   return (
     <div>
@@ -52,7 +52,7 @@ export default function Navbar() {
               <li className="tiret ms-3 me-3"></li>
               <li className="nav-item avatar">Faabii</li>
               <li className="nav-item">
-                <img src={vector} alt="" className="avatar" />
+                {/* <img src={vector} alt="" className="avatar" /> */}
               </li>
             </ul>
           </div>

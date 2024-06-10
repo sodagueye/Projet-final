@@ -7,6 +7,7 @@ import { RiMapPin2Line } from "react-icons/ri";
 import { LuClock } from "react-icons/lu";
 import { GrGallery } from "react-icons/gr";
 
+
 import img1 from "./img4.jpg";
 
 export default function Container() {
