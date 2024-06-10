@@ -3,7 +3,7 @@ import weave from "../Footer-img/weave.png";
 import "../Commande/commande.css";
 import { useState } from "react";
 
-export function Commande() {
+export default function Commande() {
     const tabHistoriqueCommende = [
         {
             date: '12/03/2019',

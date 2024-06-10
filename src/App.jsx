@@ -6,6 +6,9 @@ import Menu from "./Componentnav/Menu";
 import Accueil from "./khadyComponent/Accueil/Accueil"
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
+import Commande from "./khadyComponent/Commande/Commande"
+import Pannier from "./khadyComponent/Pannier/Pannier"
+import "./khadyComponent/Commande/commande.css"
 function App() {
   return (
     <div className="App">
@@ -17,6 +20,8 @@ function App() {
           <Route path="/update/:id" element={<Update />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/commande" element={<Commande />} />
+          <Route path="/panier" element={<Pannier />} />
         </Routes>
       </BrowserRouter>
     </div>

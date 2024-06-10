@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <div>
-      <table className="table">
+      <table className="Table">
         <thead>
           <tr>
             <th scope="col">Title</th>

@@ -3,7 +3,7 @@ import yassa1 from '../Footer-img/yassa1.jpg';
 import thiebouDieune from "../Footer-img/thiebou-dieune.png";
 import '../Pannier/Pannier.css';
 
-export function Pannier() {
+export default function Pannier() {
     const [detailPannier, setDetailPannier] = useState([
         {
             img: yassa1,

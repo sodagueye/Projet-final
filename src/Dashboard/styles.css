@@ -1,9 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.sidebar{
+
+.sidebar {
     background-color: #502314;
     height: 100vh;
     position: fixed;
@@ -11,7 +12,7 @@
 }
 
 
-table {
+.Table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
@@ -19,20 +20,18 @@ table {
     /* text-align: left; */
 }
 
-table thead tr {
+.Table thead tr {
     background-color: #502314;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
 }
 
-table th,
-table td {
+.Table th,
+.Table td {
     padding: 12px 15px;
 }
 
-table tbody tr {
+.Table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
-
-
