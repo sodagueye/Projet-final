@@ -1,25 +1,22 @@
-// Composant React
-import React, { useState, useEffect } from "react";
+// Importation des bibliothèques nécessaires
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const employees = [
-  { id: 1, name: 'John Doe', post: 'Développeur', hours: 40, salary: 5000 },
-  { id: 2, name: 'Jane Smith', post: 'Designeuse', hours: 30, salary: 4000 },
-  { id: 3, name: 'Bob Johnson', post: 'Ingénieur', hours: 50, salary: 6000 },
-];
+// Fonction pour récupérer les données des employés
+const getEmployees = async () => {
+  const response = await axios.get('http://localhost:5000/api/employees');
+  return response.data;
+};
 
+// Component EmployeeList
+const EmployeeList = () => {
+  const [employees, setEmployees] = useState([]);
 
-function EmployeeList() {
-  // const [employees, setEmployees] = useState([]);
-  // const [error, setError] = useState(null);
-
-  const [employeesData, setEmployeesData] = useState(employees);
-
-  // useEffect(() => {
-  //   fetch("/employees")
-  //     .then((response) => response.json())
-  //     .then((data) => setEmployees(data))
-  //     .catch((error) => setError(error));
-  // }, []);
+  useEffect(() => {
+    getEmployees().then((data) => {
+      setEmployees(data);
+    });
+  }, []);
 
   return (
     <table className="table table-striped">
@@ -27,24 +24,25 @@ function EmployeeList() {
         <tr>
           <th>Nom</th>
           <th>Poste</th>
-          <th>Heures de travail</th>
-          <th>Salaire/H</th>
+          <th>Salaire</th>
+          <th>Heure de travail</th>
           <th>Mensualité</th>
         </tr>
       </thead>
       <tbody>
-        {employeesData.map((employee) => (
+        {employees.map((employee) => (
           <tr key={employee.id}>
             <td>{employee.name}</td>
-            <td>{employee.post}</td>
-            <td>{employee.hours}H</td>
-            <td>{employee.salary} FCFA</td>
-            <td>{employee.salary * employee.hours} FCFA</td>
+            <td>{employee.position}</td>
+            <td>{employee.salary}</td>
+            <td>{employee.workHours}</td>
+            <td>{employee.monthlySalary}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
-}
+};
 
+// Export du component
 export default EmployeeList;

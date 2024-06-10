@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ReservationPage from './Reservation/Reservation';
 import Appreciation from './Appreciation/Appreciation'
 import ReservationTable from './Reservation-Table/ReservationTable';
-import Emploitest from './Emploitest';
 import Employe from './Ressources-Humaines/Employe';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         <Route path='/appreciation' element={<Appreciation />} />
         <Route path='/tables' element={<ReservationTable />} />
         <Route path='/humaines' element={<Employe />} />
-        <Route path='/test' element={<Emploitest />} />
       </Routes>
       </BrowserRouter>
     </div>
