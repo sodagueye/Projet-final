@@ -5,7 +5,7 @@ import CustomNavbar from "../../Componentnav/CustomNavbar";
 export default function Accueil() {
   return (
     <div>
-      {/* <CustomNavbar /> */}
+      <CustomNavbar />
       <Carroussel />
       <Presentation />
       <Footer />
