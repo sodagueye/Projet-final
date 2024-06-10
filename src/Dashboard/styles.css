@@ -6,4 +6,33 @@
 .sidebar{
     background-color: #502314;
     height: 100vh;
+    position: fixed;
+    width: 16.67%;
 }
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.2em;
+    /* text-align: left; */
+}
+
+table thead tr {
+    background-color: #502314;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
