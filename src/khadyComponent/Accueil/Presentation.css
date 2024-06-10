@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card-accueil h6{
+    font-size: 12px;
+}
+.card-accueil{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+}
+.card-accueil div img{
+    height: 150px;
+}
+@media screen and (max-width:350px) {
+    .row-accueil{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    .card-accueil{
+        width: 80%;
+    }
+    .card-accueil div img{
+        height: 200px;
+    }
+    
+}
