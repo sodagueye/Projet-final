@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Card from "./Card";
+import Products from "./Products";
 import "./styles.css";
 export default function Dashboard() {
   return (
@@ -13,6 +14,7 @@ export default function Dashboard() {
         <div className="col-10 p-0">
           <Navbar />
           <Card />
+          <Products />
         </div>
       </div>
       {/* <Card /> */}
