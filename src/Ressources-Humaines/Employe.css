@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+}
+.table{
+    width: 70%;
+    margin:50px auto;
+}
+th{
+    color: #E7272D;
+}
+th, td{
+    width: 200px;
+    height: 50px;
+    padding: 2px;
+    text-align: center;
+    border: 1Px solid #E7272D;
+}
