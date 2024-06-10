@@ -18,7 +18,10 @@ function Connexion() {
                     <div className='text-center my-4'>
                         <Link to="/reinitialiser" className=' oublie '>mot de pass oublié</Link>
                     </div>
+                    
+                    <Link to={"/facture"}>
                     <button type='submit ' className='liens align-items-center creer fs-5 fw-bold '> Se connecter</button>
+                    </Link>
                     <p className='text-center'>Vous n'avez pas de compte ?</p>
                     <div className='text-center my-4'>
                         <Link to="/inscrire"> <a href="#" className=' oublie '> S'inscrire</a></Link></div>

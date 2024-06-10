@@ -14,3 +14,17 @@
   .sup{
     margin-top: 102px;
   }
+  
+  .product-image {
+    width: 100%; /* Ajustez la largeur de l'image pour remplir complètement la colonne */
+    max-height: 200px; 
+    margin-bottom: 0; 
+  }
+  
+  @media (max-width: 576px) {
+    .product-image {
+      max-height: none; 
+      margin-bottom: 0; 
+    }
+  }
+  

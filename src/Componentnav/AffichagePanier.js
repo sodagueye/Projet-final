@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
 import Connexion from '../Inscription/Connexion';
+import { Link } from 'react-router-dom';
 
 const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -10,7 +11,6 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
   // Calcul du total
   const totalPrice = cartProducts.reduce((total, product) => total + (product.price * product.quantity), 0);
 
-  // Mettre à jour le nombre d'articles dans le panier lorsque cartProducts change
   useEffect(() => {
     setCartItemCount(cartProducts.length);
   }, [cartProducts]);
@@ -65,7 +65,9 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                         </tr>
                         <tr>
                           <td>
+                            <Link to={"/connexion"}>
                             <Button variant="primary" onClick={handleOrder}>Commander</Button>
+                            </Link>
                           </td>
                         </tr>
                       </tbody>

@@ -11,6 +11,7 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const totalQuantity = cartProducts.reduce((total, product) => total + product.quantity, 0);
@@ -68,12 +69,12 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
             Teranga FOOD
           </Navbar.Brand>
           <Button className="hamburger-button" onClick={handleToggle}>☰</Button>
-          <Form className="d-flex search-bar mx-auto">
+        {/**  <Form className="d-flex search-bar mx-auto">
             <div className="search-input-container">
               <FaSearch className="search-icon recherche fs-5" />
               <FormControl type="text" placeholder="Search" className="search-input" aria-label="Search" />
             </div>
-          </Form>
+          </Form> */}
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
               <Nav.Link href="#menu">Menu</Nav.Link>
