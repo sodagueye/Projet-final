@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Txt-Fact{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-fact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.btn-Fact{
+    display: flex;
+    margin-top: 25px;
+    width: 10%;
+    padding: 6px;
+    margin-left: 10px;
+    border: none;
+}
+.btn-Fact{
+    background-color: brown;
+    color: aliceblue;
+    font-size:x-large ;
+    text-align: center;
+    justify-content: center;
+}
+.tab-Fact{
+    box-shadow: 2px 5px 5px rgb(128, 51, 0);
+    width: 80%;
+}
+.div-inpt{
+    box-shadow: 1px 2px 5px rgb(19, 18, 17);
+    padding: 0px 10px;
+}
+.form-fact, input {
+    width: 100%;
+    height: 40px;
+}
+label{
+    text-align: center;
+}
+input{
+    margin: 10px 0;
+}
+.btn-Fact-Sup{
+    border: none;
+    font-size: 30px;
+}
+table{
+    position: fixed;
+    left: 8%;
+    top: 30%;
+    width: 70%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td{
+    padding: 10px 15px;
+}
+th{
+    background-color: brown;
+    border: 1px solid black;
+    color: aliceblue;
+}
+
+td{
+    border-top: 1px solid rgb(9, 9, 9);
+    border: 1px solid black;
+}
+@media screen and (max-width:390px) {
+    input{
+        margin: 10px 10px;
+        width: 100%;
+    }
+    input[type='text']{
+        width: 300px;
+    }
+    input[type='date']{
+        width: 300px;
+    }
+    input[type='number']{
+        width: 300px;
+    }
+    .div-inpt{
+        box-shadow: 1px 2px 5px rgb(19, 18, 17);
+        padding: 10px 20px;
+        margin: 10px 10px;
+    }
+    .tab-Fact{
+        position: relative;
+        top: 250px;
+        margin-left: -15px;
+    }
+    .tab-contenu{
+        width: 90%;
+        margin-left: -15px;
+    }
+    .btn-Fact{
+        position: absolute;
+        top: 400px;
+        left: 100px;
+    }
+    th, tr, td{
+        display: block;
+        width: 470px;
+    }
+}
+@media screen and (max-width:960px){
+    .form-fact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:170px;
+    }
+    input{
+        margin: 10px 10px;
+        width: 100%;
+    }
+    input[type='text']{
+        width: 600px;
+    }
+    input[type='date']{
+        width: 600px;
+    }
+    input[type='number']{
+        width: 600px;
+    }
+    .div-inpt{
+        box-shadow: 1px 2px 5px rgb(19, 18, 17);
+        padding: 10px 20px;
+        margin: 20px 20px;
+    }
+    .tab-Fact{
+        position: relative;
+        top: 230px;
+    }
+    .tab-contenu{
+        width: 200%;
+        margin-left: -10px;
+    }
+    .btn-Fact{
+        position: absolute;
+        top: 400px;
+        width: 70%;
+        right: 8px;
+        margin-right: 120px;
+    }
+    
+}
