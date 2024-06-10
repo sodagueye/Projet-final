@@ -1,0 +1,116 @@
+
+
+.table-container {
+    padding: 10px;
+    margin-top: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid grey;
+
+}
+
+.table {
+    width: 90%;
+    margin-left: 35px;
+    font-size: 12px;
+    
+}
+
+
+.table thead .entete th {
+    background-color: #F0F0F2;
+    padding: 16px;
+    height: 56px;
+}
+
+.table tbody tr {
+    height: 60px;
+}
+.icone1{
+    color: green;
+    font-size: 15px;
+}
+.icone2{
+    color:yellow;
+    font-size: 15px;
+}
+.icone3{
+    color: red;
+    font-size: 15px;
+}
+
+
+td {
+    border: none;
+}
+
+.table thead .entete th:first-child,
+.table tbody tr td:first-child {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .table-container {
+        width: 100%;
+        padding: 0px;
+        margin-left: 0;
+        margin-right: 60;
+    }
+    .table {
+        width: 92%;
+        position: relative;
+        right: 22px;
+        font-weight: bold;
+        font-size: 6px;
+    }
+.btnajout{
+    display: flex;
+    justify-content:end;
+}
+    .table thead .entete th,
+    .table tbody tr td {
+        padding: 10px;
+        position: relative;
+        bottom: 20px;
+    }
+
+    .table tbody tr {
+        height: auto;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .d-flex .btn {
+        margin-bottom: 10px;
+    }
+    
+    .table thead .entete th {
+        background-color: #F0F0F2;
+        padding: px;
+        height: 56px;
+    }
+    
+    .table tbody tr {
+        height: 60px;
+    }
+    .icone1{
+        color: green;
+        font-size: 5px;
+        font-weight: bold !important;
+    }
+    .icone2{
+        color:yellow;
+        font-size: 5px;
+        font-weight: bold !important;
+    }
+    .icone3{
+        color: red;
+        font-size:5px;
+        font-weight: bold !important;
+    }
+    
+}
