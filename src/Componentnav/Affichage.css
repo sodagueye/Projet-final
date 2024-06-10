@@ -1,0 +1,16 @@
+/* Affichage.css */
+.login-modal .modal-dialog {
+    width: 100%;
+    padding-left: 80px;
+    margin: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .sup{
+    margin-top: 102px;
+  }

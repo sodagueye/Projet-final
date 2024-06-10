@@ -34,7 +34,7 @@ function App() {
           <Route path="/menu" element={<Menu />}></Route>
           <Route path="/reservation" element={<ReservationPage />}></Route>
 
-          <Route
+          {/* <Route
             path="/About"
             element={
               <div className="container ">
@@ -42,11 +42,15 @@ function App() {
                 <Container />
               </div>
             }
-          />
+          /> */}
         </Routes>
       </Router>
     </div>
   );
+}
+
+function Home() {
+
 }
 
 export default App;
