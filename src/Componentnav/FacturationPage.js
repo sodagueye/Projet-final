@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ListGroup, Modal } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+
 import ConfirmationPage from './ConfirmationPage';
 import './FacturationPage.css';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [orderDetails, setOrderDetails] = useState([]);
-  const navigate = useNavigate();
+
 
   const handlePayment = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
 
   const handleClose = () => {
     setShowConfirmationModal(false);
-    navigate('/menu');
+    
   };
 
   return (
@@ -26,7 +26,7 @@ const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
       <h1>Facturation et Paiement</h1>
       <Row>
         <Col md={8}>
-          <h2>Informations de facturation</h2>
+          <h6>Informations de facturation</h6>
           <Form onSubmit={handlePayment}>
             <Form.Group controlId="formBasicName">
               <Form.Label>Nom</Form.Label>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
-import Connexion from '../Inscription/Connexion';
+//import Connexion from '../Inscription/Connexion';
 import { Link } from 'react-router-dom';
 
 const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct }) => {
@@ -65,9 +65,8 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                         </tr>
                         <tr>
                           <td>
-                            <Link to={"/connexion"}>
                             <Button variant="primary" onClick={handleOrder}>Commander</Button>
-                            </Link>
+                            
                           </td>
                         </tr>
                       </tbody>
@@ -91,7 +90,7 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
         </Modal.Header>
         <Modal.Body>
           <div className="login-container">
-            <Connexion />
+            
           </div>
         </Modal.Body>
       </Modal>
