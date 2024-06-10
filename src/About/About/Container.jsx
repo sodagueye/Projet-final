@@ -1,7 +1,7 @@
 import React from "react";
-import AboutTitles from "./AboutTitles";
-import Icons from "./Icons";
-import Text from "./Text";
+import AboutTitles from "../About/AboutTitles"
+import Icons from "../About/Icons"
+import Text from "../About/Text"
 import { PiWarningCircleLight } from "react-icons/pi";
 import { RiMapPin2Line } from "react-icons/ri";
 import { LuClock } from "react-icons/lu";
