@@ -8,6 +8,7 @@ import Inscrire from "./Inscription/Inscrire";
 // import MotdepassOublié from "./Inscription/MotdepassOublié";
 import Menu from "./Componentnav/Menu";
 import Accueil from "./khadyComponent/Accueil/Accueil"
+import Dashboard from "./Dashboard/Dashboard";
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" element={<Accueil />} />
           {/* <Route path="/MotdepassOublié" element={<MotdepassOublié />} /> */}
           {/* <Route path="/appreciation" element={<Appreciation />} /> */}
-          {/* <Route path="/tables" element={<ReservationTable />} /> */}
+          <Route path="/admin" element={<Dashboard />} />
           <Route path="/menu" element={<Menu />} />
         </Routes>
       </BrowserRouter>
