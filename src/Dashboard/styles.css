@@ -20,8 +20,8 @@
     /* text-align: left; */
 }
 
-.Table thead tr {
-    background-color: #502314;
+table thead tr {
+    background-color: #502314 !important;
     color: #ffffff;
     text-align: left;
     font-weight: bold;

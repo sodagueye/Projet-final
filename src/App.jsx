@@ -3,13 +3,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
 import Inscrire from "./Inscription/Inscrire";
 import Menu from "./Componentnav/Menu";
-import Accueil from "./khadyComponent/Accueil/Accueil"
+import Accueil from "./khadyComponent/Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
 import Commande from "./khadyComponent/Commande/Commande"
 import Pannier from "./khadyComponent/Pannier/Pannier"
 import "./khadyComponent/Commande/commande.css"
 import Connexion from "./Inscription/Connexion"
+import Products from "./Dashboard/Products";
+import Navbar from "./Dashboard/Navbar";
+import Sidebar from "./Dashboard/Sidebar";
 function App() {
   return (
     <div className="App">
@@ -20,6 +23,22 @@ function App() {
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/" element={<Accueil />} />
           <Route path="/update/:id" element={<Update />} />
+          <Route
+            path="/plats"
+            element={
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-2 p-0">
+                    <Sidebar />
+                  </div>
+                  <div className="col-10 p-0">
+                    <Navbar />
+                    <Products />
+                  </div>
+                </div>
+              </div>
+            }
+          />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/commande" element={<Commande />} />

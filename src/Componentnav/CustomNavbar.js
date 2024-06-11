@@ -13,10 +13,10 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
   const [cartQuantity, setCartQuantity] = useState(0);
   
 
-  useEffect(() => {
-    const totalQuantity = cartProducts.reduce((total, product) => total + product.quantity, 0);
-    setCartQuantity(totalQuantity);
-  }, [cartProducts]);
+  // useEffect(() => {
+  //   const totalQuantity = cartProducts.reduce((total, product) => total + product.quantity, 0);
+  //   setCartQuantity(totalQuantity);
+  // }, [cartProducts]);
 
   const handleToggle = () => {
     setShowOffcanvas(!showOffcanvas);
@@ -62,7 +62,12 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
 
   return (
     <>
-      <Navbar bg="custom" variant="dark" expand="lg" className="navbar-custom fixed-top">
+      <Navbar
+        bg="custom"
+        variant="dark"
+        expand="lg"
+        className="navbar-custom fixed-top mb-5"
+      >
         <Container fluid style={{ color: "#111" }}>
           <Navbar.Brand href="#" style={{ color: "#fff" }}>
             <img src={logo1} alt="Burger 1" className="me-2" style={{ width: "80px" }} />
@@ -118,14 +123,14 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
         </Offcanvas.Body>
       </Offcanvas>
 
-      <AffichagePanier
+      {/* <AffichagePanier
         show={showCartModal} 
         handleClose={handleCloseCartModal} 
         cartProducts={cartProducts} 
         incrementQuantity={incrementQuantity}
         decrementQuantity={decrementQuantity}
         removeProduct={removeProduct}
-      />
+      /> */}
     </>
   );
 };
