@@ -1,7 +1,19 @@
-input{
+.inpt-mail{
     width: 40%;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+.frm-mail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn-mail{
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: inline-block;
     background-color: brown;
     color: azure;
     border: none;
@@ -11,8 +23,18 @@ input{
     color: azure;
 }
 @media screen and (max-width:769px) {
-    input{
-        width: 150%;
+    .inpt-mail{
+        width: 60%;
         margin-top: 10px;
+    }
+}
+@media screen and (max-width:320px) {
+    .inpt-mail{
+        width: 60%;
+        margin-top: 10px;
+    }
+    .btn-mail{
+        width: 30%;
+        margin: 0;
     }
 }
