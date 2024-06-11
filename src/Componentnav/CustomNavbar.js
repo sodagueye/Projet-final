@@ -74,7 +74,7 @@ const CustomNavbar = () => {
         bg="custom"
         variant="dark"
         expand="lg"
-        className="navbar-custom fixed-top"
+        className="navbar-custom fixed-top mb-5"
       >
         <Container fluid style={{ color: "#111" }}>
           <Navbar.Brand href="#" style={{ color: "#fff" }}>

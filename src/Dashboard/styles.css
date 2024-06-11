@@ -1,9 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.sidebar{
+
+.sidebar {
     background-color: #502314;
     height: 100vh;
     position: fixed;
@@ -20,7 +21,7 @@ table {
 }
 
 table thead tr {
-    background-color: #502314;
+    background-color: #502314 !important;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -34,5 +35,3 @@ table td {
 table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
-
-

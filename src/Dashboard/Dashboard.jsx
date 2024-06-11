@@ -14,7 +14,6 @@ export default function Dashboard() {
         <div className="col-10 p-0">
           <Navbar />
           <Card />
-          <Products />
         </div>
       </div>
       {/* <Card /> */}

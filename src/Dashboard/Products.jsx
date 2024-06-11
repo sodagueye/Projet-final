@@ -2,9 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css"
-// import { CiBellOn } from "react-icons/ci";
-// import Button from "react-bootstrap/Button";
-// import Modal from "react-bootstrap/Modal";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
 
 export default function Home() {
   const [data, setData] = useState([]);
