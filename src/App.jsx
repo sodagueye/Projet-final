@@ -5,6 +5,7 @@ import Appreciation from './Appreciation/Appreciation'
 import ReservationTable from './Reservation-Table/ReservationTable';
 import Employe from './Ressources-Humaines/Employe';
 
+
 function App() {
   return (
     <div className="App">
@@ -13,7 +14,7 @@ function App() {
         <Route path='/reservation' element={<ReservationPage />} />
         <Route path='/appreciation' element={<Appreciation />} />
         <Route path='/tables' element={<ReservationTable />} />
-        <Route path='/humaines' element={<Employe />} />
+        <Route path='/RH' element={<Employe />} />
       </Routes>
       </BrowserRouter>
     </div>

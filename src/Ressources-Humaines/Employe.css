@@ -15,3 +15,33 @@ th, td{
     text-align: center;
     border: 1Px solid #E7272D;
 }
+
+form{
+    width: 50%;
+    margin: auto;
+}
+.input{
+    width: 70%;
+    border: none;
+    background-color: #f3faff;
+    border-bottom: 1px solid #E7272D;
+    border-right: 1px solid #E7272D;
+    box-shadow: 2px 2px 0.1em gray;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.btn-submit{
+    background-color: #E7272D;
+    width: 100%;
+    margin: 25px;
+    color: #FFF;
+    border: none;
+    font-size: 20px;
+}
+
+.btn-submit:hover{
+    background-color: #44bb44;
+}
