@@ -14,7 +14,7 @@ const ConfirmationPage = ({ orderDetails, totalPrice }) => {
   return (
     <div className="confirmation-page text-center">
       <h6 ><FaCheckCircle className="fs-5"style={{color:"green"}} /> Confirmation de Commande</h6>
-      <p>Merci d'avoir passé une commande sur Teranga Food!</p>
+      <p>Merci d'avoir passé une commande sur <b>Restaurant LeVrai!</b></p>
       {/***
       <ul>
         {orderDetails.map((product, index) => (

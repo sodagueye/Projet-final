@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Connexion from './Inscription/Connexion';
 import MotdepassOublié from './Inscription/MotdepassOublié';
@@ -23,9 +24,10 @@ function App() {
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/modifier" element={<ModifierPassword />} />
           <Route path="/listerUsers" element={<ListeUtilisateur />} />
-          <Route path="/panier" element={<AffichagePanier />} /> 
           <Route path="/facture" element={<FacturationPage />} />
           <Route path="/confirme" element={<ConfirmationPage />} />
+          {/**<Route path="/panier" element={<AffichagePanier />} />  */}
+          <Route path="/Panier" element={<AffichagePanier/>} />
         </Routes>
       </BrowserRouter>
     </div>

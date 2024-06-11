@@ -22,7 +22,7 @@ function Connexion(handleLogin) {
                         <Link to="/reinitialiser" className=' oublie '>mot de pass oublié</Link>
                     </div>
                     
-                    <Link to={""} className="text-decoration-none">
+                    <Link to={"/facture"} className="text-decoration-none">
                     <button type='submit ' className='liens align-items-center creer fs-5 fw-bold  '> Se connecter</button>
                     </Link>
                     <p className='text-center'>Vous n'avez pas de compte ?</p>

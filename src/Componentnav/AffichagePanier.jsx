@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
 import Connexion from '../Inscription/Connexion';
-import { Link, useNavigate } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(cartProducts.length);
-  const navigate = useNavigate();
 
   // Calcul du total
   const totalPrice = cartProducts.reduce((total, product) => total + (product.price * product.quantity), 0);
@@ -18,15 +17,8 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
 
   // Faire commande
   const handleOrder = () => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      // Utilisateur connecté, rediriger vers la page de facturation
-      navigate('/facture');
-    } else {
-      // Utilisateur non connecté, afficher le modal de connexion
-      alert('Veuillez-vous connecter pour valider votre commande!');
-      setShowLoginModal(true);
-    }
+    alert('Veuillez-vous connecter pour valider votre commande!');
+    setShowLoginModal(true);
   };
 
   const handleCloseLoginModal = () => setShowLoginModal(false);
@@ -66,19 +58,13 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                           <td>Nombre d'articles: {cartItemCount}</td>
                         </tr>
                         <tr>
-                          <td>Prix de la livraison:</td> 
-                        </tr>
-                        <tr>
                           <td>Total: {totalPrice} FCFA</td>
                         </tr>
                         <tr>
                           <td>
-                            <Button variant="primary" onClick={handleOrder}>Commander</Button>
-                            <td>
-                            <Link to="/facture">
-                            <Button variant="primary" onClick={handleOrder}>Validation Commande</Button>
-                            </Link>
-                          </td>
+             <Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
+            <Button variant="primary" onClick={handleOrder}>Commander</Button>
+          </Link>
                           </td>
                         </tr>
                       </tbody>

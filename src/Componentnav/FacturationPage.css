@@ -1,5 +1,7 @@
-/* src/components/FacturationPage.css */
 
+.payer{
+  margin-left: 6px;
+}
 .billing-container {
   margin-top: 20px;
   padding: 20px;
