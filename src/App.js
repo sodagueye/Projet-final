@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+// import Home from './Home-soda';
 function App() {
   return (
     <div className="App">
@@ -28,6 +28,7 @@ function App() {
     </div>
   </div>
 </nav>
+{/* < Home/> */}
     </div>
   );
 }
