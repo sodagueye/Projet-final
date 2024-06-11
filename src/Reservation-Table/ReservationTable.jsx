@@ -2,87 +2,96 @@ import React, { useState } from "react";
 import "./ReservationTable.css";
 
 const ReservationTable = () => {
-  const [tables, setTables] = useState([
-    { id: 1, reserved: false },
-    { id: 2, reserved: false },
-    { id: 3, reserved: false },
-    { id: 4, reserved: false },
-    { id: 5, reserved: false },
-    { id: 6, reserved: false },
-    { id: 7, reserved: false },
-    { id: 8, reserved: false },
-    { id: 9, reserved: false },
-    { id: 10, reserved: false },
-    { id: 11, reserved: false },
-    { id: 12, reserved: false },
-  ]);
-
-  const [reservedTables, setReservedTables] = useState([]);
-
-  const handleReserveTable = (tableId) => {
-    setTables((prevTables) =>
-      prevTables.map((table) => {
-        if (table.id === tableId) {
-          return { ...table, reserved: true };
-        }
-        return table;
-      })
-    );
-    setReservedTables((prevReservedTables) => [...prevReservedTables, tableId]);
-  };
-
-  const handleCancelReservation = (tableId) => {
-    setTables((prevTables) =>
-      prevTables.map((table) => {
-        if (table.id === tableId) {
-          return { ...table, reserved: false };
-        }
-        return table;
-      })
-    );
-    setReservedTables((prevReservedTables) =>
-      prevReservedTables.filter((id) => id !== tableId)
-    );
-  };
-
-  
-
-
   return (
-    <div className="container-fluid reservation-head">
-      <div className="row available-table ">
-        <h2>Reservez votre table en cliquant sur reserver</h2>
-        {tables.map((table) => (
-          <div className="col-md-3 mx-auto" id="table-A" key={table.id}>
-            <span>{table.id}</span>
-            {table.reserved ? (
-              <button
-                className="btn btn-danger"
-                onClick={() => handleCancelReservation(table.id)}
-              >
-               Annuler
-              </button>
-            ) : (
-              <button
-                className="btn btn-success"
-                onClick={() => handleReserveTable(table.id)}
-              >
-                Reserver
-              </button>
-            )}
+    <section id="reservation-table">
+      <div className="container">
+        <div className="row">
+          <h3>Tables reservations</h3>
+          <div className="reservation-body">
+            <div className="reservation-details">
+              <h5>Reservations details</h5>
+              <p className="text-muted info">
+                date de reservation + heure de reservation
+              </p>
+              <p className="text-muted info">nombre invité</p>
+            </div>
+            <form action="">
+              <div className="personnal-details">
+                <h5>Personnal details</h5>
+                <div className="form-head d-flex justify-space-between mb-3">
+                  <div className="form-floating form-x col-md-6 mb-3">
+                    <input
+                      type="email"
+                      className="form-control input-name"
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                    />
+                    <label for="floatingInput">First name</label>
+                  </div>
+                  <div className="form-floating form-x col-md-6 mb-3">
+                    <input
+                      type="password"
+                      className="form-control input-name"
+                      id="floatingPassword"
+                      placeholder="Password"
+                    />
+                    <label for="floatingPassword">Last name</label>
+                  </div>
+                </div>
+                <div className="form-floating mb-3">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    placeholder="name@example.com"
+                  />
+                  <label for="email">Email address</label>
+                </div>
+                <div className="form-floating mb-3">
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="number"
+                    placeholder="Password"
+                  />
+                  <label for="number">Mobile number</label>
+                </div>
+                <div className="select-part d-flex justify-space-between mb-3">
+                  <div className="form-floating form-x col-md-6">
+                    <select className="form-select">
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                    </select>
+                    <label>Room name</label>
+                  </div>
+                  <div className="form-floating form-x col-md-6">
+                    <select className="form-select">
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                      <option value=""></option>
+                    </select>
+                    <label>Table name</label>
+                  </div>
+                </div>
+                <div class="">
+                  <label for="floatingTextarea2">Requetes speciales</label>
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea2"
+                  ></textarea>
+                </div>
+              </div>
+            </form>
           </div>
-        ))}
+        </div>
       </div>
-
-      <div className="row reserved-table">
-        <h2>Tables déjà reservées</h2>
-        {reservedTables.map((tableId) => (
-          <div className="col-md-3 mx-auto" id="table-C" key={tableId}>
-            {tables.find((table) => table.id === tableId).id}
-          </div>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 

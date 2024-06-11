@@ -1,0 +1,16 @@
+.ventes{
+    width: 20%;
+}
+
+.ventes:focus{
+    outline: none;
+    border: none;
+}
+.btn{
+    width: 30%;
+    margin: auto;
+}
+.table{
+    color: #000;
+    width: 100%;
+}

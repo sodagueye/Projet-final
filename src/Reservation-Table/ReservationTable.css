@@ -1,81 +1,28 @@
-.reservation-head{
-    display: flex;
-    background-color: aqua;
-    text-align: center;
-    text-align: center;
-    height: auto;
+#reservation-table{
+  background-color: #f5f5f5;
+}
+.reservation-body{
+    width: 80%;
+    margin: 50px auto;
+    text-align: start;
+    background-color: #fff;
 }
 
-.reservation-head h2{
-    font-size: 25px;
-}
-.available-table {
-    background-color: blue;
-    width: 50%;
-    height: auto;
-    margin: 10px;
-    padding: 20px;
-    list-style: none;
+#floatingTextarea2{
+    height: 180px;
 }
 
-
-#table-A, #table-C{
-    background-color: #E7272D;
-    color: #fff;
-    margin: 30px 10px;
-    width: 15%;
-    height: 90px;
-    border-radius: 10%;
-    padding: 12px;
+.reservation-body form{
+  width: 100%;
 }
-
-#table-C{
-    background-color: #157347 !important;
+.reservation-body .form-floating , .form-control{
+  width: 99%;
+  margin: 0 auto;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  border: none;
 }
-
-#table-A button, #table-C button{
-    margin-left: -11px;
-    margin-top: 60px;
-}
-
-.reserved-table {
-    width: 50%;
-    margin: 10px;
-    background-color: burlywood;
-}
-
-
-
-@media screen and (max-width:770px) {
-    .reservation-head {
-        display: grid;
-    }
-
-    .available-table,.reserved-table  {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    #table-A, #table-C{
-        background-color: #E7272D;
-        color: #fff;
-        margin: 30px 10px;
-        width: 48%;
-        height: 70px;
-        border-radius: 10%;
-        padding: 0px;
-    }
-
-    #table-C{
-        font-size: 40px;
-    }
-
-    #table-A span, #table-C span{
-        font-size: 40px;
-    }
-
-    #table-A button, #table-C button{
-        margin-left: -40px;
-        margin-top: 80px;
-    }
+.form-x{
+  width: 49% !important;
+  margin: 0 auto;
 }

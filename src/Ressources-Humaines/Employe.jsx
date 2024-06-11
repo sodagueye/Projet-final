@@ -11,6 +11,7 @@ const Employe = () => {
 
       <h1>Ajouter un nouvel employé</h1>
       <AddEmployee />
+      
     </div>
   );
 };
