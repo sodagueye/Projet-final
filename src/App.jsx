@@ -6,8 +6,8 @@ import Connexion from './Inscription/Connexion';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MotdepassOublié from './Inscription/MotdepassOublié';
 import ListeUtilisateur from './Inscription/ListeUtilisateur';
-import ModifierPassword from './Inscription/ModifierPassword';
-// import Notification from './Inscription/Notification';
+import ModifierPassword from './Inscription/Modifier';
+
 
 function App(){
 
@@ -16,7 +16,6 @@ function App(){
     
     <BrowserRouter>
         <Routes>
-
           <Route path="/connexion" element={<Connexion/> }></Route>
           <Route path="/" element={<Inscrire/>}></Route>
           <Route path="/inscrire" element={<Inscrire/>}></Route>
