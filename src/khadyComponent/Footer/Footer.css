@@ -3,8 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+footer input{
+    border: none;
+    outline: none;
+}
 footer ul li{
     list-style: none;
+}
+footer a i{
+    color: black;
+}
+footer a i:hover{
+    color: #e7272d;
 }
 @media screen and (max-width:775px){
     footer h1{

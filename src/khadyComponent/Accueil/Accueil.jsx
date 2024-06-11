@@ -6,6 +6,6 @@ export function Accueil(){
     return <div>
         <Carroussel/>
         <Presentation/>
-        <Footer/>
+        <Footer />
     </div>
 }

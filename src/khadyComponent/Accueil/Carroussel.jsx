@@ -3,17 +3,17 @@ import banner3 from"../Footer-img/banner3.jpg"
 import banniere4 from"../Footer-img/banniere4.jpg"
 
 export function Carroussel(){
-    return <div className="container pb-4" style={{marginTop:100}}>
+    return <div className="container-fluid pb-4" style={{marginTop:100,padding:0}}>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src={banniere2} class="d-block w-100" alt="..." style={{height:350}}/>
+                    <img src={banniere2} class="d-block w-100" alt="..." style={{height:"75vh"}}/>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src={banner3} class="d-block w-100" alt="..." style={{height:350}}/>
+                    <img src={banner3} class="d-block w-100" alt="..." style={{height:"75vh"}}/>
                 </div>
                 <div class="carousel-item">
-                    <img src={banniere4} class="d-block w-100" alt="..." style={{height:350}}/>
+                    <img src={banniere4} class="d-block w-100" alt="..." style={{height:"75vh"}}/>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">

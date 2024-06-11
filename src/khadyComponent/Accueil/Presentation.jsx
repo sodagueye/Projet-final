@@ -110,13 +110,13 @@ export function Presentation() {
             {
                 imgInfo.map((info, index) => (
                     <div class="col-6 col-sm-4 col-md-3 mycol" key={index}>
-                        <div className="card rounded mycard">
+                        <div className="card  mycard">
                             <div>
                                 <img src={info.img} class="card-img-top" alt="Plat" />
                                 <div class="card-body d-flex flex-column align-items-center">
                                     <h6 class="card-title fw-bold">{info.title}</h6>
                                     <p class="card-text">{info.prix}</p>
-                                    <a href="#" class="btn btn-danger" style={{ fontSize: 12 }}>Ajouter au Panier</a>
+                                    <a href="Menu" class="btn btn-danger" style={{ fontSize: 14}}>Voir le Menu</a>
                                 </div>
                             </div>
                         </div>
@@ -125,4 +125,4 @@ export function Presentation() {
             }
         </div>
     </div>
-}
+} 

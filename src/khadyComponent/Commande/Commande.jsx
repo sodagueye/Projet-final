@@ -201,6 +201,6 @@ export function Commande() {
                     </button>
                 ))}
             </div>
-        </div>
+        </div> 
     );
 }

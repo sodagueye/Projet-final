@@ -11,9 +11,18 @@
     flex-direction: column;
     align-items: center;
 }
+.myrow div{
+    border-radius: 20px 20px 20px 20px;
+}
+.myrow div img{
+    border-radius: 20px 20px 0px 0px;
+}
 .mycard img{
-    width: 80%;
-    height: 200px;
+    width: 100%;
+    height: 210px;
+}
+.starIcons i{
+    color: red;
 }
  @media screen and (max-width:300px){
     .myrow{
