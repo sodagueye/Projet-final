@@ -2,7 +2,7 @@
 import './App.css';
 import Inscrire from './Inscription/Inscrire';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Connexion from './Inscription/Connexion';
+import Connexion from './Inscription/Connection';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MotdepassOublié from './Inscription/MotdepassOublié';
 import ListeUtilisateur from './Inscription/ListeUtilisateur';
