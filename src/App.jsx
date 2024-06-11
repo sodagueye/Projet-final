@@ -6,13 +6,16 @@ import Menu from "./Componentnav/Menu";
 import Accueil from "./khadyComponent/Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
-import Commande from "./khadyComponent/Commande/Commande"
-import Pannier from "./khadyComponent/Pannier/Pannier"
-import "./khadyComponent/Commande/commande.css"
-import Connexion from "./Inscription/Connexion"
+import Commande from "./khadyComponent/Commande/Commande";
+import Pannier from "./khadyComponent/Pannier/Pannier";
+import "./khadyComponent/Commande/commande.css";
+import Connexion from "./Inscription/Connexion";
 import Products from "./Dashboard/Products";
 import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
+import ListeUtilisateur from "./Inscription/ListeUtilisateur";
+import MotdepassOublié from "./Inscription/MotdepassOublié";
+import Modifier from "./Inscription/Modifier"
 function App() {
   return (
     <div className="App">
@@ -21,6 +24,8 @@ function App() {
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
+          <Route path="/connexion" element={<MotdepassOublié />} />
+          <Route path="/modifier" element={<Modifier />} />
           <Route path="/" element={<Accueil />} />
           <Route path="/update/:id" element={<Update />} />
           <Route
@@ -34,6 +39,22 @@ function App() {
                   <div className="col-10 p-0">
                     <Navbar />
                     <Products />
+                  </div>
+                </div>
+              </div>
+            }
+          />
+          <Route
+            path="/users"
+            element={
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-2 p-0">
+                    <Sidebar />
+                  </div>
+                  <div className="col-10 p-0">
+                    <Navbar />
+                    <ListeUtilisateur />
                   </div>
                 </div>
               </div>
