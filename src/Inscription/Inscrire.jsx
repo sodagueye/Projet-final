@@ -77,7 +77,6 @@ function Inscrire() {
 
             <input class=" input " type="text" placeholder="Mot de pass" required value={password} onChange={e => setPassword(e.target.value)} />
 
-
             <input class=" input " type="text" placeholder="Confirmation mot de pass" required value={confirmPassword} onChange={e => {
               setConfirmPassword(e.target.value)
               console.log(confirmPassword);
