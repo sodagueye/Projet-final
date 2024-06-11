@@ -9,6 +9,7 @@ import Update from "./Dashboard/Update";
 import Commande from "./khadyComponent/Commande/Commande"
 import Pannier from "./khadyComponent/Pannier/Pannier"
 import "./khadyComponent/Commande/commande.css"
+// import Connexion from "./Inscription/Connection"
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/inscription" element={<Inscrire />} />
+          {/* <Route path="/connexion" element={<Connexion />} /> */}
           <Route path="/" element={<Accueil />} />
           <Route path="/update/:id" element={<Update />} />
           <Route path="/admin" element={<Dashboard />} />
