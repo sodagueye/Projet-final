@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ListGroup, Modal } from 'react-bootstrap';
-
 import ConfirmationPage from './ConfirmationPage';
 import './FacturationPage.css';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [orderDetails, setOrderDetails] = useState([]);
-
-
   const handlePayment = (e) => {
     e.preventDefault();
     setOrderDetails(cartProducts);
@@ -18,7 +15,7 @@ const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
 
   const handleClose = () => {
     setShowConfirmationModal(false);
-    
+
   };
 
   return (
@@ -44,23 +41,26 @@ const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
               <Form.Label>Ville</Form.Label>
               <Form.Control type="text" placeholder="Entrez votre ville" required />
             </Form.Group>
-        <Link to={"/confirme"}> 
+      {/***  <Link to={"/confirme"}> 
         <Button variant="primary" type="submit">
               Payer
             </Button>
-        </Link>
+        </Link> */}
+         <Button variant="primary" type="submit">
+              Payer
+            </Button>
           </Form>
         </Col>
         <Col md={4}>
-          <h2>Produits choisis</h2>
+         {/** <h2>Produits choisis</h2>
           <ListGroup>
             {cartProducts.map((product, index) => (
               <ListGroup.Item key={index}>
                 {product.name} - {product.quantity} x {product.price} FCFA
               </ListGroup.Item>
             ))}
-          </ListGroup>
           <h3 className="mt-3">Total: {totalPrice} FCFA</h3>
+          </ListGroup> */}
 
           <h2 className="mt-4">Mode de paiement</h2>
           <Form.Group controlId="formBasicPaymentMethod">
@@ -68,16 +68,16 @@ const FacturationPage = ({ cartProducts = [], totalPrice = 0 }) => {
               type="radio"
               label="Wave"
               name="paymentMethod"
-              id="creditCard"
-              value="creditCard"
+              id="Wav"
+              value="Wav"
               required
             />
             <Form.Check
               type="radio"
               label="Orange Money"
               name="paymentMethod"
-              id="paypal"
-              value="paypal"
+              id="OM"
+              value="OM"
               required
             />
           </Form.Group>

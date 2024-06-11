@@ -7,11 +7,11 @@ import './Navbar.css';
 import logo1 from '../assets/logo1.png';
 
 const CustomNavbar = ({ cartProducts, setCartProducts }) => {
-  const [activeLink, setActiveLink] = useState('');
+
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   useEffect(() => {
     const totalQuantity = cartProducts.reduce((total, product) => total + product.quantity, 0);
