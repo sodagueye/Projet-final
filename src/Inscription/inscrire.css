@@ -169,6 +169,10 @@
         text-decoration: none;
         cursor: pointer;
       }
+      .page-item .lienitem:hover{
+        background: #502314;
+
+      }
       
 
 @media screen and (max-width:768px) {

@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MotdepassOublié from './Inscription/MotdepassOublié';
 import ListeUtilisateur from './Inscription/ListeUtilisateur';
 import ModifierPassword from './Inscription/Modifier';
+// import Lister from './Inscription/Utile';
+
+
 
 
 function App(){
@@ -22,6 +25,8 @@ function App(){
           <Route path="/reinitialiser" element={ <MotdepassOublié/>}></Route>
           <Route path="/modifier" element={ <ModifierPassword/>}></Route>
           <Route path="/listerUsers" element={ <ListeUtilisateur/>}></Route>
+          {/* <Route path="/Lister" element={ <Lister/>}></Route> */}
+          
          
       </Routes>
       </BrowserRouter>
