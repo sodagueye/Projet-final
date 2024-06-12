@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mycard{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.mycard div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mycard img{
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+}
+ @media screen and (max-width:300px){
+    .myrow{
+        display: flex;
+        flex-direction: column;
+    }
+    .myrow .mycol{
+        width: 100%;
+    }
+ }
