@@ -51,9 +51,9 @@
 }
 
 .contact-button {
-  background-color: #E7272D;
+  background-color: #91725d;
   color: #fff;
-  border: 2px solid #E7272D;
+  border: 2px solid #91725d;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@
 
 .contact-button:hover {
   background-color: #fff;
-  color: #E7272D;
+  color: #91725d;
 }
 @keyframes scroll {
   0% {
@@ -95,7 +95,7 @@
 }
 
 .icon:hover {
-  color: #e7272d;
+  color: #91725d;
 }
 
 

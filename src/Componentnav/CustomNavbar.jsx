@@ -4,7 +4,7 @@ import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
 import AffichagePanier from './AffichagePanier';
 
 import './Navbar.css';
-import logo from '../assets/logo.png';
+import soda from '../assets/soda.png';
 
 const CustomNavbar = ({ cartProducts, setCartProducts }) => {
 
@@ -65,10 +65,9 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
       <Navbar bg="custom" variant="dark" expand="lg" className="navbar-custom fixed-top">
         <Container fluid style={{ color: "#111" }}>
           <Navbar.Brand href="#" style={{ color: "#fff" }}>
-            <img src={logo} alt="Burger 1" className="me-2" style={{ width: "100px", }} 
+            <img src={soda} alt="Burger 1" className="me-2" style={{ width: "180px", }} 
             /> 
-             <p>Restaurant</p>
-            <span style={{margintop:"44px"}}>LeVrai</span> 
+          
           </Navbar.Brand>
           <Button className="hamburger-button" onClick={handleToggle}>☰</Button>
         {/**  <Form className="d-flex search-bar mx-auto">

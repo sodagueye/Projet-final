@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import ConfirmationPage from './ConfirmationPage';
 import './FacturationPage.css';
+//import AffichagePanier from './AffichagePanier';
 import AffichagePanier from './AffichagePanier';
 
 const FacturationPage = ({ location, cartProducts = [] }) => {
@@ -91,14 +92,14 @@ const FacturationPage = ({ location, cartProducts = [] }) => {
               <Form.Control type="date" onChange={handleDeliveryDateChange} required />
             </Form.Group>
             <Button variant="primary" onClick={handleAddShippingAddress}>Ajouter</Button>
-            <Button className='payer' variant="danger" type="submit">
+            <Button className='payer' variant="" type="submit" className="payer">
               Payer
             </Button>
           </Form>
         </Col>
-        <Col md={6}>
+        <Col md={6} className='text-center'>
           <h6>Mode de paiement</h6>
-         {/** <p>Total: {totalPrice} FCFA</p> */}
+       {/**  <p>Total: {totalPrice} FCFA</p> */}
           <p>Frais de livraison: {deliveryFee} FCFA</p>
           <p>Total à payer: {totalWithDelivery} FCFA</p>
           <AffichagePanier cartProducts={cartProducts} />
@@ -107,7 +108,9 @@ const FacturationPage = ({ location, cartProducts = [] }) => {
           <p>Adresse: {shippingAddress.adresse}</p>
           <p>Ville: {shippingAddress.ville}</p>
           <p>Date de livraison: {deliveryDate}</p>
+          
         </Col>
+        
       </Row>
 
       <Modal show={showConfirmationModal} onHide={handleClose} centered style={{ height: "105%" }}>
@@ -118,7 +121,9 @@ const FacturationPage = ({ location, cartProducts = [] }) => {
           <Button variant="secondary" onClick={handleClose}>Fermer</Button>
         </Modal.Footer>
       </Modal>
+      
     </Container>
+    
   );
 };
 

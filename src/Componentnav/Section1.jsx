@@ -79,7 +79,7 @@ const Section1 = ({ updateCartQuantity }) => {
                 <div className="card-body" style={{ textAlign: "center" }}>
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.price} FCFA</p>
-                  <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
+                  <button className="btn btn-primary card-button bacg" style={{ border: "#fff solid 1px",background:"#91725d" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
                 </div>
               </div>
             ))}
@@ -91,11 +91,26 @@ const Section1 = ({ updateCartQuantity }) => {
                 <div className="card-body">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.price} FCFA</p>
-                  <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
+                  <button className="btn btn-primary card-button " style={{ border: "#fff solid 1px",background:"#91725d"  }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
                 </div>
               </div>
             ))}
           </div>
+
+         {/** <div className="slider-row">
+            {secondRow.map((product, index) => (
+              <div key={index} className="card card-spacing card-container">
+                <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.price} FCFA</p>
+                  <button className="btn btn-primary card-button " style={{ border: "#fff solid 1px",background:"#91725d"  }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
+                </div>
+              </div>
+            ))}
+          </div> */}
+
+
         </div>
       </div>
 
@@ -116,7 +131,7 @@ const Section1 = ({ updateCartQuantity }) => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
-            <Button variant="" style={{ backgroundColor: "#E7272D", color: "white" }} onClick={handleAddToCart}>Ajouter au panier</Button>
+            <Button variant="" style={{ backgroundColor: "#91725d", color: "white" }} onClick={handleAddToCart}>Ajouter au panier</Button>
           </Modal.Footer>
         </Modal>
       )}

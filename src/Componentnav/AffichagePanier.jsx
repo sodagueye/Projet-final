@@ -58,12 +58,12 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                           <td>Nombre d'articles: {cartItemCount}</td>
                         </tr>
                         <tr>
-                          <td>Total: {totalPrice} FCFA</td>
+                          <td>Prix Total des produits: {totalPrice} FCFA</td>
                         </tr>
                         <tr>
                           <td>
              <Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
-            <Button variant="primary" onClick={handleOrder}>Commander</Button>
+            <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
           </Link>
                           </td>
                         </tr>
