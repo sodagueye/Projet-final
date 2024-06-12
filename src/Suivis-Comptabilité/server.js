@@ -25,6 +25,7 @@ app.get("/ventes", (req, res) => {
       },
     },
   ];
+  
   db.collection("ventes").aggregate(aggregation, (err, result) => {
     if (err) {
       res

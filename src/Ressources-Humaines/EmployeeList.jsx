@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 
 // Importation des bibliothèques nécessaires
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Employe.css"
 
 // Fonction pour récupérer les données des employés
 const getEmployees = async () => {
