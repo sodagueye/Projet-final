@@ -14,7 +14,9 @@ import Products from "./Dashboard/Products";
 import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
 import Connexion from "./Inscription/Connexion"
-import  ListeUtilisateur from './Inscription/ListeUtilisateur'
+import  ListeUtilisateur from './Inscription/ListeUtilisateur';
+import ModifierPassword from "./Inscription/Modifier";
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,9 @@ function App() {
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
+          <Route path="/Modifier" element={<ModifierPassword/>} />
+         
+          
           <Route path="/Utilisateur" element={< ListeUtilisateur />} />
            <Route path="/" element={<Accueil />} />
           <Route path="/update/:id" element={<Update />} />
