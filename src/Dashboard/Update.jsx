@@ -6,18 +6,20 @@ export default function Update() {
   let { id } = useParams();
   const [values, setValues] = useState({
     id: id,
-    title: "",
+    name: "",
     price: "",
   });
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/recup/${id}`)
+      .get(
+        `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`
+      )
       .then((res) => {
         console.log("Data retrieved:", res.data); // Vérifiez les données reçues
         setValues({
           id: id,
-          title: res.data.title,
+          name: res.data.name,
           price: res.data.price,
         });
       })
@@ -38,12 +40,15 @@ export default function Update() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitting values:", values); 
+    console.log("Submitting values:", values);
     axios
-      .patch(`http://localhost:4000/update/${id}`, values)
+      .patch(
+        `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`,
+        values
+      )
       .then((res) => {
-        console.log("Update successful:", res.data); 
-        navigate("/admin");
+        console.log("Update successful:", res.data);
+        navigate("/plats");
       })
       .catch((err) => {
         console.error("There was an error updating the data!", err);
@@ -60,7 +65,7 @@ export default function Update() {
             name="title"
             placeholder="Title..."
             aria-describedby="titleHelp"
-            value={values.title}
+            value={values.name}
             onChange={handleChange}
           />
         </div>
