@@ -13,6 +13,8 @@ import Update from "./Dashboard/Update";
 import Products from "./Dashboard/Products";
 import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
+import Connexion from "./Inscription/Connexion"
+import  ListeUtilisateur from './Inscription/ListeUtilisateur'
 function App() {
   return (
     <div className="App">
@@ -20,7 +22,9 @@ function App() {
         <Routes>
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/inscription" element={<Inscrire />} />
-          <Route path="/" element={<Accueil />} />
+          <Route path="/connexion" element={<Connexion />} />
+          <Route path="/Utilisateur" element={< ListeUtilisateur />} />
+           <Route path="/" element={<Accueil />} />
           <Route path="/update/:id" element={<Update />} />
           <Route
             path="/plats"
