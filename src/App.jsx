@@ -13,6 +13,7 @@ import Update from "./Dashboard/Update";
 import Products from "./Dashboard/Products";
 import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
+import Details from "./khadyComponent/Accueil/Details";
 import "./styles/style.css"
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             }
           />
           <Route path="/admin" element={<Dashboard />} />
+          <Route path="/detail/:id" element={<Details />} />
           <Route path="/menu" element={<Menu />} />
         </Routes>
       </BrowserRouter>

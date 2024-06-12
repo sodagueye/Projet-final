@@ -2,7 +2,7 @@ import banniere2 from "../Footer-img/banniere2.jpg";
 import banner3 from "../Footer-img/banner3.jpg";
 import banniere4 from "../Footer-img/banniere4.jpg";
 
-export function Carroussel() {
+export default function Carroussel() {
   return (
     <div className="container-fluid p-0">
       <div
