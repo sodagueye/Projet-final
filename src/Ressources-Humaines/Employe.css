@@ -6,14 +6,14 @@ body{
     margin:50px auto;
 }
 th{
-    color: #E7272D;
+    color: #91725d;
 }
 th, td{
     width: 200px;
     height: 50px;
     padding: 2px;
     text-align: center;
-    border: 1Px solid #E7272D;
+    border: 1Px solid #91725d;
 }
 
 form{
@@ -24,8 +24,8 @@ form{
     width: 70%;
     border: none;
     background-color: #f3faff;
-    border-bottom: 1px solid #E7272D;
-    border-right: 1px solid #E7272D;
+    border-bottom: 1px solid #91725d;
+    border-right: 1px solid #91725d;
     box-shadow: 2px 2px 0.1em gray;
 }
 
@@ -34,7 +34,7 @@ form{
 }
 
 .btn-submit{
-    background-color: #E7272D;
+    background-color: #91725d;
     width: 100%;
     margin: 25px;
     color: #FFF;
