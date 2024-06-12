@@ -65,7 +65,7 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
       <Navbar bg="custom" variant="dark" expand="lg" className="navbar-custom fixed-top">
         <Container fluid style={{ color: "#111" }}>
           <Navbar.Brand href="#" style={{ color: "#fff" }}>
-            <img src={soda} alt="Burger 1" className="me-2" style={{ width: "180px", }} 
+            <img src={soda} alt="Burger 1" className="me-2 logonav" style={{ width: "180px", }} 
             /> 
           
           </Navbar.Brand>
