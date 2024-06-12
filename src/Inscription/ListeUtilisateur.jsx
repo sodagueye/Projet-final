@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillEdit, AiFillDelete, AiFillEye } from "react-icons/ai";
 import axios from 'axios';
-import Modal from 'react-bootstrap/Modal';
+ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import '../Inscription/inscrire.css';
 
