@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./ReservationTable.css";
 
 const ReservationTable = () => {
@@ -6,25 +5,25 @@ const ReservationTable = () => {
     <section id="reservation-table">
       <div className="container">
         <div className="row">
-          <h3>Tables reservations</h3>
+          <h3 className="reservation-body-text text-header">Tables reservations</h3>
           <div className="reservation-body">
             <div className="reservation-details">
-              <h5>Reservations details</h5>
-              <p className="text-muted info">
+              <h5 className="mt-3 reservation-body-text">Reservations details</h5>
+              <p className="text-muted reservation-body-text">
                 date de reservation + heure de reservation
               </p>
-              <p className="text-muted info">nombre invité</p>
+              <p className="text-muted info reservation-body-text">nombre invité</p>
             </div>
             <form action="">
               <div className="personnal-details">
-                <h5>Personnal details</h5>
+                <h5 className="reservation-body-text ">Personnal details</h5>
                 <div className="form-head d-flex justify-space-between mb-3">
                   <div className="form-floating form-x col-md-6 mb-3">
                     <input
                       type="email"
                       className="form-control input-name"
-                      id="floatingInput"
-                      placeholder="name@example.com"
+                      id="floatingInputDisabled"
+                      disabled
                     />
                     <label for="floatingInput">First name</label>
                   </div>
@@ -32,18 +31,18 @@ const ReservationTable = () => {
                     <input
                       type="password"
                       className="form-control input-name"
-                      id="floatingPassword"
-                      placeholder="Password"
+                      id="floatingInputDisabled"
+                      disabled
                     />
-                    <label for="floatingPassword">Last name</label>
+                    <label for="floatingInput">Last name</label>
                   </div>
                 </div>
                 <div className="form-floating mb-3">
                   <input
                     type="email"
                     className="form-control"
-                    id="email"
-                    placeholder="name@example.com"
+                    id="floatingInputDisabled"
+                    disabled
                   />
                   <label for="email">Email address</label>
                 </div>
@@ -51,42 +50,43 @@ const ReservationTable = () => {
                   <input
                     type="number"
                     className="form-control"
-                    id="number"
-                    placeholder="Password"
+                    id="floatingInputDisabled"
+                    disabled
                   />
                   <label for="number">Mobile number</label>
                 </div>
                 <div className="select-part d-flex justify-space-between mb-3">
-                  <div className="form-floating form-x col-md-6">
-                    <select className="form-select">
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
+                  <div className="form-floating rounded-0 border-0  form-z form-x col-md-6">
+                    <select id="floatingSelect" className="form-select rounded-0 border-0">
+                      <option value="">Salle 8</option>
+                      <option value="">Salle 4</option>
+                      <option value="">Salle 6</option>
+                      <option value="">Salle 2</option>
+                      <option value="">Salle 10</option>
                     </select>
                     <label>Room name</label>
                   </div>
-                  <div className="form-floating form-x col-md-6">
-                    <select className="form-select">
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
-                      <option value=""></option>
+                  <div className="form-floating rounded-0 border-0 form-z form-x col-md-6">
+                    <select id="floatingSelect" className="form-select rounded-0 border-0">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
                     </select>
                     <label>Table name</label>
                   </div>
                 </div>
                 <div class="">
-                  <label for="floatingTextarea2">Requetes speciales</label>
+                  <label className="reservation-body-text text-muted" for="floatingTextarea2">Requetes speciales</label>
                   <textarea
                     class="form-control"
-                    placeholder="Leave a comment here"
                     id="floatingTextarea2"
                   ></textarea>
                 </div>
               </div>
+              <p className="reservation-body-text text-muted mt-3 fs-6" >By continuing, you agree to Terms of Service and Privacy Policy.</p>
+              <button type="submit" className="btn btnsend">Reserver</button>
             </form>
           </div>
         </div>

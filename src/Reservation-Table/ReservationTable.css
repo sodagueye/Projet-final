@@ -1,28 +1,68 @@
-#reservation-table{
+#reservation-table {
   background-color: #f5f5f5;
+  text-align: start;
 }
-.reservation-body{
-    width: 80%;
-    margin: 50px auto;
-    text-align: start;
-    background-color: #fff;
-}
-
-#floatingTextarea2{
-    height: 180px;
+.reservation-body {
+  width: 80%;
+  margin: 50px auto;
+  background-color: #fff;
 }
 
-.reservation-body form{
+.text-header{
+  margin-bottom: -40px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+#floatingTextarea2 {
+  height: 180px;
+  border: 1px solid gray;
+}
+
+.reservation-body form {
   width: 100%;
 }
-.reservation-body .form-floating , .form-control{
+.reservation-body .form-floating,
+.form-control {
   width: 99%;
   margin: 0 auto;
   background-color: #eeeeee;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
 }
-.form-x{
+.reservation-body .form-floating {
+  border: 1px solid gray;
+}
+.form-x {
   width: 49% !important;
   margin: 0 auto;
+}
+
+.reservation-body .info {
+  margin-top: -15px;
+}
+
+.reservation-body .reservation-body-text {
+  margin-left: 5px;
+}
+
+.reservation-body .select-part .form-z {
+  border: none !important;
+  border-radius: Opx !important;
+  border-bottom: 2px solid gray !important;
+}
+
+.reservation-body:focus {
+  outline: none;
+}
+
+.reservation-body .btnsend{
+  width: 99%;
+  height: 50px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 40px;
+  background-color: #e7272d;
+  font-size: 20px;
+  font-weight: 600;
 }
