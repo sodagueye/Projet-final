@@ -3,7 +3,7 @@ import { AiFillDashboard } from "react-icons/ai";
 import { CiUser } from "react-icons/ci";
 import { GiHotMeal } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
-
+import "./styles.css"
 export default function Sidebar({ icon }) {
   const navigation = useNavigate();
   return (

@@ -1,10 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles.css";
-import Sidebar from "./Sidebar";
-import Navbar from "./Navbar";
-
+// import "./styles/style.css"
 export default function Home() {
   const [data, setData] = useState([]);
 
@@ -38,32 +35,64 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <table className="table">
+    <div className="container mt-5">
+      <table className="table shadow table-hover ">
         <thead>
           <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-            <th scope="col">Actions</th>
+            <th
+              style={{ backgroundColor: "#91725d", color: "white" }}
+              scope="col"
+            >
+              Plats
+            </th>
+            <th
+              style={{ backgroundColor: "#91725d", color: "white" }}
+              scope="col"
+            >
+              Name
+            </th>
+            <th
+              style={{ backgroundColor: "#91725d", color: "white" }}
+              scope="col"
+            >
+              Description
+            </th>
+            <th
+              style={{ backgroundColor: "#91725d", color: "white" }}
+              scope="col"
+            >
+              Price
+            </th>
+            <th
+              style={{ backgroundColor: "#91725d", color: "white" }}
+              scope="col"
+            >
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>
           {data.map((item) => (
             <tr key={item._id}>
+              <td>
+                <img src={item.image} alt="" style={{ width: "50px" }} />
+              </td>
               <td>{item.name}</td>
               <td>{item.description}</td>
               <td>{item.price}</td>
               <td>
-                <button className="btn btn-warning">
-                  <Link to={`/update/${item._id}`}>Update</Link>
+                <button className="btn btn-warning me-1 ">
+                  <Link className="text-white" to={`/update/${item._id}`}>
+                    Update
+                  </Link>
                 </button>
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-danger me-1"
                   onClick={() => handleSubmit(item._id)}
                 >
                   Delete
                 </button>
+                <button className="btn btn-success">Archiver</button>
               </td>
             </tr>
           ))}

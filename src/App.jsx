@@ -13,6 +13,7 @@ import Update from "./Dashboard/Update";
 import Products from "./Dashboard/Products";
 import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
+import "./styles/style.css"
 function App() {
   return (
     <div className="App">
