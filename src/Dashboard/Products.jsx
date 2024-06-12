@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles.css"
+import "./styles.css";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 
@@ -11,7 +11,9 @@ export default function Home() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch("http://localhost:4000/recup");
+        const response = await fetch(
+          "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits"
+        );
         const resultat = await response.json();
         setData(resultat);
       } catch {
@@ -49,16 +51,20 @@ export default function Home() {
         <tbody>
           {data.map((item) => (
             <tr key={item._id}>
-              <td>{item.title}</td>
-              <td>
-                <img src={item.description} alt={item.title} />
-              </td>
+              <td>{item.name}</td>
+              <td>{item.description}</td>
               <td>{item.price}</td>
               <td>
-               <button className="btn btn-warning"><Link to={`/update/${item._id}`}>Update</Link></button> 
-               <button className="btn btn-danger" onClick={() => handleSubmit(item._id)}>Delete</button>
+                <button className="btn btn-warning">
+                  <Link to={`/update/${item._id}`}>Update</Link>
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleSubmit(item._id)}
+                >
+                  Delete
+                </button>
               </td>
-            
             </tr>
           ))}
         </tbody>
