@@ -25,7 +25,7 @@ export default function Home() {
     const conf = window.confirm("Do you want to delete?");
     if (conf) {
       try {
-        await axios.delete(`http://localhost:4000/delete/${id}`);
+        await axios.delete(`https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`);
         alert("Deleted successfully");
         setData(data.filter((item) => item._id !== id));
       } catch (error) {
