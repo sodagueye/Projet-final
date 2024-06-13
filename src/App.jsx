@@ -23,11 +23,13 @@ import Connexion from "./Inscription/Connexion"
 import ListeUtilisateur from "./Inscription/ListeUtilisateur"
 import ModifierPassword from "./Inscription/Modifier";
 import "./styles/style.css"
+import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="redirection-confirmation" element={<PageRedirection />} />
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/tables" element={<ReservationTable/>} />
 
