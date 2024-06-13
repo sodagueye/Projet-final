@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../Inscription/inscrire.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function Inscrire() {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ function Inscrire() {
   async function submit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/register", {
+      const res = await axios.post("https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/post_api_register", {
         firstName,
         lastName,
         email,
@@ -23,11 +25,13 @@ function Inscrire() {
         password,
         confirmPassword
       });
-
+  
       if (res.data === "exist") {
-        alert("existe deja");
+       
+        toast.error("l'utilisateur existe deja")
       } else if (res.data === "exist pas") {
-        alert("Inscription réussie");
+       
+        toast.success("inscription reussie")
         // Réinitialiser les champs du formulaire
         setFirstName('');
         setLastName('');
@@ -35,11 +39,11 @@ function Inscrire() {
         setNumber('');
         setPassword('');
         setConfirmPassword('');
-       
+        // Rediriger vers la page de connexion
+        navigate('/connexion');
       }
     } catch (error) {
-      
-      alert("Error" );
+    toast.error("erreur d inscription")
       console.log(error);
     }
   }
@@ -67,6 +71,8 @@ function Inscrire() {
           </div>
         </form>
       </div>
+      <ToastContainer position='top-center'/>
+      
     </div>
   )
 }

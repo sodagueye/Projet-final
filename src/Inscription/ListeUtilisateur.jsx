@@ -9,6 +9,7 @@ function ListeUtilisateur() {
     const [data, setData] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    // pagination
     // const [current, setCurrent] = useState(1);
     // const count = 10;
 
@@ -18,7 +19,7 @@ function ListeUtilisateur() {
 
     const getData = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/api/register/getting");
+            const response = await axios.get("https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/get_api_register_getting");
             setData(response.data);
             console.log(data);
         } catch (error) {
@@ -29,7 +30,8 @@ function ListeUtilisateur() {
 
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:8080/api/delete/${id}`);
+            // https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/delete_api_register_delete__id_
+            const response = await axios.delete(`https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/delete_api_register_delete/${id}`);
             if (response.status === 200) {
                 setData(data.filter(item => item._id !== id));
             }
@@ -57,6 +59,7 @@ function ListeUtilisateur() {
     // const handleClick = (pageNumber) => {
     //     setCurrent(pageNumber);
     // };
+    // pagination
 
     return (
         <div className="lister m-auto">
