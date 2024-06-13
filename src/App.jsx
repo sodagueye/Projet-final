@@ -19,6 +19,7 @@ import ModifierPassword from "./Inscription/Modifier";
 import Employe from "./Ressources-Humaines/Employe";
 import Ventas from "./Suivis-Comptabilité/Ventes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
+import AppAjout from "./Ajouter/AppAjout";
 // import "./styles/style.css";
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/Utilisateur" element={<ListeUtilisateur />} />
           <Route path="/" element={<Accueil />} />
+          <Route path="/ajout" element={<AppAjout />} />
           <Route path="/employe" element={<Employe />} />
           <Route path="/table" element={<ReservationTable />} />
           <Route path="/update/:id" element={<Update />} />
