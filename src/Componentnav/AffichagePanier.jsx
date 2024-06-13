@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
-import Connexion from '../Inscription/Connexion';
-import { Link } from 'react-router-dom';
+//import Connexion from '../Inscription/Connexion';
+//import { Link } from 'react-router-dom';
 
 const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct, setTotalPrice }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -65,9 +65,10 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                         </tr>
                         <tr>
                           <td>
-                            <Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
+                          <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
+                            {/**<Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
                               <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
-                            </Link>
+                            </Link> */}
                           </td>
                         </tr>
                       </tbody>
@@ -91,7 +92,7 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
         </Modal.Header>
         <Modal.Body>
           <div className="login-container">
-            <Connexion />
+         {/**   <Connexion /> */}
           </div>
         </Modal.Body>
       </Modal>
