@@ -15,10 +15,6 @@
     font-size: 15px;
 }
 
-.aboutTitle {
-    font-size: 18px;
-}
-
 img,
 .div-img {
     width: 100px;
@@ -26,7 +22,7 @@ img,
 
 .sidebar {
     height: 100vh;
-    background: #502314;
+    background-color: #91725d !important;
     color: #fff;
 }
 
@@ -74,11 +70,6 @@ img,
     font-size: 10px;
 }
 
-.tiret {
-    background-color: gray;
-    width: 1px;
-    height: 30px;
-}
 
 .avatar {
     width: 50px;
@@ -114,29 +105,24 @@ img,
     border-left: 3px solid #502314 !important;
 }
 
-
-/* Table */
 table {
     border-collapse: collapse;
-    background-color: #fff;
 }
 
-table,
-
-td,
-th {
-    border: 1px solid #ecf0f1;
-   
-
+th,
+td {
+    border: 1px solid #ddd;
 }
 
+a {
+    text-decoration: none;
+}
 
 th {
-    background-color: #502314;
-    color: #fff;
-    padding: 10px !important;
-
+    background-color: #f2f2f2;
 }
-.carte{
-    border-left: 3px solid #502314 !important;
+
+.table-hover tbody tr:hover {
+    background-color: #ffcccb !important;
+    /* Couleur de survol personnalisée */
 }
