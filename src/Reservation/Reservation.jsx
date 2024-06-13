@@ -12,7 +12,7 @@ function ReservationPage() {
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
   };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
@@ -22,11 +22,9 @@ function ReservationPage() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/reservation", formData);
-      navigate('/tables'); 
+      const response = await axios.post("http://localhost:8080/api/reservation", formData);
+      navigate('/tables', { state: formData });
       console.log(response.data);
-            alert("Inscrivez-vous avant de faire une reservation !");
-
     } catch (err) {
       console.error(err);
       alert("Erreur lors de la demande de réservation");
@@ -44,7 +42,7 @@ function ReservationPage() {
       <div className="row reservation-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-head d-flex justify-space-between">
+          <div className="form-head justify-space-between">
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
@@ -131,5 +129,4 @@ function ReservationPage() {
     </section>
   );
 }
-
 export default ReservationPage;

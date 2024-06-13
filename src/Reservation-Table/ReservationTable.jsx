@@ -1,6 +1,11 @@
+import React from "react";
 import "./ReservationTable.css";
+import { useLocation } from 'react-router-dom';
 
 const ReservationTable = () => {
+  const location = useLocation();
+  const { invites, date, hour } = location.state || {};
+
   return (
     <section id="reservation-table">
       <div className="container">
@@ -10,53 +15,56 @@ const ReservationTable = () => {
             <div className="reservation-details">
               <h5 className="mt-3 reservation-table-body-text">Reservations details</h5>
               <p className="text-muted reservation-table-body-text">
-                date de reservation + heure de reservation
+                {`Date de reservation: ${new Date(date).toLocaleDateString("fr-FR", {
+                  weekday: "short",
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })} à ${hour}`}
               </p>
-              <p className="text-muted info reservation-table-body-text">nombre invité</p>
+              <p className="text-muted info reservation-table-body-text">
+                {`Nombre d'invités: ${invites}`}
+              </p>
             </div>
             <form action="">
               <div className="personnal-details">
-                <h5 className="reservation-table-body-text ">Personnal details</h5>
+                <h5 className="reservation-table-body-text">Personnal details</h5>
                 <div className="form-head d-flex justify-space-between mb-3">
                   <div className="form-floating form-x col-md-6 mb-3">
                     <input
-                      type="email"
+                      type="text"
                       className="form-control input-name"
-                      id="floatingInputDisabled"
-                      disabled
+                      id="floatingInput"
                     />
-                    <label for="floatingInput">First name</label>
+                    <label htmlFor="floatingInput">First name</label>
                   </div>
                   <div className="form-floating form-x col-md-6 mb-3">
                     <input
-                      type="password"
+                      type="text"
                       className="form-control input-name"
-                      id="floatingInputDisabled"
-                      disabled
+                      id="floatingInput"
                     />
-                    <label for="floatingInput">Last name</label>
+                    <label htmlFor="floatingInput">Last name</label>
                   </div>
                 </div>
                 <div className="form-floating mb-3">
                   <input
                     type="email"
                     className="form-control"
-                    id="floatingInputDisabled"
-                    disabled
+                    id="floatingInput"
                   />
-                  <label for="email">Email address</label>
+                  <label htmlFor="email">Email address</label>
                 </div>
                 <div className="form-floating mb-3">
                   <input
                     type="number"
                     className="form-control"
-                    id="floatingInputDisabled"
-                    disabled
+                    id="floatingInput"
                   />
-                  <label for="number">Mobile number</label>
+                  <label htmlFor="number">Mobile number</label>
                 </div>
                 <div className="select-part d-flex justify-space-between mb-3">
-                  <div className="form-floating rounded-0 border-0  form-z form-x col-md-6">
+                  <div className="form-floating rounded-0 border-0 form-z form-x col-md-6">
                     <select id="floatingSelect" className="form-select rounded-0 border-0">
                       <option value="">Salle 8</option>
                       <option value="">Salle 4</option>
@@ -77,15 +85,15 @@ const ReservationTable = () => {
                     <label>Table name</label>
                   </div>
                 </div>
-                <div class="">
-                  <label className="reservation-table-body-text text-muted" for="floatingTextarea2">Requetes speciales</label>
+                <div>
+                  <label className="reservation-table-body-text text-muted" htmlFor="floatingTextarea2">Requetes speciales</label>
                   <textarea
-                    class="form-control"
+                    className="form-control"
                     id="floatingTextarea2"
                   ></textarea>
                 </div>
               </div>
-              <p className="reservation-table-body-text text-muted mt-3 fs-6" >By continuing, you agree to Terms of Service and Privacy Policy.</p>
+              <p className="reservation-table-body-text text-muted mt-3 fs-6">By continuing, you agree to Terms of Service and Privacy Policy.</p>
               <button type="submit" className="btn btnsend">Reserver</button>
             </form>
           </div>
