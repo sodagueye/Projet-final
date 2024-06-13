@@ -1,10 +1,26 @@
 import React from "react";
 import "./ReservationTable.css";
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ReservationTable = () => {
   const location = useLocation();
   const { invites, date, hour } = location.state || {};
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    
+    navigate('/redirection-confirmation', {
+      state: {
+        invites: invites,
+        date: date,
+        hour: hour
+      }
+    });
+  };
+
 
   return (
     <section id="reservation-table">
@@ -94,7 +110,7 @@ const ReservationTable = () => {
                 </div>
               </div>
               <p className="reservation-table-body-text text-muted mt-3 fs-6">By continuing, you agree to Terms of Service and Privacy Policy.</p>
-              <button type="submit" className="btn btnsend">Reserver</button>
+              <button type="submit" className="btn btnsend"  onClick={handleSubmit}>Reserver</button>
             </form>
           </div>
         </div>
@@ -104,3 +120,4 @@ const ReservationTable = () => {
 };
 
 export default ReservationTable;
+

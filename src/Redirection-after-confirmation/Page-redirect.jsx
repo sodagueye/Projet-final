@@ -1,6 +1,11 @@
+import React from "react";
 import "./Page-redirect.css";
+import { useLocation } from 'react-router-dom';
 
 const PageRedirection = () => {
+  const location = useLocation();
+  const { invites, date, hour } = location.state || {};
+
   return (
     <section id="PageRedirection">
       <div className="container">
@@ -16,11 +21,15 @@ const PageRedirection = () => {
             </p>
             <div className="recup-reservation-date">
               <h5 className="my-4">
-                va recuperé le jour, la date et l'heure de reservation
+                {`${new Date(date).toLocaleDateString("fr-FR", {
+                  weekday: "short",
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })} à ${hour}`}
               </h5>
               <p className="d-grid">
-                <span>va recuperé le nombre de personne</span>{" "}
-                <span>Va recuperé l'id de reservation</span>
+                <span> {`Nombre d'invités: ${invites}`}</span>{" "}
               </p>
             </div>
             <div className="Redirect-Page-footer my-3">

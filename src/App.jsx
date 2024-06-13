@@ -29,9 +29,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="redirection-confirmation" element={<PageRedirection />} />
+          <Route path="/redirection-confirmation" element={<PageRedirection />} />
           <Route path="/reservation" element={<ReservationPage />} />
-          <Route path="/tables" element={<ReservationTable/>} />
+          {/* <Route path="/tables" element={<ReservationTable/>} /> */}
 
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
