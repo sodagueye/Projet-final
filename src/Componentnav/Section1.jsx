@@ -1,38 +1,26 @@
-// Section1.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import bur4 from '../assets/bur4.png';
-import img7 from '../assets/img7.png';
-import img10 from '../assets/img10.png';
-import img3 from '../assets/img3.png';
-import jus6 from '../assets/jus6.jpg';
-import jus4 from '../assets/jus4.jpg';
-import gl from '../assets/gl.png';
-import glace from '../assets/glace.png';
-import jus11 from '../assets/jus11.png';
-import tb2 from '../assets/tb2.jpg';
-import tb7 from '../assets/tb7.jpg';
-import tb8 from '../assets/tb8.jpg';
-import tb11 from '../assets/tb11.png';
-import './Section1.css';
+import './Section1.css'; 
 
 const products = [
-  { id: 1, name: 'Creme Glace', price: 2000, image: gl, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 2, name: 'Jus de Fruit', price: 1000, image: jus4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 3, name: 'Burger', price: 4000, image: bur4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 4, name: 'Burger + KFC', price: 13000, image: img7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 5, name: 'Frite avec Sauce tomate', price: 3500, image: img10, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 6, name: 'Salade+Poulet', price: 4000, image: img3, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 7, name: 'Glace', price: 2000, image: glace, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 8, name: 'Jus naturelle', price: 1000, image: jus6, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 9, name: 'Jus naturelle', price: 1000, image: jus11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 10, name: 'Theboudjeune', price: 1500, image: tb2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 11, name: 'Cest Bon', price: 2000, image: tb7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 12, name: 'Vermiselle', price: 2000, image: tb8, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
-  { id: 13, name: 'Theboudjeune', price: 1500, image: tb11, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada, diam sed consequat consectetur, nunc eros congu...' },
+  { id: 1, name: 'Creme Glace', price: 2000, image: require('../assets/gl.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 2, name: 'Jus de Fruit', price: 1000, image: require('../assets/jus4.jpg'), category: 'jus', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 3, name: 'Burger', price: 4000, image: require('../assets/bur4.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 4, name: 'Burger', price: 13000, image: require('../assets/bur1.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 4, name: 'Burger', price: 13000, image: require('../assets/bur2.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 4, name: 'Burger + KFC', price: 13000, image: require('../assets/img7.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  
+  { id: 5, name: 'Frite avec Sauce tomate', price: 3500, image: require('../assets/img10.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 6, name: 'Salade+Poulet', price: 4000, image: require('../assets/img3.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 7, name: 'Glace', price: 2000, image: require('../assets/glace.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 8, name: 'Jus naturelle', price: 1000, image: require('../assets/jus6.jpg'), category: 'jus', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 9, name: 'Theboudjeune', price: 1500, image: require('../assets/tb2.jpg'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 10, name: 'Cest Bon', price: 2000, image: require('../assets/tb7.jpg'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 11, name: 'Vermiselle', price: 2000, image: require('../assets/tb8.jpg'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
 ];
 
-const Section1 = ({ updateCartQuantity }) => {
+const Section1 = ({ updateCartQuantity, selectedCategory }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -57,60 +45,32 @@ const Section1 = ({ updateCartQuantity }) => {
     handleCloseModal();
   };
 
-  const handleQuantityChange = (newQuantity
-  ) => {
+  const handleQuantityChange = (newQuantity) => {
     const updatedQuantity = Math.max(1, newQuantity);
     setQuantity(updatedQuantity);
     setTotalPrice(updatedQuantity * selectedProduct.price);
   };
 
-  const halfLength = Math.ceil(products.length / 2);
-  const firstRow = products.slice(0, halfLength);
-  const secondRow = products.slice(halfLength);
+  const filteredProducts = selectedCategory 
+    ? products.filter(product => product.category === selectedCategory) 
+    : products;
 
   return (
     <div className="section1-container">
       <div className="slider">
         <div className="slider-track">
           <div className="slider-row">
-            {firstRow.map((product, index) => (
+            {filteredProducts.map((product, index) => (
               <div key={index} className="card card-spacing card-container">
                 <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
                 <div className="card-body" style={{ textAlign: "center" }}>
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.price} FCFA</p>
-                  <button className="btn btn-primary card-button bacg" style={{ border: "#fff solid 1px",background:"#91725d" }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
+                  <button className="btn  card-button" onClick={() => handleShowModal(product)} style={{background:"#91725d",color:"white"}}>Ajouter au panier</button>
                 </div>
               </div>
             ))}
           </div>
-          <div className="slider-row">
-            {secondRow.map((product, index) => (
-              <div key={index} className="card card-spacing card-container">
-                <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.price} FCFA</p>
-                  <button className="btn btn-primary card-button " style={{ border: "#fff solid 1px",background:"#91725d"  }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-         {/** <div className="slider-row">
-            {secondRow.map((product, index) => (
-              <div key={index} className="card card-spacing card-container">
-                <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.price} FCFA</p>
-                  <button className="btn btn-primary card-button " style={{ border: "#fff solid 1px",background:"#91725d"  }} onClick={() => handleShowModal(product)}>Ajouter au panier</button>
-                </div>
-              </div>
-            ))}
-          </div> */}
-
-
         </div>
       </div>
 

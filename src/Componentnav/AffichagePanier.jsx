@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
 import Connexion from '../Inscription/Connexion';
-
 import { Link } from 'react-router-dom';
-const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct }) => {
+
+const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct, setTotalPrice }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(cartProducts.length);
 
@@ -13,7 +13,10 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
 
   useEffect(() => {
     setCartItemCount(cartProducts.length);
-  }, [cartProducts]);
+    if (setTotalPrice) {
+      setTotalPrice(totalPrice); // Mettre à jour le prix total des produits dans FacturationPage
+    }
+  }, [cartProducts, totalPrice, setTotalPrice]);
 
   // Faire commande
   const handleOrder = () => {
@@ -62,9 +65,9 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                         </tr>
                         <tr>
                           <td>
-             <Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
-            <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
-          </Link>
+                            <Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
+                              <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
+                            </Link>
                           </td>
                         </tr>
                       </tbody>

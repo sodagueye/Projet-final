@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Modal } from 'react-bootstrap';
 import ConfirmationPage from './ConfirmationPage';
 import './FacturationPage.css';
-//import AffichagePanier from './AffichagePanier';
 import AffichagePanier from './AffichagePanier';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
-const FacturationPage = ({ location, cartProducts = [] }) => {
+const FacturationPage = ({ initialCartProducts = [] }) => {
+  const [cartProducts, setCartProducts] = useState(initialCartProducts);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [orderDetails, setOrderDetails] = useState([]);
   const [deliveryFee, setDeliveryFee] = useState(0);
@@ -21,6 +23,7 @@ const FacturationPage = ({ location, cartProducts = [] }) => {
     adresse: '',
     ville: ''
   });
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const handlePayment = (e) => {
     e.preventDefault();
@@ -49,8 +52,24 @@ const FacturationPage = ({ location, cartProducts = [] }) => {
     setShippingAddress({ ...billingInfo });
   };
 
-  // Calcul du total
-  const totalPrice = cartProducts.reduce((total, product) => total + (product.price * product.quantity), 0);
+  const removeProduct = (productId) => {
+    setCartProducts(cartProducts.filter(product => product.id !== productId));
+  };
+
+  const generatePDF = () => {
+    const input = document.getElementById('confirmation-content');
+    html2canvas(input)
+      .then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save("facture.pdf");
+      });
+  };
+
   const totalWithDelivery = totalPrice + deliveryFee;
 
   return (
@@ -99,31 +118,30 @@ const FacturationPage = ({ location, cartProducts = [] }) => {
         </Col>
         <Col md={6} className='text-center'>
           <h6>Mode de paiement</h6>
-       {/**  <p>Total: {totalPrice} FCFA</p> */}
+          <p>Prix Total des produits: {totalPrice} FCFA</p>
           <p>Frais de livraison: {deliveryFee} FCFA</p>
           <p>Total à payer: {totalWithDelivery} FCFA</p>
-          <AffichagePanier cartProducts={cartProducts} />
+          <AffichagePanier cartProducts={cartProducts} setTotalPrice={setTotalPrice} removeProduct={removeProduct} />
           <h6>Adresse de livraison</h6>
           <p>Nom: {shippingAddress.nom}</p>
           <p>Adresse: {shippingAddress.adresse}</p>
           <p>Ville: {shippingAddress.ville}</p>
           <p>Date de livraison: {deliveryDate}</p>
-          
         </Col>
-        
       </Row>
 
       <Modal show={showConfirmationModal} onHide={handleClose} centered style={{ height: "105%" }}>
         <Modal.Body>
-          <ConfirmationPage orderDetails={orderDetails} totalPrice={totalWithDelivery} />
+          <div id="confirmation-content">
+            <ConfirmationPage orderDetails={orderDetails} totalPrice={totalWithDelivery} />
+          </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>Fermer</Button>
+    
+          <Button variant="primary" onClick={generatePDF}>Télécharger la facture</Button>
         </Modal.Footer>
       </Modal>
-      
     </Container>
-    
   );
 };
 
