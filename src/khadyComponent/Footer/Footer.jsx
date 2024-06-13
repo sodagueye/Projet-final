@@ -3,7 +3,8 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../Footer/Footer.css";
-import logo from "../Footer-img/logo.jpg";
+import {FaTiktok , FaFacebookF , FaInstagram , FaWhatsapp } from 'react-icons/fa';
+import logo from "../Footer-img/logo1.png";
 
 export function Footer() {
     const [email, setEmail] = useState('');
@@ -27,22 +28,22 @@ export function Footer() {
     };
 
     return (
-        <footer>
+        <footer className="py-3">
             <div style={{ borderBottom: "1px solid white" }}>
-                <div className="container d-flex justify-content-between align-items-center deux" >
+                <div className="container d-flex justify-content-between align-items-center deux">
                     <div>
-                        <a href=""> <img src={logo} alt="" style={{ width: 130, height: 130 }} /></a>
+                        <a href=""> <img src={logo} alt="logo" className="img-fluid" style={{ width: 100, height: 100 }} /></a>
                     </div>
                     <div className="d-flex gap-3">
-                        <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 "  target="_blank" ><i class="bi bi-whatsapp"></i></a>
-                        <a href="https://www.tiktok.com/@nom_utilisateur" target="_blank"><i class="bi bi-tiktok"></i></a>
-                        <a href="https://www.facebook.com/nom_utilisateur" target="_blank"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/nom_utilisateur" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 "  target="_blank" ><FaWhatsapp /></a>
+                        <a href="https://www.tiktok.com/@nom_utilisateur" target="_blank"><FaTiktok/></a>
+                        <a href="https://www.facebook.com/nom_utilisateur" target="_blank"><FaFacebookF/></a>
+                        <a href="https://www.instagram.com/nom_utilisateur" target="_blank"><FaInstagram/></a>
                     </div>
                 </div>
             </div>
-            <div className="py-4" style={{ borderBottom: "1px solid white" }}>
-                <div className="container">
+            <div style={{ borderBottom: "1px solid white" }}>
+                <div className="container py-3">
                     <div className="row">
                         <div className="col-12 col-sm-6 col-md4 col-lg-2">
                             <div className="d-flex flex-column align-items-center">
@@ -100,7 +101,7 @@ export function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="py-4" style={{ borderBottom: "1px solid white" }}>
+            <div className="pt-3">
                 <div className="container d-flex flex-column align-items-center justify-content-center">
                     <h5>Tiens-toi à jour</h5>
                     <p>Abonnez-vous à notre newsletter</p>
