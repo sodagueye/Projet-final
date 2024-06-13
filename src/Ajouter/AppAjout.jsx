@@ -28,7 +28,7 @@ function AppAjout() {
 
     const handleAddProduct = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/admin/liste-produits', newProduct)
+        axios.post('https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits', newProduct)
             .then(res => {
                 setRecords([...records, res.data]); // Ajout du nouveau produit à la liste
                 setNewProduct({ name: '', description: '', price: '' }); // Réinitialiser le formulaire
