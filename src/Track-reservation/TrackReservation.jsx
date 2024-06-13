@@ -1,10 +1,16 @@
 import "./TrackReservation.css"
+import { FaCheckCircle } from "react-icons/fa";
 
 const TrackReservation = () => {
   return (
     <section id="trackreservation">
       <div className="container">
         <div className="row">
+            <div className="d-flex trackreservation-state">
+                <div className="d-flex fa active"><FaCheckCircle /> <p>En attente</p></div> <hr />
+                <div className="d-flex fa"><FaCheckCircle /><p>Confirmé</p></div> <hr />
+                <div className="d-flex fa"><FaCheckCircle /><p>Reservé</p></div>
+            </div>
           <div className="trackreservation-head d-flex justify-content-between">
             <div className="restaurantRef">
                 <div className="restaurantLogo"></div>
@@ -35,7 +41,7 @@ const TrackReservation = () => {
               </div>
             </div>
             <div className="trackreservation-footer">
-                <button className="btn btn-warning">Modifié la réservation</button>
+                <button className="btn btn-modify">Modifié la réservation</button>
             </div>
           </div>
         </div>
