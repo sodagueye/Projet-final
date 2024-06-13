@@ -19,12 +19,14 @@ import ModifierPassword from "./Inscription/Modifier";
 import Employe from "./Ressources-Humaines/Employe";
 import Ventas from "./Suivis-Comptabilité/Ventes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
+import TrackReservation from "./Track-reservation/TrackReservation";
 // import "./styles/style.css";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
