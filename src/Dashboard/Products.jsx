@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import "./styles/style.css"
+import { Link, useNavigate } from "react-router-dom";
+import "../styles/style.css"
 export default function Home() {
   const [data, setData] = useState([]);
+  const navigation = useNavigate();
 
   useEffect(() => {
     async function getData() {
@@ -25,7 +26,9 @@ export default function Home() {
     const conf = window.confirm("Do you want to delete?");
     if (conf) {
       try {
-        await axios.delete(`https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`);
+        await axios.delete(
+          `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`
+        );
         alert("Deleted successfully");
         setData(data.filter((item) => item._id !== id));
       } catch (error) {
@@ -36,6 +39,14 @@ export default function Home() {
 
   return (
     <div className="container mt-5">
+      <div className="text-end">
+        <button
+          onClick={() => navigation("/ajout")}
+          className="btn btn-primary btn-ajout shadow"
+        >
+          Ajouter
+        </button>
+      </div>
       <table className="table shadow table-hover ">
         <thead>
           <tr>

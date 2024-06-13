@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function AppAjout() {
     const [columns, setColumns] = useState(['Name', 'Description', 'Price']); // Définir les colonnes ici
     const [records, setRecords] = useState([]);
     const [newProduct, setNewProduct] = useState({ name: '', description: '', price: '' });
-
+    const navigation = useNavigate()
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -30,8 +31,9 @@ function AppAjout() {
         e.preventDefault();
         axios.post('https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits', newProduct)
             .then(res => {
-                setRecords([...records, res.data]); // Ajout du nouveau produit à la liste
-                setNewProduct({ name: '', description: '', price: '' }); // Réinitialiser le formulaire
+                setRecords([...records, res.data]); 
+                setNewProduct({ name: '', description: '', price: '' });
+                navigation('/plats') 
             })
             .catch(err => {
                 console.error("An error occurred while adding the product:", err);
@@ -72,6 +74,7 @@ function AppAjout() {
                         required
                         placeholder="Price"
                     />
+                    <input type="file" required />
                 </div>
                    <div className="text-center">
                        <button type="submit" className="btn btn-danger w-50 mb-3 ">Adjouter</button>

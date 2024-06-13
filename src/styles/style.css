@@ -108,7 +108,9 @@ img,
 .zoom-container:hover .zoom-image {
     transform: scale(1.2); /* Échelle de l'effet de zoom */
 }
-
+.btn-ajout{
+    width: 100px !important;
+}
 
 table {
     border-collapse: collapse;
