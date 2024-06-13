@@ -33,7 +33,7 @@ footer{
     font-family: "Roboto Condensed";
 }
 
-.toast-success {
+/* .toast-success {
     background-color: rgb(10, 233, 10) ;
     color: white !important;
   }
@@ -41,7 +41,7 @@ footer{
   .toast-error {
     background-color: red;
     color: white !important;
-  }
+  } */
   
 
 @media screen and (max-width:380px){
