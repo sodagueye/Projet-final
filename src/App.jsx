@@ -1,6 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
+import ReservationTable from "./Reservation-Table/ReservationTable";
+
 // import Appreciation from "./Appreciation/Appreciation";
 // import ReservationTable from "./Reservation-Table/ReservationTable";
 import Inscrire from "./Inscription/Inscrire";
@@ -23,6 +25,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/reservation" element={<ReservationPage />} />
+          <Route path="/tables" element={<ReservationTable/>} />
+
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/Modifier" element={<ModifierPassword/>} />

@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import "../Reservation-Table/ReservationTable.css";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
   const [hour, setHour] = useState("");
+  const navigate = useNavigate();
 
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
@@ -21,8 +23,10 @@ function ReservationPage() {
 
     try {
       const response = await axios.post("http://localhost:5000/api/reservation", formData);
+      navigate('/tables'); 
       console.log(response.data);
-      alert("Réservation réussie !");
+            alert("Inscrivez-vous avant de faire une reservation !");
+
     } catch (err) {
       console.error(err);
       alert("Erreur lors de la demande de réservation");
