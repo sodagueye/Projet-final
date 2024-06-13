@@ -134,7 +134,7 @@ const CustomNavbar = () => {
             <Nav.Link href="#about" className="text-dark fs-4">
               About
             </Nav.Link>
-            <Nav.Link href="/inscription">
+            <Nav.Link href="inscription">
               <FaUser className="user" style={{ fontSize: "19px" }} />
             </Nav.Link>
             <Nav.Link href="#cart">
