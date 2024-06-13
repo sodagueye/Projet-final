@@ -3,7 +3,7 @@
 }
 
 .left-arrow{
-    background-color: #E7272D;
+    background-color: #91725d;
     position: absolute;
     width: 30px;
     height: 30px;
@@ -18,7 +18,7 @@
 }
 
 .right-arrow{
-    background-color: #E7272D;
+    background-color: #91725d;
     position: absolute;
     width: 30px;
     height: 30px;
@@ -41,7 +41,7 @@
 }
 
 #appreciation .carousel-item .quote{
-    color: #E7272D;
+    color: #91725d;
     font-size: 25px;
 }
 #appreciation .carousel-item {
@@ -93,14 +93,14 @@
     }
 
     .left-arrow{
-        background-color: #E7272D;
+        background-color: #91725d;
         position: absolute;
         margin-left: 0%;
         margin-top: 0%;
     }
     
     .right-arrow{
-        background-color: #E7272D;
+        background-color: #91725d;
         margin-left: 0%;
         margin-top: 0%;
     }

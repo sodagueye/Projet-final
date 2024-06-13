@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
 import ReservationTable from "./Reservation-Table/ReservationTable";
+=======
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ReservationPage from './Reservation/Reservation';
+import Appreciation from './Appreciation/Appreciation'
+import ReservationTable from './Reservation-Table/ReservationTable';
+import Employe from './Ressources-Humaines/Employe';
+import Ventas from './Suivis-Comptabilité/Ventes';
+
+>>>>>>> 52a5c1b56fc1569bca057cb5256fa0c1e38a2f8f
 
 // import Appreciation from "./Appreciation/Appreciation";
 // import ReservationTable from "./Reservation-Table/ReservationTable";
@@ -23,6 +34,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+<<<<<<< HEAD
         <Routes>
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/tables" element={<ReservationTable/>} />
@@ -55,6 +67,15 @@ function App() {
           <Route path="/detail/:id" element={<Details />} />
           <Route path="/menu" element={<Menu />} />
         </Routes>
+=======
+      <Routes>
+        <Route path='/reservation' element={<ReservationPage />} />
+        <Route path='/appreciation' element={<Appreciation />} />
+        <Route path='/tables' element={<ReservationTable />} />
+        <Route path='/RH' element={<Employe />} />
+        <Route path='/ventes' element={<Ventas />} /> 
+      </Routes>
+>>>>>>> 52a5c1b56fc1569bca057cb5256fa0c1e38a2f8f
       </BrowserRouter>
     </div>
   );

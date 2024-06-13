@@ -44,7 +44,7 @@ function ReservationPage() {
       <div className="row reservation-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-head justify-space-between">
+          <div className="form-head d-flex justify-space-between">
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
