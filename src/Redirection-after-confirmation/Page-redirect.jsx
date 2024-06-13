@@ -1,9 +1,14 @@
-/* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react";
+import React from "react";
 import "./Page-redirect.css";
+import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { IoIosArrowBack } from "react-icons/io";
 
+
+
 const PageRedirection = () => {
+  const location = useLocation();
+  const { invites, date, hour } = location.state || {};
 
   // Bouton qui renvoie à la page précédente
   const [prevPage, setPrevPage] = useState(window.location.href);
