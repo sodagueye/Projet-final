@@ -1,30 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../Footer/Footer.css";
-import logo from "../Footer-img/logo.jpg"
-// import { FaFacebook , FaSquareInstagram } from "react-icons/fa";
+import logo from "../Footer-img/logo.jpg";
 
 export function Footer() {
+    const [email, setEmail] = useState('');
 
-    const [email, setEmail] = useState("");
-    const [newsletter, setNewsletter] = useState([]);
-
-    useEffect(() => {
-        axios.post('http://localhost:8080/api/email/send')
-            .then(response => {
-                console.log(response.data);
-                setNewsletter(response.data);
-            })
-            .catch(error => {
-                console.error('Une erreur est survenue :', error);
-            });
-    }, []);
-
-    const handleSubmit = (e) => {
+    const handleChange = (e) => {
+      setEmail(e.target.value);
+    };
+  
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const newEmail = { email };
-        setNewsletter([newEmail, ...newsletter]);
-        setEmail(""); // Utiliser setEmail pour réinitialiser l'email
+        try {
+            const response = await axios.post('http://localhost:8080/subscribe', { email });
+            console.log('Réponse du backend:', response.data);
+            setEmail('');
+            toast.success('Vous êtes abonné avec succès à notre newsletter!' , { className: 'toast-success'});
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi de l\'e-mail:', error);
+            toast.error('Une erreur est survenue. Veuillez réessayer.' , {className: 'toast-error'});
+            ;
+        }
     };
 
     return (
@@ -113,10 +112,10 @@ export function Footer() {
                                 placeholder="E-mail"
                                 className="rounded"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={handleChange}
                                 style={{ height: 40 }}
                             />
-                            <button
+                            <button type="submit"
                                 className="rounded border-0 px-2"
                                 style={{ position: "relative", right: 8, height: 40 }}
                             >
@@ -127,6 +126,7 @@ export function Footer() {
                 </div>
 
             </div>
+            <ToastContainer  position="bottom-left"/>
         </footer>
     );
 }
