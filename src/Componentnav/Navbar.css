@@ -99,8 +99,7 @@ option {
   font-size: 19px;
   text-decoration: none;color: black;
 }
-.search-input-container{
-}
+
 .user{color: black;}
   .search-icon.recherche {
     color: black; 
@@ -115,6 +114,14 @@ option {
     display: block; 
     background-color: white;
     color:red;
+    position: relative;
+    bottom: 60px;
   }
+
+.logonav{
+  width: 50px;
+  position: relative;
+  bottom: 60px;
+}
 
 }

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Row, Col } from 'react-bootstrap';
 import './Affichage.css';
 //import Connexion from '../Inscription/Connexion';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
-const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct }) => {
+const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, decrementQuantity, removeProduct, setTotalPrice }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [cartItemCount, setCartItemCount] = useState(cartProducts.length);
 
@@ -13,7 +13,10 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
 
   useEffect(() => {
     setCartItemCount(cartProducts.length);
-  }, [cartProducts]);
+    if (setTotalPrice) {
+      setTotalPrice(totalPrice); // Mettre à jour le prix total des produits dans FacturationPage
+    }
+  }, [cartProducts, totalPrice, setTotalPrice]);
 
   // Faire commande
   const handleOrder = () => {
@@ -58,15 +61,14 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
                           <td>Nombre d'articles: {cartItemCount}</td>
                         </tr>
                         <tr>
-                          <td>Prix de la livraison:</td> 
-                        </tr>
-                        <tr>
-                          <td>Total: {totalPrice} FCFA</td>
+                          <td>Prix Total des produits: {totalPrice} FCFA</td>
                         </tr>
                         <tr>
                           <td>
-                            <Button variant="primary" onClick={handleOrder}>Commander</Button>
-                            
+                          <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
+                            {/**<Link to={{ pathname: '/connexion', state: { orderDetails: cartProducts } }}>
+                              <Button variant="" onClick={handleOrder} className='commander'>Commander</Button>
+                            </Link> */}
                           </td>
                         </tr>
                       </tbody>
@@ -90,7 +92,7 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
         </Modal.Header>
         <Modal.Body>
           <div className="login-container">
-            
+         {/**   <Connexion /> */}
           </div>
         </Modal.Body>
       </Modal>

@@ -1,12 +1,19 @@
-/* src/components/FacturationPage.css */
 
+.payer{
+  margin-left: 6px;
+}
 .billing-container {
   margin-top: 20px;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa !important;
+  
   border-radius: 8px;
 }
+.payer{
+  background-color: #91725d;
 
+  color: white;
+}
 h1, h2 {
   margin-bottom: 20px;
 }

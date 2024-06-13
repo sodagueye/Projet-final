@@ -1,8 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
-// import Appreciation from "./Appreciation/Appreciation";
-// import ReservationTable from "./Reservation-Table/ReservationTable";
 import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
 import Menu from "./Componentnav/Menu";
@@ -32,6 +30,7 @@ function App() {
           <Route path="/Modifier" element={<ModifierPassword />} />
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/Utilisateur" element={<ListeUtilisateur />} />
+          <Route path="/" element={<Accueil />} />
           <Route path="/" element={<Accueil />} />
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="/employe" element={<Employe />} />
