@@ -15,7 +15,7 @@ function Inscrire() {
   async function submit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/api/admin/register", {
+      const res = await axios.post("http://localhost:8080/api/register", {
         firstName,
         lastName,
         email,

@@ -1,14 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Inscription/inscrire.css';
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 // import googles from '../Inscription/googles.png'
 
 function Connexion() {
+    const [email ,setEmail]=useState('');
+    const [password ,setPassword]=useState('')
+
+    async function login(e) {
+        e.preventDefault();
+        try {
+          const res = await axios.post("http://localhost:8080/api/auth", {
+            email,
+            password,
+          });
+    
+          if (res.data === "exist") {
+            alert("Connexion réussie");
+            // Rediriger l'utilisateur ou effectuer d'autres actions nécessaires
+          } else {
+            alert("Identifiants incorrects");
+          }
+          setEmail('');
+          setPassword('');
+         
+        } catch (error) {
+          console.log("Error during login:", error);
+          alert("Erreur lors de la connexion");
+        }
+      }
     return (
         <div>
             <div className='backCConnexion shadow d-flex justify-content-center align-items-center mt-5'>
-                <form className='form  align-items-center'>
+                <form className='form  align-items-center' onSubmit={login}>
                     <h2 className='text-center fw-bold fs-2 color '>Connecter</h2>
 
                     <div className=' inscript1'>

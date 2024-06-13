@@ -2,6 +2,8 @@
 import React from 'react'
 
 function ModifierPassword() {
+  
+
   return (
     <div>
       <div className='backCConnexion shadow d-flex justify-content-center align-items-center mt-5'>

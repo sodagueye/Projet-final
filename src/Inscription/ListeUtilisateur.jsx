@@ -9,8 +9,8 @@ function ListeUtilisateur() {
     const [data, setData] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [showModal, setShowModal] = useState(false);
-    const [current, setCurrent] = useState(1);
-    const count = 10;
+    // const [current, setCurrent] = useState(1);
+    // const count = 10;
 
     useEffect(() => {
         getData();
@@ -18,16 +18,18 @@ function ListeUtilisateur() {
 
     const getData = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/api/admin/users");
+            const response = await axios.get("http://localhost:8080/api/register/getting");
             setData(response.data);
+            console.log(data);
         } catch (error) {
             console.error("Failed to fetch list:", error);
+           
         }
     };
 
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:8000/api/admin/delete-admin/${id}`);
+            const response = await axios.delete(`http://localhost:8080/api/delete/${id}`);
             if (response.status === 200) {
                 setData(data.filter(item => item._id !== id));
             }
@@ -44,17 +46,17 @@ function ListeUtilisateur() {
     const closeModal = () => {
         setShowModal(false);
     };
+// pagination
+    // const last = current * count;
+    // const first = last - count;
+    // const visibleData = data.slice(first, last);
 
-    const last = current * count;
-    const first = last - count;
-    const visibleData = data.slice(first, last);
+    // const totalPages = Math.ceil(data.length / count);
+    // const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-    const totalPages = Math.ceil(data.length / count);
-    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-    const handleClick = (pageNumber) => {
-        setCurrent(pageNumber);
-    };
+    // const handleClick = (pageNumber) => {
+    //     setCurrent(pageNumber);
+    // };
 
     return (
         <div className="lister m-auto">
@@ -72,7 +74,7 @@ function ListeUtilisateur() {
                     </tr>
                 </thead>
                 <tbody>
-                    {visibleData.length ? visibleData.map((item) => (
+                    {data.length ? data.map((item) => (
                         <tr key={item._id}>
                             <td>{item.firstName}</td>
                             <td>{item.lastName}</td>
@@ -81,7 +83,7 @@ function ListeUtilisateur() {
                             <td className='gap-3'>
                                 <AiFillEye className='icone1' onClick={() => openModal(item)} />
                                 <AiFillEdit className='icone2' />
-                                <AiFillDelete onClick={() => handleDelete(item._id)} className='icone3' />
+                                <AiFillDelete onClick={() => handleDelete(item._id)} className='icone3' /> 
                             </td>
                         </tr>
                     )) : <tr><td colSpan="5">Pas de données</td></tr>}
@@ -89,7 +91,7 @@ function ListeUtilisateur() {
             </table>
 
             {/* Pagination */}
-            <nav>
+            {/* <nav>
                 <ul className='pagination d-flex justify-content-end m-auto'>
                     {pageNumbers.map((pageNumber) => (
                         <li key={pageNumber} className={`page-item lienitem ${current === pageNumber ? 'active' : ''}`}>
@@ -97,7 +99,7 @@ function ListeUtilisateur() {
                         </li>
                     ))}
                 </ul>
-            </nav>
+            </nav> */}
             {/* Pagination */}
 
             <Modal show={showModal} onHide={closeModal}>
