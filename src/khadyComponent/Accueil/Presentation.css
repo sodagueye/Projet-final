@@ -11,6 +11,12 @@
     flex-direction: column;
     align-items: center;
 }
+.myrow div{
+    border-radius: 20px 20px 20px 20px;
+}
+.myrow div img{
+    border-radius: 20px 20px 0px 0px;
+}
 .mycard img{
     width: 80%;
     height: 200px;
