@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Reservation-Table/ReservationTable.css";
+import "./Reservation.css";
 import axios from "axios";
 
 function ReservationPage() {
@@ -36,8 +36,8 @@ function ReservationPage() {
   const hours = Array.from({ length: 24 }, (_, i) => i);
 
   return (
-    <section id="reservation">
-      <div className="row reservation-body">
+    <section id="reservationPage">
+      <div className="row reservationPage-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">
@@ -97,7 +97,7 @@ function ReservationPage() {
             </div>
           </div>
           <label>
-            <div className="row reservation-heure">
+            <div className="row reservationPage-heure">
               {hours.map((hour, index) => (
                 <React.Fragment key={index}>
                   <button
