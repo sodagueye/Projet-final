@@ -16,7 +16,10 @@ import Details from "./khadyComponent/Accueil/Details";
 import Connexion from "./Inscription/Connexion";
 import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import ModifierPassword from "./Inscription/Modifier";
-import "./styles/style.css";
+import Employe from "./Ressources-Humaines/Employe";
+import Ventas from "./Suivis-Comptabilité/Ventes";
+import ReservationTable from "./Reservation-Table/ReservationTable";
+// import "./styles/style.css";
 function App() {
   return (
     <div className="App">
@@ -29,6 +32,8 @@ function App() {
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/Utilisateur" element={<ListeUtilisateur />} />
           <Route path="/" element={<Accueil />} />
+          <Route path="/employe" element={<Employe />} />
+          <Route path="/table" element={<ReservationTable />} />
           <Route path="/update/:id" element={<Update />} />
           <Route
             path="/plats"
@@ -49,6 +54,7 @@ function App() {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/detail/:id" element={<Details />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/ventes" element={<Ventas />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,81 +1,68 @@
-.reservation-head{
-    display: flex;
-    background-color: aqua;
-    text-align: center;
-    text-align: center;
-    height: auto;
+#reservation-table {
+  background-color: #f5f5f5;
+  text-align: start;
+}
+.reservation-table-body {
+  width: 80%;
+  margin: 50px auto;
+  background-color: #fff;
 }
 
-.reservation-head h2{
-    font-size: 25px;
-}
-.available-table {
-    background-color: blue;
-    width: 50%;
-    height: auto;
-    margin: 10px;
-    padding: 20px;
-    list-style: none;
+.text-header{
+  margin-bottom: -40px;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
-
-#table-A, #table-C{
-    background-color: #E7272D;
-    color: #fff;
-    margin: 30px 10px;
-    width: 15%;
-    height: 90px;
-    border-radius: 10%;
-    padding: 12px;
+#floatingTextarea2 {
+  height: 180px;
+  border: 1px solid gray;
 }
 
-#table-C{
-    background-color: #157347 !important;
+.reservation-table-body form {
+  width: 100%;
+}
+.reservation-table-body .form-floating,
+.form-control {
+  width: 99%;
+  margin: 0 auto;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  border: none;
+}
+.reservation-table-body .form-floating {
+  border: 1px solid gray;
+}
+.form-x {
+  width: 49% !important;
+  margin: 0 auto;
 }
 
-#table-A button, #table-C button{
-    margin-left: -11px;
-    margin-top: 60px;
+.reservation-table-body .info {
+  margin-top: -15px;
 }
 
-.reserved-table {
-    width: 50%;
-    margin: 10px;
-    background-color: burlywood;
+.reservation-table-body .reservation-table-body-text {
+  margin-left: 5px;
 }
 
+.reservation-table-body .select-part .form-z {
+  border: none !important;
+  border-radius: Opx !important;
+  border-bottom: 2px solid gray !important;
+}
 
+.reservation-table-body:focus {
+  outline: none;
+}
 
-@media screen and (max-width:770px) {
-    .reservation-head {
-        display: grid;
-    }
-
-    .available-table,.reserved-table  {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    #table-A, #table-C{
-        background-color: #E7272D;
-        color: #fff;
-        margin: 30px 10px;
-        width: 48%;
-        height: 70px;
-        border-radius: 10%;
-        padding: 0px;
-    }
-
-    #table-C{
-        font-size: 40px;
-    }
-
-    #table-A span, #table-C span{
-        font-size: 40px;
-    }
-
-    #table-A button, #table-C button{
-        margin-left: -40px;
-        margin-top: 80px;
-    }
+.reservation-table-body .btnsend{
+  width: 99%;
+  height: 50px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 40px;
+  background-color: #91725d;
+  font-size: 20px;
+  font-weight: 600;
 }
