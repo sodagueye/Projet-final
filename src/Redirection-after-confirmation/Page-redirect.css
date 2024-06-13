@@ -1,26 +1,41 @@
 #PageRedirection {
-    padding: 50px 200px;
-    background-color: #f5f5f5;
+  padding: 50px 200px;
+  background-color: #f5f5f5;
 }
 
-#PageRedirection .Redirect-Page-body{
-    background-color: #fff;
-    text-align: center;
-    padding: 20px 0;
+#PageRedirection .btn-back-page {
+  color: #91725d;
+  float: left;
+  margin-left: 10px;
 }
 
-#PageRedirection .Redirect-Page-footer .btn{
-    width: 250px;
-    height: 45px;
-    border-radius: 30px;
+#PageRedirection .btn-back-page:hover{
+ background-color: #91725d;
+ color: #fff;
+}
+
+#PageRedirection .btn-back-page span {
+  font-size: 20px;
+}
+
+#PageRedirection .Redirect-Page-body {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#PageRedirection .Redirect-Page-footer .btn {
+  width: 250px;
+  height: 45px;
+  border-radius: 30px;
 }
 
 #PageRedirection .Redirect-Page-footer .btn-new {
-    background-color: #91725d;
-    color: #fff;
+  background-color: #91725d;
+  color: #fff;
 }
 
-#PageRedirection .Redirect-Page-footer .btn-track{
-    border: 1px solid gray;
-    color: gray;
+#PageRedirection .Redirect-Page-footer .btn-track {
+  border: 1px solid gray;
+  color: gray;
 }

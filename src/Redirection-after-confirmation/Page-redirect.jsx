@@ -1,10 +1,24 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
 import "./Page-redirect.css";
-import { useLocation } from 'react-router-dom';
+import { IoIosArrowBack } from "react-icons/io";
 
 const PageRedirection = () => {
-  const location = useLocation();
-  const { invites, date, hour } = location.state || {};
+
+  // Bouton qui renvoie à la page précédente
+  const [prevPage, setPrevPage] = useState(window.location.href);
+
+  useEffect(() => {
+    const handlePrevPage = () => {
+      window.history.back();
+    };
+
+    const prevPageButton = document.getElementById("prev-page-button");
+    if (prevPageButton) {
+      prevPageButton.addEventListener("click", handlePrevPage);
+    }
+  }, []);
+
 
   return (
     <section id="PageRedirection">
@@ -14,7 +28,13 @@ const PageRedirection = () => {
             <h4>Table reservations</h4>
           </div>
           <div className="Redirect-Page-body">
-            <iframe title="icon-success" src="https://lottie.host/embed/a034fca6-de7c-4398-8fc9-026c5be7a51e/NZZuRrhGYL.json" />
+            <div className="Redirect-Page-body-navigate-button">
+            <button id="prev-page-button " className="btn btn-back-page"> <span><IoIosArrowBack /></span> Back</button>
+            </div>
+            <iframe
+              title="icon-success"
+              src="https://lottie.host/embed/a034fca6-de7c-4398-8fc9-026c5be7a51e/NZZuRrhGYL.json"
+            />
             <h4>Votre reservation a été effectuée avec succès</h4>
             <p className="text-muted">
               vous recevrez un autre email une fois votre reservation confirmé
