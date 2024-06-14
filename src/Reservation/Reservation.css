@@ -115,7 +115,7 @@
 }
 
 
-#reservationPage .option-back:hover {
+#reservation .option-back:hover {
     background-color: #91725d;
     color: #fff;
 }
@@ -151,7 +151,7 @@
     border-radius: 5px;
 }
 
-#reservationPage .secondaire:focus {
+#reservation .secondaire:focus {
     background-color: #91725d;
     border: none;
     color: #fff;

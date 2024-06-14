@@ -1,12 +1,8 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ReservationPage from './Reservation/Reservation';
-// import Appreciation from './Appreciation/Appreciation'
-import ReservationTable from './Reservation-Table/ReservationTable';
-import Employe from './Ressources-Humaines/Employe';
-import Ventas from './Suivis-Comptabilité/Ventes';
 
 
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReservationPage from "./Reservation/Reservation";
 // import Appreciation from "./Appreciation/Appreciation";
 // import ReservationTable from "./Reservation-Table/ReservationTable";
 import Inscrire from "./Inscription/Inscrire";
@@ -19,27 +15,34 @@ import Products from "./Dashboard/Products";
 import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
 import Details from "./khadyComponent/Accueil/Details";
-import Connexion from "./Inscription/Connexion"
-import ListeUtilisateur from "./Inscription/ListeUtilisateur"
+import Connexion from "./Inscription/Connexion";
+import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import ModifierPassword from "./Inscription/Modifier";
 import "./styles/style.css"
 import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
+import Employe from "./Ressources-Humaines/Employe";
+import Ventas from "./Suivis-Comptabilité/Ventes";
+import ReservationTable from "./Reservation-Table/ReservationTable";
+import TrackReservation from "./Track-reservation/TrackReservation";
+// import "./styles/style.css";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/redirection-confirmation" element={<PageRedirection />} />
+          <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/reservation" element={<ReservationPage />} />
           {/* <Route path="/tables" element={<ReservationTable/>} /> */}
 
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
-          <Route path="/Modifier" element={<ModifierPassword/>} />
-          <Route path="/reinitialiser" element={<MotdepassOublié/>} />
-          
-         <Route path="/Utilisateur" element={< ListeUtilisateur />} />
-           <Route path="/" element={<Accueil />} />
+          <Route path="/Modifier" element={<ModifierPassword />} />
+          <Route path="/reinitialiser" element={<MotdepassOublié />} />
+          <Route path="/Utilisateur" element={<ListeUtilisateur />} />
+          <Route path="/" element={<Accueil />} />
+          <Route path="/employe" element={<Employe />} />
+          <Route path="/table" element={<ReservationTable />} />
           <Route path="/update/:id" element={<Update />} />
           <Route
             path="/plats"
@@ -60,6 +63,7 @@ function App() {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/detail/:id" element={<Details />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/ventes" element={<Ventas />} />
         </Routes>
       <Routes>
         {/* <Route path='/reservation' element={<ReservationPage />} /> */}
