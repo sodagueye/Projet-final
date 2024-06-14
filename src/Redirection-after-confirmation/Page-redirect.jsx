@@ -1,7 +1,7 @@
 import React from "react";
 import "./Page-redirect.css";
 import { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IoIosArrowBack } from "react-icons/io";
 
 
@@ -34,8 +34,10 @@ const PageRedirection = () => {
           </div>
           <div className="Redirect-Page-body">
             <div className="Redirect-Page-body-navigate-button">
+              <Link to="/reservation">
             <button id="prev-page-button " className="btn btn-back-page"> <span><IoIosArrowBack /></span> Back</button>
-            </div>
+            </Link>
+            </div> 
             <iframe
               title="icon-success"
               src="https://lottie.host/embed/a034fca6-de7c-4398-8fc9-026c5be7a51e/NZZuRrhGYL.json"
