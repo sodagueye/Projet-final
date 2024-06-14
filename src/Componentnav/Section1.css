@@ -1,6 +1,7 @@
 
 .card-container {
-  margin: 5px; 
+  margin: 5px;
+  height: 270px; 
 }
 
 .card-spacing {
@@ -19,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; 
+ 
 }
 .section1-container {
   position: relative;

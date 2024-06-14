@@ -5,43 +5,38 @@ import './Section1.css';
 const products = [
   { id: 1, name: 'Creme Glace', price: 2000, image: require('../assets/gl.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 2, name: 'Jus de Fruit', price: 1000, image: require('../assets/jus4.jpg'), category: 'jus', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-   { id: 4, name: 'Burger + KFC', price: 13000, image: require('../assets/img7.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg1.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+ 
+  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg2.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+ 
+  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+ 
+  { id: 4, name: 'Burger + KFC', price: 13000, image: require('../assets/img7.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
    { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+   { id: 5, name: 'Frite avec Sauce tomate', price: 3500, image: require('../assets/img10.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
    { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace1.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
 
    { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace2.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-   { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-   { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace1.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-
-   { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace2.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+   { id: 11, name: 'Pizza', price: 4000, image: require('../assets/p1.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+   { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg3.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   
-
-
-  { id: 5, name: 'Frite avec Sauce tomate', price: 3500, image: require('../assets/img10.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 6, name: 'Salade+Poulet', price: 4000, image: require('../assets/img3.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  
+   { id: 11, name: 'pizza', price: 4000, image: require('../assets/pa2.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+   { id: 11, name: 'Glace', price: 2000, image: require('../assets/glace2.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+   { id: 6, name: 'Salade+Poulet', price: 4000, image: require('../assets/img3.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 7, name: 'Glace', price: 2000, image: require('../assets/glace.png'), category: 'glace', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 8, name: 'Jus naturelle', price: 1000, image: require('../assets/jus6.jpg'), category: 'jus', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 9, name: 'Theboudjeune', price: 1500, image: require('../assets/tb2.jpg'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 10, name: 'Cest Bon', price: 2000, image: require('../assets/tb7.jpg'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 11, name: 'Vermiselle', price: 2000, image: require('../assets/tb8.jpg'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  
-
   { id: 3, name: 'Burger', price: 4000, image: require('../assets/bur4.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 4, name: 'Burger', price: 4000, image: require('../assets/bur1.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 4, name: 'Burger', price: 5000, image: require('../assets/bur2.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 4, name: 'KFC+Frite', price: 5000, image: require('../assets/img6.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg1.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg2.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Burger', price: 10000, image: require('../assets/bg3.png'), category: 'burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  
-  
+   { id: 12, name: 'Sauce', price: 3500, image: require('../assets/chine1.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 12, name: 'Grillade', price: 4000, image: require('../assets/img1.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
   { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-  { id: 12, name: 'Theboudjeune', price: 1500, image: require('../assets/tb11.png'), category: 'plat', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-
-
 
 ];
 
@@ -86,7 +81,7 @@ const Section1 = ({ updateCartQuantity, selectedCategory }) => {
         <div className="slider-track">
           <div className="slider-row">
             {filteredProducts.map((product, index) => (
-              <div key={index} className="card card-spacing card-container">
+              <div key={index} className="card card-spacing card-container" style={{borderRadius:"15px"}}>
                 <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
                 <div className="card-body" style={{ textAlign: "center" }}>
                   <h5 className="card-title">{product.name}</h5>
