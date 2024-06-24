@@ -15,21 +15,19 @@ import "./Navbar.css";
 import logo1 from "../assets/logo1.png";
 // { cartProducts, setCartProducts }
 // const CustomNavbar = () => {
-  // const [activeLink, setActiveLink] = useState('');
-  // const [showOffcanvas, setShowOffcanvas] = useState(false);
-  // const [showCartModal, setShowCartModal] = useState(false);
-  // const [cartQuantity, setCartQuantity] = useState(0);
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+// const [activeLink, setActiveLink] = useState('');
+// const [showOffcanvas, setShowOffcanvas] = useState(false);
+// const [showCartModal, setShowCartModal] = useState(false);
+// const [cartQuantity, setCartQuantity] = useState(0);
+// const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 // import './Navbar.css';
-import soda from '../assets/soda.png';
+import soda from "../assets/soda.png";
 
 const CustomNavbar = ({ cartProducts, setCartProducts }) => {
-
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
-  
 
   // const handleCloseOffcanvas = () => {
   //   setShowOffcanvas(false);
@@ -79,9 +77,12 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
       >
         <Container fluid style={{ color: "#111" }}>
           <Navbar.Brand href="#" style={{ color: "#fff" }}>
-            <img src={soda} alt="Burger 1" className="me-2 logonav" style={{ width: "180px", }} 
-            /> 
-          
+            <img
+              src={soda}
+              alt="Burger 1"
+              className="me-2 logonav"
+              style={{ width: "180px" }}
+            />
           </Navbar.Brand>
           <Button className="hamburger-button">☰</Button>
           {/**  <Form className="d-flex search-bar mx-auto">
@@ -95,7 +96,9 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
               <Nav.Link href="/menu">Menu</Nav.Link>
               <Nav.Link href="/reservation">Reservation</Nav.Link>
               <Nav.Link href="/about">A-Propos</Nav.Link>
-              <FaUser className="text-white" style={{ fontSize: "19px" }} />
+              <Nav.Link href="/connexion">
+                <FaUser className="text-white" style={{ fontSize: "19px" }} />
+              </Nav.Link>
               <Nav.Link href="#cart">
                 <FaShoppingCart className="cart-icon" />
                 <span></span>
