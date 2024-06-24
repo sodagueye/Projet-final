@@ -1,13 +1,13 @@
 import './App.css';
-// import listeUtilisateur from"../src/listeUtilisateur/listeUtilisateur.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Test from './listeUtilisateur/test';
+import Users from './users/users';
+// import Test from './listeUtilisateur/test';
 
 function App() {
   return (
     <div>
-      {/* <listeUtilisateur/> */}
-      <Test/>
+      <Users/>
+      {/* <Test/> */}
   
     </div>
   );

@@ -1,26 +1,31 @@
-.listeUtilisateur{
+.users{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.listeUtilisateur th{
+.users th{
     font-size: 15px;
     font-weight: normal;
 }
-.listeUtilisateur td{
+.users td{
     font-size: 13px;
     font-weight: normal;
 }
-.listeUtilisateur i{
-    font-size: 15px;
+.users .icons{
+    font-size: 18px;
     cursor: pointer;
+    margin: 0 5px;
 }
-.listeUtilisateur input{
+.users input{
     border: 1px solid gray;
 }
-.listeUtilisateur .boutons button{
+.users .boutons button{
     padding: 0 5px;
+    margin: 0 2px;
 }
-.listeUtilisateur .active{
-    background-color: #0b960f;
+.users .active{
+    background-color: #91725d;
     color: white;
     
 }
+.users h3{
+    color: #91725d;
+} 
