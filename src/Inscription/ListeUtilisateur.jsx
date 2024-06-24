@@ -9,9 +9,10 @@ function ListeUtilisateur() {
     const [data, setData] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [error , setError] = useState(null)
     // pagination
-    // const [current, setCurrent] = useState(1);
-    // const count = 10;
+    const [current, setCurrent] = useState(1);
+    const count = 10;
 
     useEffect(() => {
         getData();
@@ -19,14 +20,24 @@ function ListeUtilisateur() {
 
     const getData = async () => {
         try {
-            const response = await axios.get("https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/get_api_register_getting");
-            setData(response.data);
-            console.log(data);
+            const response = await axios.get("https://tache-de-validition-nodejs-3.onrender.com/api/register/getting");
+            
+            if(response.data && response.data.utilisateur){
+                setData(response.data.utilisateur);
+
+            }else{
+                setError("response inaccepte")
+            }
+           
+            // console.log(data.utilisateur);
         } catch (error) {
             console.error("Failed to fetch list:", error);
            
         }
     };
+    if(error){
+        return <div>Error {error}</div>
+    }
 
     const handleDelete = async (id) => {
         try {
@@ -49,16 +60,16 @@ function ListeUtilisateur() {
         setShowModal(false);
     };
 // pagination
-    // const last = current * count;
-    // const first = last - count;
-    // const visibleData = data.slice(first, last);
+    const last = current * count;
+    const first = last - count;
+    const visibleData = data.slice(first, last);
 
-    // const totalPages = Math.ceil(data.length / count);
-    // const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+    const totalPages = Math.ceil(data.length / count);
+    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-    // const handleClick = (pageNumber) => {
-    //     setCurrent(pageNumber);
-    // };
+    const handleClick = (pageNumber) => {
+        setCurrent(pageNumber);
+    };
     // pagination
 
     return (
@@ -77,8 +88,8 @@ function ListeUtilisateur() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.length ? data.map((item) => (
-                        <tr key={item._id}>
+                    { data.map((item ,index) => (
+                        <tr key={index._id}>
                             <td>{item.firstName}</td>
                             <td>{item.lastName}</td>
                             <td>{item.email}</td>
@@ -89,13 +100,14 @@ function ListeUtilisateur() {
                                 <AiFillDelete onClick={() => handleDelete(item._id)} className='icone3' /> 
                             </td>
                         </tr>
-                    )) : <tr><td colSpan="5">Pas de données</td></tr>
+                    )) 
+                    //  <tr><td colSpan="5">Pas de données</td></tr>
                     }
                 </tbody>
             </table>
 
             {/* Pagination */}
-            {/* <nav>
+            <nav>
                 <ul className='pagination d-flex justify-content-end m-auto'>
                     {pageNumbers.map((pageNumber) => (
                         <li key={pageNumber} className={`page-item lienitem ${current === pageNumber ? 'active' : ''}`}>
@@ -103,7 +115,7 @@ function ListeUtilisateur() {
                         </li>
                     ))}
                 </ul>
-            </nav> */}
+            </nav>
             {/* Pagination */}
 
             <Modal show={showModal} onHide={closeModal}>
