@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import "../Reservation-Table/ReservationTable.css";
+import "./Reservation.css";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
   const [hour, setHour] = useState("");
+  const navigate = useNavigate();
 
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
@@ -20,9 +22,12 @@ function ReservationPage() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/reservation", formData);
+      const response = await axios.post("http://localhost:8080/api/reservation", formData);
+
+      navigate('/tables', { state: formData });
+      // navigate('/redirection-confirmation', { state: formData });
+
       console.log(response.data);
-      alert("Réservation réussie !");
     } catch (err) {
       console.error(err);
       alert("Erreur lors de la demande de réservation");
@@ -36,11 +41,11 @@ function ReservationPage() {
   const hours = Array.from({ length: 24 }, (_, i) => i);
 
   return (
-    <section id="reservation">
-      <div className="row reservation-body">
+    <section id="reservationPage">
+      <div className="row reservationPage-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-head d-flex justify-space-between">
+          <div className="form-head justify-space-between">
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
@@ -97,7 +102,7 @@ function ReservationPage() {
             </div>
           </div>
           <label>
-            <div className="row reservation-heure">
+            <div className="row reservationPage-heure">
               {hours.map((hour, index) => (
                 <React.Fragment key={index}>
                   <button
@@ -127,5 +132,4 @@ function ReservationPage() {
     </section>
   );
 }
-
 export default ReservationPage;

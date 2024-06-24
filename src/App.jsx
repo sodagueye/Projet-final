@@ -18,6 +18,8 @@ import AppAjout from "./Ajouter/AppAjout";
 import Plats from "./Dashboard/Plats";
 import PlatsVendus from "./Dashboard/PlatsVendus";
 import PageNotFound from "./PageNotFound";
+import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
+import TrackReservation from "./Track-reservation/TrackReservation";
 function App() {
   return (
     <div className="App">
@@ -32,11 +34,14 @@ function App() {
           <Route path="/Modifier" element={<ModifierPassword />} />
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/reservation" element={<ReservationPage />} />
+          <Route path="/redirection-confirmation" element={<PageRedirection />} />
+          <Route path="/trackResevation" element={<TrackReservation />} />
+
           {/* Admin's Components */}
           <Route path="/Utilisateur" element={<ListeUtilisateur />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/employe" element={<Employes />} />
-          <Route path="/table" element={<ReservationTable />} />
+          <Route path="/tables" element={<ReservationTable />} />
           <Route path="/ventes" element={<PlatsVendus />} />
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="/update/:id" element={<Update />} />
@@ -44,6 +49,11 @@ function App() {
           {/* Not Found Page */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        {/* <Routes>
+        <Route path='/tables' element={<ReservationTable />} />
+        <Route path='/RH' element={<Employes />} />
+        <Route path='/ventes' element={<Ventas />} /> 
+      </Routes> */}
       </BrowserRouter>
     </div>
   );
