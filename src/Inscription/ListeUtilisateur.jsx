@@ -30,7 +30,7 @@ function ListeUtilisateur() {
 
     const handleDelete = async (id) => {
         try {
-            // https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/delete_api_register_delete__id_
+           
             const response = await axios.delete(`https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/delete_api_register_delete/${id}`);
             if (response.status === 200) {
                 setData(data.filter(item => item._id !== id));
@@ -89,7 +89,8 @@ function ListeUtilisateur() {
                                 <AiFillDelete onClick={() => handleDelete(item._id)} className='icone3' /> 
                             </td>
                         </tr>
-                    )) : <tr><td colSpan="5">Pas de données</td></tr>}
+                    )) : <tr><td colSpan="5">Pas de données</td></tr>
+                    }
                 </tbody>
             </table>
 
