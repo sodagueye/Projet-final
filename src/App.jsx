@@ -11,11 +11,12 @@ import Details from "./khadyComponent/Accueil/Details";
 import Connexion from "./Inscription/Connexion";
 import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import ModifierPassword from "./Inscription/Modifier";
-import Employe from "./Ressources-Humaines/Employe";
+import Employes from "./Dashboard/Employes";
 import Ventas from "./Suivis-Comptabilité/Ventes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import AppAjout from "./Ajouter/AppAjout";
 import Plats from "./Dashboard/Plats";
+import PlatsVendus from "./Dashboard/PlatsVendus";
 function App() {
   return (
     <div className="App">
@@ -29,14 +30,14 @@ function App() {
           <Route path="/Utilisateur" element={<ListeUtilisateur />} />
           <Route path="/" element={<Accueil />} />
           <Route path="/ajout" element={<AppAjout />} />
-          <Route path="/employe" element={<Employe />} />
+          <Route path="/employe" element={<Employes />} />
           <Route path="/table" element={<ReservationTable />} />
           <Route path="/update/:id" element={<Update />} />
           <Route path="/plats" element={<Plats />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/detail/:id" element={<Details />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/ventes" element={<Ventas />} />
+          <Route path="/ventes" element={<PlatsVendus />} />
         </Routes>
       </BrowserRouter>
     </div>
