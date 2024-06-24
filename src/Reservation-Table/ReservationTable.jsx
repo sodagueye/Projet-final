@@ -186,4 +186,3 @@ const ReservationTable = () => {
 };
 
 export default ReservationTable;
-
