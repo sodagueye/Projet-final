@@ -6,19 +6,25 @@ const Section22 = ({ onCategorySelect }) => {
   return (
     <div>
       <button onClick={() => onCategorySelect('')} className='b1'>
-        <FaListAlt /> Tous
+        <FaListAlt /> 
+        <span className='categoriebtn'> Tous</span>
+       
       </button>
       <button onClick={() => onCategorySelect('burger')} className='b1'>
-        <FaHamburger /> Burger
+        <FaHamburger /> 
+      <span>Burger</span>
       </button>
       <button onClick={() => onCategorySelect('glace')} className='b1'>
-        <FaIceCream /> Glace
+        <FaIceCream /> 
+        <span>Glace</span>
       </button>
       <button onClick={() => onCategorySelect('plat')} className='b1'>
-        <FaUtensils /> Plats
+        <FaUtensils /> 
+        <span>Plats</span>
       </button>
       <button onClick={() => onCategorySelect('jus')} className='b1'>
-        <FaCocktail /> Jus
+        <FaCocktail /> 
+        <span>Jus</span>
       </button>
     </div>
   );

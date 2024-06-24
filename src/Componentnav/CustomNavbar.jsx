@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Form, FormControl, Container, Offcanvas, Button } from 'react-bootstrap';
 import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
 import AffichagePanier from './AffichagePanier';
-
 import './Navbar.css';
 import soda from '../assets/soda.png';
 
@@ -97,9 +96,9 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Form className="d-flex search-bar mx-auto">
-            <div className="search-input-container">
-              <FaSearch className="search-icon recherche fs-5" />
-              <FormControl type="text" placeholder="Search" className="search-input" aria-label="Search" />
+            <div className=" reactive-search-input-container">
+              <FaSearch className="reactive-search-icon recherche fs-5" />
+              <FormControl type="text" placeholder="Search" className="reactive-search-input" aria-label="Search" />
             </div>
           </Form>
           <Nav className="flex-column">

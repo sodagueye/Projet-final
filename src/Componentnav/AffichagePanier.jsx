@@ -14,7 +14,7 @@ const AffichagePanier = ({ show, handleClose, cartProducts, incrementQuantity, d
   useEffect(() => {
     setCartItemCount(cartProducts.length);
     if (setTotalPrice) {
-      setTotalPrice(totalPrice); // Mettre à jour le prix total des produits dans FacturationPage
+      setTotalPrice(totalPrice);
     }
   }, [cartProducts, totalPrice, setTotalPrice]);
 

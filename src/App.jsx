@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //import Connexion from './Inscription/Connexion';
 //import MotdepassOublié from './Inscription/MotdepassOublié';
@@ -11,7 +12,8 @@ import Menu from './Componentnav/Menu';
 import AffichagePanier from './Componentnav/AffichagePanier';
 import FacturationPage from './Componentnav/FacturationPage';
 import ConfirmationPage from './Componentnav/ConfirmationPage';
- 
+
+
 function App() {
   return (
     <div className="App">
@@ -26,10 +28,11 @@ function App() {
           */}
           <Route path="/facture" element={<FacturationPage />} />
           <Route path="/confirme" element={<ConfirmationPage />} />
-         <Route path="/panier" element={<AffichagePanier />} />  
-          <Route path="/Panier" element={<AffichagePanier/>} />
+          <Route path="/panier" element={<AffichagePanier />} />
+          <Route path="/Panier" element={<AffichagePanier />} />
         </Routes>
       </BrowserRouter>
+      
     </div>
   );
 }

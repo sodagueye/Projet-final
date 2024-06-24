@@ -1,17 +1,28 @@
+
 .b1 {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* espace entre l'icône et le texte */
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 10px;
+  font-size: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.b1:hover {
+  background-color: #91725d;
+}
+
+@media (max-width: 576px) {
+   .categorebtn{   
+    font-size:75px; 
   }
-  
-  .b1:hover {
-    background-color: #91725d;
+.b1{font-size: 4px;}
+  .b1 svg {
+    font-size: 11px;
   }
-  
+}

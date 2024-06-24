@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './CategorieProduit.css';
 const CategorieProduit = ({ filterProducts }) => {
 
   const handleClick = (category, event) => {
