@@ -1,0 +1,26 @@
+.listeUtilisateur{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.listeUtilisateur th{
+    font-size: 15px;
+    font-weight: normal;
+}
+.listeUtilisateur td{
+    font-size: 13px;
+    font-weight: normal;
+}
+.listeUtilisateur i{
+    font-size: 15px;
+    cursor: pointer;
+}
+.listeUtilisateur input{
+    border: 1px solid gray;
+}
+.listeUtilisateur .boutons button{
+    padding: 0 5px;
+}
+.listeUtilisateur .active{
+    background-color: #0b960f;
+    color: white;
+    
+}
