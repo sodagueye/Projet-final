@@ -14,44 +14,44 @@ export default function Sidebar({ icon }) {
         onClick={() => navigation("/admin")}
         className="d-flex justify-content-start mb-4"
       >
-        <p>{<AiFillDashboard />}</p>
-        <p>Dashboard</p>
+        <p className="fs-5">{<AiFillDashboard />}</p>
+        <p className="fs-5">Dashboard</p>
       </div>
       <div
         onClick={() => navigation("/users")}
         className="d-flex justify-content-start"
       >
-        <p>
+        <p className="fs-5">
           <CiUser />
         </p>
-        <p>Utilisateurs</p>
+        <p className="fs-5">Utilisateurs</p>
       </div>
       <div
         onClick={() => navigation("/plats")}
         className="d-flex justify-content-start mt-4"
       >
-        <p>
+        <p className="fs-5">
           <GiHotMeal />
         </p>
-        <p>Plats</p>
+        <p className="fs-5">Plats</p>
       </div>
       <div
         onClick={() => navigation("/employe")}
         className="d-flex justify-content-start mt-4"
       >
-        <p>
+        <p className="fs-5">
           <GiHumanTarget />
         </p>
-        <p>Ressources Humaines</p>
+        <p className="fs-5">Ressources Humaines</p>
       </div>
       <div
         onClick={() => navigation("/ventes")}
         className="d-flex justify-content-start mt-4"
       >
-        <p>
+        <p className="fs-5">
           <FaSellsy />
         </p>
-        <p>Ventes</p>
+        <p className="fs-5">Ventes</p>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { FiShoppingCart } from "react-icons/fi";
 import "./Cards.css";
 export default function Card() {
   const [plat, setPlat] = useState("");
@@ -14,44 +15,43 @@ export default function Card() {
       console.log(e);
     }
   }
-  useEffect(()=>{
-    Plats()
-  },[])
+  useEffect(() => {
+    Plats();
+  }, []);
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-3">
-          <div class="card carte">
-            <div class="card-body">
-              <p class="card-text">{plat}</p>
+          <div class="card shadow carte p-2">
+            <div class="card-body d-flex align-items-center flex-row">
+              <div>
+                <p className="fs-4" style={{color: "#91725d" }}>{plat}</p>
+              </div>
+              <p className="fs-3">
+                <FiShoppingCart />
+              </p>
             </div>
           </div>
         </div>
         <div className="col-lg-3">
-          <div class="card carte">
+          <div class="card shadow carte p-4">
             <div class="card-body">
               <p class="card-text">Utilisateurs</p>
             </div>
           </div>
         </div>
         <div className="col-lg-3">
-          <div class="card carte">
+          <div class="card shadow carte p-4">
             <div class="card-body">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <p class="card-text">Ventes</p>
             </div>
           </div>
         </div>
         <div className="col-lg-3">
-          <div class="card">
+          <div class="card shadow carte p-4">
             <div class="card-body">
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <p class="card-text">Recette</p>
             </div>
           </div>
         </div>
