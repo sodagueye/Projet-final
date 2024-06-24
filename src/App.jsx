@@ -5,6 +5,7 @@ import ReservationPage from "./Reservation/Reservation";
 // import ReservationTable from "./Reservation-Table/ReservationTable";
 import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
+import ModifierPassword from './Inscription/ModifierPassword';
 import Menu from "./Componentnav/Menu";
 import Accueil from "./khadyComponent/Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
@@ -14,8 +15,11 @@ import Navbar from "./Dashboard/Navbar";
 import Sidebar from "./Dashboard/Sidebar";
 import Connexion from "./Inscription/Connexion"
 import  ListeUtilisateur from './Inscription/ListeUtilisateur';
+import SendMail from './Inscription/SendMail';
+import MsgSuccess from './Inscription/MsgSuccess';
+
 // import  ListeUtilisateur from './Inscription/xxx';
-import ModifierPassword from "./Inscription/Modifier";
+// import ModifierPassword from "./Inscription/Modifier";
 function App() {
   return (
     <div className="App">
@@ -26,6 +30,9 @@ function App() {
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/Modifier" element={<ModifierPassword/>} />
           <Route path="/reinitialiser" element={<MotdepassOublié/>} />
+          <Route path="/:token" element={<ModifierPassword/>}></Route> 
+          <Route path="/sendmail" element={<SendMail/>}></Route>
+          <Route path="/msgsuccess" element={<MsgSuccess/>}></Route>
           
          <Route path="/Utilisateur" element={< ListeUtilisateur />} />
            <Route path="/" element={<Accueil />} />

@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
@@ -10,11 +9,10 @@ function MotdepassOublié() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3030/api/reset-password', { email });
-      // navigate('/sendmail'); 
-      alert('Email de réinitialisation a éte envoyé');
+      await axios.post('http://localhost:8080/api/request-reset', { email });
+      navigate('/sendmail'); 
     } catch (err) {
-      // console.error(err);
+      console.error(err);
       alert('Erreur lors de la demande de réinitialisation');
     }
   };
@@ -24,7 +22,7 @@ function MotdepassOublié() {
       <div className='backpass shadow d-flex justify-content-center align-items-center mt-5'>
         <form onSubmit={handleSubmit} className='form align-items-center'>
           <h2 className='text-center fw-bold fs-2 color mt-5'>Mot de passe oublié</h2>
-          <p className='text-center'>Veuillez spécifier votre adresse e-mail <br></br>pour recevoir les instructions pour la réinitialisation</p>
+          <p className='text-center'>Veuillez spécifier votre adresse e-mail pour recevoir les instructions pour la réinitialisation</p>
           <div className='inscript1 align-items-center'>
             <input
               className="input email my-5"
