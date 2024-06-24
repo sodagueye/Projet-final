@@ -87,7 +87,7 @@
 
  .liens {
     color: white;
-    background-color: #dfd7d7;
+    background-color: #502314;
     text-decoration: none;
     border-radius: 30px;
     padding: 4px;
@@ -107,7 +107,7 @@
 .backpass{
     background-color: white !important;
     height: 400px;
-    width: 500px;
+    width: 400px;
     margin: auto;
 
 }
@@ -137,23 +137,23 @@
     }
     /* modal */
     .modal {
-        display: none; /* Par défaut, la modal est cachée */
-        position: fixed; /* La modal est positionnée par rapport à la fenêtre du navigateur */
-        z-index: 999; /* Valeur de z-index élevée pour s'assurer que la modal est au-dessus du reste du contenu */
+        display: none; 
+        position: fixed; 
+        z-index: 999; 
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour assombrir le reste de la page */
+        background-color: rgba(0, 0, 0, 0.5); 
       }
       
       .modal-content {
         background-color: white;
-        margin: 20% auto; /* Positionnement au centre de l'écran */
+        margin: 20% auto;
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
-        max-width: 600px; /* Largeur maximale de la modal */
+        max-width: 600px; 
       }
       
       .close {
@@ -210,3 +210,4 @@
         /* height: 700px; */
     }
 }
+/* #502314 */

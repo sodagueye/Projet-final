@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../Inscription/inscrire.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Inscrire() {
   const navigate = useNavigate();
@@ -11,11 +13,17 @@ function Inscrire() {
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+ 
 
   async function submit(e) {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      toast.error("Les mots de passe ne correspondent pas");
+      return;
+    }
     try {
-      const res = await axios.post("http://localhost:8000/api/admin/register", {
+      const res = await axios.post("https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/post_api_register", {
         firstName,
         lastName,
         email,
@@ -23,11 +31,14 @@ function Inscrire() {
         password,
         confirmPassword
       });
-
+      
+  
       if (res.data === "exist") {
-        alert("existe deja");
+       
+        toast.error("l'utilisateur existe deja")
       } else if (res.data === "exist pas") {
-        alert("Inscription réussie");
+       
+        toast.success("inscription reussie")
         // Réinitialiser les champs du formulaire
         setFirstName('');
         setLastName('');
@@ -35,11 +46,11 @@ function Inscrire() {
         setNumber('');
         setPassword('');
         setConfirmPassword('');
-       
+        // Rediriger vers la page de connexion
+        navigate('/connexion');
       }
     } catch (error) {
-      
-      alert("Error" );
+    toast.error("erreur d inscription")
       console.log(error);
     }
   }
@@ -61,12 +72,15 @@ function Inscrire() {
             <input className="input" type="text" placeholder="Mot de pass" required value={password} onChange={e => setPassword(e.target.value)} />
             <input className="input" type="text" placeholder="Confirmation mot de pass" required value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
           </div>
+         
           <p className='m-3 text-center'>By clicking "Submit," you agree to <span className='terms'> E-delivery General Terms and Conditions </span> and acknowledge you have read the  <span className='terms'>Privacy Policy.</span></p>
           <div className='creer'>
             <button type='submit' className='creer liens fs-5 fw-bold' >Creer un compte</button>
           </div>
         </form>
       </div>
+      <ToastContainer position='top-center'/>
+      
     </div>
   )
 }
