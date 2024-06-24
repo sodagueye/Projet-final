@@ -23,6 +23,7 @@ function ReservationPage() {
 
     try {
       const response = await axios.post("http://localhost:8080/api/reservation", formData);
+
       navigate('/tables', { state: formData });
       // navigate('/redirection-confirmation', { state: formData });
 
