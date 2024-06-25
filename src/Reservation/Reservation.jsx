@@ -3,7 +3,7 @@ import "./Reservation.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CustomNavbar from "../Componentnav/CustomNavbar";
-
+import { Footer } from "../khadyComponent/Footer/Footer";
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
@@ -143,6 +143,11 @@ function ReservationPage() {
             Continue
           </button>
         </form>
+      </div>
+      <div className="container-fluid">
+        <div className="row">
+          <Footer />
+        </div>
       </div>
     </section>
   );
