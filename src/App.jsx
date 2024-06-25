@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
 import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
+import ModifierPassword from "./Inscription/ModifierPassword";
 import Menu from "./Componentnav/Menu";
 import Accueil from "./khadyComponent/Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
@@ -10,7 +11,7 @@ import Update from "./Dashboard/Update";
 import Details from "./khadyComponent/Accueil/Details";
 import Connexion from "./Inscription/Connexion";
 import ListeUtilisateur from "./Inscription/ListeUtilisateur";
-import ModifierPassword from "./Inscription/Modifier";
+// import ModifierPassword from "./Inscription/Modifier";
 import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
@@ -20,6 +21,8 @@ import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
 import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
+import SendMail from "./Inscription/SendMail";
+import MsgSuccess from "./Inscription/MsgSuccess";
 function App() {
   return (
     <div className="App">
@@ -31,7 +34,9 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
-          <Route path="/Modifier" element={<ModifierPassword />} />
+          <Route path="/success" element={<MsgSuccess />} />
+          <Route path="/mail" element={<SendMail />} />
+          <Route path="/:token" element={<ModifierPassword />} />
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/reservation" element={<ReservationPage />} />
           <Route

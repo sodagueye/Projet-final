@@ -87,13 +87,16 @@
 
  .liens {
     color: white;
-    background-color: #502314;
+    background-color: #91725d;
     text-decoration: none;
     border-radius: 30px;
     padding: 4px;
    width: 300px;
 
 } 
+.liens:hover{
+    background-color:#bbaca1;
+}
 .icon-groupe{
   height: 40px;
    border-radius: 20px;
@@ -106,7 +109,7 @@
 }
 .backpass{
     background-color: white !important;
-    height: 400px;
+    height: 450px;
     width: 400px;
     margin: auto;
 

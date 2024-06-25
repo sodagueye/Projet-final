@@ -13,14 +13,18 @@ function Connexion() {
 
     async function login(e) {
         e.preventDefault();
+        console.log(email ,"email" ,password);
         try {
-            const res = await axios.post("https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/userLogin", {
+            // https://tache-de-validition-nodejs-6.onrender.com/api-docs/#/default/userLogin
+            const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/auth", {
                 email,
                 password,
             });
+            console.log(res);
 
             if (res.data === "exist") {
                 toast.success("Connexion réussie")
+
 
             } 
             else {
@@ -43,8 +47,8 @@ function Connexion() {
                     <h2 className='text-center fw-bold fs-2 color '>Connecter</h2>
 
                     <div className=' inscript1'>
-                        <input class=" input  email my-2" type="email" placeholder="Email" required />
-                        <input class=" input  email my-2" type="password" placeholder="mot de pass" required />
+                        <input class=" input  email my-2" type="email" placeholder="Email" required  onChange={(e)=>setEmail(e.target.value)}/>
+                        <input class=" input  email my-2" type="password" placeholder="mot de pass" required onChange={(e)=>setPassword(e.target.value)}/>
                     </div>
                     <div className='text-center my-4'>
                         <Link to="/reinitialiser" className=' oublie '>mot de pass oublié</Link>
@@ -52,13 +56,14 @@ function Connexion() {
                     <button type='submit ' className='liens align-items-center creer fs-5 fw-bold '> Se connecter</button>
                     <p className='text-center'>Vous n'avez pas de compte ?</p>
                     <div className='text-center my-4'>
-                        <Link to="/inscrire"> <a href="#" className=' oublie '> S'inscrire</a></Link></div>
-                    <div className='d-flex '>
-                        <div className='d-flex icon-google gap-3 align-items-center '>
+                        <Link to="/inscription"> <a href="#" className=' oublie '> S'inscrire</a></Link>
+                        </div>
+                    {/* <div className='d-flex '> */}
+                        {/* <div className='d-flex icon-google gap-3 align-items-center '>
 
                             <p className='ecriture mt-3'> google</p>
-                        </div>
-                    </div>
+                        </div> */}
+                    {/* </div> */}
 
                 </form>
             </div>
