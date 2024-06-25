@@ -12,7 +12,7 @@ const Section22 = ({ onCategorySelect }) => {
       </button>
       <button onClick={() => onCategorySelect('burger')} className='b1'>
         <FaHamburger /> 
-      <span>Burger</span>
+      <span>Fasst-Food</span>
       </button>
       <button onClick={() => onCategorySelect('glace')} className='b1'>
         <FaIceCream /> 
