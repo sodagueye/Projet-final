@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import CustomNavbar from "../Componentnav/CustomNavbar";
+import { IoIosArrowBack } from "react-icons/io";
 
 const reservedTables = {
   "Salle 8": [1, 2],
@@ -15,6 +17,10 @@ const ReservationTable = () => {
   const location = useLocation();
   const { invites, date, hour } = location.state || {};
   const navigate = useNavigate();
+
+  const handleNewReservation = () => {
+    navigate('/reservation');
+  };
   
   const [selectedRoom, setSelectedRoom] = useState("");
   const [selectedTable, setSelectedTable] = useState("");
@@ -72,13 +78,20 @@ const ReservationTable = () => {
       }
     }
   };
+  
 
   return (
     <section id="reservation-table">
-      <div className="container">
+      <CustomNavbar />
+      <div className="container mt-5">
         <div className="row">
           <h3 className="reservation-table-body-text text-header">Tables reservations</h3>
           <div className="reservation-table-body">
+          <div className="Redirect-Page-body-navigate-button">
+              <button id="prev-page-button" className="btn btn-back-page" onClick={handleNewReservation}>
+                <span><IoIosArrowBack /></span> Back
+              </button>
+            </div>
             <div className="reservation-details">
               <h5 className="mt-3 reservation-table-body-text">Reservations details</h5>
               <p className="text-muted reservation-table-body-text">

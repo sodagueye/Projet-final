@@ -41,7 +41,7 @@ const TrackReservation = () => {
   return (
     <section id="trackreservation">
       <CustomNavbar />
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
             <div className="d-flex trackreservation-state mt-5">
                 <div className="d-flex fa active"><FaCheckCircle /> <p>En attente</p></div> <hr />

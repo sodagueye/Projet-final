@@ -66,3 +66,23 @@
   font-size: 20px;
   font-weight: 600;
 }
+
+#reservation-table  .Redirect-Page-body-navigate-button{
+  width: 30%;
+  font-size: 15px;
+  text-align: start;
+}
+
+#reservation-table  .Redirect-Page-body-navigate-button span{
+font-size: 20px;
+margin-left: -20px;
+}
+
+#reservation-table  .Redirect-Page-body-navigate-button .btn-back-page{
+  color: #91725d;
+}
+
+#reservation-table  .Redirect-Page-body-navigate-button :hover{
+  background-color: #91725d;
+  color: black;
+}

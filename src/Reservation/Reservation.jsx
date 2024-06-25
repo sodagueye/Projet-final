@@ -47,8 +47,7 @@ function ReservationPage() {
   return (
     <section id="reservationPage">
       <CustomNavbar />
-
-      <div className="row reservationPage-body">
+      <div className="row reservationPage-body mt-5">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Page-redirect.css";
 import { useLocation, useNavigate } from 'react-router-dom';
-import { IoIosArrowBack } from "react-icons/io";
 import CustomNavbar from "../Componentnav/CustomNavbar";
 
 
@@ -21,17 +20,12 @@ const PageRedirection = () => {
   return (
     <section id="PageRedirection">
       <CustomNavbar />
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
           <div className="Redirect-Page-head">
-            <h4>Table reservations</h4>
+            <h4 className="text-start">Table reservations</h4>
           </div>
           <div className="Redirect-Page-body">
-            <div className="Redirect-Page-body-navigate-button">
-              <button id="prev-page-button" className="btn btn-back-page" onClick={handleNewReservation}>
-                <span><IoIosArrowBack /></span> Back
-              </button>
-            </div>
             <iframe
               title="icon-success"
               src="https://lottie.host/embed/a034fca6-de7c-4398-8fc9-026c5be7a51e/NZZuRrhGYL.json"
