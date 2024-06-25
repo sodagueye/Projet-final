@@ -96,7 +96,7 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
             
               <NavLink className="text-white ms-2" to="/menu">Menu</NavLink>
               <NavLink className="text-white ms-2" to="/reservation">Reservation</NavLink>
-              <NavLink className="text-white ms-2" to="/about">A-Propos</NavLink>
+              {/* <NavLink className="text-white ms-2" to="/about">A-Propos</NavLink> */}
               <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
               </NavLink>

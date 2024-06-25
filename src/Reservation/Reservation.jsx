@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Reservation.css";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import CustomNavbar from "../Componentnav/CustomNavbar";
 
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
@@ -22,9 +23,12 @@ function ReservationPage() {
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/api/reservation", formData);
+      const response = await axios.post(
+        "http://localhost:8080/api/reservation",
+        formData
+      );
 
-      navigate('/tables', { state: formData });
+      navigate("/tables", { state: formData });
       // navigate('/redirection-confirmation', { state: formData });
 
       console.log(response.data);
@@ -42,7 +46,8 @@ function ReservationPage() {
 
   return (
     <section id="reservationPage">
-      <div className="row reservationPage-body">
+      <CustomNavbar />
+      <div className="row mt-5 reservationPage-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">
@@ -53,11 +58,7 @@ function ReservationPage() {
                 onChange={(e) => setInvites(Number(e.target.value))}
               >
                 {[...Array(8).keys()].map((i) => (
-                  <option
-                    className="option-back"
-                    key={i + 1}
-                    value={i + 1}
-                  >
+                  <option className="option-back" key={i + 1} value={i + 1}>
                     {i + 1}
                   </option>
                 ))}
@@ -71,7 +72,9 @@ function ReservationPage() {
                 onChange={handleDateChange}
               >
                 {Array.from({ length: 7 }, (_, i) => {
-                  const newDate = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
+                  const newDate = new Date(
+                    Date.now() + i * 24 * 60 * 60 * 1000
+                  );
                   return (
                     <option
                       className="option-back"
@@ -110,14 +113,26 @@ function ReservationPage() {
                     type="button"
                     onClick={() => handleHourChange(`${hour}:00`)}
                   >
-                    {hour === 0 ? `12:00 AM` : hour < 12 ? `${hour}:00 AM` : hour === 12 ? `12:00 PM` : `${hour - 12}:00 PM`}
+                    {hour === 0
+                      ? `12:00 AM`
+                      : hour < 12
+                      ? `${hour}:00 AM`
+                      : hour === 12
+                      ? `12:00 PM`
+                      : `${hour - 12}:00 PM`}
                   </button>
                   <button
                     className="col-md-2 secondaire"
                     type="button"
                     onClick={() => handleHourChange(`${hour}:30`)}
                   >
-                    {hour === 0 ? `12:30 AM` : hour < 12 ? `${hour}:30 AM` : hour === 12 ? `12:30 PM` : `${hour - 12}:30 PM`}
+                    {hour === 0
+                      ? `12:30 AM`
+                      : hour < 12
+                      ? `${hour}:30 AM`
+                      : hour === 12
+                      ? `12:30 PM`
+                      : `${hour - 12}:30 PM`}
                   </button>
                 </React.Fragment>
               ))}

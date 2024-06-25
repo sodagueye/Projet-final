@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from 'react-router-dom';
+import CustomNavbar from "../Componentnav/CustomNavbar";
 import axios from 'axios';
 
 const reservedTables = {
@@ -75,7 +76,8 @@ const ReservationTable = () => {
 
   return (
     <section id="reservation-table">
-      <div className="container">
+      <CustomNavbar/>
+      <div className="container mt-5">
         <div className="row">
           <h3 className="reservation-table-body-text text-header">Tables reservations</h3>
           <div className="reservation-table-body">
