@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import CustomNavbar from "../../Componentnav/CustomNavbar";
+import { Footer } from "../Footer/Footer";
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -44,28 +45,35 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="container d-flex justify-content-center align-items-center mt-5">
-      <div style={{ color: "#502314" }}>
-        <h2 className="fs-2 fw-bold">{product.name}</h2>
-        <p>{product.description}</p>
-        <p>Prix: {product.price} FCFA</p>
-      </div>
-      <div className="zoom-container">
-        <img
-          className="zoom-image"
-          src={product.image}
-          alt={product.name}
-          style={{ width: "70%" }}
-        />
-      </div>
-    
+    <div>
+      <CustomNavbar />
+      <div className="container p-5 mt-5 d-flex justify-content-center align-items-center">
+        <div style={{ color: "#502314" }}>
+          <h2 className=" fw-bold">{product.name}</h2>
+          <p>{product.description}</p>
+          <p>Prix: {product.price} FCFA</p>
+        </div>
+        <div className="zoom-container">
+          <img
+            className="zoom-image"
+            src={product.image}
+            alt={product.name}
+            style={{ width: "50%" }}
+          />
+        </div>
+
         <button
-          style={{ backgroundColor: "#502314" }}
+          style={{ backgroundColor: " #91725d" }}
           className="btn text-white shadow "
         >
           Ajouter au Panier
         </button>
-   
+      </div>
+      <div className="container-fluid">
+        <div className="row">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

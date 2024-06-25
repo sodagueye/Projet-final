@@ -96,19 +96,8 @@ img,
     right: 39px;
 }
 
-.zoom-container {
- /* Vous pouvez ajuster la taille du conteneur comme vous le souhaitez */
-    overflow: hidden; /* Pour s'assurer que l'image ne dépasse pas du conteneur */
-}
 
-.zoom-image {
-    transition: transform 0.5s ease; /* Durée et type de transition */
-}
-
-.zoom-container:hover .zoom-image {
-    transform: scale(1.2); /* Échelle de l'effet de zoom */
-}
-.btn-ajout{
+.btn-ajout {
     width: 100px !important;
 }
 
