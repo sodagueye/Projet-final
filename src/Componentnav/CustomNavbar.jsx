@@ -79,7 +79,7 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
               <Nav.Link href="#menu">Menu</Nav.Link>
               <Nav.Link href="#reservation">Reservation</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#about">A-Propos</Nav.Link>
               <FaUser className="text-white" style={{ fontSize: "19px" }} />
               <Nav.Link href="#cart" onClick={handleShowCartModal}>
                 <FaShoppingCart className="cart-icon" />
