@@ -2,6 +2,8 @@ import React from "react";
 import "./Page-redirect.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from "react-icons/io";
+import CustomNavbar from "../Componentnav/CustomNavbar";
+
 
 const PageRedirection = () => {
   const location = useLocation();
@@ -18,6 +20,7 @@ const PageRedirection = () => {
 
   return (
     <section id="PageRedirection">
+      <CustomNavbar />
       <div className="container">
         <div className="row">
           <div className="Redirect-Page-head">

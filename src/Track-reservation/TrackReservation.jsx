@@ -2,6 +2,7 @@ import axios from "axios";
 import "./TrackReservation.css"
 import { FaCheckCircle } from "react-icons/fa";
 import { useLocation, useNavigate} from 'react-router-dom';
+import CustomNavbar from "../Componentnav/CustomNavbar";
 
 const TrackReservation = () => {
   const navigate = useNavigate();
@@ -39,9 +40,10 @@ const TrackReservation = () => {
   };
   return (
     <section id="trackreservation">
+      <CustomNavbar />
       <div className="container">
         <div className="row">
-            <div className="d-flex trackreservation-state">
+            <div className="d-flex trackreservation-state mt-5">
                 <div className="d-flex fa active"><FaCheckCircle /> <p>En attente</p></div> <hr />
                 <div className="d-flex fa"><FaCheckCircle /><p>Confirmé</p></div> <hr />
                 <div className="d-flex fa"><FaCheckCircle /><p>Reservé</p></div>

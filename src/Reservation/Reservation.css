@@ -4,6 +4,7 @@
 
 #reservationPage {
     background-color: #f5f5f5;
+    padding: 10px;
 }
 
 #reservationPage h1 {
@@ -25,6 +26,7 @@
 
 #reservationPage .form-head {
     display: flex;
+    height: 100px;
 }
 
 #reservationPage .form-floating {
@@ -52,20 +54,13 @@
     outline-width: 0cap;
 }
 
-#reservationPage .form-select {
+#reservationPage .form-floating  .form-select  {
     outline: none;
     border-radius: 0;
-    height: 10px;
-    margin-bottom: 10px;
-}
+    margin-bottom: 5px;
+    font-size: 15px;
+    margin-top: -5px;
 
-#reservationPage .form-select .option-back {
-    height: 30px;
-    list-style: none;
-    outline-style: none;
-    outline-offset: O;
-    outline-color: #FFF;
-    outline-width: 0cap;
 }
 
 #reservationPage .form-select [selected] {
@@ -81,12 +76,12 @@
 
 #reservationPage .form-select:focus {
     outline: none;
-    border-bottom: 2px solid #91725d;
+    border-bottom: 1px solid #91725d;
 }
 
 #reservationPage form select {
     border: none;
-    border-bottom: 2px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 #floatingSelect:focus {
@@ -95,12 +90,12 @@
 
 #reservationPage form select:hover {
     border: none;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 #reservationPage form select:focus {
     border: none;
-    border-bottom: 2px solid #91725d;
+    border-bottom: 1px solid #91725d;
     outline: none;
 }
 
@@ -155,6 +150,10 @@
     background-color: #91725d;
     border: none;
     color: #fff;
+}
+
+#reservationPage .reservationPage-heure{
+    margin-left: 5px;
 }
 
 @media screen and (max-width: 769px) {

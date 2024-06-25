@@ -40,3 +40,7 @@
   border: 1px solid gray;
   color: gray;
 }
+
+#PageRedirection .Redirect-Page-body iframe{
+  margin-left: -100px;
+}
