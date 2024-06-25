@@ -20,6 +20,7 @@ import PlatsVendus from "./Dashboard/PlatsVendus";
 import PageNotFound from "./PageNotFound";
 import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
+import AjouterUtilisateur from "./AjouterUtilisateur/AjouterUtilisateur"
 function App() {
   return (
     <div className="App">
@@ -48,6 +49,7 @@ function App() {
           <Route path="/plats" element={<Plats />} />
           {/* Not Found Page */}
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/ajoutUtilisateur" element={<AjouterUtilisateur />} />
         </Routes>
         {/* <Routes>
         <Route path='/tables' element={<ReservationTable />} />
