@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+// import { toast } from "react-toastify";
+// toast.configure();
+// import "react-toastify/dist/ReactToastify.css";
+
+
 
 const reservedTables = {
   "Salle 8": [1, 2],
