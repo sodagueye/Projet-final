@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/trackResevation" element={<TrackReservation />} />
+          <Route path="/trackReservation" element={<TrackReservation />} />
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
