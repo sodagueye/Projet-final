@@ -4,7 +4,9 @@
   font-weight: bold;
   width: 100%;
 }
-
+a{
+  text-decoration: none;
+}
 .navbar {
   font-weight: bold;
   height: 80px;

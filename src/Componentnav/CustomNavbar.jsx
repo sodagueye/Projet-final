@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import AffichagePanier from "./AffichagePanier";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo1 from "../assets/logo1.png";
 // { cartProducts, setCartProducts }
@@ -76,14 +76,14 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
         className="navbar-custom fixed-top mb-5"
       >
         <Container fluid style={{ color: "#111" }}>
-          <Navbar.Brand href="#" style={{ color: "#fff" }}>
+          <NavLink to="/" style={{ color: "#fff" }}>
             <img
               src={soda}
               alt="Burger 1"
               className="me-2 logonav"
               style={{ width: "180px" }}
             />
-          </Navbar.Brand>
+          </NavLink>
           <Button className="hamburger-button">☰</Button>
           {/**  <Form className="d-flex search-bar mx-auto">
             <div className="search-input-container">
@@ -93,16 +93,17 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
           </Form> */}
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
-              <Nav.Link href="/menu">Menu</Nav.Link>
-              <Nav.Link href="/reservation">Reservation</Nav.Link>
-              <Nav.Link href="/about">A-Propos</Nav.Link>
-              <Nav.Link href="/connexion">
+            
+              <NavLink className="text-white ms-2" to="/menu">Menu</NavLink>
+              <NavLink className="text-white ms-2" to="/reservation">Reservation</NavLink>
+              <NavLink className="text-white ms-2" to="/about">A-Propos</NavLink>
+              <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
-              </Nav.Link>
-              <Nav.Link href="#cart">
+              </NavLink>
+              <NavLink className="text-white" href="/cart">
                 <FaShoppingCart className="cart-icon" />
                 <span></span>
-              </Nav.Link>
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
