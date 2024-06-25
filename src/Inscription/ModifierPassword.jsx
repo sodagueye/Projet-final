@@ -52,11 +52,7 @@ function ModifierPassword() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              {/* <FontAwesomeIcon
-                // icon={showPassword ? faEyeSlash : faEye}
-                onClick={() => setShowPassword(!showPassword)}
-                className="password-icon"
-              /> */}
+             
             </div>
             <div className="password-container my-2">
               <input
@@ -67,11 +63,7 @@ function ModifierPassword() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              {/* <FontAwesomeIcon
-                // icon={showConfirmPassword ? faEyeSlash : faEye}
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="password-icon"
-              /> */}
+             
             </div>
           </div>
           <button type='submit' className='liens align-items-center creer fs-5 fw-bold mt-5'>

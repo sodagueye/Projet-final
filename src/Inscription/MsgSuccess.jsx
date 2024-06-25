@@ -9,7 +9,7 @@ function MsgSuccess() {
   };
 
   return (
-    <div className="backpass1 shadow p-5 fs-5 mt-5">
+    <div className="backpass shadow p-5 fs-5 mt-5">
       <p>Bravo ! Votre mot de passe a été bien réinitialisé. Vous pouvez vous connecter dorénavant avec votre email et votre nouveau mot de passe.</p>
       <button 
         type='button' 

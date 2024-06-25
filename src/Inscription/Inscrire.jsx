@@ -23,7 +23,7 @@ function Inscrire() {
       return;
     }
     try {
-      const res = await axios.post("https://tache-de-validition-nodejs-3.onrender.com/api-docs/#/default/post_api_register", {
+      const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/register", {
         firstName,
         lastName,
         email,
@@ -39,20 +39,27 @@ function Inscrire() {
       } else if (res.data === "exist pas") {
        
         toast.success("inscription reussie")
-        // Réinitialiser les champs du formulaire
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setNumber('');
-        setPassword('');
-        setConfirmPassword('');
-        // Rediriger vers la page de connexion
-        navigate('/connexion');
+       
+      
+        
       }
+       // Réinitialiser les champs du formulaire
+       
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setNumber('');
+      setPassword('');
+      setConfirmPassword('');
+
+   // Rediriger vers la page de connexion
+      navigate('/connexion');
+
     } catch (error) {
     toast.error("erreur d inscription")
       console.log(error);
     }
+    
   }
 
   return (
