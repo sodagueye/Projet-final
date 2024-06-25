@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FiShoppingCart } from "react-icons/fi";
+import { FiUsers } from "react-icons/fi";
+import { FaSellsy } from "react-icons/fa";
+import { GiMoneyStack } from "react-icons/gi";
+import { BiSolidDish } from "react-icons/bi";
 import "./Cards.css";
 export default function Card() {
   const [plat, setPlat] = useState("");
@@ -20,38 +24,47 @@ export default function Card() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className="row">
         <div className="col-lg-3">
-          <div class="card shadow carte p-2">
+          <div class="card shadow carte">
             <div class="card-body d-flex align-items-center flex-row">
               <div>
-                <p className="fs-4" style={{color: "#91725d" }}>{plat}</p>
+                <p className="fs-4">{plat} plats</p>
               </div>
-              <p className="fs-3">
-                <FiShoppingCart />
+              <p className="fs-2">
+                <BiSolidDish />
               </p>
             </div>
           </div>
         </div>
         <div className="col-lg-3">
-          <div class="card shadow carte p-4">
-            <div class="card-body">
-              <p class="card-text">Utilisateurs</p>
+          <div class="card shadow carte">
+            <div class="card-body d-flex flex-row align-items-center">
+              <h3 class="card-text">Utilisateurs</h3>
+              <p className="fs-2">
+                <FiUsers />
+              </p>
             </div>
           </div>
         </div>
         <div className="col-lg-3">
-          <div class="card shadow carte p-4">
-            <div class="card-body">
-              <p class="card-text">Ventes</p>
+          <div class="card shadow carte">
+            <div class="card-body d-flex flex-row align-items-center">
+              <h3 class="card-text">Ventes</h3>
+              <p className="fs-2">
+                <FaSellsy />
+              </p>
             </div>
           </div>
         </div>
         <div className="col-lg-3">
-          <div class="card shadow carte p-4">
-            <div class="card-body">
-              <p class="card-text">Recette</p>
+          <div class="card shadow carte">
+            <div class="card-body d-flex flex-row align-items-center">
+              <h3 className="card-text">Recette</h3>
+              <p className="fs-2">
+                <GiMoneyStack />
+              </p>
             </div>
           </div>
         </div>

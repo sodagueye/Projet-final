@@ -12,14 +12,14 @@ import Connexion from "./Inscription/Connexion";
 import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import ModifierPassword from "./Inscription/Modifier";
 import Employes from "./Dashboard/Employes";
-import Ventas from "./Suivis-Comptabilité/Ventes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
-import AppAjout from "./Ajouter/AppAjout";
 import Plats from "./Dashboard/Plats";
 import PlatsVendus from "./Dashboard/PlatsVendus";
 import PageNotFound from "./PageNotFound";
 import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
+import AppAjout from "./Ajouter/AppAjout";
+import Admin from "./Dashboard/Admin";
 function App() {
   return (
     <div className="App">
@@ -34,26 +34,28 @@ function App() {
           <Route path="/Modifier" element={<ModifierPassword />} />
           <Route path="/reinitialiser" element={<MotdepassOublié />} />
           <Route path="/reservation" element={<ReservationPage />} />
-          <Route path="/redirection-confirmation" element={<PageRedirection />} />
+          <Route
+            path="/redirection-confirmation"
+            element={<PageRedirection />}
+          />
           <Route path="/trackResevation" element={<TrackReservation />} />
 
           {/* Admin's Components */}
-          <Route path="/Utilisateur" element={<ListeUtilisateur />} />
-          <Route path="/admin" element={<Dashboard />} />
-          <Route path="/employe" element={<Employes />} />
+          <Route path="/utilisateur" element={<ListeUtilisateur />} />
+          <Route path="/admin" element={<Dashboard />}>
+            <Route path="/admin/employe" element={<Employes />} />
+            <Route path="/admin/dashboard" element={<Admin />} />
+            <Route path="/admin/ventes" element={<PlatsVendus />} />
+            <Route path="/admin/plats" element={<Plats />} />
+            <Route path="/admin/utilisateur" element={<ListeUtilisateur />} />
+          </Route>
           <Route path="/tables" element={<ReservationTable />} />
-          <Route path="/ventes" element={<PlatsVendus />} />
-          <Route path="/ajout" element={<AppAjout />} />
           <Route path="/update/:id" element={<Update />} />
-          <Route path="/plats" element={<Plats />} />
+          <Route path="/plats" />
+          <Route path="/ajout" element={<AppAjout />} />
           {/* Not Found Page */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        {/* <Routes>
-        <Route path='/tables' element={<ReservationTable />} />
-        <Route path='/RH' element={<Employes />} />
-        <Route path='/ventes' element={<Ventas />} /> 
-      </Routes> */}
       </BrowserRouter>
     </div>
   );

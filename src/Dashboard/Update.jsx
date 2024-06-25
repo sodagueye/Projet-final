@@ -48,7 +48,7 @@ export default function Update() {
       )
       .then((res) => {
         console.log("Update successful:", res.data);
-        navigate("/plats");
+        navigate("/admin/plats");
       })
       .catch((err) => {
         console.error("There was an error updating the data!", err);
