@@ -147,7 +147,7 @@
 }
 
 #reservation .secondaire:focus {
-    background-color: #91725d;
+    background-color: #91725d !important;
     border: none;
     color: #fff;
 }

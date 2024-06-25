@@ -42,7 +42,7 @@ function ReservationPage() {
     setHour(hour);
   };
 
-  const hours = Array.from({ length: 24 }, (_, i) => i);
+  const hours = Array.from({ length: 23 }, (_, i) => i);
 
   return (
     <section id="reservationPage">
@@ -113,26 +113,26 @@ function ReservationPage() {
                     type="button"
                     onClick={() => handleHourChange(`${hour}:00:00`)}
                   >
-                    {hour === 0
-                      ? `12:00 AM`
+                    {hour === 6
+                      ? `06:00:00`
                       : hour < 12
-                      ? `${hour}:00 AM`
+                      ? `${hour}:00:00`
                       : hour === 12
-                      ? `12:00 PM`
-                      : `${hour - 12}:00 PM`}
+                      ? `12:00:00`
+                      : `${hour + 1}:00:00`}
                   </button>
                   <button
                     className="col-md-2 secondaire"
                     type="button"
                     onClick={() => handleHourChange(`${hour}:30:00`)}
                   >
-                    {hour === 0
-                      ? `12:30 AM`
+                    {hour === 6
+                      ? `06:30:00`
                       : hour < 12
-                      ? `${hour}:30 AM`
+                      ? `${hour}:30:00`
                       : hour === 12
-                      ? `12:30 PM`
-                      : `${hour - 12}:30 PM`}
+                      ? `12:30:00`
+                      : `${hour + 1}:30:00`}
                   </button>
                 </React.Fragment>
               ))}
