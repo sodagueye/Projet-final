@@ -7,6 +7,7 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [ajout,setAjout] = useState(0)
 
   useEffect(() => {
     async function fetchProduct() {
@@ -46,12 +47,20 @@ export default function ProductDetail() {
 
   return (
     <div>
-      <CustomNavbar />
+      <CustomNavbar test={ajout} />
       <div className="container p-5 mt-5 d-flex justify-content-center align-items-center">
         <div style={{ color: "#502314" }}>
           <h2 className=" fw-bold">{product.name}</h2>
           <p>{product.description}</p>
           <p>Prix: {product.price} FCFA</p>
+          <div>
+            <button
+              style={{ backgroundColor: " #91725d" }}
+              className="btn w-100 text-white shadow "
+            >
+              Ajouter au Panier
+            </button>
+          </div>
         </div>
         <div className="zoom-container">
           <img
@@ -61,13 +70,6 @@ export default function ProductDetail() {
             style={{ width: "50%" }}
           />
         </div>
-
-        <button
-          style={{ backgroundColor: " #91725d" }}
-          className="btn text-white shadow "
-        >
-          Ajouter au Panier
-        </button>
       </div>
       <div className="container-fluid">
         <div className="row">

@@ -11,6 +11,7 @@ import {
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import AffichagePanier from "./AffichagePanier";
 import { Link, NavLink } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Navbar.css";
 import logo1 from "../assets/logo1.png";
 // { cartProducts, setCartProducts }
@@ -24,48 +25,10 @@ import logo1 from "../assets/logo1.png";
 // import './Navbar.css';
 import soda from "../assets/soda.png";
 
-const CustomNavbar = ({ cartProducts, setCartProducts }) => {
+const CustomNavbar = ({ cartProducts, setCartProducts, test }) => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
-
-  // const handleCloseOffcanvas = () => {
-  //   setShowOffcanvas(false);
-  // };
-
-  // const handleShowCartModal = () => {
-  //   setShowCartModal(true);
-  // };
-
-  // const handleCloseCartModal = () => {
-  //   setShowCartModal(false);
-  // };
-
-  // const incrementQuantity = (productId) => {
-  //   setCartProducts(prevCartProducts =>
-  //     prevCartProducts.map(product =>
-  //       product.id === productId
-  //         ? { ...product, quantity: product.quantity + 1 }
-  //         : product
-  //     )
-  //   );
-  // };
-
-  // const decrementQuantity = (productId) => {
-  //   setCartProducts(prevCartProducts =>
-  //     prevCartProducts.map(product =>
-  //       product.id === productId && product.quantity > 1
-  //         ? { ...product, quantity: product.quantity - 1 }
-  //         : product
-  //     )
-  //   );
-  // };
-
-  // const removeProduct = (productId) => {
-  //   setCartProducts(prevCartProducts =>
-  //     prevCartProducts.filter(product => product.id !== productId)
-  //   );
-  // };
 
   return (
     <>
@@ -85,24 +48,26 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
             />
           </NavLink>
           <Button className="hamburger-button">☰</Button>
-          {/**  <Form className="d-flex search-bar mx-auto">
-            <div className="search-input-container">
-              <FaSearch className="search-icon recherche fs-5" />
-              <FormControl type="text" placeholder="Search" className="search-input" aria-label="Search" />
-            </div>
-          </Form> */}
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
-            
-              <NavLink className="text-white ms-2" to="/menu">Menu</NavLink>
-              <NavLink className="text-white ms-2" to="/reservation">Reservation</NavLink>
+              <NavLink className="text-white ms-2" to="/menu">
+                Menu
+              </NavLink>
+              <NavLink className="text-white ms-2" to="/reservation">
+                Reservation
+              </NavLink>
               {/* <NavLink className="text-white ms-2" to="/about">A-Propos</NavLink> */}
               <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
               </NavLink>
-              <NavLink className="text-white" href="/cart">
-                <FaShoppingCart className="cart-icon" />
-                <span></span>
+              <NavLink className="text-white panier" to="/panier">
+                <span className="fs-4">
+                  <AiOutlineShoppingCart />
+                </span>
+                <p className="bg-white  ajout">
+                  {test}
+                </p>
               </NavLink>
             </Nav>
           </Navbar.Collapse>
@@ -141,7 +106,6 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
             <Nav.Link href="#cart">
               <div className="ensemble">
                 <FaShoppingCart className="cart-icon" />
-                <span></span>
               </div>
             </Nav.Link>
           </Nav>
