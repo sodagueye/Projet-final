@@ -3,7 +3,12 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.test{
+    padding: 100px;
+}
+.btn-commande{
+    background-color: hsl(24, 22%, 47%);
+}
 .sidebar a:active {
     color: red
 }

@@ -57,7 +57,7 @@ export default function ProductDetail() {
             <button
               style={{ backgroundColor: " #91725d" }}
               className="btn w-100 text-white shadow "
-              onClick={()=>handleAddToCart(product.id)}
+              onClick={()=>handleAddToCart(product)}
             >
               Ajouter au Panier
             </button>
