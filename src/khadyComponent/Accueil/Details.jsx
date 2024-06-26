@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../Components";
 import { Footer } from "../Footer/Footer";
+import { ToastContainer } from "react-toastify";
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { cart, handleAddToCart } = useContext(Context);
+  const { handleAddToCart} = useContext(Context);
   useEffect(() => {
     async function fetchProduct() {
       try {
@@ -56,7 +57,7 @@ export default function ProductDetail() {
             <button
               style={{ backgroundColor: " #91725d" }}
               className="btn w-100 text-white shadow "
-              onClick={handleAddToCart}
+              onClick={()=>handleAddToCart(product.id)}
             >
               Ajouter au Panier
             </button>
@@ -73,7 +74,7 @@ export default function ProductDetail() {
       </div>
       <div className="container-fluid">
         <div className="row">
-          <Footer />
+        <ToastContainer/>
         </div>
       </div>
     </div>

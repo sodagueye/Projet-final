@@ -17,7 +17,7 @@ import "./Navbar.css";
 import soda from "../assets/soda.png";
 
 const CustomNavbar = () => {
-  const { cart, handleAddToCart } = useContext(Context);
+  const { cartQuantity } = useContext(Context);
   return (
     <>
       <Navbar
@@ -53,7 +53,7 @@ const CustomNavbar = () => {
                 <span className="fs-4">
                   <AiOutlineShoppingCart />
                 </span>
-                <p className="bg-white  ajout">{cart}</p>
+                <p className="bg-white  ajout">{cartQuantity}</p>
               </NavLink>
             </Nav>
           </Navbar.Collapse>
@@ -85,7 +85,7 @@ const CustomNavbar = () => {
             <Nav.Link href="#about" className="text-dark fs-4">
               About
             </Nav.Link>
-            <Nav.Link href="inscription">
+            <Nav.Link>
               <FaUser className="user" style={{ fontSize: "19px" }} />
             </Nav.Link>
             <Nav.Link href="#cart">

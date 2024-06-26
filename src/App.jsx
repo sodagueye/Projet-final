@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
 import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
@@ -23,14 +23,29 @@ import Admin from "./Dashboard/Admin";
 import SendMail from "./Inscription/SendMail";
 import MsgSuccess from "./Inscription/MsgSuccess";
 import Components from "./Components";
+import Panier from "./Panier/Panier";
+import { Footer } from "./khadyComponent/Footer/Footer";
+import CustomNavbar from "./Componentnav/CustomNavbar";
+import PanierProvider from "./Components";
+
+const AppLayout = () => {
+  return (
+    <PanierProvider>
+      <CustomNavbar />
+      <Outlet />
+      <Footer />
+    </PanierProvider>
+  );
+};
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Components />}>
+          <Route path="/" element={<AppLayout />}>
             <Route path="/" element={<Accueil />} />
+            <Route path="/panier" element={<Panier />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/reservation" element={<ReservationPage />} />
             <Route path="/detail/:id" element={<Details />} />
@@ -58,6 +73,7 @@ function App() {
             <Route path="/ajout" element={<AppAjout />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
+          {/* Route vers la page Panier */}
         </Routes>
       </BrowserRouter>
     </div>

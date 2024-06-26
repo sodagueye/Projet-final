@@ -1,22 +1,27 @@
-import React, { createContext, useState } from "react";
-import CustomNavbar from "./Componentnav/CustomNavbar";
-import { Outlet } from "react-router-dom";
-
+// Components.js
+import React, { createContext, useState, useEffect } from "react";
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const Context = createContext();
 
-export default function Components() {
-  const [cart, setCartQuantity] = useState(0);
-
-  const handleAddToCart = () => {
-    setCartQuantity(cart + 1);
+export default function PanierProvider({ children }) {
+  const [cartQuantity, setCartQuantity] = useState(0); // Compteur de la quantité totale dans le panier
+  const [cartItems, setCartItems] = useState([]);
+  const handleAddToCart = (item) => {
+    const updatedCart = [...cartItems, item];
+    setCartItems(updatedCart);
+    setCartQuantity(updatedCart.length);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    toast.success("Produit ajouté avec succès !");
   };
-
+  useEffect(() => {
+    const savedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(savedCartItems);
+    setCartQuantity(savedCartItems.length);
+  }, []);
   return (
-    <Context.Provider value={{ cart, handleAddToCart }}>
-      <div>
-        <CustomNavbar />
-        <Outlet />
-      </div>
+    <Context.Provider value={{ cartQuantity, handleAddToCart, cartItems }}>
+      {children}
     </Context.Provider>
   );
 }
