@@ -8,28 +8,16 @@ import {
   Offcanvas,
   Button,
 } from "react-bootstrap";
+import { Context } from "../Components";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
-import AffichagePanier from "./AffichagePanier";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useContext } from "react";
 import "./Navbar.css";
-import logo1 from "../assets/logo1.png";
-// { cartProducts, setCartProducts }
-// const CustomNavbar = () => {
-// const [activeLink, setActiveLink] = useState('');
-// const [showOffcanvas, setShowOffcanvas] = useState(false);
-// const [showCartModal, setShowCartModal] = useState(false);
-// const [cartQuantity, setCartQuantity] = useState(0);
-// const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-// import './Navbar.css';
 import soda from "../assets/soda.png";
 
-const CustomNavbar = ({ cartProducts, setCartProducts, test }) => {
-  const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const [showCartModal, setShowCartModal] = useState(false);
-  const [cartQuantity, setCartQuantity] = useState(0);
-
+const CustomNavbar = () => {
+  const { cart, handleAddToCart } = useContext(Context);
   return (
     <>
       <Navbar
@@ -65,15 +53,12 @@ const CustomNavbar = ({ cartProducts, setCartProducts, test }) => {
                 <span className="fs-4">
                   <AiOutlineShoppingCart />
                 </span>
-                <p className="bg-white  ajout">
-                  {test}
-                </p>
+                <p className="bg-white  ajout">{cart}</p>
               </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
       <Offcanvas placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
@@ -111,15 +96,6 @@ const CustomNavbar = ({ cartProducts, setCartProducts, test }) => {
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
-
-      {/* <AffichagePanier
-        show={showCartModal} 
-        handleClose={handleCloseCartModal} 
-        cartProducts={cartProducts} 
-        incrementQuantity={incrementQuantity}
-        decrementQuantity={decrementQuantity}
-        removeProduct={removeProduct}
-      /> */}
     </>
   );
 };

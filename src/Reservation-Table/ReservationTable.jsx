@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import CustomNavbar from "../Componentnav/CustomNavbar";
 import { Footer } from "../khadyComponent/Footer/Footer";
 import axios from "axios";
 
@@ -81,7 +80,7 @@ const ReservationTable = () => {
 
   return (
     <section id="reservation-table">
-      <CustomNavbar />
+    
       <div>
         <div className="container mt-5">
           <div className="row">

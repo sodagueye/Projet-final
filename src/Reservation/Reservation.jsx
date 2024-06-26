@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Reservation.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import CustomNavbar from "../Componentnav/CustomNavbar";
 import { Footer } from "../khadyComponent/Footer/Footer";
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
@@ -46,7 +45,6 @@ function ReservationPage() {
 
   return (
     <section id="reservationPage">
-      <CustomNavbar />
       <div className="row mt-5 reservationPage-body">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Section1 from "./Section1";
-import CustomNavbar from "./CustomNavbar";
 import VoirMenu from "./VoirMenu";
 import { Footer } from "../khadyComponent/Footer/Footer";
 const Menu = () => {
@@ -31,11 +30,6 @@ const Menu = () => {
   return (
     <div>
       <div className="container mt-5">
-        <CustomNavbar
-          cartQuantity={cartQuantity}
-          cartProducts={cartProducts}
-          setCartProducts={setCartProducts}
-        />
         <div className="w-100">
           <VoirMenu onCategorySelect={handleCategoryFilter} />
         </div>

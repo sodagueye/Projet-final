@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CustomNavbar from "../../Componentnav/CustomNavbar";
+import { useContext } from "react";
+import { Context } from "../../Components";
 import { Footer } from "../Footer/Footer";
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [ajout,setAjout] = useState(0)
-
+  const { cart, handleAddToCart } = useContext(Context);
   useEffect(() => {
     async function fetchProduct() {
       try {
@@ -47,7 +47,6 @@ export default function ProductDetail() {
 
   return (
     <div>
-      <CustomNavbar test={ajout} />
       <div className="container p-5 mt-5 d-flex justify-content-center align-items-center">
         <div style={{ color: "#502314" }}>
           <h2 className=" fw-bold">{product.name}</h2>
@@ -57,6 +56,7 @@ export default function ProductDetail() {
             <button
               style={{ backgroundColor: " #91725d" }}
               className="btn w-100 text-white shadow "
+              onClick={handleAddToCart}
             >
               Ajouter au Panier
             </button>
