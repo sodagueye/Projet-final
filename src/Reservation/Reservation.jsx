@@ -30,7 +30,7 @@ function ReservationPage() {
 
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
-  };
+  }
 
   const isAuthenticated = () => {
     return localStorage.getItem('authToken') !== null;
