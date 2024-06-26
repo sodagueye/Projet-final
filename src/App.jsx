@@ -37,8 +37,8 @@ function App() {
             <Route path="/table" element={<ReservationTable />} />
             <Route path="/inscription" element={<Inscrire />} />
             <Route path="/connexion" element={<Connexion />} />
-            <Route path="/success" element={<MsgSuccess />} />
-            <Route path="/mail" element={<SendMail />} />
+            <Route path="/msgsuccess" element={<MsgSuccess />} />
+            <Route path="/sendmail" element={<SendMail />} />
             <Route path="/:token" element={<ModifierPassword />} />
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
             <Route

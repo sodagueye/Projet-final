@@ -3,6 +3,9 @@ import "./ReservationTable.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "../khadyComponent/Footer/Footer";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const reservedTables = {
   "Salle 8": [1, 2],
@@ -44,7 +47,7 @@ const ReservationTable = () => {
   const handlePass = async (e) => {
     e.preventDefault();
     if (isTableReserved) {
-      alert("Cette table a déjà été réservée.");
+      toast.success("Cette table a déjà été réservée.");
     } else {
       const formData = {
         invites: invites,
@@ -64,14 +67,14 @@ const ReservationTable = () => {
           "http://localhost:8080/api/reservation",
           formData
         );
-        alert(
+        toast.success(
           `Vous avez réservé la table ${selectedTable} dans ${selectedRoom}`
         );
         navigate("/redirection-confirmation", { state: formData });
         // console.log(response.data);
       } catch (error) {
         console.error("There was an error making the reservation!", error);
-        alert(
+        toast.error(
           "Une erreur s'est produite lors de la réservation. Veuillez réessayer."
         );
       }
@@ -80,7 +83,7 @@ const ReservationTable = () => {
 
   return (
     <section id="reservation-table">
-    
+    <ToastContainer/>
       <div>
         <div className="container mt-5">
           <div className="row">
