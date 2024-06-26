@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import { toast } from "react-toastify";
-// toast.configure();
-// import "react-toastify/dist/ReactToastify.css";
-
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const reservedTables = {
   "Salle 8": [1, 2],
@@ -45,10 +42,11 @@ const ReservationTable = () => {
       setIsTableReserved(false);
     }
   };
+
   const handlePass = async (e) => {
     e.preventDefault();
     if (isTableReserved) {
-      alert("Cette table a déjà été réservée.");
+      toast.error("Cette table a déjà été réservée.");
     } else {
       const formData = {
         invites: invites,
@@ -58,28 +56,25 @@ const ReservationTable = () => {
         lastName,
         email,
         mobileNumber,
-        roomId: selectedRoom, 
+        roomId: selectedRoom,
         tableId: selectedTable,
         specialRequests
       };
 
       try {
         const response = await axios.post("http://localhost:8080/api/reservation", formData);
-        alert(`Vous avez réservé la table ${selectedTable} dans ${selectedRoom}`);
-          navigate('/redirection-confirmation', { state: formData });
-          // console.log(response.data);
-
-           
-          
+        toast.success(`Vous avez réservé la table ${selectedTable} dans ${selectedRoom}`);
+        navigate('/redirection-confirmation', { state: formData });
       } catch (error) {
         console.error("There was an error making the reservation!", error);
-        alert("Une erreur s'est produite lors de la réservation. Veuillez réessayer.");
+        toast.error("Une erreur s'est produite lors de la réservation. Veuillez réessayer.");
       }
     }
   };
 
   return (
     <section id="reservation-table">
+      <ToastContainer />
       <div className="container">
         <div className="row">
           <h3 className="reservation-table-body-text text-header">Tables reservations</h3>

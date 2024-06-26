@@ -1,36 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Reservation.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
   const [hour, setHour] = useState("");
+  const [hours, setHours] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    Hours();
+  }, [date]);
+
+  const Hours = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/reservation/hours");
+      console.log(response.data);
+      const { heures_disponibles } = response.data;
+      setHours(heures_disponibles);
+    } catch (err) {
+      console.error(err);
+      alert("Erreur lors du chargement des heures disponibles");
+    }
+  };
 
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
   };
 
+  const isAuthenticated = () => {
+    return localStorage.getItem('authToken') !== null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!hour) {
+      toast.error("Veuillez sélectionner une heure.");
+      return;
+    }
+
+    if (!isAuthenticated()) {
+      toast.error("Veuillez vous connecter pour continuer.");
+      setTimeout(() => {
+        navigate('/connexion');
+       }, 3000); 
+      return;
+    }
+
     const formData = {
       invites: invites,
-      date: date.toISOString(),
+      date: date.toISOString().split('T')[0],
       hour: hour,
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/api/reservation", formData);
-
+      await axios.post("http://localhost:8080/api/reservation", formData);
       navigate('/tables', { state: formData });
-      // navigate('/redirection-confirmation', { state: formData });
-
-      console.log(response.data);
     } catch (err) {
       console.error(err);
-      alert("Erreur lors de la demande de réservation");
+      toast.error("Erreur lors de la demande de réservation");
     }
   };
 
@@ -38,26 +71,34 @@ function ReservationPage() {
     setHour(hour);
   };
 
-  const hours = Array.from({ length: 24 }, (_, i) => i);
+  const renderHourButtons = () => {
+    return hours.map((hour, index) => (
+      <React.Fragment key={index}>
+        <button
+          className="col-md-2 secondaire"
+          type="button"
+          onClick={() => handleHourChange(hour)}
+        >
+          {hour}
+        </button>
+      </React.Fragment>
+    ));
+  };
 
   return (
     <section id="reservationPage">
-      <div className="row reservationPage-body">
+      <ToastContainer />
+      <div className="row reservationPage-body mt-5">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">
-            <div className="form-floating col-md-4 mx-2 my-3">
+            <div className="form-floating col col-md-4 mx-2 my-3">
               <select
                 className="form-select"
                 value={invites}
-                onChange={(e) => setInvites(Number(e.target.value))}
-              >
+                onChange={(e) => setInvites(Number(e.target.value))}>
                 {[...Array(8).keys()].map((i) => (
-                  <option
-                    className="option-back"
-                    key={i + 1}
-                    value={i + 1}
-                  >
+                  <option className="option-back" key={i + 1} value={i + 1}>
                     {i + 1}
                   </option>
                 ))}
@@ -67,17 +108,13 @@ function ReservationPage() {
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
-                value={date.toISOString()}
+                value={date.toISOString().split('T')[0]}
                 onChange={handleDateChange}
               >
                 {Array.from({ length: 7 }, (_, i) => {
                   const newDate = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
                   return (
-                    <option
-                      className="option-back"
-                      key={i}
-                      value={newDate.toISOString()}
-                    >
+                    <option className="option-back" key={i} value={newDate.toISOString().split('T')[0]}>
                       {newDate.toLocaleDateString("fr-FR", {
                         weekday: "short",
                         day: "2-digit",
@@ -103,24 +140,7 @@ function ReservationPage() {
           </div>
           <label>
             <div className="row reservationPage-heure">
-              {hours.map((hour, index) => (
-                <React.Fragment key={index}>
-                  <button
-                    className="col-md-2 secondaire"
-                    type="button"
-                    onClick={() => handleHourChange(`${hour}:00`)}
-                  >
-                    {hour === 0 ? `12:00 AM` : hour < 12 ? `${hour}:00 AM` : hour === 12 ? `12:00 PM` : `${hour - 12}:00 PM`}
-                  </button>
-                  <button
-                    className="col-md-2 secondaire"
-                    type="button"
-                    onClick={() => handleHourChange(`${hour}:30`)}
-                  >
-                    {hour === 0 ? `12:30 AM` : hour < 12 ? `${hour}:30 AM` : hour === 12 ? `12:30 PM` : `${hour - 12}:30 PM`}
-                  </button>
-                </React.Fragment>
-              ))}
+              {renderHourButtons()}
             </div>
           </label>
           <br />
