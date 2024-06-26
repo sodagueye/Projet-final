@@ -52,7 +52,7 @@ function ModifierPassword() {
           <div className="inscript1">
             <div className="password-container my-2">
               <input
-                className="input email"
+                className="nom email"
                 type={showPassword ? "text" : "password"}
                 placeholder="Mot de passe"
                 value={password}
@@ -62,7 +62,7 @@ function ModifierPassword() {
             </div>
             <div className="password-container my-2">
               <input
-                className="input email"
+                className="nom email"
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="Confirmer mot de passe"
                 value={confirmPassword}
@@ -74,7 +74,7 @@ function ModifierPassword() {
           <div className="d-flex justify-content-center align-items-center">
             <button
               type="submit"
-              className="liens d-flex justify-content-center align-items-center creer fs-5 fw-bold mt-5"
+              className="liens d-flex justify-content-center align-items-center creer fs-5 fw-bold mt-5 connect"
             >
               Envoyer
             </button>
