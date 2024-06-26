@@ -61,12 +61,16 @@ const Section1 = ({ updateCartQuantity, selectedCategory }) => {
         <div className="slider-track">
           <div className="slider-row">
             {filteredProducts.map((product, index) => (
-              <div key={index} className="card card-spacing card-container">
-                <img src={product.image} alt={product.name} className="mx-auto d-block" style={{ width: "140px" }} />
-                <div className="card-body" style={{ textAlign: "center" }}>
+              <div key={index} className="card card-spacing card-container py-3">
+                  <div>
+                   <img src={product.image} alt={product.name} className="mx-auto  d-block align-items-center "  />
+                  </div>
+                <div className="card-body" >
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.price} FCFA</p>
-                  <button className="btn  card-button" onClick={() => handleShowModal(product)} style={{background:"#91725d",color:"white"}}>Ajouter au panier</button>
+                  <div className=''>
+                  <button className="btn card-button" onClick={() => handleShowModal(product)} style={{background:"#91725d",color:"white", width:"150px", borderRadius:20}}>Ajouter au panier</button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -91,7 +95,7 @@ const Section1 = ({ updateCartQuantity, selectedCategory }) => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
-            <Button variant="" style={{ backgroundColor: "#91725d", color: "white" }} onClick={handleAddToCart}>Ajouter au panier</Button>
+            <Button variant="" style={{ backgroundColor: "#91725d", color: "white" }}  onClick={handleAddToCart}>Ajouter au panier</Button>
           </Modal.Footer>
         </Modal>
       )}

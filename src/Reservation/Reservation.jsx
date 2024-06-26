@@ -43,7 +43,7 @@ function ReservationPage() {
   return (
     <section id="reservationPage">
       <div className="row reservationPage-body">
-        <h1>Table de réservations</h1>
+        <h1> Réservation de Table </h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">
             <div className="form-floating col-md-4 mx-2 my-3">
@@ -62,7 +62,7 @@ function ReservationPage() {
                   </option>
                 ))}
               </select>
-              <label>Guest</label>
+              <label>Invite(s)</label>
             </div>
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
@@ -98,7 +98,7 @@ function ReservationPage() {
                 disabled
                 value={hour}
               />
-              <label htmlFor="floatingInputDisabled">Time</label>
+              <label htmlFor="floatingInputDisabled">Heur</label>
             </div>
           </div>
           <label>
@@ -110,21 +110,21 @@ function ReservationPage() {
                     type="button"
                     onClick={() => handleHourChange(`${hour}:00`)}
                   >
-                    {hour === 0 ? `12:00 AM` : hour < 12 ? `${hour}:00 AM` : hour === 12 ? `12:00 PM` : `${hour - 12}:00 PM`}
+                    {hour === 0 ? `12:00 h` : hour < 12 ? `${hour}:00 h` : hour === 12 ? `12:00 h` : `${hour - 12}:00 h`}
                   </button>
                   <button
                     className="col-md-2 secondaire"
                     type="button"
                     onClick={() => handleHourChange(`${hour}:30`)}
                   >
-                    {hour === 0 ? `12:30 AM` : hour < 12 ? `${hour}:30 AM` : hour === 12 ? `12:30 PM` : `${hour - 12}:30 PM`}
+                    {hour === 0 ? `12:30 h` : hour < 12 ? `${hour}:30 h` : hour === 12 ? `12:30 h` : `${hour - 12}:30 h`}
                   </button>
                 </React.Fragment>
               ))}
             </div>
           </label>
           <br />
-          <button className="btn btnsend" type="submit">
+          <button className="btn btnsend w-50 mt-3" type="submit">
             Continue
           </button>
         </form>
