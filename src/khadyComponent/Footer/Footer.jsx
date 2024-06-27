@@ -4,6 +4,7 @@
 // import 'react-toastify/dist/ReactToastify.css';
 import "../Footer/Footer.css";
 import logo from "../Footer-img/logo.jpg";
+import { Link } from "react-router-dom";
 
 export function Footer() {
     // const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ export function Footer() {
     // const handleChange = (e) => {
     //   setEmail(e.target.value);
     // };
-  
+
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
     //     try {
@@ -25,7 +26,8 @@ export function Footer() {
     //         ;
     //     }
     // };
-
+    //////////////////////////////////////////////////////////////
+    
     return (
         <footer>
             <div style={{ borderBottom: "1px solid white" }}>
@@ -34,7 +36,7 @@ export function Footer() {
                         <a href=""> <img src={logo} alt="" style={{ width: 130, height: 130 }} /></a>
                     </div>
                     <div className="d-flex gap-3">
-                        <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 "  target="_blank" ><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 " target="_blank" ><i class="bi bi-whatsapp"></i></a>
                         <a href="https://www.tiktok.com/@nom_utilisateur" target="_blank"><i class="bi bi-tiktok"></i></a>
                         <a href="https://www.facebook.com/nom_utilisateur" target="_blank"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/nom_utilisateur" target="_blank"><i class="bi bi-instagram"></i></a>
@@ -44,56 +46,41 @@ export function Footer() {
             <div className="py-4" style={{ borderBottom: "1px solid white" }}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-sm-6 col-md4 col-lg-2">
+                        <div className="col-12 col-sm-6 col-lg-3">
                             <div className="d-flex flex-column align-items-center">
-                                <h5>Produits</h5>
+                                <h5>À propos</h5>
                                 <ul>
-                                    <li><a href="">Catalogue produits</a></li>
-                                    <li><a href="">Nos burgers</a></li>
-                                    <li><a href="">Nos menus</a></li>
-
+                                    <li><a href="/notre-histoire">Notre histoire</a></li>
+                                    <li><a href="/equipe">Notre équipe</a></li>
+                                    {/* <li><a href="/carriere">Carrières</a></li> */}
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-6 col-md4 col-lg-2">
+                        <div className="col-12 col-sm-6 col-lg-3">
                             <div className="d-flex flex-column align-items-center">
-                                <h5>Famille</h5>
+                                <h4>Menu</h4>
                                 <ul>
-                                    <li><a href="">Catalogue produits</a></li>
-                                    <li><a href="">Nos burgers</a></li>
-                                    <li><a href="">Nos menus</a></li>
-
+                                    <li><a href="/menu/plats">Plats</a></li>
+                                    <li><a href="/menu/boissons">Boissons</a></li>
+                                    <li><a href="/menu/desserts">Desserts</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-6 col-md4 col-lg-2">
-                            <div className="d-flex flex-column align-items-center">
-                                <h5>Service conso</h5>
-                                <ul>
-                                    <li><a href="">Catalogue produits</a></li>
-                                    <li><a href="">Nos burgers</a></li>
-                                    <li><a href="">Nos menus</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-6 col-md4 col-lg-4">
+                        <div className="col-12 col-sm-6 col-lg-3">
                             <div className="d-flex flex-column align-items-center">
                                 <h5>Informations légales</h5>
                                 <ul>
-                                    <li><a href="">Catalogue produits</a></li>
-                                    <li><a href="">Nos burgers</a></li>
-                                    <li><a href="">Nos menus</a></li>
-
+                                    <li><a href="/conditions-utilisation">Conditions d'utilisation</a></li>
+                                    <li><a href="/politique-de-confidentialite">Politique de confidentialité</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-6 col-md4 col-lg-2">
+                        <div className="col-12 col-sm-6 col-lg-3">
                             <div className="d-flex flex-column align-items-center">
-                                <h5>L'entreprise</h5>
+                                <h5>Contact</h5>
                                 <ul>
-                                    <li><a href="">Histoire</a></li>
-                                    <li><a href="">Recrutement</a></li>
+                                    <li><a href="/contact">Contactez-nous</a></li>
+                                    <li><Link to="/Localisation">Localisation</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -126,7 +113,7 @@ export function Footer() {
                 </div>
 
             </div>  */}
-             {/* <ToastContainer  position="bottom-left"/> */}
+            {/* <ToastContainer  position="bottom-left"/> */}
         </footer>
     );
 }

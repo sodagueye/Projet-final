@@ -32,7 +32,10 @@ footer a:hover{
 footer{
     font-family: "Roboto Condensed";
 }
-
+footer h5{
+    font-family: Georgia, serif;
+    flex-wrap: nowrap;
+}
 .toast-success {
     background-color: rgb(10, 233, 10) ;
     color: white !important;
