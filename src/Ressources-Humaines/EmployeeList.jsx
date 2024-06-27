@@ -1,99 +1,79 @@
-/* eslint-disable no-unused-vars */
-
-// Importation des bibliothèques nécessaires
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Employe.css"
+import EmployeeForm from "./AjoutEmployee"; 
 
-// Fonction pour récupérer les données des employés
-const getEmployees = async () => {
-  const response = await axios.get("http://localhost:5000/employees");
-  return response.data;
-};
-
-// Composant EmployeeList
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
   const [error, setError] = useState(null);
-  const [idToDelete, setIdToDelete] = useState(null);
 
   useEffect(() => {
-    getEmployees()
-      .then((data) => {
-        setEmployees(data);
-      })
-      .catch((error) => {
-        setError(error);
-      });
+    getEmployees();
   }, []);
 
-  // Button pour supprimer un employé
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/employees')
-      .then((response) => {
-        setEmployees(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/employees/${id}`)
-      .then((response) => {
-        setEmployees(employees.filter((employee) => employee.id !== id));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  const getEmployees = async () => {
+    try {
+      const response = await axios.get(
+        "https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting"
+      );
+      setEmployees(response.data);
+    } catch (error) {
+      setError(error);
+    }
   };
+
+  const handleDeleteEmployee = async (_id) => {
+    try {
+      await axios.delete(
+        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/delete/${_id}`
+      );
+      // Mettre à jour la liste des employés localement après la suppression
+      setEmployees(prevEmployees => prevEmployees.filter(employee => employee._id !== _id));
+      console.log(`Employé avec l'id ${_id} supprimé avec succès.`);
+    } catch (error) {
+      console.error("Erreur de Suppression:", error);
+      // Gestion des erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur
+    }
+  };
+
+  const handleEmployeeAdded = (newEmployee) => {
+    setEmployees([...employees, newEmployee]);
+  };
+
   return (
-    <table className="table table-striped">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Poste</th>
-          <th>Salaire</th>
-          <th>Heure de travail</th>
-          <th>Mensualité</th>
-          <th>Supprimer</th>
-        </tr>
-      </thead>
-      <tbody>
-        {employees.map((employee) => (
-          <tr key={employee.id}>
-            <td>{employee.name}</td>
-            <td>{employee.poste}</td>
-            <td>{employee.salary}</td>
-            <td>{employee.workHours}</td>
-            <td>{employee.monthlySalary}</td>
-            <td>
-              <div>
-                <button
-                  key={employee.id}
-                  className="btn btn-danger"
-                  onClick={() => setIdToDelete(employee.id)}
-                >
+    <div>
+      <EmployeeForm onEmployeeAdded={handleEmployeeAdded} />
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Poste</th>
+            <th>Salaire</th>
+            <th>Heures de travail</th>
+            <th>Mensualité</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {employees.map((employee) => (
+            <tr key={employee._id}>
+              <td>{employee.nom}</td>
+              <td>{employee.poste}</td>
+              <td>{employee.salaire}</td>
+              <td>{employee.horaire}</td>
+              <td>{employee.mensualite}</td>
+              <td>
+                <button onClick={() => handleDeleteEmployee(employee._id)}>
                   Supprimer
                 </button>
-
-                {idToDelete && (
-                  <button
-                    className="btn btn-success"
-                    onClick={() => handleDelete(idToDelete)}
-                  >
-                    Confirmer suppression
-                  </button>
-                )}
-              </div>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
-// Export du component
 export default EmployeeList;
+
+
