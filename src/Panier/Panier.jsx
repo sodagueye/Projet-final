@@ -1,12 +1,30 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../Components";
 import { MdOutlineDelete } from "react-icons/md";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Panier = () => {
-  const { cartItems } = useContext(Context);
+  const { cartItems, setCartItems, setCartQuantity} = useContext(Context);
 
   const totalPrix = cartItems.reduce((total, item) => {
     return total + (item.price || 0);
   }, 0);
+
+  const handleDelete = (id) => {
+    const newCartItems = cartItems.filter((item) => item._id !== id);
+    setCartItems(newCartItems);
+    toast.success("Le produit a été retiré du panier")
+    setCartQuantity(newCartItems.length)
+    localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+  };
+
+  useEffect(() => {
+    const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    if (savedCartItems) {
+      setCartItems(savedCartItems);
+    }
+  }, [setCartItems]);
 
   return (
     <div className="container-fluid test">
@@ -15,20 +33,27 @@ const Panier = () => {
           {cartItems.length > 0 ? (
             <div>
               <h3 className="text-start">Panier ({cartItems.length})</h3>
-              {cartItems.map((item, index) => (
-                <div>
-                  <div
-                    className="d-flex align-items-center justify-content-between"
-                    key={index}
-                  >
+              <hr />
+              {cartItems.map((item) => (
+                <div key={item.id}>
+                  <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex justify-content-center align-items-center">
-                      <img src={item.image} alt="" />
+                      <div>
+                        <img className="product-img" src={item.image} alt="" />
+                        <div>
+                          <span
+                            onClick={() => handleDelete(item._id)}
+                            className="fs-3 cart"
+                          >
+                            <MdOutlineDelete />
+                          </span>
+                          <span className="delete fw-bold fs-6">SUPPRIMER</span>
+                        </div>
+                      </div>
 
-                      {/* <h4>{item.name}</h4> */}
                       <p>{item.description}</p>
                     </div>
-
-                    <p>{item.price} FCFA</p>
+                    <p className="fw-bold">{item.price} FCFA</p>
                   </div>
                   <hr />
                 </div>
@@ -39,9 +64,9 @@ const Panier = () => {
           )}
         </div>
         <div className="col-lg-3">
-          <div class="card shadow">
-            <div class="card-body">
-              <h5 class="card-title text-uppercase text-start">
+          <div className="card shadow">
+            <div className="card-body">
+              <h5 className="card-title text-uppercase text-start">
                 Résumé du panier
               </h5>
               <hr />
@@ -50,12 +75,13 @@ const Panier = () => {
                 <h6>{totalPrix} FCFA</h6>
               </div>
               <button className="btn w-100 btn-commande text-white shadow">
-                Commander ({totalPrix} FCFA){" "}
+                Commander ({totalPrix} FCFA)
               </button>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

@@ -27,6 +27,7 @@ import Panier from "./Panier/Panier";
 import { Footer } from "./khadyComponent/Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
+import Apps from "./Panier/Modal";
 
 const AppLayout = () => {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route path="/" element={<Accueil />} />
+
             <Route path="/panier" element={<Panier />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/reservation" element={<ReservationPage />} />
