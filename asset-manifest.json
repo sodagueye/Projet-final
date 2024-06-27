@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Projet-final/static/css/main.16ec0e6a.css",
+    "main.js": "/Projet-final/static/js/main.5927155c.js",
+    "static/media/about3.jpg": "/Projet-final/static/media/about3.e679e553780038bf1901.jpg",
+    "static/media/avatar.jpg": "/Projet-final/static/media/avatar.3434519a0dbd98552160.jpg",
+    "static/media/gl.png": "/Projet-final/static/media/gl.87074f2d1a255fbbf407.png",
+    "static/media/banniere4.jpg": "/Projet-final/static/media/banniere4.ecf93b16dd9c987d474e.jpg",
+    "static/media/banner3.jpg": "/Projet-final/static/media/banner3.62cbaac3b866f269243b.jpg",
+    "static/media/banniere2.jpg": "/Projet-final/static/media/banniere2.bcfed8a14beb163d04ae.jpg",
+    "static/media/about2.jpg": "/Projet-final/static/media/about2.ae8688c4b90d87f7b6d5.jpg",
+    "static/media/tb11.png": "/Projet-final/static/media/tb11.52c919e1103ecd422c2a.png",
+    "static/media/about1.png": "/Projet-final/static/media/about1.6c5497597700639f8319.png",
+    "static/media/bur2.png": "/Projet-final/static/media/bur2.57e2e2dddcc0ed311e9f.png",
+    "static/media/glace.png": "/Projet-final/static/media/glace.7edd5ecd597a8dfafdba.png",
+    "static/media/bur1.png": "/Projet-final/static/media/bur1.d95da7525dc9117ba33f.png",
+    "static/media/bur4.png": "/Projet-final/static/media/bur4.307338eb9944881aac97.png",
+    "static/media/logoMaron.png": "/Projet-final/static/media/logoMaron.227d7aaee71f192896ad.png",
+    "static/media/soda.png": "/Projet-final/static/media/soda.df2222ddee7d640fd80d.png",
+    "static/media/logo1.png": "/Projet-final/static/media/logo1.0adcf9f2325ce6ec9a23.png",
+    "static/media/img3.png": "/Projet-final/static/media/img3.2ace1428c0f3c8e72aab.png",
+    "static/media/img7.png": "/Projet-final/static/media/img7.3ac4f269243a07443815.png",
+    "static/media/img10.png": "/Projet-final/static/media/img10.352967992d9b39921d4b.png",
+    "static/media/tb7.jpg": "/Projet-final/static/media/tb7.d8da4f2ae86db0001d0f.jpg",
+    "static/media/tb8.jpg": "/Projet-final/static/media/tb8.7ac1f765097e12f86df4.jpg",
+    "index.html": "/Projet-final/index.html",
+    "main.16ec0e6a.css.map": "/Projet-final/static/css/main.16ec0e6a.css.map",
+    "main.5927155c.js.map": "/Projet-final/static/js/main.5927155c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16ec0e6a.css",
+    "static/js/main.5927155c.js"
+  ]
+}
