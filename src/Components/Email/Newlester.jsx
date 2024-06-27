@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../../Styles/Newlester.css'
 
 function Newsletter() {
@@ -11,15 +12,8 @@ function Newsletter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/email/send/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-      const data = await response.json();
-      console.log('Réponse du backend:', data);
+      const response = await axios.post('http://localhost:8080/subscribe', { email });
+      console.log('Réponse du backend:', response.data);
       setEmail('');
     } catch (error) {
       console.error('Erreur lors de l\'envoi de l\'e-mail:', error);
