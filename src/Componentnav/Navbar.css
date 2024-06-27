@@ -121,6 +121,11 @@ option {
     text-decoration: none;
     color: black;
   }
+  .panierk {
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+  }
 
   .user {
     color: black;
@@ -138,7 +143,7 @@ option {
   .hamburger-button {
     display: block;
     background-color: white;
-    color: red;
+    color:#91725d;
     position: relative;
     bottom: 60px;
   }

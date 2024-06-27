@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import {
   Navbar,
   Nav,
@@ -12,12 +12,16 @@ import { Context } from "../Components";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useContext } from "react";
 import "./Navbar.css";
 import soda from "../assets/soda.png";
 
 const CustomNavbar = () => {
   const { cartQuantity } = useContext(Context);
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
+
   return (
     <>
       <Navbar
@@ -35,7 +39,7 @@ const CustomNavbar = () => {
               style={{ width: "180px" }}
             />
           </NavLink>
-          <Button className="hamburger-button">☰</Button>
+          <Button className="hamburger-button btn btn-light" onClick={handleShow}>☰</Button>
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
@@ -45,7 +49,6 @@ const CustomNavbar = () => {
               <NavLink className="text-white ms-2" to="/reservation">
                 Reservation
               </NavLink>
-              {/* <NavLink className="text-white ms-2" to="/about">A-Propos</NavLink> */}
               <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
               </NavLink>
@@ -53,13 +56,14 @@ const CustomNavbar = () => {
                 <span className="fs-4">
                   <AiOutlineShoppingCart />
                 </span>
-                <p className="bg-white  ajout">{cartQuantity}</p>
+                <p className="bg-white ajout">{cartQuantity}</p>
               </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Offcanvas placement="end">
+
+      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
@@ -76,20 +80,23 @@ const CustomNavbar = () => {
             </div>
           </Form>
           <Nav className="flex-column">
-            <Nav.Link href="#menu" className="text-dark fs-4">
+            <Nav.Link href="menu" className="text-dark fs-4">
               Menu
             </Nav.Link>
-            <Nav.Link href="#reservation" className="text-dark fs-4">
+            <Nav.Link href="reservation" className="text-dark fs-4">
               Reservation
             </Nav.Link>
-            <Nav.Link href="#about" className="text-dark fs-4">
+            <Nav.Link href="" className="text-dark fs-4">
               About
             </Nav.Link>
-            <Nav.Link>
+            <Nav.Link  href="connexion">
+            <div>
               <FaUser className="user" style={{ fontSize: "19px" }} />
+            </div>
             </Nav.Link>
-            <Nav.Link href="#cart">
-              <div className="ensemble">
+
+            <Nav.Link href="panier">
+              <div className="panierk">
                 <FaShoppingCart className="cart-icon" />
               </div>
             </Nav.Link>
