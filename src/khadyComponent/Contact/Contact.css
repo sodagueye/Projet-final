@@ -1,0 +1,24 @@
+.contact{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .row .one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact i{
+    font-size: 20px;
+    font-weight: bold;
+}
+.contact h6{
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+p{
+    font-size: 13px;
+    flex-wrap: wrap;
+}

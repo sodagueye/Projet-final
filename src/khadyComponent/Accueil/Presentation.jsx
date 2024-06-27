@@ -116,7 +116,7 @@ export function Presentation() {
                                 <div class="card-body d-flex flex-column align-items-center">
                                     <h6 class="card-title fw-bold">{info.title}</h6>
                                     <p class="card-text">{info.prix}</p>
-                                    <a href="Menu" class="btn btn-danger" style={{ fontSize: 14}}>Voir le Menu</a>
+                                    <a href="Menu" className="rounded-5 p-2" style={{backgroundColor:"#91725d",color:"white"}}>Ajouter au panier</a>
                                 </div>
                             </div>
                         </div>

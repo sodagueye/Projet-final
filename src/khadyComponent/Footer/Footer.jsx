@@ -79,7 +79,7 @@ export function Footer() {
                             <div className="d-flex flex-column align-items-center">
                                 <h5>Contact</h5>
                                 <ul>
-                                    <li><a href="/contact">Contactez-nous</a></li>
+                                    <li><Link to="/Contact">Contact</Link></li>
                                     <li><Link to="/Localisation">Localisation</Link></li>
                                 </ul>
                             </div>
