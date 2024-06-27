@@ -49,6 +49,9 @@ const CustomNavbar = () => {
               <NavLink className="text-white ms-2" to="/reservation">
                 Reservation
               </NavLink>
+              <NavLink className="text-white ms-2" to="/About">
+                About
+              </NavLink>
               <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
               </NavLink>
@@ -59,6 +62,7 @@ const CustomNavbar = () => {
                 <p className="bg-white ajout">{cartQuantity}</p>
               </NavLink>
             </Nav>
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -86,9 +90,12 @@ const CustomNavbar = () => {
             <Nav.Link href="reservation" className="text-dark fs-4">
               Reservation
             </Nav.Link>
-            <Nav.Link href="" className="text-dark fs-4">
-              About
+            <Nav.Link href="about" className="text-dark fs-4">
+             About
             </Nav.Link>
+            {/* <Nav.Link href="ABOUT" className="text-dark fs-4">
+              About
+            </Nav.Link> */}
             <Nav.Link  href="connexion">
             <div>
               <FaUser className="user" style={{ fontSize: "19px" }} />

@@ -29,6 +29,7 @@ import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
 import Apps from "./Panier/Modal";
 import Users from "./users/users";
+import About from "./ABOUT/About";
 
 const AppLayout = () => {
   return (
@@ -74,6 +75,8 @@ function App() {
           <Route path="/update/:id" element={<Update />} />
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="About" element={<About />} />
+         
 
           {/* Route vers la page Panier */}
         </Routes>
