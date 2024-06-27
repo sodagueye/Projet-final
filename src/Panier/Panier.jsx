@@ -23,10 +23,9 @@ const Panier = () => {
                   >
                     <div className="d-flex justify-content-center align-items-center">
                       <img src={item.image} alt="" />
-                      
+
                       {/* <h4>{item.name}</h4> */}
                       <p>{item.description}</p>
-                     
                     </div>
 
                     <p>{item.price} FCFA</p>
