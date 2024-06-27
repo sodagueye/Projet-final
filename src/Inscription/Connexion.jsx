@@ -16,17 +16,18 @@ function Connexion() {
     async function login(e) {
         e.preventDefault();
         try {
-            const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/auth", {
+             const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/auth", {
                 email,
                 password,
             });
 
             if (res.data === "exist") {
                 toast.success("Connexion réussie");
-                // history("/")
+               
                 console.log("Redirection vers la page d'accueil...");
                  navigate("/"); 
-            } else {
+            } 
+            else {
                 toast.error("Email ou mot de passe incorrect");
             }
 

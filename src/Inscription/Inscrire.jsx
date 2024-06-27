@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import logoMaron from '../assets/logoMaron.png';
+import logoMaron from '../assets/logoMaron.png'; 
 import './inscrire.css'; // Assurez-vous que votre CSS est correctement importé ici
 
 function Inscrire() {
@@ -22,7 +22,7 @@ function Inscrire() {
       toast.error("Les mots de passe ne correspondent pas");
       return;
     }
-
+    
     try {
       const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/register", {
         firstName,
@@ -33,11 +33,8 @@ function Inscrire() {
         confirmPassword
       });
 
-      if (res.data === "exist") {
-        toast.error("L'utilisateur existe déjà");
-      } else if (res.data === "Inscription réussie. Un email de confirmation a été envoyé à votre adresse.") {
-        toast.success("Inscription réussie");
-        // Réinitialiser les champs du formulaire après une inscription réussie
+      if (res.status === 201) {
+        toast.error(res.data.msg);
         setFirstName('');
         setLastName('');
         setEmail('');
@@ -46,8 +43,9 @@ function Inscrire() {
         setConfirmPassword('');
         // Rediriger vers la page de connexion après une inscription réussie
         navigate('/connexion');
-      } else {
-        toast.error("Erreur lors de l'inscription");
+
+      }else {
+        toast.error(res.data.errors[0].msg);
       }
     } catch (error) {
       toast.error("Erreur lors de l'inscription");
@@ -64,7 +62,7 @@ function Inscrire() {
             <h3>Créez votre compte</h3>
           </div>
           <div className='auth'>
-            <input className="nom" type="text" style={{ backgroundColor: "transparent" }} placeholder="Prénom" required value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+            <input className="nom" type="text" style={{backgroundColor: "transparent"}} placeholder="Prénom" required value={firstName} onChange={(e) => setFirstName(e.target.value)} />
             <input className="nom number" type="text" placeholder="Nom" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
           </div>
           <div className='auth'>

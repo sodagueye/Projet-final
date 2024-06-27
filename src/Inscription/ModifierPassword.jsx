@@ -35,8 +35,8 @@ function ModifierPassword() {
         )
         .then((response) => response.json())
         .then((data) => console.log(data))
-        .catch((error) => console.error("Error:", error));
-      navigate("/msgsuccess");
+        // .catch((error) => console.error("Error:", error));
+          navigate("/msgsuccess");
     } catch (error) {
       alert("Erreur lors de la mise à jour du mot de passe");
     }
