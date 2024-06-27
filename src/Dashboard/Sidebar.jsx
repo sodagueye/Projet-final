@@ -8,49 +8,59 @@ import "./styles.css";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar shadow text-white">
-      <div className="d-flex justify-content-start mb-4">
+    <div className="sidebar text-white">
+      <div
+        // onClick={() => navigation("/admin")}
+        className="d-flex justify-content-start mb-4"
+      >
+        <div className="d-flex">
         <p className="fs-5">{<AiFillDashboard />}</p>
-        <p className="fs-5">
-          <NavLink to="/admin">Dashboard</NavLink>
-        </p>
+        <p className="fs-5">Dashboard</p>
+        </div>
       </div>
-      <div className="d-flex justify-content-start">
+      <div
+        // onClick={() => navigation("/users")}
+        className="d-flex justify-content-start"
+      >
+        <div className="d-flex"> 
         <p className="fs-5">
           <CiUser />
         </p>
-        <p className="fs-5">
-          <NavLink to="/admin/utilisateur">Utilisateurs</NavLink>
-        </p>
+        <p className="fs-5">Utilisateurs</p>
+        </div>
       </div>
-      <div className="d-flex justify-content-start mt-4">
+      <div
+        // onClick={() => navigation("/plats")}
+        className="d-flex justify-content-start mt-4"
+      >
+        <div className="d-flex"> 
         <p className="fs-5">
           <GiHotMeal />
         </p>
-        <p className="fs-5">
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="/admin/plats"
-          >
-            Plats
-          </NavLink>
-        </p>
+        <p className="fs-5">Plats</p>
+          </div>
       </div>
-      <div className="d-flex justify-content-start mt-4">
+      <div
+        // onClick={() => navigation("/employe")}
+        className="d-flex justify-content-start mt-4"
+      >
+        <div className="d-flex"> 
         <p className="fs-5">
           <GiHumanTarget />
         </p>
-        <p className="fs-5">
-          <NavLink to="/admin/employe">Ressources Humaines</NavLink>
-        </p>
+        <p className="fs-5">Ressources <br /> Humaines</p>
+          </div>
       </div>
-      <div className="d-flex justify-content-start mt-4">
+      <div
+        // onClick={() => navigation("/ventes")}
+        className="d-flex justify-content-start mt-4"
+      >
+        <div className="d-flex">  
         <p className="fs-5">
           <FaSellsy />
         </p>
-        <p className="fs-5">
-          <NavLink to="/admin/ventes">Ventes</NavLink>
-        </p>
+        <p className="fs-5">Ventes</p>
+          </div>
       </div>
     </div>
   );

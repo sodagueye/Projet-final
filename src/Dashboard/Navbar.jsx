@@ -12,7 +12,7 @@ export default function Navbar() {
             <input
               className="input-research "
               type="text"
-              placeholder="Search Dashboard"
+              placeholder="Rechercher"
             />
             <div className="icon-search d-flex justify-content-center align-items-center">
               <IoSearch />
