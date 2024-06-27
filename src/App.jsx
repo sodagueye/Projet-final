@@ -28,6 +28,7 @@ import { Footer } from "./khadyComponent/Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
 import Apps from "./Panier/Modal";
+import Users from "./users/users";
 
 const AppLayout = () => {
   return (
@@ -63,14 +64,13 @@ function App() {
             element={<PageRedirection />}
           />
           <Route path="/trackResevation" element={<TrackReservation />} />
-          <Route path="/utilisateur" element={<ListeUtilisateur />} />
+         <Route path="/utilisateur" element={<Users />} /> 
           <Route path="/admin" element={<Dashboard />}>
             <Route path="employe" element={<Employes />} />
             <Route path="dashboard" element={<Admin />} />
             <Route path="ventes" element={<PlatsVendus />} />
             <Route path="plats" element={<Plats />} />
-            {/* <Route path="utilisateur" element={<ListeUtilisateur />} /> */}
-          </Route>
+           </Route>
           <Route path="/update/:id" element={<Update />} />
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
