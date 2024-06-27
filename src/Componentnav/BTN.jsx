@@ -11,7 +11,7 @@ const Btn = () => {
         <div className="card-body">
           <h5 className="card-title">Creme Glace</h5>
           <p className="card-text">2000 FCFA</p>
-          <button className="btn btn-primary card-button bg-danger" style={{ border: "#fff solid 1px" }}> Ajouter au panier </button>
+          <button className="btn btn-primary card-button bg-danger " style={{ border: "#fff solid 1px" }}> Ajouter au panier </button>
         </div>
       </div>
 

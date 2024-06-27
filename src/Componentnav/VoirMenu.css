@@ -4,7 +4,7 @@
     margin-bottom: 20px;
   }
   
-  .VoirMenu button {
+  .VoirMenu, .KYS {
     display: inline-block;
     padding: 10px 20px;
     font-size: 18px;
@@ -12,6 +12,23 @@
     border: 1px solid #ddd;
     cursor: pointer;
     margin: 5px;
+  }
+  .VoirMenu button{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .VoirMenu button:hover{
+    background-color: #91725d;
+    color: #f8f9fa ;
+  }
+  .VoirMenu button:focus{
+    background-color: #91725d;
+    color: #f8f9fa;
   }
   
   .category-button {
