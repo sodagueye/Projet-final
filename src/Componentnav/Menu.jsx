@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Section1 from "./Section1";
 import VoirMenu from "./VoirMenu";
-import { Footer } from "../khadyComponent/Footer/Footer";
 const Menu = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
   const [cartProducts, setCartProducts] = useState([]);
@@ -40,11 +39,6 @@ const Menu = () => {
               selectedCategory={selectedCategory}
             />
           </div>
-        </div>
-      </div>
-      <div className="container-fluid">
-        <div className="row">
-          <Footer />
         </div>
       </div>
     </div>
