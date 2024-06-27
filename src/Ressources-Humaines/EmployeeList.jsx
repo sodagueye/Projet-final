@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Employe.css";
+import EmployeeForm from "./AjoutEmployee"; 
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
   const [error, setError] = useState(null);
-  const [formData, setFormData] = useState({
-    id: null,
-    nom: "",
-    poste: "",
-    salaire: 0,
-    horaire: 0,
-    mensualite: 0
-  });
 
   useEffect(() => {
     getEmployees();
@@ -20,33 +12,36 @@ const EmployeeList = () => {
 
   const getEmployees = async () => {
     try {
-      const response = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting");
+      const response = await axios.get(
+        "https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting"
+      );
       setEmployees(response.data);
     } catch (error) {
       setError(error);
     }
   };
-    //  ********CA MARCHE PAS ENCORE*********//
 
-  // const handleDeleteEmployee = async (id) => {
-  //   try {
-  //     // Envoyer la requête DELETE pour supprimer l'employé
-  //     await axios.delete(`https://tache-de-validition-nodejs-6.onrender.com/api/employes/delete/${id}`);
-  
-  //     // Mise à jour de la liste des employés localement après la suppression
-  //     setEmployees(employees.filter(employee => employee.id !== id));
-  
-  //     console.log(`Employé avec l'id ${id} supprimé avec succès.`);
-  
-  //   } catch (error) {
-  //     console.error("Erreur de Suppression:", error);
-  //     // Gestion des erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur
-  //   }
-  // };
-  
+  const handleDeleteEmployee = async (_id) => {
+    try {
+      await axios.delete(
+        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/delete/${_id}`
+      );
+      // Mettre à jour la liste des employés localement après la suppression
+      setEmployees(prevEmployees => prevEmployees.filter(employee => employee._id !== _id));
+      console.log(`Employé avec l'id ${_id} supprimé avec succès.`);
+    } catch (error) {
+      console.error("Erreur de Suppression:", error);
+      // Gestion des erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur
+    }
+  };
+
+  const handleEmployeeAdded = (newEmployee) => {
+    setEmployees([...employees, newEmployee]);
+  };
 
   return (
     <div>
+      <EmployeeForm onEmployeeAdded={handleEmployeeAdded} />
       <table className="table table-striped">
         <thead>
           <tr>
@@ -60,14 +55,16 @@ const EmployeeList = () => {
         </thead>
         <tbody>
           {employees.map((employee) => (
-            <tr key={employee.id}>
+            <tr key={employee._id}>
               <td>{employee.nom}</td>
               <td>{employee.poste}</td>
               <td>{employee.salaire}</td>
               <td>{employee.horaire}</td>
               <td>{employee.mensualite}</td>
               <td>
-                {/* <button onClick={() => handleDeleteEmployee(employee.id)}>Supprimer</button> */}
+                <button onClick={() => handleDeleteEmployee(employee._id)}>
+                  Supprimer
+                </button>
               </td>
             </tr>
           ))}
@@ -78,4 +75,5 @@ const EmployeeList = () => {
 };
 
 export default EmployeeList;
+
 
