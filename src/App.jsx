@@ -7,6 +7,7 @@ import { Vente } from "./khadyComponent/Ventes/Ventes";
 import { Pannier } from "./khadyComponent/Pannier/Pannier";
 import Localisation from "./khadyComponent/localisation/localisation";
 import Contact from "./khadyComponent/Contact/Contact";
+import Navbar2 from "./Navbar2/Navbar2";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Vente" element={<Vente/>} />
           <Route path="/Localisation" element={<Localisation/>} />
           <Route path="/Contact" element={<Contact/>} />
+          <Route patth="/Navbar2" element={<Navbar2/>}/>
           {/* <Route path="/Footer" element={<Footer />} /> */}
         </Routes>
       </Router>
