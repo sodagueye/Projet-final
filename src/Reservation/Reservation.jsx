@@ -33,9 +33,9 @@ function ReservationPage() {
     setDate(new Date(event.target.value));
   }
 
-  const isAuthenticated = () => {
-    return localStorage.getItem('authToken') !== null;
-  };
+  // const isAuthenticated = () => {
+  //   return localStorage.getItem('authToken') !== null;
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,13 +45,12 @@ function ReservationPage() {
       return;
     }
 
-    if (!isAuthenticated()) {
-      toast.error("Veuillez vous connecter pour continuer.");
-      setTimeout(() => {
-        navigate('/connexion');
-       }, 3000); 
-      return;
-    }
+    // if (!isAuthenticated()) {
+    //   toast.error("Veuillez vous connecter pour continuer.");
+    //   setTimeout(() => {
+    //    }, 3000); 
+    //   return;
+    // }
 
     const formData = {
       invites: invites,
@@ -60,7 +59,7 @@ function ReservationPage() {
     };
 
     try {
-      await axios.post("http://localhost:8080/api/reservation", formData);
+      const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/reservation", formData);
       navigate('/table', { state: formData });
     } catch (err) {
       console.error(err);

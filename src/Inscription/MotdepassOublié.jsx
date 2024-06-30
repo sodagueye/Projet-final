@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function MotdepassOublié() {
   const [email, setEmail] = useState('');
@@ -9,16 +12,17 @@ function MotdepassOublié() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/request-reset', { email });
+      await axios.post('http://localhost:8080/api/forgot-password', { email });
       navigate('/sendmail'); 
     } catch (err) {
       console.error(err);
-      alert('Erreur lors de la demande de réinitialisation');
+      toast.error('Erreur lors de la demande de réinitialisation');
     }
   };
 
   return (
     <div>
+      <ToastContainer/>
       <div className='backpass shadow d-flex justify-content-center align-items-center mt-5'>
         <form onSubmit={handleSubmit} className='form align-items-center'>
           <h2 className='text-center fw-bold fs-2 color mt-5'>Mot de passe oublié</h2>

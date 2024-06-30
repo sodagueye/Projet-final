@@ -47,7 +47,7 @@ const ReservationTable = () => {
   const handlePass = async (e) => {
     e.preventDefault();
     if (isTableReserved) {
-      toast.success("Cette table a déjà été réservée.");
+      toast.error("Cette table a déjà été réservée.");
     } else {
       const formData = {
         invites: invites,
@@ -64,8 +64,7 @@ const ReservationTable = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:8080/api/reservation",
-          formData
+          "http://localhost:8080/api/reservation-table/tablereserved",formData
         );
         toast.success(
           `Vous avez réservé la table ${selectedTable} dans ${selectedRoom}`

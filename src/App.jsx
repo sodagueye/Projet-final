@@ -39,7 +39,7 @@ function App() {
             <Route path="/connexion" element={<Connexion />} />
             <Route path="/msgsuccess" element={<MsgSuccess />} />
             <Route path="/sendmail" element={<SendMail />} />
-            <Route path="/:token" element={<ModifierPassword />} />
+            <Route path="/reset-password/:token" element={<ModifierPassword />} />
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
             <Route
               path="/redirection-confirmation"
