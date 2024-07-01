@@ -14,9 +14,9 @@ import about3 from "../assets/about3.jpg"
 
 function About() {
   return (
-    <div className=" w-100 bg-body-secondary">
+    <div className=" w-100 bg-body-secondary p-5">
       {/* <CustomNavbar/> */}
-      <h2 className="text-start ps-5 ms-5">Apropos De</h2>
+      <h2 className="text-start ps-5 ms-5 mt-5">Apropos De</h2>
       <div className="container bg-body w-75">
         <div className="row pt-3">
           <div className="col-12 col-md-2 text-start">

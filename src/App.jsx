@@ -51,6 +51,7 @@ function App() {
           <Route path="/" element={<AppLayout />}>
             <Route path="/" element={<Accueil />} />
             <Route path="/panier" element={<Panier />} />
+            <Route path="/about" element={<About />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/reservation" element={<ReservationPage />} />
             <Route path="/detail/:id" element={<Details />} />
