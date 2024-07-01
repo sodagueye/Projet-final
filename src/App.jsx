@@ -1,5 +1,11 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
 import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
@@ -56,12 +62,13 @@ function App() {
             <Route path="/reservation" element={<ReservationPage />} />
             <Route path="/detail/:id" element={<Details />} />
             <Route path="/table" element={<ReservationTable />} />
-            <Route path="/" element={<MenuLayout />}>
-              <Route path="/boissons" element={<Boissons />} />
-              <Route path="/platsSenegalais" element={<PlatSenegalais />} />
-              <Route path="/cuisineAilleurs" element={<CuisineAilleurs />} />
-              <Route path="/desserts" element={<Desserts />} />
-              <Route path="/burgers" element={<Burgers />} />
+            <Route path="/menu" element={<MenuLayout />}>
+              <Route index element={<Navigate replace to="boissons" />} />
+              <Route path="/menu/boissons" element={<Boissons />} />
+              <Route path="/menu/platsSenegalais" element={<PlatSenegalais />} />
+              <Route path="/menu/cuisineAilleurs" element={<CuisineAilleurs />} />
+              <Route path="/menu/desserts" element={<Desserts />} />
+              <Route path="/menu/burgers" element={<Burgers />} />
             </Route>
           </Route>
 
