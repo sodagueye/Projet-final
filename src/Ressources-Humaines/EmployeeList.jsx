@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import EmployeeForm from "./AjoutEmployee"; 
+import EmployeeForm from "./AjoutEmployee";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+  const [employeeToEdit, setEmployeeToEdit] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -13,7 +14,7 @@ const EmployeeList = () => {
   const getEmployees = async () => {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting"
+        "http://localhost:8080/api/employes/getting"
       );
       setEmployees(response.data);
     } catch (error) {
@@ -26,12 +27,12 @@ const EmployeeList = () => {
       await axios.delete(
         `https://tache-de-validition-nodejs-6.onrender.com/api/employes/delete/${_id}`
       );
-      // Mettre à jour la liste des employés localement après la suppression
-      setEmployees(prevEmployees => prevEmployees.filter(employee => employee._id !== _id));
+      setEmployees((prevEmployees) =>
+        prevEmployees.filter((employee) => employee._id !== _id)
+      );
       console.log(`Employé avec l'id ${_id} supprimé avec succès.`);
     } catch (error) {
       console.error("Erreur de Suppression:", error);
-      // Gestion des erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur
     }
   };
 
@@ -39,10 +40,28 @@ const EmployeeList = () => {
     setEmployees([...employees, newEmployee]);
   };
 
+  const handleEmployeeUpdated = (updatedEmployee) => {
+    setEmployees((prevEmployees) =>
+      prevEmployees.map((employee) =>
+        employee._id === updatedEmployee._id ? updatedEmployee : employee
+      )
+    );
+    setEmployeeToEdit(null);
+  };
+
+  const handleEditEmployee = (employee) => {
+    setEmployeeToEdit(employee);
+  };
+
   return (
     <div>
-      <EmployeeForm onEmployeeAdded={handleEmployeeAdded} />
-      <table className="table table-striped">
+      <EmployeeForm
+        onEmployeeAdded={handleEmployeeAdded}
+        onEmployeeUpdated={handleEmployeeUpdated}
+        employeeToEdit={employeeToEdit}
+      />
+      <h1>Liste des employés</h1>
+      <table className="table table">
         <thead>
           <tr>
             <th>Nom</th>
@@ -62,8 +81,17 @@ const EmployeeList = () => {
               <td>{employee.horaire}</td>
               <td>{employee.mensualite}</td>
               <td>
-                <button onClick={() => handleDeleteEmployee(employee._id)}>
-                  Supprimer
+                <button
+                  onClick={() => handleDeleteEmployee(employee._id)}
+                  className="btn btn w-100"
+                >
+                  X
+                </button>
+                <button
+                  onClick={() => handleEditEmployee(employee)}
+                  className="btn btn w-100"
+                >
+                  Modifier
                 </button>
               </td>
             </tr>
@@ -75,5 +103,4 @@ const EmployeeList = () => {
 };
 
 export default EmployeeList;
-
 
