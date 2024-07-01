@@ -15,7 +15,7 @@ export default function ProductDetail() {
       try {
         console.log(`Fetching product details for ID: ${id}`);
         const response = await fetch(
-          `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`
+          `https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${id}`
         );
         if (!response.ok) {
           throw new Error(`Error fetching product: ${response.statusText}`);

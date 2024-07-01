@@ -5,9 +5,10 @@ export default function Presentation() {
   const [plats, setPlats] = useState([]);
   async function getProducts() {
     const resultat = await axios.get(
-      "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits"
+      "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
     );
     const response = await resultat.data;
+    // console.log(response.data);
     setPlats(response);
   }
   getProducts();
@@ -20,18 +21,18 @@ export default function Presentation() {
         {plats.map((item) => (
           <div key={item.id} className="col-lg-3">
             <Link to={`/detail/${item._id}`}>
-            <div class="card border-0">
-             <img src={item.image} class="card-img-top" alt="..." />
-              <div class="card-body text-center">
-                <h5 class="card-title">{item.name}</h5>
-                <p class="card-text">{item.description}</p>
-                <p class="card-text">{item.price}</p>
-                {/* <a href="#" class="btn btn-primary">
+              <div class="card border-0">
+                <img src={item.image} class="card-img-top" alt="..." />
+                <div class="card-body text-center">
+                  <h5 class="card-title">{item.name}</h5>
+                  <p class="card-text">{item.description}</p>
+                  <p class="card-text">{item.price}</p>
+                  {/* <a href="#" class="btn btn-primary">
                   Go somewhere
                 </a> */}
+                </div>
               </div>
-            </div></Link>
-          
+            </Link>
           </div>
         ))}
       </div>

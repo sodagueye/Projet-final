@@ -3,7 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AppAjout() {
-  const [columns, setColumns] = useState(["Name", "Description", "Price"]); // Définir les colonnes ici
+  const [columns, setColumns] = useState([
+    "Name",
+    "Description",
+    "Price",
+    "Image",
+  ]); // Définir les colonnes ici
   const [records, setRecords] = useState([]);
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -21,8 +26,10 @@ function AppAjout() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setImage(file);
-    setImgPreview(URL.createObjectURL(file)); // Créer une URL pour la prévisualisation de l'image
+    console.log(file);
+    setImage(file.name);
+    setImgPreview(URL.createObjectURL(file));
+    console.log(URL.createObjectURL(file));
   };
   const navigation = useNavigate();
   useEffect(() => {
@@ -40,31 +47,24 @@ function AppAjout() {
         console.error("An error occurred while fetching products:", err);
       });
   };
-
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setNewProduct({ ...newProduct, [name]: value });
-  // };
-
   const handleAddProduct = (e) => {
     e.preventDefault();
     const data = {
       name: name,
       price: price,
       description: description,
-      imgUrl: imgPreview,
+      image: imgPreview,
     };
-    // setTab([...tab, data]);
 
     axios
       .post(
-        "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits",
+        "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits",
         data
       )
+
       .then((res) => {
         setTab([...tab, res.data]);
-        // setRecords([...records, res.data]);
-        // setNewProduct({ name: "", description: "", price: "" });
+        console.log(res.data);
         navigation("/admin/plats");
       })
       .catch((err) => {

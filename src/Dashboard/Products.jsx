@@ -12,7 +12,7 @@ export default function Home() {
     async function getData() {
       try {
         const response = await fetch(
-          "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits"
+          "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits",
         );
         const resultat = await response.json();
         setData(resultat);
