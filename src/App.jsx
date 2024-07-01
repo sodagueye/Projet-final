@@ -30,6 +30,8 @@ import PanierProvider from "./Components";
 import Apps from "./Panier/Modal";
 import Users from "./users/users";
 import About from "./ABOUT/About";
+import CarouselComponent from "./Appreciation/Carousel";
+// CarouselComponent
 
 const AppLayout = () => {
   return (
@@ -76,6 +78,8 @@ function App() {
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="About" element={<About />} />
+          <Route path="appreciation" element={<CarouselComponent />} />
+          {/* CarouselComponent */}
          
 
           {/* Route vers la page Panier */}

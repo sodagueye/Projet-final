@@ -41,7 +41,7 @@ const EmployeeList = () => {
 
   return (
     <div>
-      <EmployeeForm onEmployeeAdded={handleEmployeeAdded} />
+       <EmployeeForm onEmployeeAdded={handleEmployeeAdded} /> 
       <table className="table table-striped">
         <thead>
           <tr>

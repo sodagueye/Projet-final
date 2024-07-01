@@ -50,7 +50,7 @@ const CustomNavbar = () => {
                 Reservation
               </NavLink>
               <NavLink className="text-white ms-2" to="/About">
-                About
+                A propos
               </NavLink>
               <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
