@@ -1,48 +1,12 @@
-import React, { useState } from "react";
-import Section1 from "./Section1";
-import VoirMenu from "./VoirMenu";
-const Menu = () => {
-  const [cartQuantity, setCartQuantity] = useState(0);
-  const [cartProducts, setCartProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-
-  const updateCartQuantity = (product, quantity) => {
-    setCartQuantity((prevQuantity) => prevQuantity + quantity);
-    setCartProducts((prevProducts) => {
-      const productIndex = prevProducts.findIndex(
-        (item) => item.name === product.name
-      );
-      if (productIndex > -1) {
-        const updatedProducts = [...prevProducts];
-        updatedProducts[productIndex].quantity += quantity;
-        return updatedProducts;
-      }
-      return [...prevProducts, { ...product, quantity }];
-    });
-  };
-
-  const handleCategoryFilter = (category) => {
-    console.log("Category selected:", category);
-    setSelectedCategory(category);
-  };
-
+import React from "react";
+import MenuBtn from "./MenuBtn";
+import "./Menu.css";
+export default function Menu() {
   return (
-    <div>
-      <div className="container mt-5">
-        <div className="w-100">
-          <VoirMenu onCategorySelect={handleCategoryFilter} />
-        </div>
-        <div className="row">
-          <div className="col-md-12 mt-4">
-            <Section1
-              updateCartQuantity={updateCartQuantity}
-              selectedCategory={selectedCategory}
-            />
-          </div>
-        </div>
+    <div className="container mt-5 p-5">
+      <div className="row mt-5">
+        <MenuBtn />
       </div>
     </div>
   );
-};
-
-export default Menu;
+}

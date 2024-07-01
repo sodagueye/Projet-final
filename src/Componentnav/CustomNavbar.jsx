@@ -36,7 +36,7 @@ const CustomNavbar = () => {
               src={soda}
               alt="Burger 1"
               className="me-2 logonav"
-              style={{ width: "180px" }}
+              // style={{ width: "180px" }} 
             />
           </NavLink>
           <Button

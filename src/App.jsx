@@ -10,7 +10,6 @@ import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
 import Details from "./khadyComponent/Accueil/Details";
 import Connexion from "./Inscription/Connexion";
-import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
@@ -22,15 +21,18 @@ import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
 import SendMail from "./Inscription/SendMail";
 import MsgSuccess from "./Inscription/MsgSuccess";
-import Components from "./Components";
 import Panier from "./Panier/Panier";
 import { Footer } from "./khadyComponent/Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
-import Apps from "./Panier/Modal";
 import Users from "./users/users";
 import About from "./ABOUT/About";
-
+import MenuLayout from "./Componentnav/MenuLayout";
+import Boissons from "./Componentnav/Boissons";
+import Desserts from "./Componentnav/Desserts";
+import PlatSenegalais from "./Componentnav/PlatSenegalais";
+import Burgers from "./Componentnav/Burgers";
+import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
 const AppLayout = () => {
   return (
     <PanierProvider>
@@ -53,7 +55,15 @@ function App() {
             <Route path="/reservation" element={<ReservationPage />} />
             <Route path="/detail/:id" element={<Details />} />
             <Route path="/table" element={<ReservationTable />} />
+            <Route path="/" element={<MenuLayout />}>
+              <Route path="/boissons" element={<Boissons />} />
+              <Route path="/platsSenegalais" element={<PlatSenegalais />} />
+              <Route path="/cuisineAilleurs" element={<CuisineAilleurs />} />
+              <Route path="/desserts" element={<Desserts />} />
+              <Route path="/burgers" element={<Burgers />} />
+            </Route>
           </Route>
+
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/msgsuccess" element={<MsgSuccess />} />
@@ -65,18 +75,17 @@ function App() {
             element={<PageRedirection />}
           />
           <Route path="/trackResevation" element={<TrackReservation />} />
-         <Route path="/utilisateur" element={<Users />} /> 
+          <Route path="/utilisateur" element={<Users />} />
           <Route path="/admin" element={<Dashboard />}>
             <Route path="employe" element={<Employes />} />
             <Route path="dashboard" element={<Admin />} />
             <Route path="ventes" element={<PlatsVendus />} />
             <Route path="plats" element={<Plats />} />
-           </Route>
+          </Route>
           <Route path="/update/:id" element={<Update />} />
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="About" element={<About />} />
-         
 
           {/* Route vers la page Panier */}
         </Routes>
