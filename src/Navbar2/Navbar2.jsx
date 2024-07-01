@@ -1,21 +1,14 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import logo from "../Footer-img/logo-remove2.png";
+import './Navbar.css';
+import { Footer } from '../Footer/Footer';
 
 export default function Navbar2() {
-    useEffect(() => {
-        // Détecter le scroll pour basculer entre les navbars
-        const handleScroll = () => {
-            const navbar1 = document.querySelector('.navbar1');
-            const navbar2 = document.querySelector('.navbar2');
+    const [scrolled, setScrolled] = useState(false);
 
-            if (window.scrollY > 0) {
-                // Si l'utilisateur a commencé à scroller, afficher navbar2 et masquer navbar1
-                navbar1.style.display = 'none';
-                navbar2.style.display = 'block';
-            } else {
-                // Sinon, afficher navbar1 et masquer navbar2
-                navbar1.style.display = 'block';
-                navbar2.style.display = 'none';
-            }
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -27,28 +20,85 @@ export default function Navbar2() {
 
     return (
         <div>
-            <div className="navbar1 bg-dark text-white fixed-top">
-                <div className="d-flex justify-content-around">
-                    <div><h1>Logo</h1></div>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Menu</li>
-                    </ul>
+            {!scrolled ? (
+                <div className="navbar1">
+                    <div className="d-flex justify-content-around">
+                        <div>
+                            <a href=""> <img src={logo} alt="" style={{ width: 80, height: 100}} /></a>
+                        </div>
+                        <ul className='d-flex gap-2'>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li>Contact</li>
+                            <li>Menu</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div className="navbar2 bg-dark text-white fixed-top" style={{ display: 'none' }}>
-                <div className="d-flex justify-content-around">
-                    <div><h1>Logo</h1></div>
-                    <ul>
+            ) : (
+                <div className="navbar2 d-flex justify-content-around align-items-center">
+                    <div>
+                        <a href=""> <img src={logo} alt="" style={{ width: 60, height: 60}} /></a>
+                    </div>
+                    <ul className='d-flex gap-2'>
+                        <li><a href="#">Plat sénégalais</a></li>
+                        <li><a href="#">Fast food</a></li>
+                        <li>Dessert</li>
                         <li>Jus</li>
-                        <li>Burger</li>
-                        <li>Plat national</li>
-                        <li>Autre</li>
                     </ul>
                 </div>
-            </div>
+            )}
+           <div className='pt-5 mt-5'>
+           <p> className='d-flex gap-2 className='d-flex gap-2' className='d-flex gap-2' className=
+                'd-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-
+                2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className
+                ='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap
+                -2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className
+                ='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-
+                2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className=
+                'd-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2
+                ' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='
+                d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d
+                -flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='
+                d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-
+                className='d-flex gap-2 className='d-flex gap-2' className='d-flex gap-2' className=
+                'd-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-
+                2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className
+                ='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap
+                -2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className
+                ='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-
+                2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className=
+                'd-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2
+                ' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='
+                d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d
+                -flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='
+                d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-
+                2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' classNam
+                e='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex g
+                ap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' class
+                Name='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-fle
+
+
+                x gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                 className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                  className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+                   className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-
+                   flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' cl
+                   assName='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex 
+                   gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className
+                   ='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' 
+                   className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-fle
+                   x gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' classNa
+                   me='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' 
+                   className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2
+                   ' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2' className='d-flex gap-2'
+            </p>
+
+           </div>
+           <Footer/>
         </div>
     );
 }

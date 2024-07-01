@@ -21,14 +21,14 @@ export default function Contact() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-6">
-                            <div className="d-flex flex-column align-items-center bg-white p-2">
+                            <div className="d-flex flex-column align-items-center bg-white p-2 card">
                                 <i class="bi bi-geo-alt-fill"></i>
                                 <h6>Siege</h6>
                                 <p>Kounoune ,Keur Massar</p>
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="d-flex flex-column align-items-center bg-white p-2">
+                            <div className="d-flex flex-column align-items-center bg-white p-2 card">
                                <i class="bi bi-telephone"></i>
                                 <h6>Telephone</h6>
                                 <p>77-5-43-67-89</p>
@@ -39,14 +39,14 @@ export default function Contact() {
                 <div className="container-fluid mt-3">
                     <div className="row">
                         <div className="col-6">
-                            <div className="d-flex flex-column align-items-center bg-white p-2">
+                            <div className="d-flex flex-column align-items-center bg-white p-2 card">
                                 <i class="bi bi-phone-vibrate"></i>
                                 <h6>Fax</h6>
                                 <p>33-3-43-56-78</p>
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="d-flex flex-column align-items-center bg-white p-2">
+                            <div className="d-flex flex-column align-items-center bg-white p-2 card">
                                 <i class="bi bi-envelope"></i>
                                 <h6>Email</h6>
                                 <p>yayesoda@gmail.com</p>

@@ -18,9 +18,10 @@
 }
 .vente .boutons button{
     padding: 0 5px;
+    margin: 0 2px;
 }
 .vente .active{
-    background-color: #0b960f;
+    background-color: #91725d;
     color: white;
     
 }
