@@ -9,7 +9,21 @@ function AppAjout() {
     name: "",
     description: "",
     price: "",
+    image: null,
+    imgPreview: null,
   });
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
+  const [imgPreview, setImgPreview] = useState(null);
+  const [tab, setTab] = useState([]);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+    setImgPreview(URL.createObjectURL(file)); // Créer une URL pour la prévisualisation de l'image
+  };
   const navigation = useNavigate();
   useEffect(() => {
     fetchProducts();
@@ -27,21 +41,30 @@ function AppAjout() {
       });
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewProduct({ ...newProduct, [name]: value });
-  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setNewProduct({ ...newProduct, [name]: value });
+  // };
 
   const handleAddProduct = (e) => {
     e.preventDefault();
+    const data = {
+      name: name,
+      price: price,
+      description: description,
+      imgUrl: imgPreview,
+    };
+    // setTab([...tab, data]);
+
     axios
       .post(
         "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits",
-        newProduct
+        data
       )
       .then((res) => {
-        setRecords([...records, res.data]);
-        setNewProduct({ name: "", description: "", price: "" });
+        setTab([...tab, res.data]);
+        // setRecords([...records, res.data]);
+        // setNewProduct({ name: "", description: "", price: "" });
         navigation("/admin/plats");
       })
       .catch((err) => {
@@ -58,8 +81,8 @@ function AppAjout() {
             className="form-control my-3"
             id="productName"
             name="name"
-            value={newProduct.name}
-            onChange={handleInputChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
             placeholder="Name"
           />
@@ -67,9 +90,9 @@ function AppAjout() {
             type="text"
             className="form-control my-3"
             id="description"
+            value={description}
             name="description"
-            value={newProduct.description}
-            onChange={handleInputChange}
+            onChange={(e) => setDescription(e.target.value)}
             required
             placeholder="Description"
           />
@@ -78,11 +101,22 @@ function AppAjout() {
             className="form-control my-3"
             id="price"
             name="price"
-            value={newProduct.price}
-            onChange={handleInputChange}
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             required
             placeholder="Price"
           />
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="form-control my-3"
+            required
+          />
+          {imgPreview && (
+            <div>
+              <img src={imgPreview} alt="Prévisualisation" width="100" />
+            </div>
+          )}
         </div>
         <div className="text-center">
           <button type="submit" className="btn btn-danger w-50 mb-3 ">
@@ -105,6 +139,9 @@ function AppAjout() {
               <td>{d.name}</td>
               <td>{d.description}</td>
               <td>{d.price}</td>
+              <td>
+                <img src={d.image} alt="" />
+              </td>
             </tr>
           ))}
         </tbody>
