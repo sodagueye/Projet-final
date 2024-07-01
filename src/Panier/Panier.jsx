@@ -1,11 +1,12 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Components";
+import { Link } from "react-router-dom";
 import { MdOutlineDelete } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Panier = () => {
-  const { cartItems, setCartItems, setCartQuantity} = useContext(Context);
+  const { cartItems, setCartItems, setCartQuantity } = useContext(Context);
 
   const totalPrix = cartItems.reduce((total, item) => {
     return total + (item.price || 0);
@@ -14,13 +15,13 @@ const Panier = () => {
   const handleDelete = (id) => {
     const newCartItems = cartItems.filter((item) => item._id !== id);
     setCartItems(newCartItems);
-    toast.success("Le produit a été retiré du panier")
-    setCartQuantity(newCartItems.length)
-    localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+    toast.success("Le produit a été retiré du panier");
+    setCartQuantity(newCartItems.length);
+    localStorage.setItem("cartItems", JSON.stringify(newCartItems));
   };
 
   useEffect(() => {
-    const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    const savedCartItems = JSON.parse(localStorage.getItem("cartItems"));
     if (savedCartItems) {
       setCartItems(savedCartItems);
     }
@@ -75,13 +76,13 @@ const Panier = () => {
                 <h6>{totalPrix} FCFA</h6>
               </div>
               <button className="btn w-100 btn-commande text-white shadow">
-                Commander ({totalPrix} FCFA)
+                <Link to="/inscription"> Commander ({totalPrix} FCFA)</Link>
               </button>
             </div>
           </div>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

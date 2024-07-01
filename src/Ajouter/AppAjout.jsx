@@ -27,7 +27,7 @@ function AppAjout() {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(file);
-    setImage(file.name);
+    setImage(file);
     setImgPreview(URL.createObjectURL(file));
     console.log(URL.createObjectURL(file));
   };
@@ -53,7 +53,7 @@ function AppAjout() {
       name: name,
       price: price,
       description: description,
-      image: imgPreview,
+      image: image,
     };
 
     axios
