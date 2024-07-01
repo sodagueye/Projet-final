@@ -1,13 +1,13 @@
+
 import React, { useState } from "react";
-import "../Inscription/inscrire.css";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
 
 function Connexion() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,19 +21,23 @@ const navigate = useNavigate();
           password,
         }
       );
+
       if (res.status === 201) {
         setEmail("");
         setPassword("");
         toast.success("Connexion réussie.");
-        setTimeout(() =>{
-            navigate("/");
-          }, 2000);
+
+        // Vérification si l'utilisateur est administrateur
+        if (email === "admin1@gmail.com") {
+          navigate("/admin");
+        } else {
+          navigate("/");
         }
-      else {
+      } else {
         toast.error(res.data.errors[0].msg);
       }
     } catch (error) {
-      toast.error("Erreur lors de l'inscription");
+      toast.error("Erreur lors de la connexion");
       console.error(error);
     }
   }
@@ -51,20 +55,22 @@ const navigate = useNavigate();
               type="email"
               placeholder="Email"
               required
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               className="nom email"
               type="password"
-              placeholder="mot de passe"
+              placeholder="Mot de passe"
               required
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
           <div className="text-center my-4">
             <Link to="/reinitialiser" className="oublie">
-              mot de passe oublié
+              Mot de passe oublié
             </Link>
           </div>
 
@@ -92,3 +98,4 @@ const navigate = useNavigate();
 }
 
 export default Connexion;
+
