@@ -183,7 +183,7 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
       let response;
       if (isEditing) {
         response = await axios.patch(
-          `http://localhost:8080/api/employes/update/${employeeToEdit._id}`,
+          `https://tache-de-validition-nodejs-6.onrender.com/api/employes/update/${employeeToEdit._id}`,
           employeeData
         );
         console.log("Employee updated:", response.data);

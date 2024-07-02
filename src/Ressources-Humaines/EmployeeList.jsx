@@ -14,7 +14,7 @@ const EmployeeList = () => {
   const getEmployees = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/employes/getting"
+        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting`
       );
       setEmployees(response.data);
     } catch (error) {
