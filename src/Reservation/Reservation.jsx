@@ -25,7 +25,7 @@ function ReservationPage() {
       setHours(heures_disponibles);
     } catch (err) {
       console.error(err);
-      alert("Erreur lors du chargement des heures disponibles");
+      // alert("Erreur lors du chargement des heures disponibles");
     }
   };
 
