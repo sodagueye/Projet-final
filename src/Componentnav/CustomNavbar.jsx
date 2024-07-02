@@ -103,9 +103,6 @@ const CustomNavbar = () => {
             <Nav.Link href="about" className="text-dark fs-4">
              About
             </Nav.Link>
-            {/* <Nav.Link href="ABOUT" className="text-dark fs-4">
-              About
-            </Nav.Link> */}
             <Nav.Link  href="connexion">
             <div>
               <FaUser className="user" style={{ fontSize: "19px" }} />

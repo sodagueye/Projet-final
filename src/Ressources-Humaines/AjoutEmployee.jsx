@@ -190,7 +190,8 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
         onEmployeeUpdated(response.data);
       } else {
         response = await axios.post(
-          "http://localhost:8080/api/employes",
+          `https://tache-de-validition-nodejs-6.onrender.com/api/employes`,
+
           employeeData
         );
         console.log("Employee added:", response.data);
