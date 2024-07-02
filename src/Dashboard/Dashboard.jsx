@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Card from "./Card";
+import { Outlet } from "react-router-dom";
 import "./styles.css";
 export default function Dashboard() {
   return (
@@ -12,7 +13,9 @@ export default function Dashboard() {
         </div>
         <div className="col-10 p-0">
           <Navbar />
-          <Card />
+          <div>
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

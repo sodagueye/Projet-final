@@ -1,14 +1,14 @@
-import React from 'react';
-import EmployeeList from './EmployeeList';
-import "./Employe.css"
+import React from "react";
+import EmployeeList from "./EmployeeList";
+import "./Employe.css";
 
 const Employe = () => {
   return (
     <div>
-<h1>Ajouter un nouvel employé</h1>
-      <EmployeeList />      
+      <h1>Ajouter un nouvel employé</h1>
+      <EmployeeList />
     </div>
   );
 };
 
-export default Employe
+export default Employe;

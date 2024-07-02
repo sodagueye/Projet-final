@@ -4,15 +4,9 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 export default function PlatsVendus() {
   return (
-    <div className="container-fluid">
+    <div className="container">
       <div className="row">
-        <div className="col-2 p-0">
-          <Sidebar />
-        </div>
-        <div className="col-10 p-0">
-          <Navbar />
-          <Ventas />
-        </div>
+        <Ventas />
       </div>
     </div>
   );

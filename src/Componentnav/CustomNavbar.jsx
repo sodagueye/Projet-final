@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import {
   Navbar,
   Nav,
@@ -8,64 +8,19 @@ import {
   Offcanvas,
   Button,
 } from "react-bootstrap";
+import { Context } from "../Components";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
-import AffichagePanier from "./AffichagePanier";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Navbar.css";
-import logo1 from "../assets/logo1.png";
-// { cartProducts, setCartProducts }
-// const CustomNavbar = () => {
-// const [activeLink, setActiveLink] = useState('');
-// const [showOffcanvas, setShowOffcanvas] = useState(false);
-// const [showCartModal, setShowCartModal] = useState(false);
-// const [cartQuantity, setCartQuantity] = useState(0);
-// const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-// import './Navbar.css';
 import soda from "../assets/soda.png";
 
-const CustomNavbar = ({ cartProducts, setCartProducts }) => {
+const CustomNavbar = () => {
+  const { cartQuantity } = useContext(Context);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const [showCartModal, setShowCartModal] = useState(false);
-  const [cartQuantity, setCartQuantity] = useState(0);
 
-  // const handleCloseOffcanvas = () => {
-  //   setShowOffcanvas(false);
-  // };
-
-  // const handleShowCartModal = () => {
-  //   setShowCartModal(true);
-  // };
-
-  // const handleCloseCartModal = () => {
-  //   setShowCartModal(false);
-  // };
-
-  // const incrementQuantity = (productId) => {
-  //   setCartProducts(prevCartProducts =>
-  //     prevCartProducts.map(product =>
-  //       product.id === productId
-  //         ? { ...product, quantity: product.quantity + 1 }
-  //         : product
-  //     )
-  //   );
-  // };
-
-  // const decrementQuantity = (productId) => {
-  //   setCartProducts(prevCartProducts =>
-  //     prevCartProducts.map(product =>
-  //       product.id === productId && product.quantity > 1
-  //         ? { ...product, quantity: product.quantity - 1 }
-  //         : product
-  //     )
-  //   );
-  // };
-
-  // const removeProduct = (productId) => {
-  //   setCartProducts(prevCartProducts =>
-  //     prevCartProducts.filter(product => product.id !== productId)
-  //   );
-  // };
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
 
   return (
     <>
@@ -76,39 +31,43 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
         className="navbar-custom fixed-top mb-5"
       >
         <Container fluid style={{ color: "#111" }}>
-          <Navbar.Brand href="#" style={{ color: "#fff" }}>
+          <NavLink to="/" style={{ color: "#fff" }}>
             <img
               src={soda}
               alt="Burger 1"
               className="me-2 logonav"
               style={{ width: "180px" }}
             />
-          </Navbar.Brand>
-          <Button className="hamburger-button">☰</Button>
-          {/**  <Form className="d-flex search-bar mx-auto">
-            <div className="search-input-container">
-              <FaSearch className="search-icon recherche fs-5" />
-              <FormControl type="text" placeholder="Search" className="search-input" aria-label="Search" />
-            </div>
-          </Form> */}
+          </NavLink>
+          <Button className="hamburger-button btn btn-light" onClick={handleShow}>☰</Button>
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
-              <Nav.Link href="/menu">Menu</Nav.Link>
-              <Nav.Link href="/reservation">Reservation</Nav.Link>
-              <Nav.Link href="/about">A-Propos</Nav.Link>
-              <Nav.Link href="/connexion">
+              <NavLink className="text-white ms-2" to="/menu">
+                Menu
+              </NavLink>
+              <NavLink className="text-white ms-2" to="/reservation">
+                Reservation
+              </NavLink>
+              <NavLink className="text-white ms-2" to="/About">
+                About
+              </NavLink>
+              <NavLink className="text-white ms-2" to="/connexion">
                 <FaUser className="text-white" style={{ fontSize: "19px" }} />
-              </Nav.Link>
-              <Nav.Link href="#cart">
-                <FaShoppingCart className="cart-icon" />
-                <span></span>
-              </Nav.Link>
+              </NavLink>
+              <NavLink className="text-white panier" to="/panier">
+                <span className="fs-4">
+                  <AiOutlineShoppingCart />
+                </span>
+                <p className="bg-white ajout">{cartQuantity}</p>
+              </NavLink>
             </Nav>
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Offcanvas placement="end">
+      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
@@ -125,36 +84,32 @@ const CustomNavbar = ({ cartProducts, setCartProducts }) => {
             </div>
           </Form>
           <Nav className="flex-column">
-            <Nav.Link href="#menu" className="text-dark fs-4">
+            <Nav.Link href="menu" className="text-dark fs-4">
               Menu
             </Nav.Link>
-            <Nav.Link href="#reservation" className="text-dark fs-4">
+            <Nav.Link href="reservation" className="text-dark fs-4">
               Reservation
             </Nav.Link>
-            <Nav.Link href="#about" className="text-dark fs-4">
+            <Nav.Link href="about" className="text-dark fs-4">
+             About
+            </Nav.Link>
+            {/* <Nav.Link href="ABOUT" className="text-dark fs-4">
               About
-            </Nav.Link>
-            <Nav.Link href="inscription">
+            </Nav.Link> */}
+            <Nav.Link  href="connexion">
+            <div>
               <FaUser className="user" style={{ fontSize: "19px" }} />
+            </div>
             </Nav.Link>
-            <Nav.Link href="#cart">
-              <div className="ensemble">
+
+            <Nav.Link href="panier">
+              <div className="panierk">
                 <FaShoppingCart className="cart-icon" />
-                <span></span>
               </div>
             </Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
-
-      {/* <AffichagePanier
-        show={showCartModal} 
-        handleClose={handleCloseCartModal} 
-        cartProducts={cartProducts} 
-        incrementQuantity={incrementQuantity}
-        decrementQuantity={decrementQuantity}
-        removeProduct={removeProduct}
-      /> */}
     </>
   );
 };

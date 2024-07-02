@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/style.css"
+import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 export default function Home() {
   const [data, setData] = useState([]);
   const navigation = useNavigate();
@@ -23,7 +25,7 @@ export default function Home() {
   }, []);
 
   async function handleSubmit(id) {
-    const conf = window.confirm("Do you want to delete?");
+    const conf = window.confirm("Confirmer la suppression");
     if (conf) {
       try {
         await axios.delete(
@@ -42,7 +44,7 @@ export default function Home() {
       <div className="text-end">
         <button
           onClick={() => navigation("/ajout")}
-          className="btn btn-primary btn-ajout shadow"
+          className="btn btn-danger btn-ajout shadow"
         >
           Ajouter
         </button>
@@ -60,7 +62,7 @@ export default function Home() {
               style={{ backgroundColor: "#91725d", color: "white" }}
               scope="col"
             >
-              Name
+              Nom
             </th>
             <th
               style={{ backgroundColor: "#91725d", color: "white" }}
@@ -72,7 +74,7 @@ export default function Home() {
               style={{ backgroundColor: "#91725d", color: "white" }}
               scope="col"
             >
-              Price
+              Prix
             </th>
             <th
               style={{ backgroundColor: "#91725d", color: "white" }}
@@ -94,16 +96,15 @@ export default function Home() {
               <td>
                 <button className="btn btn-warning me-1 ">
                   <Link className="text-white" to={`/update/${item._id}`}>
-                    Update
+                  <MdEdit />
                   </Link>
                 </button>
                 <button
                   className="btn btn-danger me-1"
                   onClick={() => handleSubmit(item._id)}
                 >
-                  Delete
+                  <MdDelete />
                 </button>
-                <button className="btn btn-success">Archiver</button>
               </td>
             </tr>
           ))}

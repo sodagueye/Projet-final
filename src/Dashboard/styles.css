@@ -4,15 +4,41 @@
     box-sizing: border-box;
 }
 
+.test {
+    padding: 100px;
+}
+.product-img{
+    width: 80px;
+}
+.cart,
+.delete {
+    color: #91725d;
+}
+
+.btn-commande {
+    background-color: hsl(24, 22%, 47%);
+}
+
+.sidebar a:active {
+    color: red
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .sidebar {
     background-color: #91725d;
     height: 100vh;
     position: fixed;
     width: 16.67%;
 }
-.sidebar div:hover{
+
+.sidebar div:hover {
     cursor: pointer;
 }
+
 .carte {
     border-left: 3px solid #91725d;
 }

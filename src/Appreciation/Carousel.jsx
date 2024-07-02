@@ -58,7 +58,7 @@ const CarouselComponent = () => {
       infinite={true}
       autoPlay={true}
       autoPlaySpeed={2000}
-      Class="carousel-container"
+      className="carousel-container pt-5"
       removeArrowOnDeviceType={["tablet", "mobile"]}
       arrows
       customRightArrow={<CustomRightArrow />}

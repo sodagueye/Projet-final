@@ -5,10 +5,31 @@
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
+.panier {
+  position: relative;
+}
+
+.ajout {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  color: #91725d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   font-weight: bold;
   height: 80px;
-  margin: 0; 
+  margin: 0;
 }
 
 .navbar-nav {
@@ -75,7 +96,7 @@ option {
   position: absolute;
   left: 10px;
   cursor: pointer;
-  
+
 }
 
 .search-input {
@@ -83,45 +104,54 @@ option {
   outline: none;
   font-size: 15px;
   width: 100%;
-  padding: 8px 10px 8px 30px; 
-  margin: 0; 
+  padding: 8px 10px 8px 30px;
+  margin: 0;
 }
 
 .hamburger-button {
-  display: none; 
+  display: none;
 }
 
 @media (max-width: 576px) {
-.ensemble{
-  position: relative;
-  left: 30px;
-  bottom: 40px;
-  font-size: 19px;
-  text-decoration: none;color: black;
-}
+  .ensemble {
+    position: relative;
+    left: 30px;
+    bottom: 40px;
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+  }
+  .panierk {
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+  }
 
-.user{color: black;}
+  .user {
+    color: black;
+  }
+
   .search-icon.recherche {
-    color: black; 
+    color: black;
   }
 
   .search-bar {
-    flex-grow: 5; 
-    width: 100%; 
+    flex-grow: 5;
+    width: 100%;
   }
 
   .hamburger-button {
-    display: block; 
+    display: block;
     background-color: white;
-    color:red;
+    color:#91725d;
     position: relative;
     bottom: 60px;
   }
 
-.logonav{
-  width: 50px;
-  position: relative;
-  bottom: 60px;
-}
+  .logonav {
+    width: 50px;
+    position: relative;
+    bottom: 60px;
+  }
 
 }

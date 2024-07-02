@@ -2,6 +2,9 @@ import axios from "axios";
 import "./TrackReservation.css"
 import { FaCheckCircle } from "react-icons/fa";
 import { useLocation, useNavigate} from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const TrackReservation = () => {
   const navigate = useNavigate();
@@ -19,7 +22,7 @@ const TrackReservation = () => {
     }; 
     try {
       const response = await axios.delete("http://localhost:8080/api/reservation", formData);
-      alert('vous avez annuler votre réservation')
+      toast.success('vous avez annuler votre réservation')
 
       navigate('/reservation', { state: formData });
       // navigate('/redirection-confirmation', { state: formData });
@@ -27,18 +30,16 @@ const TrackReservation = () => {
       console.log(response.data);
     } catch (err) {
       console.error(err);
-      alert("Erreur lors de l'annulation de la réservation");
+      toast.error("Erreur lors de l'annulation de la réservation");
     }
   };
-
-
-
   const handlePrevPage = () => {
     navigate('/reservation');    
 
   };
   return (
     <section id="trackreservation">
+      <ToastContainer/>
       <div className="container">
         <div className="row">
             <div className="d-flex trackreservation-state">
@@ -91,4 +92,3 @@ const TrackReservation = () => {
 };
 
 export default TrackReservation;
-// je veux annuler une réservation

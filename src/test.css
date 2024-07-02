@@ -1,0 +1,24 @@
+.users{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.users td{
+    border-bottom: 1px solid gray;
+    font-size: 13px;
+    font-weight: normal;
+}
+.users i{
+    font-size: 15px;
+    cursor: pointer;
+}
+.users input{
+    border: 1px solid gray;
+}
+.users .boutons button{
+    padding: 0 5px;
+}
+.users .active{
+    background-color: #0b960f;
+    color: white;
+    
+}
