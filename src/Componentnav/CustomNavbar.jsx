@@ -10,9 +10,10 @@ import {
   Button,
 } from "react-bootstrap";
 import { Context } from "../Components";
-import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaSearch, FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaShoppingCart } from "react-icons/fa";
+// import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Navbar.css";
 import soda from "../assets/soda.png";
 
@@ -37,7 +38,7 @@ const CustomNavbar = () => {
               src={soda}
               alt="Burger 1"
               className="me-2 logonav"
-              // style={{ width: "180px" }} 
+              // style={{ width: "180px" }}
             />
           </NavLink>
           <Button
@@ -58,21 +59,35 @@ const CustomNavbar = () => {
               <NavLink className="text-white ms-2" to="/About">
                 A propos
               </NavLink>
-                <Dropdown alignRight>
-        <Dropdown.Toggle variant="link" id="dropdown-custom-link">
-        <NavLink className="text-white ms-2" to="">
-          <FaUser className="user" style={{ fontSize: "19px" }} />
-          </NavLink> 
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-        <Dropdown.Item as={NavLink} to="/connexion">Connexion</Dropdown.Item>
-        <Dropdown.Item as={NavLink} to="/connexion">Déconnexion</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+              <Dropdown>
+                <Dropdown.Toggle
+                  variant=""
+                  id=""
+                  className="dropdown-toggle"
+                >
+                  <FaUser className="user-icon" style={{ fontSize: "19px" }} />
+                </Dropdown.Toggle>
+                <Dropdown.Menu className="custom-dropdown-menu">
+                  <Dropdown.Item
+                    as={NavLink}
+                    to="/connexion"
+                    className="custom-dropdown-item"
+                  >
+                    Connexion
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    as={NavLink}
+                    to="/deconnexion"
+                    className="custom-dropdown-item"
+                  >
+                    Déconnexion
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               <NavLink className="text-white panier" to="/panier">
                 <span className="fs-4">
-                  <AiOutlineShoppingCart />
+                 {/* <FaShoppingCart /> */}
+                 <FaShoppingCart />
                 </span>
                 <p className="bg-white ajout">{cartQuantity}</p>
               </NavLink>
@@ -107,10 +122,10 @@ const CustomNavbar = () => {
             <Nav.Link href="about" className="text-dark fs-4">
               About
             </Nav.Link>
-            <Nav.Link  href="connexion">
-            <div>
-              <FaUser className="user" style={{ fontSize: "19px" }} />
-            </div>
+            <Nav.Link href="connexion">
+              <div>
+                <FaUser className="user" style={{ fontSize: "19px" }} />
+              </div>
             </Nav.Link>
 
             <Nav.Link href="panier">
