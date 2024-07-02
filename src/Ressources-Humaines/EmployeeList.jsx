@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EmployeeForm from "./AjoutEmployee"; 
+import { IoSearch } from "react-icons/io5";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -42,6 +43,16 @@ const EmployeeList = () => {
   return (
     <div>
       <EmployeeForm onEmployeeAdded={handleEmployeeAdded} />
+      <div className="research d-flex gap-0  justify-content-end mt-5">
+            <input
+              className="input-research "
+              type="text"
+              placeholder="Rechercher"
+            />
+            <div className="icon-search d-flex justify-content-center align-items-center">
+              <IoSearch />
+            </div>
+          </div> 
       <table className="table table-striped">
         <thead>
           <tr>

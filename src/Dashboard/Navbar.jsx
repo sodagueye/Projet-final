@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { IoMdMail } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
-import { IoSearch } from "react-icons/io5";
+
 import avatar from "./avatar.jpg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "../Components";
 
+import logo from "../Dashboard/logoMaron.png";
 export default function Navbar() {
-  const { cartItems,cartQuantity } = useContext(Context);
+  const { cartItems, cartQuantity } = useContext(Context);
   const handleTest = () => {
     console.log(cartItems);
     if (cartItems && cartItems.length > 0) {
@@ -20,18 +21,15 @@ export default function Navbar() {
 
   return (
     <div className="container-fluid p-0">
-      <nav className="navbar navbar-expand-lg bg-white shadow ">
-        <div className="container-fluid">
-          <div className="research d-flex gap-0">
-            <input
-              className="input-research "
-              type="text"
-              placeholder="Rechercher"
-            />
-            <div className="icon-search d-flex justify-content-center align-items-center">
-              <IoSearch />
-            </div>
+      <nav class="navbar navbar-expand-lg bg-white shadow ">
+        <div class="container-fluid">
+          <div className="col-12 col-md-2">
+            <a href="">
+              {" "}
+              <img src={logo} alt="logo" className="img-fluid" />
+            </a>
           </div>
+
           <button
             className="navbar-toggler"
             type="button"

@@ -6,10 +6,7 @@ import { GrGallery } from "react-icons/gr";
 import about1 from "../assets/about1.png"
 import about2 from "../assets/about2.jpg"
 import about3 from "../assets/about3.jpg"
-// import about1 from "../assets/about1.png"
-// import about1 from "../assets/about1.png"
-// import CustomNavbar from "./CustomNavbar/CustomNavbar"
-// import CustomNavbar from "./Componentnav/CustomNavbar";
+
 
 
 function About() {

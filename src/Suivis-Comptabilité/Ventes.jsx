@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Ventes.css"
+import { IoSearch } from "react-icons/io5";
 
 function Ventas() {
   const [ventes, setVentes] = useState([]);
@@ -36,7 +37,8 @@ function Ventas() {
     <div className="container">
       <div className="row">
         <h2 className="my-3">Suivis des ventes du restaurant</h2>
-        <form>
+        <form className="d-flex justify-content-between align-content-center">
+          <div className="">
           <label>Choisisez la date de recherche: </label>
           <input
             className="form-control ventes mx-auto"
@@ -44,6 +46,17 @@ function Ventas() {
             value={date}
             onChange={handleDateChange}
           />
+          </div>
+        <div className="research d-flex gap-0 align-content-center">
+            <input
+              className="input-research "
+              type="text"
+              placeholder="Rechercher"
+            />
+            <div className="icon-search d-flex justify-content-center align-items-center">
+              <IoSearch />
+            </div>
+          </div>  
         </form>
         <table className="table my-4 mx-auto">
           <thead>
@@ -67,7 +80,9 @@ function Ventas() {
             ))}
           </tbody>
         </table>
-        <button className="btn btn-success my-3" onClick={handleTotalVentas}>
+        <button className="btn my-3"
+         onClick={handleTotalVentas} 
+         style={{ backgroundColor: "#91725d", color: "white" }}>
           Total ventes
         </button>
       </div>
