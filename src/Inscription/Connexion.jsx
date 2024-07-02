@@ -5,11 +5,13 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 function Connexion() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [showPassword, setShowPassword] = useState(false);
 
   async function login(e) {
     e.preventDefault();
@@ -58,14 +60,20 @@ function Connexion() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            <div className="d-flex postis">
             <input
               className="nom email"
               type="password"
+              // {showPassword ? "text" : "password"}
               placeholder="Mot de passe"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {/* <span onClick={() => setShowPassword(!showPassword)} className="">
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+            </span> */}
+            </div>
           </div>
 
           <div className="text-center my-4">

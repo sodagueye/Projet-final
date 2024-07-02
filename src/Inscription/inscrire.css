@@ -196,6 +196,14 @@
         text-decoration: none;
         cursor: pointer;
       }
+      .eyes{
+       position: relative;
+       right: 20px;
+      }
+      .postis{
+        display: flex;
+
+      }
       
 
 @media screen and (max-width:768px) {
