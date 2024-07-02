@@ -3,55 +3,38 @@ import { AiFillDashboard } from "react-icons/ai";
 import { CiUser } from "react-icons/ci";
 import { GiHotMeal, GiHumanTarget } from "react-icons/gi";
 import { FaSellsy } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import "./styles.css";
+import { NavLink} from "react-router-dom";
+// import "./styles.css";
 
 export default function Sidebar() {
-  return (
-    <div className="sidebar shadow text-white">
-      <div className="d-flex justify-content-start mb-4">
-        <p className="fs-5">{<AiFillDashboard />}</p>
-        <p className="fs-5">
-          <NavLink to="/admin">Dashboard</NavLink>
-        </p>
+  return <div className="sidebar shadow text-white">
+    <div className="d-flex align-items-center fs-5 mb-4">
+      <p className="fs-5">{<AiFillDashboard />}</p>
+      <NavLink to="/admin">Dashboard</NavLink>
+    </div>
+    <div className="d-flex flex-column align-items-start ps-2" >
+      <div className="d-flex align-items-center mb-4 fs-5">
+        <CiUser/>
+        <NavLink to="/admin/utilisateur">Utilisateurs</NavLink>
       </div>
-      <div className="d-flex justify-content-start">
-        <p className="fs-5">
-          <CiUser />
-        </p>
-        <p className="fs-5">
-          <NavLink to="/admin/utilisateur">Utilisateurs</NavLink>
-        </p>
+      <div className="d-flex align-items-center fs-5 mb-4">
+        <GiHotMeal />
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/admin/plats"
+        >
+          Plats
+        </NavLink>
       </div>
-      <div className="d-flex justify-content-start mt-4">
-        <p className="fs-5">
-          <GiHotMeal />
-        </p>
-        <p className="fs-5">
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "")}
-            to="/admin/plats"
-          >
-            Plats
-          </NavLink>
-        </p>
-      </div>
-      <div className="d-flex justify-content-start mt-4">
-        <p className="fs-5">
+      <div className="d-flex align-items-center mb-4 fs-5">
           <GiHumanTarget />
-        </p>
-        <p className="fs-5">
-          <NavLink to="/admin/employe">Ressources Humaines</NavLink>
-        </p>
+          <NavLink to="/admin/employe">R-H</NavLink>
       </div>
-      <div className="d-flex justify-content-start mt-4">
-        <p className="fs-5">
-          <FaSellsy />
-        </p>
-        <p className="fs-5">
-          <NavLink to="/admin/ventes">Ventes</NavLink>
-        </p>
+      <div className="d-flex align-items-center fs-5 mb-4">
+        <FaSellsy />
+        <NavLink to="/admin/ventes">Ventes</NavLink>
       </div>
     </div>
-  );
+
+  </div>
 }
