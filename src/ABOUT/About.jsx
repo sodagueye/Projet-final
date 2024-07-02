@@ -6,6 +6,7 @@ import { GrGallery } from "react-icons/gr";
 import about1 from "../assets/about1.png"
 import about2 from "../assets/about2.jpg"
 import about3 from "../assets/about3.jpg"
+import Maps from "./map"
 // import about1 from "../assets/about1.png"
 // import about1 from "../assets/about1.png"
 // import CustomNavbar from "./CustomNavbar/CustomNavbar"
@@ -87,6 +88,7 @@ function About() {
       <div className="row">
           <div className="col-12 col-md-2 text-start">
           <GrGallery className="fs-2 ms-5" />
+          <Maps />
           </div>
           <div className="col-12 col-md-10">
           <h4 className="text-start">Gallery</h4>
@@ -105,13 +107,11 @@ function About() {
              <img src={about1} className="p-2 rounded-4" alt="" />
             </div>
              
-            
           </div>
           </div>
       </div>
       </div>
 
-     
      
     </div>
   );
