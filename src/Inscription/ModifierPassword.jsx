@@ -1,10 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import des icônes
+import "./modifier.css";
+
 
 function ModifierPassword() {
+  const { token } = useParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -14,41 +18,45 @@ function ModifierPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("Password:", password);
+    console.log("Confirm Password:", confirmPassword);
+
     if (password !== confirmPassword) {
-      alert("Les mots de passe ne correspondent pas");
+      toast.error("Les mots de passe ne correspondent pas");
       return;
     }
 
     try {
-      await axios
-        .post(
-          "http://localhost:3030/reset-password",
-          { password, confirmPassword },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              newPassword: "newPassword123",
-            }),
-          }
-        )
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        // .catch((error) => console.error("Error:", error));
-          navigate("/msgsuccess");
+      const response = await axios.post(
+        `https://tache-de-validition-nodejs-6.onrender.com/api/reset-password/${token}`,
+        { password, confirmPassword },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log(response.data);
+      toast.success(
+        "mot de passe reinitialiser avec succes."
+        );
+         setTimeout(() =>{
+           navigate("/connexion");
+        }, 2000);
+      // navigate("/msgsuccess");
     } catch (error) {
-      alert("Erreur lors de la mise à jour du mot de passe");
+      console.error("Erreur lors de la mise à jour du mot de passe:", error);
+      toast.error("Erreur lors de la mise à jour du mot de passe");
     }
   };
 
   return (
     <div>
+      <ToastContainer />
       <div className="backCConnexion shadow d-flex justify-content-center align-items-center mt-5">
         <form onSubmit={handleSubmit} className="form align-items-center">
-          <h2 className="text-center fw-bold fs-2 color">
-            Récupération de compte
-          </h2>
+          <h2 className="text-center fw-bold fs-2 color">Récupération de compte</h2>
           <div className="inscript1">
             <div className="password-container my-2">
               <input
@@ -59,6 +67,9 @@ function ModifierPassword() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              <span onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
             </div>
             <div className="password-container my-2">
               <input
@@ -69,6 +80,9 @@ function ModifierPassword() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
+              <span onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
             </div>
           </div>
           <div className="d-flex justify-content-center align-items-center">

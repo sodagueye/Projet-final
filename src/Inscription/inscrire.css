@@ -136,6 +136,8 @@
     margin: auto;
 
 }
+
+
 .facebook{
     align-items: center;
     margin: auto;
@@ -193,6 +195,14 @@
         color: black;
         text-decoration: none;
         cursor: pointer;
+      }
+      .eyes{
+       position: relative;
+       right: 20px;
+      }
+      .postis{
+        display: flex;
+
       }
       
 

@@ -56,7 +56,7 @@ const CustomNavbar = () => {
                 Reservation
               </NavLink>
               <NavLink className="text-white ms-2" to="/About">
-                About
+                A propos
               </NavLink>
                 <Dropdown alignRight>
         <Dropdown.Toggle variant="link" id="dropdown-custom-link">
