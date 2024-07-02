@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../styles/style.css"
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
+import { IoSearch } from "react-icons/io5";
 export default function Home() {
   const [data, setData] = useState([]);
   const navigation = useNavigate();
@@ -41,13 +42,24 @@ export default function Home() {
 
   return (
     <div className="container mt-5">
-      <div className="text-end">
+      <div className="d-flex justify-content-between align-items-center">
         <button
           onClick={() => navigation("/ajout")}
-          className="btn btn-danger btn-ajout shadow"
+          className="btn  btn-ajout shadow"
+          style={{ backgroundColor: "#91725d", color: "white" }}
         >
           Ajouter
         </button>
+        <div className="research d-flex gap-0">
+            <input
+              className="input-research "
+              type="text"
+              placeholder="Rechercher"
+            />
+            <div className="icon-search d-flex justify-content-center align-items-center">
+              <IoSearch />
+            </div>
+          </div> 
       </div>
       <table className="table shadow table-hover ">
         <thead>

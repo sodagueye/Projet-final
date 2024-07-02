@@ -85,7 +85,8 @@ function AppAjout() {
           />
         </div>
         <div className="text-center">
-          <button type="submit" className="btn btn-danger w-50 mb-3 ">
+          <button type="submit" className="btn  w-50 mb-3 "
+             style={{ backgroundColor: "#91725d", color: "white" }}>
             Ajouter
           </button>
         </div>
