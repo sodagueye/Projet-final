@@ -1,8 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+=======
+import { useNavigate } from 'react-router-dom'; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+>>>>>>> 7d828d8a7d9d89499b630dbdd5c3b0bbcb9951bc
 
 function MotdepassOublié() {
   const [email, setEmail] = useState('');
@@ -11,22 +18,22 @@ function MotdepassOublié() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/request-reset', { email });
-      navigate('/sendmail');
+      await axios.post('http://localhost:8080/api/forgot-password', { email });
+      navigate('/sendmail'); 
     } catch (err) {
       console.error(err);
-      toast.error("Erreur lors de la demande de réinitialisation");
-      
+      toast.error('Erreur lors de la demande de réinitialisation');
     }
   };
 
   return (
     <div>
-      <div className='backpass shadow d-flex justify-content-center '>
-        <form onSubmit={handleSubmit} className=''>
-          <h2 className='fw-bold color fs-6 mt-3'>Trouvez votre compte</h2>
-          <p className='votre m-0'>Veuillez entrer votre e-mail  pour rechercher votre compte.</p>
-          <div className='inscript1 '>
+      <ToastContainer/>
+      <div className='backpass shadow d-flex justify-content-center align-items-center mt-5'>
+        <form onSubmit={handleSubmit} className='form align-items-center'>
+          <h2 className='text-center fw-bold fs-2 color mt-5'>Mot de passe oublié</h2>
+          <p className='text-center'>Veuillez spécifier votre adresse e-mail pour recevoir les instructions pour la réinitialisation</p>
+          <div className='inscript1 align-items-center'>
             <input
               className="nom email my-5"
               type="email"
