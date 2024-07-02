@@ -1,15 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-=======
 import { useNavigate } from 'react-router-dom'; 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
->>>>>>> 7d828d8a7d9d89499b630dbdd5c3b0bbcb9951bc
 
 function MotdepassOublié() {
   const [email, setEmail] = useState('');
