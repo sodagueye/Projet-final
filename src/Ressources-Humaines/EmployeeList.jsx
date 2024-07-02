@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EmployeeForm from "./AjoutEmployee";
-
+import { FaPen } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
   const [employeeToEdit, setEmployeeToEdit] = useState(null);
@@ -61,7 +62,8 @@ const EmployeeList = () => {
         employeeToEdit={employeeToEdit}
       />
       <h1>Liste des employés</h1>
-      <table className="table table">
+       <div className="table-responsive">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th>Nom</th>
@@ -83,21 +85,22 @@ const EmployeeList = () => {
               <td>
                 <button
                   onClick={() => handleDeleteEmployee(employee._id)}
-                  className="btn btn w-100"
+                  className="btn btn me-2"
                 >
-                  X
+                  <MdDelete />
                 </button>
                 <button
                   onClick={() => handleEditEmployee(employee)}
-                  className="btn btn w-100"
+                  className="btn btn"
                 >
-                  Modifier
+                  <FaPen />
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };
