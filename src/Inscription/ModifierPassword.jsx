@@ -38,13 +38,7 @@ function ModifierPassword() {
       );
 
       console.log(response.data);
-      toast.success(
-        "mot de passe reinitialiser avec succes."
-        );
-         setTimeout(() =>{
-           navigate("/connexion");
-        }, 2000);
-      // navigate("/msgsuccess");
+      navigate("/msgsuccess");
     } catch (error) {
       console.error("Erreur lors de la mise à jour du mot de passe:", error);
       toast.error("Erreur lors de la mise à jour du mot de passe");

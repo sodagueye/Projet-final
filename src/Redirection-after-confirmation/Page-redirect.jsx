@@ -21,12 +21,12 @@ const PageRedirection = () => {
       <div className="container">
         <div className="row">
           <div className="Redirect-Page-head">
-            <h4>Table reservations</h4>
+            <h4>Table réservation</h4>
           </div>
           <div className="Redirect-Page-body">
             <div className="Redirect-Page-body-navigate-button">
               <button id="prev-page-button" className="btn btn-back-page" onClick={handleNewReservation}>
-                <span><IoIosArrowBack /></span> Back
+                <span><IoIosArrowBack /></span> Retour
               </button>
             </div>
             <iframe
@@ -51,9 +51,9 @@ const PageRedirection = () => {
               </p>
             </div>
             <div className="Redirect-Page-footer my-3">
-              <button className="btn btn-new mx-2" onClick={handleNewReservation}>Reserver de nouveau</button>
+              <button className="btn btn-new mx-2" onClick={handleNewReservation}>Réserver de nouveau</button>
               <button className="btn btn-track mx-2" onClick={handlePrevPage}>
-                Suivre votre reservation
+                Suivre votre réservation
               </button>
             </div>
           </div>
