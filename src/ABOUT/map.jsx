@@ -4,7 +4,7 @@ import './Maps.css';
 
 const libraries = ['places'];
 const mapContainerStyle = {
-  width: '100vw', 
+  width: '50vw', 
   height: '50vh', 
 };
 const center = {

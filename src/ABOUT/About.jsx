@@ -84,11 +84,11 @@ function About() {
           </select>
         </div>
         </div>
+        
       </div>
       <div className="row">
           <div className="col-12 col-md-2 text-start">
           <GrGallery className="fs-2 ms-5" />
-          <Maps />
           </div>
           <div className="col-12 col-md-10">
           <h4 className="text-start">Gallery</h4>
@@ -106,7 +106,7 @@ function About() {
             <div className="">
              <img src={about1} className="p-2 rounded-4" alt="" />
             </div>
-             
+            <Maps />
           </div>
           </div>
       </div>
