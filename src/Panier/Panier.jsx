@@ -75,6 +75,7 @@ const Panier = () => {
                 <h6 className="text-start">Total : </h6>
                 <h6>{totalPrix} FCFA</h6>
               </div>
+              
               <button className="btn w-100 btn-commande text-white shadow">
                 <Link to="/inscription"> Commander ({totalPrix} FCFA)</Link>
               </button>
