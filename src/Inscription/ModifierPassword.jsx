@@ -28,7 +28,7 @@ function ModifierPassword() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/reset-password/${token}`,
+        `https://tache-de-validition-nodejs-6.onrender.com/api/reset-password/${token}`,
         { password, confirmPassword },
         {
           headers: {
@@ -38,7 +38,13 @@ function ModifierPassword() {
       );
 
       console.log(response.data);
-      navigate("/msgsuccess");
+      toast.success(
+        "mot de passe reinitialiser avec succes."
+        );
+         setTimeout(() =>{
+           navigate("/connexion");
+        }, 2000);
+      // navigate("/msgsuccess");
     } catch (error) {
       console.error("Erreur lors de la mise à jour du mot de passe:", error);
       toast.error("Erreur lors de la mise à jour du mot de passe");
