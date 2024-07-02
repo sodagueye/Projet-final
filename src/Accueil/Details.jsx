@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { Context } from "../../Components";
+import { Context } from "../Components";
 import { Footer } from "../Footer/Footer";
 import { ToastContainer } from "react-toastify";
 export default function ProductDetail() {
