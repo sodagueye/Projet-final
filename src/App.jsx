@@ -39,6 +39,7 @@ import Desserts from "./Componentnav/Desserts";
 import PlatSenegalais from "./Componentnav/PlatSenegalais";
 import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
+import Navbar from "./Dashboard/Navbar";
 const AppLayout = () => {
   return (
     <PanierProvider>
