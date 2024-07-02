@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "../khadyComponent/Footer/Footer";
@@ -6,20 +6,12 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-const reservedTables = {
-  "Salle 8": [1, 2],
-  "Salle 4": [3],
-  "Salle 6": [],
-  "Salle 2": [4],
-  "Salle 10": [5],
-};
-
 const ReservationTable = () => {
   const location = useLocation();
   const { invites, date, hour } = location.state || {};
   const navigate = useNavigate();
 
+  const [reservedTables, setReservedTables] = useState({});
   const [selectedRoom, setSelectedRoom] = useState("");
   const [selectedTable, setSelectedTable] = useState("");
   const [isTableReserved, setIsTableReserved] = useState(false);
@@ -28,6 +20,19 @@ const ReservationTable = () => {
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [specialRequests, setSpecialRequests] = useState("");
+
+  useEffect(() => {
+    const fetchReservedTables = async () => {
+      try {
+        const response = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/reserved-tables");
+        setReservedTables(response.data);
+      } catch (error) {
+        console.error("Une erreur s'est produite lors de la récupération des tables réservées!", error);
+      }
+    };
+
+    fetchReservedTables();
+  }, []);
 
   const handleRoomChange = (e) => {
     setSelectedRoom(e.target.value);
@@ -38,12 +43,13 @@ const ReservationTable = () => {
   const handleTableChange = (e) => {
     const tableNumber = parseInt(e.target.value, 10);
     setSelectedTable(tableNumber);
-    if (reservedTables[selectedRoom].includes(tableNumber)) {
+    if (reservedTables[selectedRoom]?.includes(tableNumber)) {
       setIsTableReserved(true);
     } else {
       setIsTableReserved(false);
     }
   };
+
   const handlePass = async (e) => {
     e.preventDefault();
     if (isTableReserved) {
@@ -64,25 +70,23 @@ const ReservationTable = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:8080/api/reservation-table/tablereserved",formData
+          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/tablereserved",
+          formData
         );
         toast.success(
           `Vous avez réservé la table ${selectedTable} dans ${selectedRoom}`
         );
         navigate("/redirection-confirmation", { state: formData });
-        // console.log(response.data);
       } catch (error) {
-        console.error("There was an error making the reservation!", error);
-        toast.error(
-          "Une erreur s'est produite lors de la réservation. Veuillez réessayer."
-        );
+        console.error("Une erreur s'est produite lors de la réservation !", error);
+          toast.error("Cette table a déjà été réservée.");
       }
     }
   };
 
   return (
     <section id="reservation-table">
-    <ToastContainer/>
+      <ToastContainer />
       <div>
         <div className="container mt-5">
           <div className="row">
@@ -123,7 +127,7 @@ const ReservationTable = () => {
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                       />
-                      <label htmlFor="floatingInput">First name</label>
+                      <label htmlFor="floatingInput">Prénom</label>
                     </div>
                     <div className="form-floating form-x col-md-6 mb-3">
                       <input
@@ -133,7 +137,7 @@ const ReservationTable = () => {
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                       />
-                      <label htmlFor="floatingInput">Last name</label>
+                      <label htmlFor="floatingInput">Nom</label>
                     </div>
                   </div>
                   <div className="form-floating mb-3">
@@ -144,7 +148,7 @@ const ReservationTable = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label htmlFor="email">Email address</label>
+                    <label htmlFor="email">Email</label>
                   </div>
                   <div className="form-floating mb-3">
                     <input
@@ -154,7 +158,7 @@ const ReservationTable = () => {
                       value={mobileNumber}
                       onChange={(e) => setMobileNumber(e.target.value)}
                     />
-                    <label htmlFor="number">Mobile number</label>
+                    <label htmlFor="number">Télèphone</label>
                   </div>
                   <div className="select-part d-flex justify-space-between mb-3">
                     <div className="form-floating rounded-0 border-0 form-z form-x col-md-6">
@@ -164,14 +168,20 @@ const ReservationTable = () => {
                         value={selectedRoom}
                         onChange={handleRoomChange}
                       >
-                        <option value="">Select Room</option>
-                        <option value="Salle 8">Salle 8</option>
-                        <option value="Salle 4">Salle 4</option>
-                        <option value="Salle 6">Salle 6</option>
+                        <option value="">Sélectionner une salle</option>
+                        <option value="Salle 1">Salle 1</option>
                         <option value="Salle 2">Salle 2</option>
+                        <option value="Salle 3">Salle 3</option>
+                        <option value="Salle 4">Salle 4</option>
+                        <option value="Salle 5">Salle 5</option>
+                        <option value="Salle 6">Salle 6</option>
+                        <option value="Salle 7">Salle 7</option>
+                        <option value="Salle 8">Salle 8</option>
+                        <option value="Salle 9">Salle 9</option>
                         <option value="Salle 10">Salle 10</option>
+                        
                       </select>
-                      <label>Room name</label>
+                      <label>Salles</label>
                     </div>
                     <div className="form-floating rounded-0 border-0 form-z form-x col-md-6">
                       <select
@@ -181,14 +191,19 @@ const ReservationTable = () => {
                         onChange={handleTableChange}
                         disabled={!selectedRoom}
                       >
-                        <option value="">Select Table</option>
+                        <option value="">Sélectionner une table</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                       </select>
-                      <label>Table name</label>
+                      <label>Tables</label>
                     </div>
                   </div>
                   {isTableReserved && (
@@ -201,7 +216,7 @@ const ReservationTable = () => {
                       className="reservation-table-body-text text-muted"
                       htmlFor="floatingTextarea2"
                     >
-                      Requetes speciales
+                     Commentaires
                     </label>
                     <textarea
                       className="form-control"
@@ -212,15 +227,14 @@ const ReservationTable = () => {
                   </div>
                 </div>
                 <p className="reservation-table-body-text text-muted mt-3 fs-6">
-                  By continuing, you agree to Terms of Service and Privacy
-                  Policy.
+                En continuant, vous acceptez les conditions d'utilisation et la politique de confidentialité.!
                 </p>
                 <button
                   type="submit"
                   className="btn btnsend"
                   onClick={handlePass}
                 >
-                  Reserver
+                  Réserver
                 </button>
               </form>
             </div>

@@ -19,7 +19,7 @@ function ReservationPage() {
 
   const Hours = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/reservation/hours");
+      const response = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/api/reservation/hours");
       console.log(response.data);
       const { heures_disponibles } = response.data;
       setHours(heures_disponibles);
@@ -33,9 +33,6 @@ function ReservationPage() {
     setDate(new Date(event.target.value));
   }
 
-  // const isAuthenticated = () => {
-  //   return localStorage.getItem('authToken') !== null;
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,12 +42,6 @@ function ReservationPage() {
       return;
     }
 
-    // if (!isAuthenticated()) {
-    //   toast.error("Veuillez vous connecter pour continuer.");
-    //   setTimeout(() => {
-    //    }, 3000); 
-    //   return;
-    // }
 
     const formData = {
       invites: invites,
@@ -87,8 +78,9 @@ function ReservationPage() {
 
   return (
     <section id="reservationPage">
-      <div className="row reservationPage-body">
-        <h1> Réservation de Table </h1>
+      <ToastContainer />
+      <div className="row reservationPage-body mt-5">
+        <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">
             <div className="form-floating col col-md-4 mx-2 my-3">
@@ -102,7 +94,7 @@ function ReservationPage() {
                   </option>
                 ))}
               </select>
-              <label>Invite(s)</label>
+              <label>Nombres d'invités</label>
             </div>
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
@@ -134,34 +126,17 @@ function ReservationPage() {
                 disabled
                 value={hour}
               />
-              <label htmlFor="floatingInputDisabled">Heur</label>
+              <label htmlFor="floatingInputDisabled">Heure</label>
             </div>
           </div>
           <label>
             <div className="row reservationPage-heure">
-              {hours.map((hour, index) => (
-                <React.Fragment key={index}>
-                  <button
-                    className="col-md-2 secondaire"
-                    type="button"
-                    onClick={() => handleHourChange(`${hour}:00`)}
-                  >
-                    {hour === 0 ? `12:00 h` : hour < 12 ? `${hour}:00 h` : hour === 12 ? `12:00 h` : `${hour - 12}:00 h`}
-                  </button>
-                  <button
-                    className="col-md-2 secondaire"
-                    type="button"
-                    onClick={() => handleHourChange(`${hour}:30`)}
-                  >
-                    {hour === 0 ? `12:30 h` : hour < 12 ? `${hour}:30 h` : hour === 12 ? `12:30 h` : `${hour - 12}:30 h`}
-                  </button>
-                </React.Fragment>
-              ))}
+              {renderHourButtons()}
             </div>
           </label>
           <br />
-          <button className="btn btnsend w-50 mt-3" type="submit">
-            Continue
+          <button className="btn btnsend" type="submit">
+            Continuer
           </button>
         </form>
       </div>

@@ -13,17 +13,19 @@ const TrackReservation = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/reservation/cancelReservation', { invites, date, hour });
+      const response = await axios.post('https://tache-de-validition-nodejs-6.onrender.com/api/reservation/cancelReservation', { invites, date, hour });
       if (response.status === 200) {
-        toast.success("vous avez annuler avec succés votre réservation");
+        toast.success("Vous avez annulé avec succès votre réservation");
+        setTimeout(() => {
+          navigate('/reservation');
+        }, 8000); 
+        return;
       }
-      // navigate('/reservation')
-
     } catch (error) {
       toast.error("Erreur lors de l'annulation de la réservation");
     }
   };
-
+  
   const handlePrevPage = () => {
     navigate('/reservation');
   };
@@ -72,7 +74,7 @@ const TrackReservation = () => {
               </div>
             </div>
             <div className="trackreservation-footer">
-              <button className="btn btn-modify" onClick={handlePrevPage}>Modifié la réservation</button>
+              <button className="btn btn-modify" onClick={handlePrevPage}>Modifier la réservation</button>
             </div>
           </div>
         </div>

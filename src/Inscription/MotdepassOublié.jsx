@@ -12,7 +12,7 @@ function MotdepassOublié() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/forgot-password', { email });
+      await axios.post('https://tache-de-validition-nodejs-6.onrender.com/api/forgot-password', { email });
       navigate('/sendmail'); 
     } catch (err) {
       console.error(err);
