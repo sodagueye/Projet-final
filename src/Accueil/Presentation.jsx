@@ -5,7 +5,7 @@ export default function Presentation() {
   const [plats, setPlats] = useState([]);
   async function getProducts() {
     const resultat = await axios.get(
-      "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits"
+      "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
     );
     const response = await resultat.data;
     setPlats(response);
@@ -21,7 +21,7 @@ export default function Presentation() {
           <div key={item.id} className="col-lg-3">
             <Link to={`/detail/${item._id}`}>
             <div class="card border-0">
-             <img src={item.image} class="card-img-top" alt="..." />
+             <img src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} class="card-img-top" alt="..." />
               <div class="card-body text-center">
                 <h5 class="card-title">{item.name}</h5>
                 <p class="card-text">{item.description}</p>

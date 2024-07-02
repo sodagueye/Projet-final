@@ -13,10 +13,11 @@ export default function Home() {
     async function getData() {
       try {
         const response = await fetch(
-          "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits"
+          "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
         );
         const resultat = await response.json();
         setData(resultat);
+        console.log(resultat);
       } catch {
         console.log("error");
       }
@@ -30,7 +31,7 @@ export default function Home() {
     if (conf) {
       try {
         await axios.delete(
-          `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`
+          `https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${id}`
         );
         alert("Deleted successfully");
         setData(data.filter((item) => item._id !== id));
@@ -100,7 +101,7 @@ export default function Home() {
           {data.map((item) => (
             <tr key={item._id}>
               <td>
-                <img src={item.image} alt="" style={{ width: "50px" }} />
+                <img src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} alt="" style={{ width: "50px" }} />
               </td>
               <td>{item.name}</td>
               <td>{item.description}</td>

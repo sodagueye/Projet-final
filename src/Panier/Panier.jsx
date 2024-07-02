@@ -45,7 +45,7 @@ const Panier = () => {
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex justify-content-center align-items-center">
                       <div>
-                        <img className="product-img" src={item.image} alt="" />
+                        <img className="product-img" src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} alt="" />
                         <div>
                           <span
                             onClick={() => handleDelete(item._id)}
