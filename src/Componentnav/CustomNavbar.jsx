@@ -6,6 +6,7 @@ import {
   FormControl,
   Container,
   Offcanvas,
+  Dropdown,
   Button,
 } from "react-bootstrap";
 import { Context } from "../Components";
@@ -50,11 +51,20 @@ const CustomNavbar = () => {
                 Reservation
               </NavLink>
               <NavLink className="text-white ms-2" to="/About">
-                About
+                A propos
               </NavLink>
-              <NavLink className="text-white ms-2" to="/connexion">
-                <FaUser className="text-white" style={{ fontSize: "19px" }} />
-              </NavLink>
+                <Dropdown alignRight>
+        <Dropdown.Toggle variant="link" id="dropdown-custom-link">
+        <NavLink className="text-white ms-2" to="">
+          <FaUser className="user" style={{ fontSize: "19px" }} />
+          </NavLink> 
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+        <Dropdown.Item as={NavLink} to="/connexion">Connexion</Dropdown.Item>
+        <Dropdown.Item as={NavLink} to="/connexion">Déconnexion</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
               <NavLink className="text-white panier" to="/panier">
                 <span className="fs-4">
                   <AiOutlineShoppingCart />
@@ -62,6 +72,7 @@ const CustomNavbar = () => {
                 <p className="bg-white ajout">{cartQuantity}</p>
               </NavLink>
             </Nav>
+            
             
           </Navbar.Collapse>
         </Container>

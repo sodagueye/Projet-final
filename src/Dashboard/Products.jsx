@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../styles/style.css"
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
+
 export default function Home() {
   const [data, setData] = useState([]);
   const navigation = useNavigate();

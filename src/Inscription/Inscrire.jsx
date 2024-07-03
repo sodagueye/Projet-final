@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
 import "./inscrire.css";
+// import "./modifier.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 function Inscrire() {
   const navigate = useNavigate();
@@ -14,6 +16,8 @@ function Inscrire() {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   async function submit(e) {
     e.preventDefault();
@@ -107,20 +111,27 @@ function Inscrire() {
           <div className="auth pass">
             <input
               className="nom"
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Mot de passe"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+             <span onClick={() => setShowPassword(!showPassword)} className="eyes">
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+                {/* <FaEyeSlash /> : <FaEye /> */}
+              </span>
             <input
               className="nom"
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               placeholder="Confirmation mot de passe"
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
+             <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes">
+                {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
+              </span>
           </div>
           <div className="creer">
             <button

@@ -6,17 +6,12 @@ import { GrGallery } from "react-icons/gr";
 import about1 from "../assets/about1.png"
 import about2 from "../assets/about2.jpg"
 import about3 from "../assets/about3.jpg"
-// import about1 from "../assets/about1.png"
-// import about1 from "../assets/about1.png"
-// import CustomNavbar from "./CustomNavbar/CustomNavbar"
-// import CustomNavbar from "./Componentnav/CustomNavbar";
-
 
 function About() {
   return (
     <div className=" w-100 bg-body-secondary">
       {/* <CustomNavbar/> */}
-      <h2 className="text-start ps-5 ms-5">Apropos De</h2>
+      <h2 className="text-start ps-5 ms-5">A propos De</h2>
       <div className="container bg-body w-75">
         <div className="row pt-3">
           <div className="col-12 col-md-2 text-start">
