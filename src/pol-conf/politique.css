@@ -1,0 +1,12 @@
+.politique p , .politique h1{
+    text-align: left;
+}
+.politique p{
+    font-size: 14px;
+}
+.politique ul li{
+    font-size: 13px;
+}
+.politique ul .title{
+    font-family: Georgia, serif;
+}

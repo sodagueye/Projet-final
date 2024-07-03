@@ -13,13 +13,7 @@ function MotdepassOublié() {
     e.preventDefault();
     try {
       await axios.post('https://tache-de-validition-nodejs-6.onrender.com/api/forgot-password', { email });
-      toast.success(
-        "un email a ete envoyer"
-        );
-         setTimeout(() =>{
-           navigate('/sendmail'); ;
-        }, 2000);
-      
+      navigate('/sendmail'); 
     } catch (err) {
       console.error(err);
       toast.error('Erreur lors de la demande de réinitialisation');

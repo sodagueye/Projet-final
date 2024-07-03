@@ -6,12 +6,18 @@ import { GrGallery } from "react-icons/gr";
 import about1 from "../assets/about1.png"
 import about2 from "../assets/about2.jpg"
 import about3 from "../assets/about3.jpg"
+import Maps from "./map"
+// import about1 from "../assets/about1.png"
+// import about1 from "../assets/about1.png"
+// import CustomNavbar from "./CustomNavbar/CustomNavbar"
+// import CustomNavbar from "./Componentnav/CustomNavbar";
+
 
 function About() {
   return (
-    <div className=" w-100 bg-body-secondary">
+    <div className=" w-100 bg-body-secondary p-5">
       {/* <CustomNavbar/> */}
-      <h2 className="text-start ps-5 ms-5">A propos De</h2>
+      <h2 className="text-start ps-5 ms-5 mt-5">Apropos De</h2>
       <div className="container bg-body w-75">
         <div className="row pt-3">
           <div className="col-12 col-md-2 text-start">
@@ -78,6 +84,7 @@ function About() {
           </select>
         </div>
         </div>
+        
       </div>
       <div className="row">
           <div className="col-12 col-md-2 text-start">
@@ -99,14 +106,12 @@ function About() {
             <div className="">
              <img src={about1} className="p-2 rounded-4" alt="" />
             </div>
-             
-            
+            <Maps />
           </div>
           </div>
       </div>
       </div>
 
-     
      
     </div>
   );

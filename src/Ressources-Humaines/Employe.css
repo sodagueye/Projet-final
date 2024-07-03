@@ -3,24 +3,23 @@ body{
 }
 .table{
     width: 80%;
-    margin:50px auto;
+    margin:0px auto;
 }
-th{
-    color: #91725d;
-}
+
 th, td{
     width: 200px;
     height: 50px;
     padding: 2px;
     text-align: center;
-    border: 1Px solid #91725d;
+    border: 1px solid #91725d;
 }
 
 form{
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 .input{
+    gap: 5;
     width: 70%;
     border: none;
     background-color: #f3faff;
@@ -32,16 +31,23 @@ form{
 .input:focus{
     outline: none;
 }
-
+.btn{
+    color: #FFF;
+    background-color:#91725d;
+    font-size: 18px;
+}
+.btn:hover{
+    background-color: #f4e6d9;
+    color: #91725d;
+}
 .btn-submit{
     background-color: #91725d;
-    width: 100%;
-    margin: 25px;
     color: #FFF;
     border: none;
     font-size: 20px;
 }
 
 .btn-submit:hover{
-    background-color: #44bb44;
-}
+    background-color: #f4e6d9;
+    color: #91725d;
+} 

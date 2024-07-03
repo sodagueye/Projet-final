@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer {
+    background-color: #91725d;
+    color: white;
+}
+footer form {
+    display: flex;
+    flex-wrap: nowrap;
+}
+footer button {
+    position: relative;
+    right: 35px;
+    height: 40px;
+    width: 150px;
+    font-size: 13px;
+    background-color: #bbb;
+}
+footer input {
+    border: none;
+    outline: none;
+}
+footer ul li {
+    font-size: 13px;
+    list-style: none;
+    white-space: nowrap;
+}
+footer li:hover{
+    border-bottom: 1px solid white;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a i:hover {
+    color:#bbb;
+    
+}
+
+footer h6 {
+    font-size: 12px;
+    font-family: Georgia, serif;
+    flex-wrap: nowrap;
+}
+.toast-success {
+    background-color: rgb(10, 233, 10);
+    color: white !important;
+}
+.toast-error {
+    background-color: red;
+    color: white !important;
+}

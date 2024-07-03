@@ -3,10 +3,18 @@
   padding: 0;
   font-weight: bold;
   width: 100%;
+  height: 50px;
+  position: fixed;
+  margin-bottom: 20px;
 }
 
 a {
   text-decoration: none;
+}
+
+a.active {
+  color: #CC5500!important;
+  font-weight: bolder;
 }
 
 .panier {
@@ -28,7 +36,7 @@ a {
 
 .navbar {
   font-weight: bold;
-  height: 80px;
+  /* height: 25%; */
   margin: 0;
 }
 
@@ -65,48 +73,9 @@ a {
   font-size: 12px;
 }
 
-option {
-  height: 70px;
-  width: 80px;
-}
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  margin: 0;
-}
 
-.search-input-container {
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  background-color: white;
-  border: none;
-  padding: 4px 10px;
-  width: 100%;
-  max-width: 400px;
-  position: relative;
-}
 
-.search-icon {
-  font-size: 16px;
-  margin-right: 10px;
-  position: absolute;
-  left: 10px;
-  cursor: pointer;
-
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  font-size: 15px;
-  width: 100%;
-  padding: 8px 10px 8px 30px;
-  margin: 0;
-}
 
 .hamburger-button {
   display: none;
@@ -121,6 +90,7 @@ option {
     text-decoration: none;
     color: black;
   }
+
   .panierk {
     font-size: 19px;
     text-decoration: none;
@@ -143,7 +113,7 @@ option {
   .hamburger-button {
     display: block;
     background-color: white;
-    color:#91725d;
+    color: #91725d;
     position: relative;
     bottom: 60px;
   }

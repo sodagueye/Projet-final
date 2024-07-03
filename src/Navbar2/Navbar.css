@@ -1,0 +1,17 @@
+.navbar1,  .navbar2 {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* transition: opacity 0.3s ease-in-out; */
+    color: white;
+    margin-bottom: 50px;
+    background-color: #91725d; 
+}
+.navbar1 li,.navbar2 li{
+    list-style: none;
+}
+.navbar1 a,.navbar2 a{
+    color: white;
+    text-decoration: none;
+}

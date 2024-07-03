@@ -2,6 +2,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CustomNavbar from "./Componentnav/CustomNavbar";
+import Footer from "./Footer/Footer";
 export const Context = createContext();
 
 export default function PanierProvider({ children }) {
@@ -29,9 +31,20 @@ export default function PanierProvider({ children }) {
   }, []);
 
 //  localStorage.clear()
+const totalPrix = cartItems.reduce((total, item) => {
+  return total + (item.price || 0);
+}, 0);
+const handleClick = () => {
+  if (totalPrix === 0) {
+    toast.error("Veuillez choisir des plats");
+  } else {
+    toast.success("Commande validée avec succès");
+  }
+};
+
   return (
     <Context.Provider
-      value={{ cartQuantity, handleAddToCart, cartItems, setCartItems , setCartQuantity}}
+      value={{ cartQuantity, totalPrix,handleClick, handleAddToCart, cartItems, setCartItems , setCartQuantity}}
     >
       {children}
     </Context.Provider>

@@ -1,0 +1,13 @@
+.navmenu a {
+    text-decoration: none !important;
+    background-color: #91725d !important;
+    padding: 5px;
+    margin-left: 12px;
+    border-radius: 5px;
+
+}
+
+.navmenu a.active {
+    background-color: #fff !important;
+    color: #fff;
+}

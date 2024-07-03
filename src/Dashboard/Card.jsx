@@ -11,7 +11,7 @@ export default function Card() {
   async function Plats() {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits"
+        "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/"
       );
       const resultat = await response.data;
       setPlat(resultat.length);
