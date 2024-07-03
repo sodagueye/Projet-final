@@ -50,7 +50,7 @@ const ReservationTable = () => {
     }
   };
 
-  const handlePass = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isTableReserved) {
       toast.error("Cette table a déjà été réservée.");
@@ -83,6 +83,21 @@ const ReservationTable = () => {
       }
     }
   };
+  // const handlePass = () => {
+  //   try {
+  //     const response =  axios.post('http://localhost:8080/api/confirme-reservation');
+  //     if (response.status === 200) {
+  //       toast.success("Vous avez reçu un mail de confimation pour la réservation");
+  //       // setTimeout(() => {
+  //       //   // navigate('/reservation');
+  //       // }, 8000); 
+  //       // return;
+  //     }
+  //   } catch (error) {
+  //     toast.error("Erreur lors de la confirmation de la réservation");
+  //   }
+  
+  // }
 
   return (
     <section id="reservation-table">
@@ -113,7 +128,7 @@ const ReservationTable = () => {
                   {`Nombre d'invités: ${invites}`}
                 </p>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="personnal-details">
                   <h5 className="reservation-table-body-text">
                     Personnal details
@@ -179,6 +194,17 @@ const ReservationTable = () => {
                         <option value="Salle 8">Salle 8</option>
                         <option value="Salle 9">Salle 9</option>
                         <option value="Salle 10">Salle 10</option>
+                        <option value="Salle 11">Salle 11</option>
+                        <option value="Salle 12">Salle 12</option>
+                        <option value="Salle 13">Salle 13</option>
+                        <option value="Salle 14">Salle 14</option>
+                        <option value="Salle 15">Salle 15</option>
+                        <option value="Salle 16">Salle 16</option>
+                        <option value="Salle 17">Salle 17</option>
+                        <option value="Salle 18">Salle 18</option>
+                        <option value="Salle 19">Salle 19</option>
+                        <option value="Salle 20">Salle 20</option>
+
                         
                       </select>
                       <label>Salles</label>
@@ -202,6 +228,17 @@ const ReservationTable = () => {
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+
                       </select>
                       <label>Tables</label>
                     </div>
@@ -232,7 +269,7 @@ const ReservationTable = () => {
                 <button
                   type="submit"
                   className="btn btnsend"
-                  onClick={handlePass}
+                  // onClick={handlePass}
                 >
                   Réserver
                 </button>

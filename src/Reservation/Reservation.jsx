@@ -19,20 +19,20 @@ function ReservationPage() {
 
   const Hours = async () => {
     try {
-      const response = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/api/reservation/hours");
+      const formattedDate = date.toISOString().split('T')[0]; 
+      const response = await axios.get(`http://localhost:8080/api/reservation/hours/${formattedDate}`);
       console.log(response.data);
       const { heures_disponibles } = response.data;
       setHours(heures_disponibles);
     } catch (err) {
       console.error(err);
-      alert("Erreur lors du chargement des heures disponibles");
+      toast.error("Erreur lors du chargement des heures disponibles");
     }
   };
 
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
   }
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +41,6 @@ function ReservationPage() {
       toast.error("Veuillez sélectionner une heure.");
       return;
     }
-
 
     const formData = {
       invites: invites,
@@ -148,4 +147,5 @@ function ReservationPage() {
     </section>
   );
 }
+
 export default ReservationPage;
