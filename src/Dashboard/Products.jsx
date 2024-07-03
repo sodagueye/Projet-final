@@ -89,7 +89,7 @@ export default function Home() {
           {data.map((item) => (
             <tr key={item._id}>
               <td>
-                <img src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} alt="" style={{ width: "50px" }} />
+                <img src={item.image} alt="" style={{ width: "50px" }} />
               </td>
               <td>{item.name}</td>
               <td>{item.description}</td>

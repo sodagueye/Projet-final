@@ -66,7 +66,7 @@ export default function ProductDetail() {
         <div className="zoom-container">
           <img
             className="zoom-image"
-            src={`https://tache-de-validition-nodejs-6.onrender.com/${product.image}`}
+            src={product.image}
             alt={product.name}
             style={{ width: "50%" }}
           />

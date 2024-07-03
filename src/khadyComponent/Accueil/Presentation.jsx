@@ -21,7 +21,7 @@ export default function Presentation() {
           <div key={item.id} className="col-lg-3">
             <Link to={`/detail/${item._id}`}>
             <div class="card border-0">
-             <img src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} class="card-img-top" alt="..." />
+             <img src={item.image} class="card-img-top" alt="..." />
               <div class="card-body text-center">
                 <h5 class="card-title">{item.name}</h5>
                 <p class="card-text">{item.description}</p>
