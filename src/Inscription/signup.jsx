@@ -1,70 +1,21 @@
-import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
+import { ToastContainer, } from "react-toastify";
 import "./inscrire.css";
-// import "./modifier.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; 
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useContext } from "react";
+import { Contexte } from "./AuthProvider";
 
-function Inscrire() {
-  const navigate = useNavigate();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+function Signup() {
 
-  async function submit(e) {
-    e.preventDefault();
+  const { firstName, setFirstName, lastName, setLastName, email, setEmail, number, setNumber, password, setPassword, confirmPassword, setConfirmPassword, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, submit } = useContext(Contexte)
 
-    if (password !== confirmPassword) {
-      toast.error("Les mots de passe ne correspondent pas");
-      return;
-    }
-    
-    try {
-      const res = await axios.post(
-        "https://tache-de-validition-nodejs-6.onrender.com/api/register",
-        {
-          firstName,
-          lastName,
-          email,
-          number,
-          password,
-          confirmPassword,
-        }
-      );
 
-      if (res.status === 201) {
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setNumber("");
-        setPassword("");
-        setConfirmPassword("");
-        toast.success(
-        "Inscription réussie."
-        );
-        setTimeout(() =>{
-          navigate("/connexion");
-        }, 2000);
-       
-      } else {
-        toast.error(res.data.errors[0].msg);
-      }
-    } catch (error) {
-      toast.error("Erreur lors de l'inscription");
-      console.error(error);
-    }
-  }
 
   return (
-    <div className="">
+    <div>
       <div className="back shadow d-flex justify-content-center">
         <form className="form" onSubmit={submit}>
           <img src={logoMaron} className="fs-2 logoMaron" alt="" />
@@ -117,10 +68,10 @@ function Inscrire() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-             <span onClick={() => setShowPassword(!showPassword)} className="eyes">
-                {showPassword ? <FaEye /> : <FaEyeSlash />}
-                {/* <FaEyeSlash /> : <FaEye /> */}
-              </span>
+            <span onClick={() => setShowPassword(!showPassword)} className="eyes">
+              {showPassword ? <FaEye /> : <FaEyeSlash />}
+
+            </span>
             <input
               className="nom"
               type={showConfirmPassword ? "text" : "password"}
@@ -129,9 +80,9 @@ function Inscrire() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-             <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes">
-                {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
-              </span>
+            <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes">
+              {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
+            </span>
           </div>
           <div className="creer">
             <button
@@ -143,9 +94,8 @@ function Inscrire() {
           </div>
         </form>
       </div>
-      <ToastContainer position="top-center" />
     </div>
-  );
+  )
 }
 
-export default Inscrire;
+export default Signup

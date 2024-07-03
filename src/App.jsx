@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
-import Inscrire from "./Inscription/Inscrire";
+// import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
 import ModifierPassword from "./Inscription/ModifierPassword";
 import Menu from "./Componentnav/Menu";
@@ -15,7 +15,7 @@ import Accueil from "./Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
 import Details from "./Accueil/Details";
-import Connexion from "./Inscription/Connexion";
+// import Connexion from "./Inscription/Connexion";
 import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
@@ -28,7 +28,7 @@ import Admin from "./Dashboard/Admin";
 import SendMail from "./Inscription/SendMail";
 import MsgSuccess from "./Inscription/MsgSuccess";
 import Panier from "./Panier/Panier";
-import  Footer  from "./Footer/Footer";
+import Footer from "./Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
 import Users from "./users/users";
@@ -41,6 +41,13 @@ import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
 import Categorie from "./Page/Categorie";
 import ListeUtilisateur from "./Inscription/ListeUtilisateur";
+import ParentProvider from "./Inscription/parentProvider";
+import { BiSignal1 } from "react-icons/bi";
+import Auth from "./Inscription/Auth";
+import AuthProvider from "./Inscription/AuthProvider";
+import Signup from "./Inscription/signup";
+// parentProvider
+
 
 const AppLayout = () => {
   return (
@@ -52,13 +59,23 @@ const AppLayout = () => {
   );
 };
 
+
+const AuthentificationProvider = () => {
+  return (
+    <AuthProvider>
+      <Outlet />
+    </AuthProvider>
+  );
+};
+
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
-          <Route path="categorie/:nom" element={<Categorie />} />
+            <Route path="categorie/:nom" element={<Categorie />} />
 
             <Route path="" element={<Accueil />} />
             <Route path="panier" element={<Panier />} />
@@ -76,17 +93,21 @@ function App() {
               <Route path="burgers" element={<Burgers />} />
             </Route>
           </Route>
+         
+            <Route path="/" element={<AuthentificationProvider />} >
+            <Route path="/inscription" element={<Signup />} />
+            <Route path="/connexion" element={<Auth />} />
+            <Route path="/msgsuccess" element={<MsgSuccess />} />
+            <Route path="/sendmail" element={<SendMail />} />
+            <Route path="/reset-password/:token" element={<ModifierPassword  />} />
+            <Route path="/reinitialiser" element={<MotdepassOublié />} />
+            <Route
+              path="/redirection-confirmation"
+              element={<PageRedirection />}
+            />
+          </Route>
+          {/*  */}
 
-          <Route path="/inscription" element={<Inscrire />} />
-          <Route path="/connexion" element={<Connexion />} />
-          <Route path="/msgsuccess" element={<MsgSuccess />} />
-          <Route path="/sendmail" element={<SendMail />} />
-          <Route path="/reset-password/:token" element={<ModifierPassword />} />
-          <Route path="/reinitialiser" element={<MotdepassOublié />} />
-          <Route
-            path="/redirection-confirmation"
-            element={<PageRedirection />}
-          />
           <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
           <Route path="/admin" element={<Dashboard />}>
@@ -101,8 +122,6 @@ function App() {
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="About" element={<About />} />
-
-          {/* Route vers la page Panier */}
         </Routes>
       </BrowserRouter>
     </div>
