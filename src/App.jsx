@@ -39,7 +39,9 @@ import Desserts from "./Componentnav/Desserts";
 import PlatSenegalais from "./Componentnav/PlatSenegalais";
 import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
-import Navbar from "./Dashboard/Navbar";
+import Categorie from "./Page/Categorie";
+import ListeUtilisateur from "./Inscription/ListeUtilisateur";
+
 const AppLayout = () => {
   return (
     <PanierProvider>
@@ -56,20 +58,22 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
-            <Route path="/" element={<Accueil />} />
-            <Route path="/panier" element={<Panier />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/reservation" element={<ReservationPage />} />
-            <Route path="/detail/:id" element={<Details />} />
-            <Route path="/table" element={<ReservationTable />} />
-            <Route path="/menu" element={<MenuLayout />}>
+          <Route path="categorie/:nom" element={<Categorie />} />
+
+            <Route path="" element={<Accueil />} />
+            <Route path="panier" element={<Panier />} />
+            <Route path="about" element={<About />} />
+            <Route path="menu" element={<Menu />} />
+            <Route path="reservation" element={<ReservationPage />} />
+            <Route path="detail/:id" element={<Details />} />
+            <Route path="table" element={<ReservationTable />} />
+            <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="boissons" />} />
-              <Route path="/menu/boissons" element={<Boissons />} />
-              <Route path="/menu/platsSenegalais" element={<PlatSenegalais />} />
-              <Route path="/menu/cuisineAilleurs" element={<CuisineAilleurs />} />
-              <Route path="/menu/desserts" element={<Desserts />} />
-              <Route path="/menu/burgers" element={<Burgers />} />
+              <Route path="boissons" element={<Boissons />} />
+              <Route path="platsSenegalais" element={<PlatSenegalais />} />
+              <Route path="cuisineAilleurs" element={<CuisineAilleurs />} />
+              <Route path="desserts" element={<Desserts />} />
+              <Route path="burgers" element={<Burgers />} />
             </Route>
           </Route>
 
@@ -87,6 +91,8 @@ function App() {
           <Route path="/utilisateur" element={<Users />} />
           <Route path="/admin" element={<Dashboard />}>
             <Route path="employe" element={<Employes />} />
+            <Route path="users" element={<ListeUtilisateur />} />
+
             <Route path="dashboard" element={<Admin />} />
             <Route path="ventes" element={<PlatsVendus />} />
             <Route path="plats" element={<Plats />} />

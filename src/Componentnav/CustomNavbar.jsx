@@ -37,15 +37,10 @@ const CustomNavbar = () => {
               src={soda}
               alt="Burger 1"
               className="me-2 logonav"
-              // style={{ width: "180px" }} 
+              style={{ width: "180px" }}
             />
           </NavLink>
-          <Button
-            className="hamburger-button btn btn-light"
-            onClick={handleShow}
-          >
-            ☰
-          </Button>
+          <Button className="hamburger-button btn btn-light" onClick={handleShow}>☰</Button>
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
@@ -77,6 +72,8 @@ const CustomNavbar = () => {
                 <p className="bg-white ajout">{cartQuantity}</p>
               </NavLink>
             </Nav>
+            
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -105,8 +102,11 @@ const CustomNavbar = () => {
               Reservation
             </Nav.Link>
             <Nav.Link href="about" className="text-dark fs-4">
-              About
+             About
             </Nav.Link>
+            {/* <Nav.Link href="ABOUT" className="text-dark fs-4">
+              About
+            </Nav.Link> */}
             <Nav.Link  href="connexion">
             <div>
               <FaUser className="user" style={{ fontSize: "19px" }} />

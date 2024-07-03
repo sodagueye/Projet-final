@@ -2,6 +2,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CustomNavbar from "./Componentnav/CustomNavbar";
+import Footer from "./Footer/Footer";
 export const Context = createContext();
 
 export default function PanierProvider({ children }) {

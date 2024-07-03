@@ -16,6 +16,7 @@ export default function Presentation() {
   }, []);
   return (
     <div className="container py-3">
+      
       <div className="row">
         {plats.map((item) => (
           <div key={item.id} className="col-lg-3">
