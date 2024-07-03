@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
   Outlet,
-  Navigate,
+  Navigate
 } from "react-router-dom";
 import ReservationPage from "./Reservation/Reservation";
 import Inscrire from "./Inscription/Inscrire";
@@ -44,6 +44,7 @@ import Politique from "./pol-conf/politique";
 import Localisation from "./localisation/localisation";
 import Condition from "./cond-ut/condition";
 import Navbar from "./Dashboard/Navbar";
+import Category from "./Category/category";
 const AppLayout = () => {
   return (
     <PanierProvider>
@@ -109,6 +110,10 @@ function App() {
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="About" element={<About />} />
+    
+          <Route path="/category/:category" element={<Category/>} />
+    
+          
 
           {/* Route vers la page Panier */}
         </Routes>
@@ -118,3 +123,4 @@ function App() {
 }
 
 export default App;
+ 
