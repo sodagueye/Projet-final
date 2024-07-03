@@ -1,0 +1,13 @@
+.bgcolor {
+    /* background-color: #91725d; */
+    /* background-image: url('asset\ 6.jpeg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+
+}
+
+.test {
+    margin-top: 50px;
+}

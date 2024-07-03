@@ -1,37 +1,80 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.mycard{
+
+.mycard {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
-.mycard a{
+
+.mycard a {
     text-decoration: none;
     color: white;
 }
-.mycard div{
+
+.mycard div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.myrow div{
+
+.myrow div {
     border-radius: 20px 20px 20px 20px;
 }
-.myrow div img{
+
+.myrow div img {
     border-radius: 20px 20px 0px 0px;
 }
-.mycard img{
+
+.mycard img {
     width: 80%;
     height: 200px;
     object-fit: cover;
 }
- @media screen and (max-width:300px){
-    .myrow{
+
+.container-text {
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Carroussel.css */
+.zoom {
+    animation: zoomEffect 10s infinite;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container-fluid h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media screen and (max-width:300px) {
+    .myrow {
         display: flex;
         flex-direction: column;
     }
-    .myrow .mycol{
+
+    .myrow .mycol {
         width: 100%;
     }
- }
+}

@@ -25,7 +25,7 @@ export default function Navbar() {
         <div class="container-fluid">
           <div className="col-12 col-md-2">
             <a href="">
-              {" "}
+            
               <img src={logo} alt="logo" className="img-fluid" />
             </a>
           </div>

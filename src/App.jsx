@@ -6,6 +6,7 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
+import Carousel from "./Appreciation/Carousel";
 import ReservationPage from "./Reservation/Reservation";
 import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
@@ -55,12 +56,14 @@ const AppLayout = () => {
 };
 
 function App() {
+  console.log("hello");
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route path="/" element={<Accueil />} />
+            {/* <Route path="/carousel" element={<Carousel />} /> */}
 
             <Route path="/panier" element={<Panier />} />
             <Route path="/about" element={<About />} />

@@ -3,22 +3,16 @@ import { RiErrorWarningLine } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
 import { HiOutlineClock } from "react-icons/hi2";
 import { GrGallery } from "react-icons/gr";
-import about1 from "../assets/about1.png"
-import about2 from "../assets/about2.jpg"
-import about3 from "../assets/about3.jpg"
-import Maps from "./map"
-// import about1 from "../assets/about1.png"
-// import about1 from "../assets/about1.png"
-// import CustomNavbar from "./CustomNavbar/CustomNavbar"
-// import CustomNavbar from "./Componentnav/CustomNavbar";
-
+import about1 from "../assets/about1.png";
+import about2 from "../assets/about2.jpg";
+import about3 from "../assets/about3.jpg";
+import Maps from "./map";
+import "./about.css";
 
 function About() {
   return (
-    <div className=" w-100 bg-body-secondary p-5">
-      {/* <CustomNavbar/> */}
-      <h2 className="text-start ps-5 ms-5 mt-5">Apropos De</h2>
-      <div className="container bg-body w-75">
+    <div className=" w-100 test">
+      <div className="container  w-75 p-1   bgcolor shadow rounded">
         <div className="row pt-3">
           <div className="col-12 col-md-2 text-start">
             <RiErrorWarningLine className="fs-2 ms-5" />
@@ -42,77 +36,79 @@ function About() {
           </div>
         </div>
         <div className="row mt-3">
-            <div className="col-12 col-md-2 text-start">
-               <IoLocationOutline className="fs-2 ms-5" />
-            </div>
-            <div className="col-12 col-md-10 ">
-               <h4 className="text-start">Addresse</h4>
-               <p className="text-start">2810 South Figueroa Street, Los Angeles, CA, USA</p>
-            </div>
+          <div className="col-12 col-md-2 text-start">
+            <IoLocationOutline className="fs-2 ms-5" />
+          </div>
+          <div className="col-12 col-md-10 ">
+            <h4 className="text-start">Addresse</h4>
+            <p className="text-start">
+              2810 South Figueroa Street, Los Angeles, CA, USA
+            </p>
+          </div>
         </div>
         <div className="row mt-3">
-        <div className="col-12 col-md-2 text-start">
-          <HiOutlineClock className="fs-2 ms-5 " />
-        </div>
-        <div className="col-12 col-md-10">
-          <h4 className="text-start">Horaires d'ouvertures</h4>
-          <div className="">
-          <select className="form-select border-0" aria-label="Default select example">
-            <option selected>Today</option>
-             <option value="0">Open 1:00AM - 11:55PM</option>
-            <option value="1">
-              Lundi <span className="">1:00AM - 11:55PM</span>
-            </option>
-            <option value="2">
-              Mardi <span>1:00AM - 11:55PM</span>
-            </option>
-            <option value="3">
-              Mercredi <span>1:00AM - 11:55PM</span>
-            </option>
-            <option value="4">
-              Jeudi <span>1:00AM - 11:55PM</span>
-            </option>
-            <option value="5">
-              Vendredi <span>1:00AM - 11:55PM</span>
-            </option>
-            <option value="6">
-              Samedi <span>1:00AM - 11:55PM</span>
-            </option>
-            <option value="7">
-              Dimanche <span>1:00AM - 11:55PM</span>
-            </option>
-          </select>
-        </div>
-        </div>
-        
-      </div>
-      <div className="row">
           <div className="col-12 col-md-2 text-start">
-          <GrGallery className="fs-2 ms-5" />
+            <HiOutlineClock className="fs-2 ms-5 " />
           </div>
           <div className="col-12 col-md-10">
-          <h4 className="text-start">Gallery</h4>
-          <div className="img row text-start" >
+            <h4 className="text-start">Horaires d'ouvertures</h4>
             <div className="">
-            <img src={about3} className="p-2 rounded-4" alt="" />
-             <img src={about2}className="p-2 rounded-4"  alt="" />
-             <img src={about3} className="p-2 rounded-4" alt="" />
+              <select
+                className="form-select border-0"
+                aria-label="Default select example"
+              >
+                <option selected>Today</option>
+                <option value="0">Open 1:00AM - 11:55PM</option>
+                <option value="1">
+                  Lundi <span className="">1:00AM - 11:55PM</span>
+                </option>
+                <option value="2">
+                  Mardi <span>1:00AM - 11:55PM</span>
+                </option>
+                <option value="3">
+                  Mercredi <span>1:00AM - 11:55PM</span>
+                </option>
+                <option value="4">
+                  Jeudi <span>1:00AM - 11:55PM</span>
+                </option>
+                <option value="5">
+                  Vendredi <span>1:00AM - 11:55PM</span>
+                </option>
+                <option value="6">
+                  Samedi <span>1:00AM - 11:55PM</span>
+                </option>
+                <option value="7">
+                  Dimanche <span>1:00AM - 11:55PM</span>
+                </option>
+              </select>
             </div>
-            <div className="">
-            <img src={about3} className="p-2 rounded-4" alt="" />
-             <img src={about1} className="p-2 rounded-4" alt="" />
-             <img src={about1} className="p-2 rounded-4" alt="" />
-            </div>
-            <div className="">
-             <img src={about1} className="p-2 rounded-4" alt="" />
-            </div>
-            <Maps />
           </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-2 text-start">
+            <GrGallery className="fs-2 ms-5" />
           </div>
+          <div className="col-12 col-md-10">
+            <h4 className="text-start">Gallery</h4>
+            <div className="img row text-start">
+              <div className="">
+                <img src={about3} className="p-2 rounded-4" alt="" />
+                <img src={about2} className="p-2 rounded-4" alt="" />
+                <img src={about3} className="p-2 rounded-4" alt="" />
+              </div>
+              <div className="">
+                <img src={about3} className="p-2 rounded-4" alt="" />
+                <img src={about1} className="p-2 rounded-4" alt="" />
+                <img src={about1} className="p-2 rounded-4" alt="" />
+              </div>
+              <div className="">
+                <img src={about1} className="p-2 rounded-4" alt="" />
+              </div>
+              <Maps />
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-
-     
     </div>
   );
 }

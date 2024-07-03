@@ -1,16 +1,19 @@
-.navbar-custom {
-  background-color: #91725d;
-  padding: 0;
-  font-weight: bold;
-  /* width: 100%; */
+/* .navbar {
+  position: fixed;
+  width: 100%;
+} */
+
+.icon-nav {
+  color: #91725d;
 }
 
 a {
   text-decoration: none;
+  color: #252525;
 }
 
 a.active {
-  color: #CC5500!important;
+  color: #91725d !important;
   font-weight: bolder;
 }
 
