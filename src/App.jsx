@@ -28,7 +28,7 @@ import Admin from "./Dashboard/Admin";
 import SendMail from "./Inscription/SendMail";
 import MsgSuccess from "./Inscription/MsgSuccess";
 import Panier from "./Panier/Panier";
-import  Footer  from "./Footer/Footer";
+import Footer from "./Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
 import Users from "./users/users";
@@ -39,7 +39,10 @@ import Desserts from "./Componentnav/Desserts";
 import PlatSenegalais from "./Componentnav/PlatSenegalais";
 import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
-
+import Contact from "./Contact/Contact";
+import Politique from "./pol-conf/politique";
+import Localisation from "./localisation/localisation";
+import Condition from "./cond-ut/condition";
 import Navbar from "./Dashboard/Navbar";
 const AppLayout = () => {
   return (
@@ -58,6 +61,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route path="/" element={<Accueil />} />
+
             <Route path="/panier" element={<Panier />} />
             <Route path="/about" element={<About />} />
             <Route path="/menu" element={<Menu />} />
@@ -67,13 +71,22 @@ function App() {
             <Route path="/menu" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="boissons" />} />
               <Route path="/menu/boissons" element={<Boissons />} />
-              <Route path="/menu/platsSenegalais" element={<PlatSenegalais />} />
-              <Route path="/menu/cuisineAilleurs" element={<CuisineAilleurs />} />
+              <Route
+                path="/menu/platsSenegalais"
+                element={<PlatSenegalais />}
+              />
+              <Route
+                path="/menu/cuisineAilleurs"
+                element={<CuisineAilleurs />}
+              />
               <Route path="/menu/desserts" element={<Desserts />} />
               <Route path="/menu/burgers" element={<Burgers />} />
             </Route>
           </Route>
-
+          <Route path="/conditions-utilisation" element={<Condition />} />
+          <Route path="/politique-de-confidentialite" element={<Politique />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/localisation" element={<Localisation />} />
           <Route path="/inscription" element={<Inscrire />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/msgsuccess" element={<MsgSuccess />} />

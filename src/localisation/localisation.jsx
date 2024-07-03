@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { Footer } from "../Footer/Footer";
+import Footer  from "../Footer/Footer";
 
 export default function Localisation(){
     const [localisation, setLocalisation] = useState({latitude:null , longitude:null});

@@ -242,7 +242,7 @@ const ReservationTable = () => {
         </div>
         <div className="container-fluid">
           <div className="row">
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </div>
       </div>
