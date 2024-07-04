@@ -47,11 +47,7 @@ export default function Presentation() {
                     className="card-img-top "
                     alt="..."
                   />
-                  {/* <div className="card-body text-center">
-                    <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.description}</p>
-                    <p className="card-text">{item.price}</p>
-                  </div> */}
+                 
                 </div>
               </Link>
             </div>

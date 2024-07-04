@@ -1,18 +1,32 @@
-
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
-import { ToastContainer, } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "./inscrire.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext } from "react";
 import { Contexte } from "./AuthProvider";
 
 function Signup() {
-
-  const { firstName, setFirstName, lastName, setLastName, email, setEmail, number, setNumber, password, setPassword, confirmPassword, setConfirmPassword, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, submit } = useContext(Contexte)
-
-
+  const {
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    email,
+    setEmail,
+    number,
+    setNumber,
+    password,
+    setPassword,
+    confirmPassword,
+    setConfirmPassword,
+    showPassword,
+    setShowPassword,
+    showConfirmPassword,
+    setShowConfirmPassword,
+    submit,
+  } = useContext(Contexte);
 
   return (
     <div>
@@ -68,9 +82,11 @@ function Signup() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span onClick={() => setShowPassword(!showPassword)} className="eyes">
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="eyes"
+            >
               {showPassword ? <FaEye /> : <FaEyeSlash />}
-
             </span>
             <input
               className="nom"
@@ -80,7 +96,10 @@ function Signup() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes">
+            <span
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="eyes"
+            >
               {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
             </span>
           </div>
@@ -95,7 +114,7 @@ function Signup() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;

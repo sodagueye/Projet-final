@@ -1,8 +1,8 @@
-import React from 'react'
-import { createContext, useState } from 'react';
+import React from "react";
+import { createContext, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { Navigate ,useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Contexte = createContext();
 function AuthProvider({ children }) {
@@ -15,7 +15,7 @@ function AuthProvider({ children }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  const [user, setUser] = useState([]);
 
   // parie inscription
   async function submit(e) {
@@ -38,6 +38,8 @@ function AuthProvider({ children }) {
           confirmPassword,
         }
       );
+      // setUser({ res });
+      // console.log(res);
 
       if (res.status === 201) {
         setFirstName("");
@@ -46,13 +48,10 @@ function AuthProvider({ children }) {
         setNumber("");
         setPassword("");
         setConfirmPassword("");
-        toast.success(
-          "Inscription réussie."
-        );
+        toast.success("Inscription réussie.");
         setTimeout(() => {
           navigate("/connexion");
         }, 2000);
-
       } else {
         toast.error(res.data.errors[0].msg);
       }
@@ -74,7 +73,14 @@ function AuthProvider({ children }) {
           password,
         }
       );
+      const loggedInUser = {
+        firstName: res.data.firstName,
+        lastName: res.data.lastName,
+        email: email,
+      };
 
+      setUser(loggedInUser);
+      console.log(loggedInUser);
       if (res.status === 201) {
         setEmail("");
         setPassword("");
@@ -82,10 +88,10 @@ function AuthProvider({ children }) {
 
         // Vérification si l'utilisateur est administrateur
         if (email === "admin1@gmail.com") {
-        navigate("/admin");
+          navigate("/admin");
           return;
         } else {
-           navigate("/");
+          navigate("/");
         }
       } else {
         toast.error(res.data.errors[0].msg);
@@ -96,17 +102,36 @@ function AuthProvider({ children }) {
     }
   }
   // fin
+  console.log(user);
   return (
     <div>
-      <Contexte.Provider value={{
-        firstName, setFirstName, lastName, setLastName,
-        email, setEmail, number, setNumber, password, setPassword, confirmPassword, setConfirmPassword, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, submit, login
-      }}>
+      <Contexte.Provider
+        value={{
+          firstName,
+          setFirstName,
+          lastName,
+          setLastName,
+          email,
+          setEmail,
+          number,
+          user,
+          setUser,
+          setNumber,
+          password,
+          setPassword,
+          confirmPassword,
+          setConfirmPassword,
+          showPassword,
+          setShowPassword,
+          showConfirmPassword,
+          setShowConfirmPassword,
+          submit,
+          login,
+        }}
+      >
         {children}
-     
-
       </Contexte.Provider>
     </div>
-  )
+  );
 }
-export default AuthProvider
+export default AuthProvider;
