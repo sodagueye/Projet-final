@@ -45,6 +45,9 @@ import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
+import Tout from "./Componentnav/Tout";
+// parentProvider
+
 
 const AppLayout = () => {
   return (
@@ -94,7 +97,8 @@ function App() {
             <Route path="detail/:id" element={<Details />} />
             <Route path="table" element={<ReservationTable />} />
             <Route path="menu/" element={<MenuLayout />}>
-              <Route index element={<Navigate replace to="boissons" />} />
+              <Route index element={<Navigate replace to="tout" />} />
+              <Route path="tout" element={<Tout />} />
               <Route path="boissons" element={<Boissons />} />
               <Route path="platsSenegalais" element={<PlatSenegalais />} />
               <Route path="cuisineAilleurs" element={<CuisineAilleurs />} />
