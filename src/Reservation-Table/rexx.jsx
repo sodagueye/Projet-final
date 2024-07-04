@@ -1,104 +1,151 @@
-// import React, { useState } from 'react';
-// import '../Inscription/inscrire.css';
-// import { Link, useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import logoMaron from '../assets/logoMaron.png'; 
+// import "./Reservation.css";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// // import  Footer  from "../Footer/Footer";
+// import React, { useState, useEffect } from "react";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
-// function Connexion() {
-//     const navigate = useNavigate();
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
+// function ReservationPage() {
+//   const [invites, setInvites] = useState(1);
+//   const [date, setDate] = useState(new Date());
+//   const [hour, setHour] = useState("");
+//   const [hours, setHours] = useState([]);
+//   const navigate = useNavigate();
 
-//     async function login(e) {
-//         e.preventDefault();
-//         try {
-//             const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/auth", {
-//                 email,
-//                 password,
-//             });
+//   useEffect(() => {
+//     Hours();
+//   }, [date]);
 
-//             if (res.data === "exist") {
-//                 toast.success("Connexion réussie");
-//                 // Redirection vers la page de réservation après connexion réussie
-//                 navigate("/table");
-//             } else {
-//                 toast.error("Email ou mot de passe incorrect");
-//             }
+//   const Hours = async () => {
+//     try {
+//       const response = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/api/reservation/hours");
+//       console.log(response.data);
+//       const { heures_disponibles } = response.data;
+//       setHours(heures_disponibles);
+//     } catch (err) {
+//       console.error(err);
+//       // alert("Erreur lors du chargement des heures disponibles");
+//     }
+//   };
 
-//             setEmail('');
-//             setPassword('');
+//   const handleDateChange = (event) => {
+//     setDate(new Date(event.target.value));
+//   }
 
-//         } catch (error) {
-//             console.error(error);
-//             toast.error("Erreur lors de la connexion");
-//         }
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     if (!hour) {
+//       toast.error("Veuillez sélectionner une heure.");
+//       return;
 //     }
 
-//     return (
-//         <div>
-//             <div className='backCConnexion shadow mt-5'>
-//                 <form className='form align-items-center' onSubmit={login}>
-//                     <img src={logoMaron} className='fs-2 logoMaron' alt="" />
-//                     <h2 className='text-center fw-bold fs-2 color'>Connecter</h2>
 
-//                     <div className='inscript1'>
-//                         <input className="nom email" type="email" placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
-//                         <input className="nom email" type="password" placeholder="mot de passe" required onChange={(e) => setPassword(e.target.value)} />
-//                     </div>
+//     const formData = {
+//       invites: invites,
+//       date: date.toISOString().split('T')[0],
+//       hour: hour,
+//     };
 
-//                     <div className='text-center my-4'>
-//                         <Link to="/reinitialiser" className='oublie'>mot de passe oublié</Link>
-//                     </div>
+//     try {
+//       const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/reservation", formData);
+//       navigate('/table', { state: formData });
+//     } catch (err) {
+//       console.error(err);
+//       toast.error("Erreur lors de la demande de réservation");
+//     }
+//   };
 
-//                     <div className='creer'>
-//                         <button type='submit' className='liens align-items-center connect fs-5 fw-bold'>Se connecter</button>
-//                     </div>
+//   const handleHourChange = (hour) => {
+//     setHour(hour);
+//   };
 
-//                     <p className='text-center mt-3'>Vous n'avez pas de compte ?</p>
+//   const renderHourButtons = () => {
+//     return hours.map((hour, index) => (
+//       <React.Fragment key={index}>
+//         <button
+//           className="col-md-2 secondaire"
+//           type="button"
+//           onClick={() => handleHourChange(hour)}
+//         >
+//           {hour}
+//         </button>
+//       </React.Fragment>
+//     ));
+//   };
 
-//                     <div className='text-center my-4'>
-//                         <Link to="/inscription" className='oublie'>
-//                             Créer un compte
-//                         </Link>
-//                     </div>
-//                 </form>
+//   return (
+//     <section id="reservationPage">
+//       <ToastContainer />
+//       <div className="row reservationPage-body mt-5">
+//         <h1>Table de réservations</h1>
+//         <form onSubmit={handleSubmit}>
+//           <div className="form-head justify-space-between">
+//             <div className="form-floating col col-md-4 mx-2 my-3">
+//               <select
+//                 className="form-select"
+//                 value={invites}
+//                 onChange={(e) => setInvites(Number(e.target.value))}>
+//                 {[...Array(8).keys()].map((i) => (
+//                   <option className="option-back" key={i + 1} value={i + 1}>
+//                     {i + 1}
+//                   </option>
+//                 ))}
+//               </select>
+//               <label>Nombres d'invités</label>
 //             </div>
-//             <ToastContainer position='top-center' />
+//             <div className="form-floating col-md-4 mx-2 my-3">
+//               <select
+//                 className="form-select"
+//                 value={date.toISOString().split('T')[0]}
+//                 onChange={handleDateChange}
+//               >
+//                 {Array.from({ length: 7 }, (_, i) => {
+//                   const newDate = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
+//                   return (
+//                     <option className="option-back" key={i} value={newDate.toISOString().split('T')[0]}>
+//                       {newDate.toLocaleDateString("fr-FR", {
+//                         weekday: "short",
+//                         day: "2-digit",
+//                         month: "2-digit",
+//                         year: "numeric",
+//                       })}
+//                     </option>
+//                   );
+//                 })}
+//               </select>
+//               <label htmlFor="floatingSelect">Date</label>
+//             </div>
+//             <div className="form-floating mx-2 my-3">
+//               <input
+//                 type="text"
+//                 className="form-control"
+//                 id="floatingInputDisabled"
+//                 disabled
+//                 value={hour}
+//               />
+//               <label htmlFor="floatingInputDisabled">Heure</label>
+//             </div>
+//           </div>
+//           <label>
+//             <div className="row reservationPage-heure">
+//               {renderHourButtons()}
+//             </div>
+//           </label>
+//           <br />
+//           <button className="btn btnsend" type="submit">
+//             Continuer
+//           </button>
+//         </form>
+//       </div>
+//       <div className="container-fluid">
+//         <div className="row">
+        
 //         </div>
-//     );
+//       </div>
+//     </section>
+//   );
 // }
-
-// export default Connexion;
-
-
- // if (res.data === "exist") {
-       
-      //   toast.error("l'utilisateur existe deja")
-      // } else 
-
-      if (res.data === "exist pas") {
-       
-        toast.success("inscription reussie")
-        console.log(res);
-       
-      }
-       // Réinitialiser les champs du formulaire
-       
-      setFirstName('');
-      setLastName('');
-      setEmail('');
-      setNumber('');
-      setPassword('');
-      setConfirmPassword('');
-
-   // Rediriger vers la page de connexion
-     navigate('/connexion');
-
-    // } catch (error) {
-    // toast.error("erreur d inscription")
-    //   console.log(error);
-    // }
-    
-//   }
+// export default ReservationPage;

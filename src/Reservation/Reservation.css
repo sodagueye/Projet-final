@@ -144,6 +144,11 @@
     font-size: 20px;
     font-weight: 600;
 }
+#reservationPage .btnsend:hover{
+    color: black;
+    background-color: #91725d;
+
+}
 
 #reservationPage .secondaire {
     height: 35px;
@@ -154,7 +159,8 @@
 }
 
 #reservation .secondaire:focus {
-    background-color: #91725d;
+   background-color: #91725d; 
+
     border: none;
     color: #fff;
 }
