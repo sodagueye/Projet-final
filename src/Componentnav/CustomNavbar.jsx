@@ -5,7 +5,6 @@ import { Context } from "../Components";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { PiWarningCircleLight } from "react-icons/pi";
 import "./Navbar.css";
 import logo from "../Componentnav/logoMaron.png";
