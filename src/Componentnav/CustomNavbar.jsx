@@ -42,7 +42,7 @@ const CustomNavbar = () => {
               Reservation
             </Nav.Link>
             <Nav.Link href="about" className="text-dark fs-4">
-              About
+             About
             </Nav.Link>
             <Nav.Link href="connexion">
               <div>
@@ -110,6 +110,14 @@ const CustomNavbar = () => {
                 </p>
                 <span className="ms-1">
                   <NavLink to="reservation">RESERVATION</NavLink>
+                </span>
+              </li>
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <FaUser />
+                </p>
+                <span className="ms-1">
+                  <NavLink to="connexion">CONNEXION</NavLink>
                 </span>
               </li>
               <li className="nav-item d-flex align-items-center ms-3">

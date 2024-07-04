@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Carousel from "./Appreciation/Carousel";
 import ReservationPage from "./Reservation/Reservation";
-import Inscrire from "./Inscription/Inscrire";
+// import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
 import ModifierPassword from "./Inscription/ModifierPassword";
 import Menu from "./Componentnav/Menu";
@@ -16,7 +16,7 @@ import Accueil from "./Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
 import Details from "./Accueil/Details";
-import Connexion from "./Inscription/Connexion";
+// import Connexion from "./Inscription/Connexion";
 import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
@@ -40,11 +40,16 @@ import Desserts from "./Componentnav/Desserts";
 import PlatSenegalais from "./Componentnav/PlatSenegalais";
 import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
-import Contact from "./Contact/Contact";
-import Politique from "./pol-conf/politique";
-import Localisation from "./localisation/localisation";
-import Condition from "./cond-ut/condition";
-import Navbar from "./Dashboard/Navbar";
+import Categorie from "./Page/Categorie";
+import ListeUtilisateur from "./Inscription/ListeUtilisateur";
+import ParentProvider from "./Inscription/parentProvider";
+import { BiSignal1 } from "react-icons/bi";
+import Auth from "./Inscription/Auth";
+import AuthProvider from "./Inscription/AuthProvider";
+import Signup from "./Inscription/signup";
+// parentProvider
+
+
 const AppLayout = () => {
   return (
     <PanierProvider>
@@ -55,6 +60,16 @@ const AppLayout = () => {
   );
 };
 
+
+const AuthentificationProvider = () => {
+  return (
+    <AuthProvider>
+      <Outlet />
+    </AuthProvider>
+  );
+};
+
+
 function App() {
   console.log("hello");
   return (
@@ -62,48 +77,45 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
-            <Route path="/" element={<Accueil />} />
-            {/* <Route path="/carousel" element={<Carousel />} /> */}
+            <Route path="categorie/:nom" element={<Categorie />} />
 
-            <Route path="/panier" element={<Panier />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/reservation" element={<ReservationPage />} />
-            <Route path="/detail/:id" element={<Details />} />
-            <Route path="/table" element={<ReservationTable />} />
-            <Route path="/menu" element={<MenuLayout />}>
+            <Route path="" element={<Accueil />} />
+            <Route path="panier" element={<Panier />} />
+            <Route path="about" element={<About />} />
+            <Route path="menu" element={<Menu />} />
+            <Route path="reservation" element={<ReservationPage />} />
+            <Route path="detail/:id" element={<Details />} />
+            <Route path="table" element={<ReservationTable />} />
+            <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="boissons" />} />
-              <Route path="/menu/boissons" element={<Boissons />} />
-              <Route
-                path="/menu/platsSenegalais"
-                element={<PlatSenegalais />}
-              />
-              <Route
-                path="/menu/cuisineAilleurs"
-                element={<CuisineAilleurs />}
-              />
-              <Route path="/menu/desserts" element={<Desserts />} />
-              <Route path="/menu/burgers" element={<Burgers />} />
+              <Route path="boissons" element={<Boissons />} />
+              <Route path="platsSenegalais" element={<PlatSenegalais />} />
+              <Route path="cuisineAilleurs" element={<CuisineAilleurs />} />
+              <Route path="desserts" element={<Desserts />} />
+              <Route path="burgers" element={<Burgers />} />
             </Route>
           </Route>
-          <Route path="/conditions-utilisation" element={<Condition />} />
-          <Route path="/politique-de-confidentialite" element={<Politique />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/localisation" element={<Localisation />} />
-          <Route path="/inscription" element={<Inscrire />} />
-          <Route path="/connexion" element={<Connexion />} />
-          <Route path="/msgsuccess" element={<MsgSuccess />} />
-          <Route path="/sendmail" element={<SendMail />} />
-          <Route path="/reset-password/:token" element={<ModifierPassword />} />
-          <Route path="/reinitialiser" element={<MotdepassOublié />} />
-          <Route
-            path="/redirection-confirmation"
-            element={<PageRedirection />}
-          />
+         
+            <Route path="/" element={<AuthentificationProvider />} >
+            <Route path="/inscription" element={<Signup />} />
+            <Route path="/connexion" element={<Auth />} />
+            <Route path="/msgsuccess" element={<MsgSuccess />} />
+            <Route path="/sendmail" element={<SendMail />} />
+            <Route path="/reset-password/:token" element={<ModifierPassword  />} />
+            <Route path="/reinitialiser" element={<MotdepassOublié />} />
+            <Route
+              path="/redirection-confirmation"
+              element={<PageRedirection />}
+            />
+          </Route>
+          {/*  */}
+
           <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
           <Route path="/admin" element={<Dashboard />}>
             <Route path="employe" element={<Employes />} />
+            <Route path="users" element={<ListeUtilisateur />} />
+
             <Route path="dashboard" element={<Admin />} />
             <Route path="ventes" element={<PlatsVendus />} />
             <Route path="plats" element={<Plats />} />
@@ -112,8 +124,6 @@ function App() {
           <Route path="/ajout" element={<AppAjout />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="About" element={<About />} />
-
-          {/* Route vers la page Panier */}
         </Routes>
       </BrowserRouter>
     </div>
