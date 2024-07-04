@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
+import "./inscrire.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import logoMaron from "../assets/logoMaron.png";
+
 
 
 function MotdepassOublié() {
@@ -21,15 +24,15 @@ function MotdepassOublié() {
   };
 
   return (
-    <div>
+    <div className=''>
       <ToastContainer/>
-      <div className='backpass shadow d-flex justify-content-center align-items-center mt-5'>
+      <div className='shadow d-flex justify-content-center align-items-center backCConnexion mt-5 pb-5'>
         <form onSubmit={handleSubmit} className='form align-items-center'>
-          <h2 className='text-center fw-bold fs-2 color mt-5'>Mot de passe oublié</h2>
-          <p className='text-center'>Veuillez spécifier votre adresse e-mail pour recevoir les instructions pour la réinitialisation</p>
+          <img src={logoMaron} className="fs-2 logoMaron" alt="" />
+          <h2 className='text-center'>Réinitialisation mot de passe</h2>
           <div className='inscript1 align-items-center'>
             <input
-              className="nom email my-5"
+              className="nom email my-3"
               type="email"
               placeholder="adresse email"
               required
@@ -37,8 +40,8 @@ function MotdepassOublié() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className='creer'>
-            <button type='submit' className='liens align-items-center m-auto  connect fs-5 fw-bold'>Reinitialiser</button></div>
+          <div className='creer d-flex'>
+            <button type='submit' className='liens align-items-center m-auto  connect fs-5 fw-bold border-0'>Envoyer</button></div>
           {/* <div className='text-center my-4'></div> */}
         </form>
       </div>

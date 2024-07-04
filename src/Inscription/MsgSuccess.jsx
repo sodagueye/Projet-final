@@ -13,7 +13,7 @@ function MsgSuccess() {
       <p>Bravo ! Votre mot de passe a été bien réinitialisé. Vous pouvez vous connecter dorénavant avec votre email et votre nouveau mot de passe.</p>
       <button 
         type='button' 
-        className='liens align-items-center creer mt-5 fs-5 fw-bold'
+        className='liens align-items-center creer mt-5 fs-5 fw-bold border-0'
         onClick={handleLoginRedirect}
       >
         Connectez-vous
