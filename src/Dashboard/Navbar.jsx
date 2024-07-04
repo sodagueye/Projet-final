@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { IoMdMail } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 
@@ -6,10 +6,27 @@ import avatar from "./avatar.jpg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "../Components";
-
+import { Contexte } from "../Inscription/AuthProvider";
 import logo from "../Dashboard/logoMaron.png";
+import axios from "axios";
 export default function Navbar() {
   const { cartItems, cartQuantity } = useContext(Context);
+  const { firstName, lastName, email, setTab, tab } = useContext(Contexte);
+  console.log(tab);
+  useEffect(() => {
+    async function Test() {
+      try {
+        const res = await axios.get(
+          "https://tache-de-validition-nodejs-6.onrender.com/api/register/getting"
+        );
+        const test = await res.data()
+        console.log(test);
+      } catch {
+        console.log("error");
+      }
+    }
+    Test();
+  }, []);
   const handleTest = () => {
     console.log(cartItems);
     if (cartItems && cartItems.length > 0) {
@@ -24,10 +41,7 @@ export default function Navbar() {
       <nav class="navbar navbar-expand-lg bg-white shadow ">
         <div class="container-fluid">
           <div className="col-12 col-md-2">
-            <a href="">
-            
-              <img src={logo} alt="logo" className="img-fluid" />
-            </a>
+            <img src={logo} alt="logo" className="img-fluid" />
           </div>
 
           <button
@@ -44,14 +58,12 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item send">
-                <a className="nav-link active" aria-current="page" href="#">
-                  <span className="fs-5">
-                    <IoMdMail />
-                  </span>
-                  <div className="texte text-white d-flex justify-content-center align-items-center">
-                    7
-                  </div>
-                </a>
+                <span className="fs-5">
+                  <IoMdMail />
+                </span>
+                <div className="texte text-white d-flex justify-content-center align-items-center">
+                  7
+                </div>
               </li>
               <li className="nav-item fabelle">
                 <span onClick={handleTest} className="fs-5">
@@ -62,7 +74,7 @@ export default function Navbar() {
                 </div>
               </li>
               <li className="nav-item">
-                <span className="ms-4 name">Faabii</span>
+                <span className="ms-4 name fs-5">{email}</span>
                 <img className="avatar" src={avatar} alt="avatar" />
               </li>
             </ul>

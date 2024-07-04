@@ -8,11 +8,13 @@ import { NavLink } from "react-router-dom";
 import { PiWarningCircleLight } from "react-icons/pi";
 import "./Navbar.css";
 import logo from "../Componentnav/logoMaron.png";
+import { Contexte } from "../Inscription/AuthProvider";
 
 const CustomNavbar = () => {
   const { cartQuantity } = useContext(Context);
+  const { user } = useContext(Contexte);
+  console.log(user);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-
   const handleClose = () => setShowOffcanvas(false);
 
   return (
@@ -116,13 +118,14 @@ const CustomNavbar = () => {
                   <FaUser />
                 </p>
                 <span className="ms-1">
-                  <NavLink to="connexion">CONNEXION</NavLink>
+                  <NavLink to="connexion">CONNEXION {user}</NavLink>
                 </span>
               </li>
-              <li className="nav-item d-flex align-items-center ms-3">
+              <li className="nav-item cart d-flex align-items-center ms-3">
                 <p className="fs-5 mt-2 icon-nav">
                   <FaShoppingCart />
                 </p>
+                <span className="ajout">{cartQuantity}</span>
                 <span className="ms-1">
                   <NavLink to="panier">PANIER</NavLink>
                 </span>

@@ -42,24 +42,32 @@ import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
 import Categorie from "./Page/Categorie";
 import ListeUtilisateur from "./Inscription/ListeUtilisateur";
-import ParentProvider from "./Inscription/parentProvider";
-import { BiSignal1 } from "react-icons/bi";
 import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
-// parentProvider
-
 
 const AppLayout = () => {
   return (
     <PanierProvider>
-      <CustomNavbar />
-      <Outlet />
-      <Footer />
+      <AuthProvider>
+        <CustomNavbar />
+        <Outlet />
+        <Footer />
+      </AuthProvider>
     </PanierProvider>
   );
 };
-
+// const AppLayout = () => {
+//   return (
+//     <PanierProvider>
+//       <AuthProvider>
+//         <CustomNavbar />
+//         <Outlet />
+//         <Footer />
+//       </AuthProvider>
+//     </PanierProvider>
+//   );
+// };
 
 const AuthentificationProvider = () => {
   return (
@@ -68,7 +76,6 @@ const AuthentificationProvider = () => {
     </AuthProvider>
   );
 };
-
 
 function App() {
   console.log("hello");
@@ -95,13 +102,16 @@ function App() {
               <Route path="burgers" element={<Burgers />} />
             </Route>
           </Route>
-         
-            <Route path="/" element={<AuthentificationProvider />} >
+
+          <Route path="/" element={<AuthentificationProvider />}>
             <Route path="/inscription" element={<Signup />} />
             <Route path="/connexion" element={<Auth />} />
             <Route path="/msgsuccess" element={<MsgSuccess />} />
             <Route path="/sendmail" element={<SendMail />} />
-            <Route path="/reset-password/:token" element={<ModifierPassword  />} />
+            <Route
+              path="/reset-password/:token"
+              element={<ModifierPassword />}
+            />
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
             <Route
               path="/redirection-confirmation"
