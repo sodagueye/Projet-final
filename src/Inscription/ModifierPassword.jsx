@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import des icônes
 import "./modifier.css";
+import "./inscrire.css";
 
 
 function ModifierPassword() {
@@ -50,7 +51,7 @@ function ModifierPassword() {
       <ToastContainer />
       <div className="backCConnexion shadow d-flex justify-content-center align-items-center mt-5">
         <form onSubmit={handleSubmit} className="form align-items-center">
-          <h2 className="text-center fw-bold fs-2 color">Récupération de compte</h2>
+          <h2 className="text-center fw-bold fs-2 color">Recupération de compte</h2>
           <div className="inscript1">
             <div className="password-container my-2">
               <input
@@ -61,8 +62,8 @@ function ModifierPassword() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <span onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              <span onClick={() => setShowPassword(!showPassword)} className="eyes oublie ">
+                {showPassword ? <FaEye />: <FaEyeSlash /> }
               </span>
             </div>
             <div className="password-container my-2">
@@ -74,15 +75,15 @@ function ModifierPassword() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              <span onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
-                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes oublie ">
+                {showConfirmPassword ? <FaEye />: <FaEyeSlash /> }
               </span>
             </div>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <button
               type="submit"
-              className="liens d-flex justify-content-center align-items-center creer fs-5 fw-bold mt-5 connect"
+              className="liens d-flex justify-content-center align-items-center creer fs-5 fw-bold mt-5 connect border-0"
             >
               Envoyer
             </button>

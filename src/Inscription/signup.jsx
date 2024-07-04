@@ -16,13 +16,13 @@ function Signup() {
 
   return (
     <div>
-      <div className="back shadow d-flex justify-content-center">
+      <div className="backCConnexion shadow d-flex justify-content-center mt-5">
         <form className="form" onSubmit={submit}>
           <img src={logoMaron} className="fs-2 logoMaron" alt="" />
           <div className="color m-0 fw-bold">
             <h3>Créez votre compte</h3>
           </div>
-          <div className="auth">
+          <div className="auth d-flex justify-content-center align-items-center">
             <input
               className="nom"
               type="text"
@@ -41,7 +41,7 @@ function Signup() {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
-          <div className="auth">
+          <div className="auth d-flex justify-content-center align-items-center">
             <input
               className="nom"
               type="email"
@@ -59,7 +59,7 @@ function Signup() {
               onChange={(e) => setNumber(e.target.value)}
             />
           </div>
-          <div className="auth pass">
+          <div className="auth d-flex justify-content-center align-items-center pass">
             <input
               className="nom"
               type={showPassword ? "text" : "password"}
@@ -68,26 +68,26 @@ function Signup() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span onClick={() => setShowPassword(!showPassword)} className="eyes">
+            <span onClick={() => setShowPassword(!showPassword)} className="eyes oublie">
               {showPassword ? <FaEye /> : <FaEyeSlash />}
 
             </span>
             <input
               className="nom"
               type={showConfirmPassword ? "text" : "password"}
-              placeholder="Confirmation mot de passe"
+              placeholder="Confirmer mot de passe"
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes">
+            <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes oublie">
               {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
             </span>
           </div>
-          <div className="creer">
+          <div className="d-flex">
             <button
               type="submit"
-              className="creer liens fs-5 fw-bold mt-3 connect"
+              className="creer liens fs-5 fw-bold mt-5 connect border-0 "
             >
               Créer un compte
             </button>
