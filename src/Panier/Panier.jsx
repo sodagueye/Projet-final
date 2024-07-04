@@ -7,10 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Panier = () => {
   const { cartItems, setCartItems, setCartQuantity,totalPrix, handleClick } = useContext(Context);
 
-  // const totalPrix = cartItems.reduce((total, item) => {
-  //   return total + (item.price || 0);
-  // }, 0);
-
   const handleDelete = (id) => {
     const newCartItems = cartItems.filter((item) => item._id !== id);
     setCartItems(newCartItems);
@@ -34,6 +30,9 @@ const Panier = () => {
   // };
   return (
     <div className="container-fluid test">
+      <div className="row s">
+
+      </div>
       <div className="row">
         <div className="col-lg-9 bg-body shadow rounded">
           {cartItems.length > 0 ? (
@@ -45,7 +44,7 @@ const Panier = () => {
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex justify-content-center align-items-center">
                       <div>
-                        <img className="product-img" src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} alt="" />
+                        <img className="product-img" src={item.image} alt="" />
                         <div>
                           <span
                             onClick={() => handleDelete(item._id)}

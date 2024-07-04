@@ -1,12 +1,16 @@
-/* #reservation-table {
+#reservation-table {
   text-align: start;
   padding: 500px !important;
+}
+
+.bg-img {
+  background-image: url('asset24.jpeg');
 }
 
 .reservation-table-body {
   width: 80%;
   margin: 50px auto;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .text-header {
@@ -28,14 +32,23 @@
 .form-control {
   width: 99%;
   margin: 0 auto;
-  background-color: #eeeeee;
   border-radius: 5px;
   border: none;
+  background-color: transparent;
+
 }
 
 .reservation-table-body .form-floating {
-  border: 1px solid gray;
+  border: 1px solid #91725d;
 }
+
+.form-floating input::placeholder {
+  background-color: transparent;
+}
+
+/* .reservation-table-body .form-floating::placeholder {
+} */
+
 
 .form-x {
   width: 49% !important;
@@ -69,4 +82,4 @@
   background-color: #91725d;
   font-size: 20px;
   font-weight: 600;
-} */
+}

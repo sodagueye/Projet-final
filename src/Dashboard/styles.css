@@ -4,12 +4,18 @@
     box-sizing: border-box;
 }
 
+.bg-test {
+    /* background-image: url("asset1.jpeg"); */
+}
+
 .test {
     padding: 100px;
 }
-.product-img{
+
+.product-img {
     width: 80px;
 }
+
 .cart,
 .delete {
     color: #91725d;

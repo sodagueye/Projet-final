@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Portfolio from "./Portfolio";
 export default function Presentation() {
   const [plats, setPlats] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,6 @@ export default function Presentation() {
   }, []);
   return (
     <div className="container p-5">
-      
       <div className="row">
         {loading ? (
           <div>
@@ -39,24 +39,29 @@ export default function Presentation() {
           </div>
         ) : (
           plats.map((item) => (
-            <div key={item.id} className="col-lg-3">
+            <div key={item.id} className="col-lg-4 mt-4 scale-image">
               <Link to={`/detail/${item._id}`}>
-                <div className="card border-0">
+                <div className="card border-0 carte shadow">
                   <img
-                    src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`}
-                    className="card-img-top"
+                    src={item.image}
+                    className="card-img-top "
                     alt="..."
                   />
-                  <div className="card-body text-center">
+                  {/* <div className="card-body text-center">
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.description}</p>
                     <p className="card-text">{item.price}</p>
-                  </div>
+                  </div> */}
                 </div>
               </Link>
             </div>
           ))
         )}
+      </div>
+      <div className="row">
+        <div>
+          <Portfolio/>
+        </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { PiWarningCircleLight } from "react-icons/pi";
 import "./Navbar.css";
 import logo from "../Componentnav/logoMaron.png";
 
@@ -95,19 +96,28 @@ const CustomNavbar = () => {
                 </span>
               </li>
               <li className="nav-item d-flex align-items-center ms-3">
-                <p className="fs-5 mt-2 icon-nav">
-                  <MdOutlineRestaurantMenu />
+                <p className="fs-4 mt-2 icon-nav">
+                  <PiWarningCircleLight />
                 </p>
                 <span className="ms-1">
                   <NavLink to="about">A PROPOS</NavLink>
                 </span>
               </li>
+
               <li className="nav-item d-flex align-items-center ms-3">
                 <p className="fs-5 mt-2 icon-nav">
                   <MdDashboard />
                 </p>
                 <span className="ms-1">
                   <NavLink to="reservation">RESERVATION</NavLink>
+                </span>
+              </li>
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <FaShoppingCart />
+                </p>
+                <span className="ms-1">
+                  <NavLink to="panier">PANIER</NavLink>
                 </span>
               </li>
             </ul>

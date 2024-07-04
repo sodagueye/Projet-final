@@ -95,7 +95,7 @@ const ReservationTable = () => {
     <section id="reservation-table ">
       <ToastContainer />
       <div>
-        <div className="container mt-5">
+        <div className="container mt-5 bg-img">
           <div className="row">
             <h3 className="reservation-table-body-text text-header">
               Tables reservations

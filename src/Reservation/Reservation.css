@@ -6,13 +6,23 @@
 #reservationPage .reservationPage-body {
     width: 75%;
     margin: 50px auto;
+
 }
-#reservationPage{
+
+.reservationPage-body {
+    background-image: url("asset24.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#reservationPage {
     padding: 70px;
 }
 
 #reservationPage form {
-    background-color: #FFF;
+    /* background-color: #FFF; */
 }
 
 #reservationPage .form-head {
@@ -150,14 +160,14 @@
 }
 
 @media screen and (max-width: 769px) {
-    #reservationPage .reservationPage-body h1{
+    #reservationPage .reservationPage-body h1 {
         font-size: 100%;
         text-align: left;
         margin-left: -5%;
         margin-top: 15%;
         font-weight: 600;
     }
-    
+
     #reservationPage .form-head {
         display: grid;
     }

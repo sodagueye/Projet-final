@@ -1,40 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.mycard {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
 
-.mycard a {
-    text-decoration: none;
-    color: white;
-}
-
-.mycard div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.myrow div {
-    border-radius: 20px 20px 20px 20px;
-}
-
-.myrow div img {
-    border-radius: 20px 20px 0px 0px;
-}
-
-.mycard img {
-    width: 80%;
-    height: 200px;
-    object-fit: cover;
+.portfolio {
+    font-family: "Ga Maamli", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #91725d;
 }
 
 .container-text {
     position: relative;
+}
+
+.carte,
+.carte img {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* ImageScaleAnimation.css */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.scale-image {
+    /* width: 50%; */
+    transition: transform 0.5s ease-in-out;
+}
+
+.scale-image:hover {
+    transform: scale(1.1);
 }
 
 .text {
