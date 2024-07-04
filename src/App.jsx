@@ -83,9 +83,9 @@ function App() {
             <Route path="panier" element={<Panier />} />
             <Route path="about" element={<About />} />
             <Route path="menu" element={<Menu />} />
-            <Route path="reservation" element={<ReservationPage />} />
+            {/* <Route path="reservation" element={<ReservationPage />} /> */}
             <Route path="detail/:id" element={<Details />} />
-            <Route path="table" element={<ReservationTable />} />
+            {/* <Route path="table" element={<ReservationTable />} /> */}
             <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="boissons" />} />
               <Route path="boissons" element={<Boissons />} />
@@ -103,6 +103,8 @@ function App() {
             <Route path="/sendmail" element={<SendMail />} />
             <Route path="/reset-password/:token" element={<ModifierPassword  />} />
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
+            <Route path="reservation" element={<ReservationPage />} />
+            <Route path="table" element={<ReservationTable />} />
             <Route
               path="/redirection-confirmation"
               element={<PageRedirection />}

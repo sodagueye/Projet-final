@@ -46,12 +46,12 @@ function AuthProvider({ children }) {
         setNumber("");
         setPassword("");
         setConfirmPassword("");
-        toast.success(
-          "Inscription réussie."
-        );
+        toast.success( "Inscription réussie.");
+
         setTimeout(() => {
           navigate("/connexion");
-        }, 2000);
+        }, 3000);
+       
 
       } else {
         toast.error(res.data.errors[0].msg);
