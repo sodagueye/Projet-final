@@ -47,6 +47,7 @@ import { BiSignal1 } from "react-icons/bi";
 import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
+import Localisation from "./localisation/localisation";
 // parentProvider
 
 
@@ -84,6 +85,8 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="menu" element={<Menu />} />
             <Route path="reservation" element={<ReservationPage />} />
+            <Route path="/Localisation" element={<Localisation />} />
+            <Route path="/Localisation" element={<Localisation />} />
             <Route path="detail/:id" element={<Details />} />
             <Route path="table" element={<ReservationTable />} />
             <Route path="menu/" element={<MenuLayout />}>

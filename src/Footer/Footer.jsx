@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../Footer/Footer.css";
 import logo from "../Footer-img/log-remove.png";
 import { Link } from "react-router-dom";
+// import Maps from "../ABOUT/map";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -53,7 +54,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    to="/politique-de-confidentialite"
+                    to="/politique-de-confidentialite" 
                     style={{ color: "white" }}
                   >
                     Politique de confidentialité
