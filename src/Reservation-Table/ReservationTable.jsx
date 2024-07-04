@@ -83,21 +83,6 @@ const ReservationTable = () => {
       }
     }
   };
-  // const handlePass = () => {
-  //   try {
-  //     const response =  axios.post('http://localhost:8080/api/confirme-reservation');
-  //     if (response.status === 200) {
-  //       toast.success("Vous avez reçu un mail de confimation pour la réservation");
-  //       // setTimeout(() => {
-  //       //   // navigate('/reservation');
-  //       // }, 8000); 
-  //       // return;
-  //     }
-  //   } catch (error) {
-  //     toast.error("Erreur lors de la confirmation de la réservation");
-  //   }
-  
-  // }
 
   return (
     <section id="reservation-table">
@@ -269,7 +254,6 @@ const ReservationTable = () => {
                 <button
                   type="submit"
                   className="btn btnsend"
-                  // onClick={handlePass}
                 >
                   Réserver
                 </button>
