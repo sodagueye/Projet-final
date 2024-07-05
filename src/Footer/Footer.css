@@ -9,9 +9,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
+    padding: 30px;
 }
 footer {
-    /* background-color: #91725d; */
     color: white;
 }
 footer form {
@@ -24,11 +24,11 @@ footer button {
     height: 40px;
     width: 150px;
     font-size: 13px;
-    background-color: #bbb;
+    background-color: #fff;
 }
 footer input {
-    border: none;
-    outline: none;
+    border: 1px solid #fff !important;
+    /* outline: none; */
 }
 footer ul li {
     font-size: 13px;
