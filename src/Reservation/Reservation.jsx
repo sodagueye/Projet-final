@@ -4,10 +4,10 @@ import "./Reservation.css";
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
- import { Contexte } from '../Inscription/AuthProvider'; 
+  import { Contexte } from '../Inscription/AuthProvider'; 
 
 function ReservationPage() {
-  const { email, password } = useContext(Contexte); // Accès aux valeurs fournies par le contexte
+ const { email, password } = useContext(Contexte); // Accès aux valeurs fournies par le contexte
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
   const [hour, setHour] = useState("");

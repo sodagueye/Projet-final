@@ -151,7 +151,7 @@ const ReservationTable = () => {
                     <input
                       type="email"
                       className="form-control"
-                      id="floatingInput"
+                      id="floatingInput" name ={firstName}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />

@@ -16,7 +16,12 @@ function MotdepassOublié() {
     e.preventDefault();
     try {
       await axios.post('https://tache-de-validition-nodejs-6.onrender.com/api/forgot-password', { email });
-      navigate('/sendmail'); 
+      
+      toast.success(`Un mail avec lien de confirmation est envoyé sur votre compte ${email}`);
+      setTimeout(()=>{
+        navigate('/connexion'); 
+      },3000)
+       
     } catch (err) {
       console.error(err);
       toast.error('Erreur lors de la demande de réinitialisation');
