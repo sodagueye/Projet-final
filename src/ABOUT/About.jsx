@@ -12,7 +12,7 @@ import "./about.css";
 function About() {
   return (
     <div className=" w-100 test">
-      <div className="container  w-75 p-1   bgcolor shadow rounded">
+      <div className="container  w-75 p-1   bgcolor ">
         <div className="row pt-3">
           <div className="col-12 col-md-2 text-start">
             <RiErrorWarningLine className="fs-2 ms-5" />
