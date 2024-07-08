@@ -6,9 +6,7 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
-import Carousel from "./Appreciation/Carousel";
 import ReservationPage from "./Reservation/Reservation";
-// import Inscrire from "./Inscription/Inscrire";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
 import ModifierPassword from "./Inscription/ModifierPassword";
 import Menu from "./Componentnav/Menu";
@@ -16,7 +14,6 @@ import Accueil from "./Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
 import Details from "./Accueil/Details";
-// import Connexion from "./Inscription/Connexion";
 import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
@@ -47,7 +44,6 @@ import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
 // parentProvider
-
 
 const AppLayout = () => {
   return (
@@ -88,7 +84,6 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route path="categorie/:nom" element={<Categorie />} />
-
             <Route path="" element={<Accueil />} />
             <Route path="panier" element={<Panier />} />
             <Route path="about" element={<About />} />
@@ -96,6 +91,7 @@ function App() {
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="detail/:id" element={<Details />} />
             <Route path="table" element={<ReservationTable />} />
+            {/* MENU */}
             <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="tout" />} />
               <Route path="tout" element={<Tout />} />
@@ -105,6 +101,7 @@ function App() {
               <Route path="desserts" element={<Desserts />} />
               <Route path="burgers" element={<Burgers />} />
             </Route>
+            {/* FIN MENU */}
           </Route>
 
           <Route path="/" element={<AuthentificationProvider />}>
@@ -125,21 +122,23 @@ function App() {
             />
           </Route>
           {/*  */}
-
           <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
+          {/* ADMIN */}
           <Route path="/admin" element={<Dashboard />}>
+            <Route path="/admin/dashboard" element={<Admin />} />
             <Route path="employe" element={<Employes />} />
             <Route path="users" element={<ListeUtilisateur />} />
-
             <Route path="dashboard" element={<Admin />} />
             <Route path="ventes" element={<PlatsVendus />} />
             <Route path="plats" element={<Plats />} />
           </Route>
+          {/* FIN ADMIN */}
           <Route path="/update/:id" element={<Update />} />
           <Route path="/ajout" element={<AppAjout />} />
-          <Route path="*" element={<PageNotFound />} />
           <Route path="About" element={<About />} />
+          {/* PAGE NOT FOUND */}
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

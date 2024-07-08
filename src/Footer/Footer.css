@@ -8,7 +8,7 @@
     background-image: url("asset26.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 50vh;
+    /* height: 50vh; */
     padding: 30px;
 }
 footer {

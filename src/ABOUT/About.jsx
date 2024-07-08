@@ -20,18 +20,21 @@ function About() {
           <div className="col-12 col-md-10  ">
             <h4 className="text-start">Quelques mots sur Keur Yaay Soda</h4>
             <div className="  text-start ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              vel est eget tortor eleifend ultrices. Morbi ac libero luctus,
-              accumsan tortor at, fermentum libero. Nunc posuere mauris est, a
-              blandit massa rhoncus id. Pellentesque nec tincidunt velit. Etiam
-              ornare pulvinar urna. Curabitur vitae finibus purus. Nam feugiat,
-              magna id venenatis tempor, est tortor congue sapien, sed dapibus
-              erat est in diam. Praesent non aliquet purus. Etiam consectetur,
-              sapien scelerisque auctor maximus, felis erat pretium libero, sit
-              amet mattis odio odio in neque. Suspendisse id ipsum lobortis,
-              tincidunt libero nec, rhoncus risus. Integer aliquet sem id massa
-              efficitur dictum. Curabitur non fermentum erat, eleifend tempor
-              neque. Ut eu enim turpis.
+              Bienvenue chez Keur Yaay Soda, une oasis culinaire au cœur de
+              Grand Yoff. Notre restaurant est bien plus qu'un simple lieu de
+              repas ; c'est une célébration de la culture et des saveurs
+              africaines, spécialement inspirées des traditions sénégalaises.
+              "Keur Yaay" signifie "la maison de maman" en wolof, et ici, nous
+              nous efforçons de recréer l'ambiance chaleureuse et accueillante
+              d'un repas familial sénégalais. Chez Keur Yaay Soda, chaque plat
+              est préparé avec amour et passion, en utilisant des ingrédients
+              frais et authentiques pour vous offrir une expérience
+              gastronomique inoubliable. Notre menu varié propose une sélection
+              de plats traditionnels tels que le Thieboudienne, le Yassa, et le
+              Mafé, tous cuisinés selon des recettes transmises de génération en
+              génération. Que vous soyez un amateur de cuisine africaine ou un
+              novice curieux, nos plats sont conçus pour ravir vos papilles et
+              vous transporter au Sénégal le temps d'un repas.
             </div>
           </div>
         </div>

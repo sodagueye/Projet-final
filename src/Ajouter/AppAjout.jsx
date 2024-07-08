@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { storage } from "../firebase"; 
+import { storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-
-
-
 
 // **********************************************TEST 2******************************************************
 
@@ -39,21 +36,20 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 //       },
 //       async () => {
 //         const imageUrl = await getDownloadURL(uploadTask.snapshot.ref);
-//         saveProduct(imageUrl); 
+//         saveProduct(imageUrl);
 //       }
 //     );
 //   } else {
-//     saveProduct(); 
+//     saveProduct();
 //   }
 // };
-
 
 //   const saveProduct = async (imageUrl = "") => {
 //   const productData = {
 //     name,
 //     description,
 //     price,
-//     image: imageUrl, 
+//     image: imageUrl,
 //   };
 
 //     try {
@@ -98,7 +94,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 //   const handleDelete = async (id) => {
 //     try {
 //       await axios.delete(`https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${id}`);
-//       fetchProducts(); 
+//       fetchProducts();
 //     } catch (err) {
 //       console.error(err);
 //     }
@@ -164,10 +160,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 // export default ImageUpload;
 
-
-
 // *********************************************************TEST 3*******************************************************************
-
 
 function ImageUpload() {
   const [name, setName] = useState("");
@@ -222,13 +215,13 @@ function ImageUpload() {
     try {
       if (editingProductId) {
         await axios.patch(
-          `https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${editingProductId}`,
+          `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${editingProductId}`,
           productData
         );
         setEditingProductId(null);
       } else {
         await axios.post(
-          "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits",
+          "https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits",
           productData
         );
       }
@@ -245,8 +238,11 @@ function ImageUpload() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits");
-      setProducts(res.data);
+      const res = await axios.get(
+        "https://tache-de-validition-nodejs-61fk.onrender.com/"
+      );
+      console.log(res.data);
+      // setProducts(res.data);
     } catch (err) {
       console.error(err);
     }
@@ -262,8 +258,10 @@ function ImageUpload() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${id}`);
-      fetchProducts(); 
+      await axios.delete(
+        `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${id}`
+      );
+      fetchProducts();
     } catch (err) {
       console.error(err);
     }
@@ -274,7 +272,7 @@ function ImageUpload() {
   };
 
   const filteredProducts = filterCategory
-    ? products.filter(product => product.category === filterCategory)
+    ? products.filter((product) => product.category === filterCategory)
     : products;
 
   return (
@@ -282,15 +280,30 @@ function ImageUpload() {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Nom du produit:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </div>
         <div>
           <label>Description:</label>
-          <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} required />
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
         </div>
         <div>
           <label>Prix:</label>
-          <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
+          <input
+            type="number"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            required
+          />
         </div>
         <div>
           <label>Image:</label>
@@ -298,7 +311,11 @@ function ImageUpload() {
         </div>
         <div>
           <label>Catégorie:</label>
-          <select value={category} onChange={(e) => setCategory(e.target.value)} required>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          >
             <option value="">Sélectionnez une catégorie</option>
             <option value="plats senegalais">Plats Sénégalais</option>
             <option value="fastfood">Fastfood</option>
@@ -317,11 +334,11 @@ function ImageUpload() {
         <label>Filtrer par catégorie:</label>
         <select value={filterCategory} onChange={handleCategoryFilterChange}>
           <option value="">Toutes les catégories</option>
-            <option value="plats senegalais">Plats Sénégalais</option>
-            <option value="fastfood">Fastfood</option>
-            <option value="boissons">Boissons</option>
-            <option value="desserts">Desserts</option>
-            <option value="cuisine d'ailleurs">Cuisine d'ailleurs</option>
+          <option value="plats senegalais">Plats Sénégalais</option>
+          <option value="fastfood">Fastfood</option>
+          <option value="boissons">Boissons</option>
+          <option value="desserts">Desserts</option>
+          <option value="cuisine d'ailleurs">Cuisine d'ailleurs</option>
         </select>
       </div>
       <table>
@@ -343,13 +360,15 @@ function ImageUpload() {
               <td>{product.price}</td>
               <td>
                 {product.image && (
-                  <img src={product.image} alt={product.name} width="100"/>
+                  <img src={product.image} alt={product.name} width="100" />
                 )}
               </td>
               <td>{product.category}</td>
               <td>
                 <button onClick={() => handleEdit(product)}>Modifier</button>
-                <button onClick={() => handleDelete(product._id)}>Supprimer</button>
+                <button onClick={() => handleDelete(product._id)}>
+                  Supprimer
+                </button>
               </td>
             </tr>
           ))}
