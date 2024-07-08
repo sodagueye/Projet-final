@@ -38,14 +38,18 @@ const Panier = () => {
                     <div className="d-flex justify-content-center align-items-center">
                       <div>
                         <img className="product-img" src={item.image} alt="" />
-                        <div>
-                          <span
+                        <div className="d-flex justify-content-between">
+                          <div
                             onClick={() => handleDelete(item._id)}
                             className="fs-3 cart"
                           >
                             <MdOutlineDelete />
-                          </span>
-                          <span className="delete fw-bold fs-6">SUPPRIMER</span>
+                          </div>
+                          <div>
+                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">+</button>
+                            <span>{1}</span>
+                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">-</button>
+                          </div>
                         </div>
                       </div>
 

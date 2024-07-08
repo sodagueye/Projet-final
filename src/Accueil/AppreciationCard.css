@@ -1,0 +1,23 @@
+.appreciation-container {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+    font-size: 13px;  margin: 70px;
+  }
+  
+  .appreciation-card {
+    width: 300px; 
+    padding: 10px;
+    height: 300px;
+  
+    border: 2px solid #91725d;
+    border-radius: 18px;
+  }
+  .appreciation-card h6{
+    margin-top: 6px;
+  }
+  .appreciation-content {
+    text-align: center; 
+    
+  }
+  

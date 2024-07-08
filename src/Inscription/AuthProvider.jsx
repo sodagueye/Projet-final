@@ -28,7 +28,7 @@ function AuthProvider({ children }) {
 
     try {
       const res = await axios.post(
-        "https://tache-de-validition-nodejs-6.onrender.com/api/register",
+        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register",
         {
           firstName,
           lastName,
@@ -48,13 +48,11 @@ function AuthProvider({ children }) {
         setNumber("");
         setPassword("");
         setConfirmPassword("");
-        toast.success( "Inscription réussie.");
+        toast.success("Inscription réussie.");
 
         setTimeout(() => {
           navigate("/connexion");
         }, 3000);
-       
-
       } else {
         toast.error(res.data.errors[0].msg);
       }
@@ -70,7 +68,7 @@ function AuthProvider({ children }) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://tache-de-validition-nodejs-6.onrender.com/api/auth",
+        "https://tache-de-validition-nodejs-61fk.onrender.com/api/auth",
         {
           email,
           password,

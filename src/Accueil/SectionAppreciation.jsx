@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AppreciationSection.css';
 
-const AppreciationSection = () => {
+const SectionAppreciation = () => {
   const [reviews, setReviews] = useState([]);
 
   const [newReview, setNewReview] = useState({
@@ -45,7 +45,7 @@ const AppreciationSection = () => {
   return (
     <div className="appreciation-section">
       <div className="reviews-summary">
-        {/* Résumé des avis peut-être ajouté ici */}
+
       </div>
       <div className="reviews-list">
         {reviews.map(review => (
@@ -75,6 +75,7 @@ const AppreciationSection = () => {
             value={newReview.text}
             onChange={handleInputChange}
           ></textarea>
+          
           <input
             type="number"
             name="rating"
@@ -91,4 +92,4 @@ const AppreciationSection = () => {
   );
 };
 
-export default AppreciationSection;
+export default SectionAppreciation;

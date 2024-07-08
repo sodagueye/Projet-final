@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoMdMail } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 
@@ -11,15 +11,17 @@ import logo from "../Dashboard/logoMaron.png";
 import axios from "axios";
 export default function Navbar() {
   const { cartItems, cartQuantity } = useContext(Context);
+  const [notification, setNotification] = useState(false);
   const { firstName, lastName, email, setTab, tab } = useContext(Contexte);
   console.log(tab);
+
   useEffect(() => {
     async function Test() {
       try {
         const res = await axios.get(
           "https://tache-de-validition-nodejs-6.onrender.com/api/register/getting"
         );
-        const test = await res.data()
+        const test = await res.data();
         console.log(test);
       } catch {
         console.log("error");
@@ -27,13 +29,9 @@ export default function Navbar() {
     }
     Test();
   }, []);
-  const handleTest = () => {
+  const handleNotification = () => {
     console.log(cartItems);
-    if (cartItems && cartItems.length > 0) {
-      cartItems.map((t) => toast.success(`Commande de ${t.name} ID ${t._id}`));
-    } else {
-      toast.info("Your cart is empty.");
-    }
+    setNotification(true);
   };
 
   return (
@@ -57,18 +55,40 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item send">
-                <span className="fs-5">
+              <li className="nav-item send me-4">
+                <span className="fs-5 ">
                   <IoMdMail />
                 </span>
                 <div className="texte text-white d-flex justify-content-center align-items-center">
                   7
                 </div>
               </li>
-              <li className="nav-item fabelle">
-                <span onClick={handleTest} className="fs-5">
+              <li className="nav-item fabelle me-4">
+                <span onClick={handleNotification} className="fs-5 ">
                   <FaBell />
                 </span>
+                <div
+                  className={`toast position-absolute top-0 end-0 m-3 ${
+                    notification ? "show" : "hide"
+                  }`}
+                  role="alert"
+                  aria-live="assertive"
+                  aria-atomic="true"
+                  style={{ minWidth: "250px" }}
+                >
+                  <div class="toast-header">
+                    <strong class="me-auto">Commande</strong>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="toast"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="toast-body">
+                    {cartItems.map((t) => `Commande de ${t.name} ID ${t._id}`)}
+                  </div>
+                </div>
                 <div className="belle text-white d-flex justify-content-center align-items-center">
                   {cartQuantity}
                 </div>
