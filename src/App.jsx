@@ -23,8 +23,8 @@ import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
 import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
-import SendMail from "./Inscription/SendMail";
-import MsgSuccess from "./Inscription/MsgSuccess";
+// import SendMail from "./Inscription/SendMail";
+// import MsgSuccess from "./Inscription/MsgSuccess";
 import Panier from "./Panier/Panier";
 import Footer from "./Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
@@ -107,8 +107,8 @@ function App() {
           <Route path="/" element={<AuthentificationProvider />}>
             <Route path="/inscription" element={<Signup />} />
             <Route path="/connexion" element={<Auth />} />
-            <Route path="/msgsuccess" element={<MsgSuccess />} />
-            <Route path="/sendmail" element={<SendMail />} />
+            {/* <Route path="/msgsuccess" element={<MsgSuccess />} /> */}
+            {/* <Route path="/sendmail" element={<SendMail />} /> */}
             <Route
               path="/reset-password/:token"
               element={<ModifierPassword />}
