@@ -222,13 +222,13 @@ function ImageUpload() {
     try {
       if (editingProductId) {
         await axios.patch(
-          `https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${editingProductId}`,
+          `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${editingProductId}`,
           productData
         );
         setEditingProductId(null);
       } else {
         await axios.post(
-          "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits",
+          "https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits",
           productData
         );
       }
@@ -245,7 +245,7 @@ function ImageUpload() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits");
+      const res = await axios.get("https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits");
       setProducts(res.data);
     } catch (err) {
       console.error(err);
@@ -262,7 +262,7 @@ function ImageUpload() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${id}`);
+      await axios.delete(`https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${id}`);
       fetchProducts(); 
     } catch (err) {
       console.error(err);

@@ -7,7 +7,7 @@ export default function Presentation() {
   const [loading, setLoading] = useState(true);
   async function getProducts() {
     const resultat = await axios.get(
-      "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
+      "https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits"
     );
     const response = await resultat.data;
     setPlats(response);
