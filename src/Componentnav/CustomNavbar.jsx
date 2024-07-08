@@ -63,10 +63,9 @@ const CustomNavbar = () => {
         <div class="container-fluid">
           <div className="col-12 col-md-2">
             <NavLink to="/">
-              <img src={logo} alt="logo" className="img-fluid" />
+              <img src={logo} alt="logo" style={{ width: "80px" }} />
             </NavLink>
           </div>
-
           <button
             className="navbar-toggler"
             type="button"
