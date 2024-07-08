@@ -7,7 +7,9 @@
     font-style: normal;
     color: #91725d;
 }
-
+.btn-add{
+    background-color: #91725d;
+}
 .container-text {
     position: relative;
 }
@@ -17,6 +19,9 @@
     height: 300px;
     object-fit: cover;
 }
+/* .btn-add{
+    width: 100px;
+} */
 
 /* ImageScaleAnimation.css */
 .image-container {
