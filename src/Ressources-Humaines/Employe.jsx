@@ -5,7 +5,6 @@ import "./Employe.css";
 const Employe = () => {
   return (
     <div>
-      <h1>Ajouter un nouvel employé</h1>
       <EmployeeList />
     </div>
   );

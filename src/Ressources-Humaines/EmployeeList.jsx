@@ -61,7 +61,7 @@ const EmployeeList = () => {
         onEmployeeUpdated={handleEmployeeUpdated}
         employeeToEdit={employeeToEdit}
       />
-      <h1>Liste des employés</h1>
+      <h3 className="text-start mt-3">Liste des employés</h3>
        <div className="table-responsive">
       <table className="table table-striped table-hover">
         <thead>
