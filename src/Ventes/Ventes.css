@@ -1,25 +1,21 @@
-.vente{
+.commende{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.vente th{
+.commende th{
     font-size: 15px;
     font-weight: normal;
 }
-.vente td{
+.commende td{
     font-size: 13px;
     font-weight: normal;
 }
-.vente i{
-    font-size: 15px;
-    cursor: pointer;
-}
-.vente input{
+.commende input{
     border: 1px solid gray;
 }
-.vente .boutons button{
+.commende .boutons button{
     padding: 0 5px;
 }
-.vente .active{
+.commende .active{
     background-color: #0b960f;
     color: white;
     

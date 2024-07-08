@@ -3,10 +3,13 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../Footer/Footer.css";
-import {FaTiktok , FaFacebookF , FaInstagram , FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook ,  FaTiktok , FaWhatsapp , FaInstagram} from "react-icons/fa";
+// import { FaInstagram  } from "react-icons/fa";
+// import { FaWhatsapp } from "react-icons/fa";
+// import { FaTiktok } from "react-icons/fa";
 import logo from "../Footer-img/logo1.png";
 
-export function Footer() {
+export default function Footer() {
     const [email, setEmail] = useState('');
 
     const handleChange = (e) => {
@@ -94,9 +97,9 @@ export function Footer() {
                                     <li><a href="">Recrutement</a></li>
                                     <li><a href="">
                                     <div className="d-flex gap-3 ">
-                                      <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 "  target="_blank"><FaWhatsapp/></a>
+                                      <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 "  target="_blank">< FaWhatsapp/></a>
                                       <a href="https://www.tiktok.com/@nom_utilisateur" target="_blank"><FaTiktok/></a>
-                                      <a href="https://www.facebook.com/nom_utilisateur" target="_blank"><FaFacebookF/></a>
+                                      <a href="https://www.facebook.com/nom_utilisateur" target="_blank"><FaFacebook/></a>
                                       <a href="https://www.instagram.com/nom_utilisateur" target="_blank"><FaInstagram/></a>
                                   </div> 
                                 </a></li>

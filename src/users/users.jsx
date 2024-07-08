@@ -78,7 +78,7 @@ export default function Users() {
     };
     return (
         <div className="container users pb-5 my-4">
-            <h3 className="ms-2 py-2">{users.length} Utilisateurs</h3>
+            <h3 className="text-start ms-2 py-2 ">{users.length} Utilisateurs</h3>
             <div style={{ borderTop: "2px solid gray" }}></div>
             <div className="d-flex justify-content-end">
                 <div className="d-flex py-2">

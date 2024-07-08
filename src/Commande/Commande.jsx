@@ -1,132 +1,117 @@
-import { useState } from "react";
 import orangeMoney from "../Footer-img/orange-money.png";
 import weave from "../Footer-img/weave.png";
-import "../Ventes/Ventes.css";
+import "../Commande/commande.css";
+import { useState } from "react";
 
-export function Vente() {
-    const tabHistoriqueVente = [
+export default function Commande() {
+    const tabHistoriqueCommende = [
         {
-            date: '31/12/2020',
-            nbArticle: 2,
-            montant: "25.000fr",
-            livraison: "En attente",
-            paiment: orangeMoney,
-            etat: "En cours"
-        },
-        {
-            date: '30/01/2022',
-            nbArticle: 2,
-            montant: "35.000fr",
-            livraison: "terminee",
-            paiment: weave,
-            etat: "terminée"
-        },
-        {
-            date: '03/05/2023',
+            date: '12/03/2019',
             nbArticle: 2,
             montant: "12.000fr",
-            livraison: "En cours",
+            etat: "En cours",
             paiment: orangeMoney,
-            etat: "En cours"
         },
         {
-            date: '30/01/2024',
+            date: '02/06/2024',
             nbArticle: 1,
             montant: "20.000fr",
-            livraison: "En attente",
+            etat: "En attente",
             paiment: weave,
-            etat: "En attente"
         },
         {
-            date: '10/05/2024',
+            date: '12/12/2024',
+            nbArticle: 6,
+            montant: "39.000fr",
+            etat: "terminée",
+            paiment: orangeMoney,
+        },
+        {
+            date: '12/05/2022',
+            nbArticle: 4,
+            montant: "13.000fr",
+            etat: "En cours",
+            paiment: orangeMoney,
+        },
+        {
+            date: '02/12/2021',
+            nbArticle: 11,
+            montant: "25.000fr",
+            etat: "En attente",
+            paiment: weave,
+        },
+        {
+            date: '01/11/2020',
+            nbArticle: 9,
+            montant: "40.000fr",
+            etat: "terminée",
+            paiment: orangeMoney,
+        },
+        {
+            date: '12/07/2024',
+            nbArticle: 4,
+            montant: "10.000fr",
+            etat: "En cours",
+            paiment: orangeMoney,
+        },
+        {
+            date: '01/04/2024',
+            nbArticle: 1,
+            montant: "30.000fr",
+            etat: "En attente",
+            paiment: weave,
+        },
+        {
+            date: '12/08/2024',
+            nbArticle: 3,
+            montant: "37.000fr",
+            etat: "terminée",
+            paiment: orangeMoney,
+        },
+        {
+            date: '12/03/2023',
+            nbArticle: 2,
+            montant: "12.000fr",
+            etat: "En cours",
+            paiment: orangeMoney,
+        },
+        {
+            date: '02/06/2024',
+            nbArticle: 1,
+            montant: "20.000fr",
+            etat: "En attente",
+            paiment: weave,
+        },
+        {
+            date: '12/11/2024',
+            nbArticle: 9,
+            montant: "39.000fr",
+            etat: "terminée",
+            paiment: orangeMoney,
+        },
+        {
+            date: '12/03/2023',
+            nbArticle: 2,
+            montant: "12.000fr",
+            etat: "En cours",
+            paiment: orangeMoney,
+        },
+        {
+            date: '02/06/2024',
+            nbArticle: 1,
+            montant: "20.000fr",
+            etat: "En attente",
+            paiment: weave,
+        },
+        {
+            date: '10/12/2020',
             nbArticle: 10,
             montant: "39.000fr",
-            livraison: "terminée",
+            etat: "terminée",
             paiment: orangeMoney,
-            etat: "terminée"
-        },
-        {
-            date: '31/12/2024',
-            nbArticle: 2,
-            montant: "25.000fr",
-            livraison: "En attente",
-            paiment: orangeMoney,
-            etat: "En attente"
-        },
-        {
-            date: '30/01/2022',
-            nbArticle: 2,
-            montant: "35.000fr",
-            livraison: "terminee",
-            paiment: weave,
-            etat: "terminée"
-        },
-        {
-            date: '03/07/2022',
-            nbArticle: 12,
-            montant: "12.000fr",
-            livraison: "En cours",
-            paiment: orangeMoney,
-            etat: "En cours"
-        },
-        {
-            date: '30/01/2023',
-            nbArticle: 1,
-            montant: "26.000fr",
-            livraison: "En attente",
-            paiment: weave,
-            etat: "En attente"
-        },
-        {
-            date: '11/09/2024',
-            nbArticle: 1,
-            montant: "39.000fr",
-            livraison: "terminée",
-            paiment: orangeMoney,
-            etat: "terminée"
-        },
-        {
-            date: '31/12/2024',
-            nbArticle: 2,
-            montant: "25.000fr",
-            livraison: "En attente",
-            paiment: orangeMoney,
-            etat: "En attente"
-        },
-        {
-            date: '30/01/2022',
-            nbArticle: 2,
-            montant: "35.000fr",
-            livraison: "terminee",
-            paiment: weave,
-            etat: "terminée"
-        },
-        {
-            date: '03/08/2024',
-            nbArticle: 2,
-            montant: "12.600fr",
-            livraison: "En cours",
-            paiment: orangeMoney,
-            etat: "En cours"
-        },
-        {
-            date: '30/01/2021',
-            nbArticle: 1,
-            montant: "20.000fr",
-            livraison: "En attente",
-            paiment: weave,
-            etat: "En attente"
-        },
-        {
-            date: '15/05/2020',
-            nbArticle: 1,
-            montant: "39.000fr",
-            livraison: "terminée",
-            paiment: orangeMoney,
-            etat: "terminée"
         }
     ];
-
+   
     const [recherche, setRecherche] = useState("");
 
     // Pour la pagination
@@ -134,7 +119,7 @@ export function Vente() {
     const count = 5;
     const [btnActive, setBtnActive] = useState(1);
 
-    const filteredData = tabHistoriqueVente.filter((item) => {
+    const filteredData = tabHistoriqueCommende.filter((item) => {
         const rechercheLower = recherche.toLowerCase();
         return item.date.toLowerCase().includes(rechercheLower);
     });
@@ -155,7 +140,7 @@ export function Vente() {
 
     return (
         <div className="container vente pb-5 my-4">
-            <h6 className="ms-2 py-2">Historique des ventes</h6>
+            <h6 className="text-start ms-2 py-2">Historique des ventes</h6>
             <div style={{ borderTop: "2px solid gray" }}></div>
             <div className="d-flex justify-content-end">
                 <div className="d-flex py-2">
@@ -216,6 +201,6 @@ export function Vente() {
                     </button>
                 ))}
             </div>
-        </div>
+        </div> 
     );
 }

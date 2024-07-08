@@ -13,7 +13,7 @@ export default function Dashboard() {
         </div>
         <div className="col-10 p-0">
           <Navbar />
-          <div>
+          <div className="mt-5 pt-5">
             <Outlet />
           </div>
         </div>

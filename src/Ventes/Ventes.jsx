@@ -1,10 +1,10 @@
 import orangeMoney from "../Footer-img/orange-money.png";
 import weave from "../Footer-img/weave.png";
-import "../Commande/commande.css";
+import "../Ventes/Ventes.css";
 import { useState } from "react";
 
-export function Commande() {
-    const tabHistoriqueCommende = [
+export default function Ventes() {
+    const tabHistoriqueVente = [
         {
             date: '12/03/2019',
             nbArticle: 2,
@@ -119,7 +119,7 @@ export function Commande() {
     const count = 5;
     const [btnActive, setBtnActive] = useState(1);
 
-    const filteredData = tabHistoriqueCommende.filter((item) => {
+    const filteredData = tabHistoriqueVente.filter((item) => {
         const rechercheLower = recherche.toLowerCase();
         return item.date.toLowerCase().includes(rechercheLower);
     });
@@ -140,7 +140,7 @@ export function Commande() {
 
     return (
         <div className="container vente pb-5 my-4">
-            <h6 className="ms-2 py-2">Historique des ventes</h6>
+            <h6 className="text-start ms-2 py-2">Historique des ventes</h6>
             <div style={{ borderTop: "2px solid gray" }}></div>
             <div className="d-flex justify-content-end">
                 <div className="d-flex py-2">
@@ -158,10 +158,10 @@ export function Commande() {
                 <thead>
                     <tr style={{ backgroundColor: "#eee" }}>
                         <th scope="col">Date</th>
+                        <th scope="col">Prix Article</th>
                         <th scope="col">Nombre d'article</th>
-                        <th scope="col">Montant</th>
+                        <th scope="col">Total</th>
                         <th scope="col">Paiment</th>
-                        <th scope="col">Livraison</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>

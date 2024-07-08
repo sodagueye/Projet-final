@@ -3,10 +3,11 @@ import { IoMdMail } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import avatar from "./avatar.jpg";
+
 export default function Navbar() {
   return (
-    <div className="container-fluid p-0">
-      <nav class="navbar navbar-expand-lg bg-white shadow ">
+    <div className="container-fluid p-0 Navbar">
+      <nav class="navbar navbar-expand-lg bg-white shadow">
         <div class="container-fluid">
           <div className="research d-flex gap-0">
             <input

@@ -1,10 +1,13 @@
+.Navbar{
+  width: 83%;
+  position: fixed;
+}
 .navbar-custom {
   background-color: #91725d;
   padding: 0;
   font-weight: bold;
   width: 100%;
 }
-
 a {
   text-decoration: none;
 }
@@ -12,7 +15,6 @@ a {
 .panier {
   position: relative;
 }
-
 .ajout {
   position: absolute;
   bottom: 0px;

@@ -1,7 +1,7 @@
 import "./Reservation.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Footer } from "../khadyComponent/Footer/Footer";
+import Footer from "../Footer/Footer";
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
