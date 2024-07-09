@@ -29,7 +29,7 @@ function ModifierPassword() {
 
     try {
       const response = await axios.post(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/reset-password/${token}`,
+        `https://tache-de-validition-nodejs-61fk.onrender.com/api/reset-password/${token}`,
         { password, confirmPassword },
         {
           headers: {

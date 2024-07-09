@@ -7,7 +7,7 @@ export default function Test() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("https://tache-de-validition-nodejs-3.onrender.com/api/register/getting")
+        axios.get("https://tache-de-validition-nodejs-61fk.onrender.com//api/register/getting")
             .then(response => {
                 console.log(response);
                 // Assuming the structure of the response is { utilisateur: [...] }

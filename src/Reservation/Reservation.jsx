@@ -57,7 +57,7 @@ function ReservationPage() {
     };
 
     try {
-      const res = await axios.post("https://tache-de-validition-nodejs-6.onrender.com/api/reservation", formData);
+      const res = await axios.post("https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation", formData);
       navigate('/table', { state: formData });
     } catch (error) {
       console.error(error);

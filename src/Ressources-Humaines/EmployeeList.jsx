@@ -15,7 +15,7 @@ const EmployeeList = () => {
   const getEmployees = async () => {
     try {
       const response = await axios.get(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting`
+        `https://tache-de-validition-nodejs-61fk.onrender.com/api/employes/getting`
       );
       setEmployees(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ const EmployeeList = () => {
   const handleDeleteEmployee = async (_id) => {
     try {
       await axios.delete(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/delete/${_id}`
+        `https://tache-de-validition-nodejs-61fk.onrender.com/api/employes/delete/${_id}`
       );
       setEmployees((prevEmployees) =>
         prevEmployees.filter((employee) => employee._id !== _id)

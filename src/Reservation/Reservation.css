@@ -9,20 +9,20 @@
 
 }
 
-.reservationPage-body {
+/* .reservationPage-body {
     background-image: url("asset24.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+} */
 
 #reservationPage {
     padding: 70px;
 }
 
 #reservationPage form {
-    /* background-color: #FFF; */
+    /* background-color: #FFF;  */
 }
 
 #reservationPage .form-head {

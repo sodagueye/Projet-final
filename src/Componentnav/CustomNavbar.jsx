@@ -12,8 +12,9 @@ import { Contexte } from "../Inscription/AuthProvider";
 
 const CustomNavbar = () => {
   const { cartQuantity } = useContext(Context);
-  const { firstName,lastName } = useContext(Contexte);
-   console.log(firstName, lastName);
+  const { user} = useContext(Contexte);
+  console.log(user);
+  //  console.log(firstName, lastName);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const handleClose = () => setShowOffcanvas(false);
 
@@ -119,11 +120,7 @@ const CustomNavbar = () => {
                 </p>
                 <span className="ms-1">
                   <NavLink to="connexion">
-                  {firstName && lastName ? (
-              <span className="ms-1">CONNEXION {firstName} {lastName}</span>
-            ) : (
-              <span className="ms-1">Connexion</span>
-            )}
+              <span className="ms-1">{user.firstName}</span>
                   </NavLink>
                 </span>
               </li>

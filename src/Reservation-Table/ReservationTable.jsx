@@ -24,7 +24,7 @@ const ReservationTable = () => {
     const fetchReservedTables = async () => {
       try {
         const response = await axios.get(
-          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/reserved-tables"
+          "https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation-table/reserved-tables"
         );
         setReservedTables(response.data);
       } catch (error) {
@@ -74,7 +74,7 @@ const ReservationTable = () => {
 
       try {
         const response = await axios.post(
-          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/tablereserved",
+          "https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation-table/tablereserved",
           formData
         );
         toast.success(

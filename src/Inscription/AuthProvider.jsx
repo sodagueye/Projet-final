@@ -28,7 +28,7 @@ function AuthProvider({ children }) {
 
     try {
       const res = await axios.post(
-        "https://tache-de-validition-nodejs-6.onrender.com/api/register",
+        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register",
         {
           firstName,
           lastName,
@@ -42,25 +42,23 @@ function AuthProvider({ children }) {
       // console.log(res);
 
       if (res.status === 201) {
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setNumber("");
-        setPassword("");
-        setConfirmPassword("");
-        toast.success( "Inscription réussie.");
+        // setFirstName("");
+        // setLastName("");
+        // setEmail("");
+        // setNumber("");
+        // setPassword("");
+        // setConfirmPassword("");
+        toast.success("Inscription réussie.");
 
         setTimeout(() => {
           navigate("/connexion");
         }, 3000);
-       
-
       } else {
         toast.error(res.data.errors[0].msg);
       }
     } catch (error) {
       toast.error("Erreur lors de l'inscription");
-      console.error(error);
+      // console.error(error);
     }
   }
   // fin
@@ -70,23 +68,23 @@ function AuthProvider({ children }) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://tache-de-validition-nodejs-6.onrender.com/api/auth",
+        "https://tache-de-validition-nodejs-61fk.onrender.com/api/auth",
         {
           email,
           password,
         }
       );
-      const loggedInUser = {
-        firstName: res.data.firstName,
-        lastName: res.data.lastName,
-        email: email,
-      };
+    
 
-      setUser(loggedInUser);
-      console.log(loggedInUser);
+      console.log(user);
       if (res.status === 201) {
-        setEmail("");
-        setPassword("");
+        const loggedInUser = {
+          firstName: res.data.firstName,
+          lastName: res.data.lastName,
+          email: email,
+        };
+        setUser(loggedInUser)
+        console.log(user);
         toast.success("Connexion réussie.");
 
         // Vérification si l'utilisateur est administrateur
@@ -101,9 +99,10 @@ function AuthProvider({ children }) {
       }
     } catch (error) {
       toast.error("Erreur lors de la connexion");
-      console.error(error);
+      // console.error(error);
     }
   }
+
   // fin
   console.log(user);
   return (

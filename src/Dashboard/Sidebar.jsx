@@ -12,7 +12,7 @@ export default function Sidebar() {
       <div className="d-flex justify-content-start mb-4">
         <p className="fs-5">{<AiFillDashboard />}</p>
         <p className="fs-5">
-          <NavLink to="/admin">Dashboard</NavLink>
+          <NavLink to="/admin/dashboard">Dashboard</NavLink>
         </p>
       </div>
       <div className="d-flex justify-content-start">
