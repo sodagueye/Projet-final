@@ -30,6 +30,7 @@ export default function PlatSenegalais() {
     : products;
 
   return (
+<<<<<<< HEAD
     <div className="container mt-5">
       <div className="row">
         {loading ? (
@@ -48,6 +49,20 @@ export default function PlatSenegalais() {
             >
               <span className="visually-hidden">Loading...</span>
             </div>
+=======
+    <div className='container'>
+          <div className='row justify-content-center'>
+            {filteredProducts.map((item) => (
+             <div key={item.id} className="col-lg-4 mt-4 scale-image">
+               <Link to={`/detail/${item._id}`}>
+                 <div className="card border-0 carte shadow">
+                   <img src={item.image} className="card-img-top" alt="..."/>                
+                 </div>
+               </Link>
+             </div>
+           ))
+          }
+>>>>>>> 3cb5c14d1462b4dfb2b933a3f002448112b97a08
           </div>
         ) : (
           <div className="row mt-4">
