@@ -106,6 +106,8 @@ function App() {
           <Route path="/" element={<AuthentificationProvider />}>
             <Route path="/inscription" element={<Signup />} />
             <Route path="/connexion" element={<Auth />} />
+            <Route path="/panier/connexion" element={<Auth />} />
+
             {/* <Route path="/msgsuccess" element={<MsgSuccess />} /> */}
             {/* <Route path="/sendmail" element={<SendMail />} /> */}
             <Route
