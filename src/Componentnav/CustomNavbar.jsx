@@ -12,8 +12,8 @@ import { Contexte } from "../Inscription/AuthProvider";
 
 const CustomNavbar = () => {
   const { cartQuantity } = useContext(Context);
-  const { firstName,lastName } = useContext(Contexte);
-   console.log(firstName, lastName);
+  const { firstName, lastName } = useContext(Contexte);
+  console.log(firstName, lastName);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const handleClose = () => setShowOffcanvas(false);
 
@@ -59,8 +59,8 @@ const CustomNavbar = () => {
           </Nav>
         </Offcanvas.Body>
       </Offcanvas> */}
-      <nav class="navbar navbar-expand-lg fixed-top w-100 bg-white shadow ">
-        <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg mb-5 fixed-top w-100 bg-white shadow ">
+        <div class="container-fluid ">
           <div className="col-12 col-md-2">
             <NavLink to="/">
               <img src={logo} alt="logo" style={{ width: "80px" }} />
@@ -118,11 +118,13 @@ const CustomNavbar = () => {
                 </p>
                 <span className="ms-1">
                   <NavLink to="connexion">
-                  {firstName && lastName ? (
-              <span className="ms-1">CONNEXION {firstName} {lastName}</span>
-            ) : (
-              <span className="ms-1">Connexion</span>
-            )}
+                    {firstName && lastName ? (
+                      <span className="ms-1">
+                        CONNEXION {firstName} {lastName}
+                      </span>
+                    ) : (
+                      <span className="ms-1">Connexion</span>
+                    )}
                   </NavLink>
                 </span>
               </li>

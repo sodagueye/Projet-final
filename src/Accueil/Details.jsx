@@ -14,7 +14,8 @@ export default function ProductDetail() {
       try {
         console.log(`Fetching product details for ID: ${id}`);
         const response = await fetch(
-          `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${id}`)
+          `https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits/${id}`
+        );
         const resultat = await response.json();
         setProduct(resultat);
         setLoading(false);
@@ -28,7 +29,7 @@ export default function ProductDetail() {
   }, [id]);
 
   return (
-    <div>
+    <div className="mt-5 pt-5">
       {loading ? (
         <div>
           <div>
@@ -50,7 +51,10 @@ export default function ProductDetail() {
         </div>
       ) : (
         <div>
-          <div className="container p-5 mt-5 d-flex justify-content-center align-items-center">
+          <div
+            style={{ padding: "200px" }}
+            className="container pt-5 mt-5  d-flex justify-content-center align-items-center"
+          >
             <div style={{ color: "#502314" }}>
               <h2 className=" fw-bold">{product.name}</h2>
               <p>{product.description}</p>

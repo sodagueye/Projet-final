@@ -18,7 +18,7 @@ export default function Users() {
   useEffect(() => {
     axios
       .get(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register/getting"
+        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/register/getting"
       )
       .then((response) => {
         console.log(response);

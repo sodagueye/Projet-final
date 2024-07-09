@@ -12,7 +12,7 @@ export default function Card() {
   async function Plats() {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/"
+        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/"
       );
       const resultat = await response.data;
       setPlat(resultat.length);
@@ -23,7 +23,7 @@ export default function Card() {
   async function Users() {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register/getting"
+        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/register/getting"
       );
       const data = await response.data;
       setUsers(data.utilisateur.length);
