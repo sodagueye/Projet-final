@@ -36,11 +36,14 @@ import PlatSenegalais from "./Componentnav/PlatSenegalais";
 import Burgers from "./Componentnav/Burgers";
 import CuisineAilleurs from "./Componentnav/CuisineAilleurs";
 import Categorie from "./Page/Categorie";
-import ListeUtilisateur from "./Inscription/ListeUtilisateur";
+// import ListeUtilisateur from "./Inscription/ListeUtilisateur";
 import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
+import AjouterUsers from "./users/AjouterUsers";
+
+
 // parentProvider
 
 const AppLayout = () => {
@@ -89,6 +92,7 @@ function App() {
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="detail/:id" element={<Details />} />
             <Route path="table" element={<ReservationTable />} />
+           
             {/* MENU */}
             <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="tout" />} />
@@ -109,6 +113,7 @@ function App() {
               path="/reset-password/:token"
               element={<ModifierPassword />}
             />
+            <Route path="AjouterUsers" element={<AjouterUsers/>}/> 
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="table" element={<ReservationTable />} />
@@ -124,7 +129,7 @@ function App() {
           <Route path="/admin" element={<Dashboard />}>
             <Route path="/admin/dashboard" element={<Admin />} />
             <Route path="employe" element={<Employes />} />
-            <Route path="users" element={<ListeUtilisateur />} />
+            {/* <Route path="users" element={<ListeUtilisateur />} /> */}
             <Route path="dashboard" element={<Admin />} />
             <Route path="ventes" element={<PlatsVendus />} />
             <Route path="plats" element={<Plats />} />

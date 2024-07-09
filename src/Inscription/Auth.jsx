@@ -2,11 +2,12 @@ import React from 'react'
 import { useContext } from 'react'
 import { Contexte } from './AuthProvider'
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
+import "./inscrire.css";
 
 
 

@@ -17,7 +17,7 @@ function AuthProvider({ children }) {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [user, setUser] = useState([]);
 
-  // parie inscription
+  // partie inscription
   async function submit(e) {
     e.preventDefault();
 
