@@ -17,9 +17,9 @@ function About() {
           <div className="col-12 col-md-2 text-start">
             <RiErrorWarningLine className="fs-2 ms-5" />
           </div>
-          <div className="col-12 col-md-10  ">
+          <div className="col-12 col-md-10">
             <h4 className="text-start">Quelques mots sur Keur Yaay Soda</h4>
-            <div className="  text-start ">
+            <div className="text-start">
               Bienvenue chez Keur Yaay Soda, une oasis culinaire au cœur de
               Grand Yoff. Notre restaurant est bien plus qu'un simple lieu de
               repas ; c'est une célébration de la culture et des saveurs
@@ -93,19 +93,19 @@ function About() {
           </div>
           <div className="col-12 col-md-10">
             <h4 className="text-start">Gallery</h4>
-            <div className="img row text-start">
+            <div className="img  text-start ">
               <div className="">
-                <img src={about3} className="p-2 rounded-4" alt="" />
-                <img src={about2} className="p-2 rounded-4" alt="" />
-                <img src={about3} className="p-2 rounded-4" alt="" />
+                <img src={about3} className="p-2 rounded-4 col-12 col-md-3" alt="" />
+                <img src={about2} className="p-2 rounded-4 col-12 col-md-3" alt="" />
+                <img src={about3} className="p-2 rounded-4 col-12 col-md-3" alt="" />
               </div>
               <div className="">
-                <img src={about3} className="p-2 rounded-4" alt="" />
-                <img src={about1} className="p-2 rounded-4" alt="" />
-                <img src={about1} className="p-2 rounded-4" alt="" />
+                <img src={about3} className="p-2 rounded-4 col-12 col-md-3" alt="" />
+                <img src={about1} className="p-2 rounded-4 col-12 col-md-3" alt="" />
+                <img src={about1} className="p-2 rounded-4 col-12 col-md-3" alt="" />
               </div>
               <div className="">
-                <img src={about1} className="p-2 rounded-4" alt="" />
+                <img src={about1} className="p-2 rounded-4 col-12 col-md-3" alt=""/>
               </div>
               <Maps />
             </div>
