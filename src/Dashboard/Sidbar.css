@@ -1,0 +1,32 @@
+.sidbar {
+    width: 16.62%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.sidbar .div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.sidbar a {
+    color: #91725d;
+    width: 100%;
+    font-weight: bold;
+}
+
+.sidbar a:hover {
+    background-color: #91725d;
+    color: white;
+}
+
+.sidbar .active {
+    background-color: #91725d;
+    color: white;
+}

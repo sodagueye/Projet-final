@@ -10,6 +10,7 @@ import ReservationPage from "./Reservation/Reservation";
 import MotdepassOublié from "./Inscription/MotdepassOublié";
 import ModifierPassword from "./Inscription/ModifierPassword";
 import Menu from "./Componentnav/Menu";
+import Commande from "./Commande/Commande";
 import Accueil from "./Accueil/Accueil";
 import Dashboard from "./Dashboard/Dashboard";
 import Update from "./Dashboard/Update";
@@ -17,15 +18,13 @@ import Details from "./Accueil/Details";
 import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
-import PlatsVendus from "./Dashboard/PlatsVendus";
 import PageNotFound from "./PageNotFound";
 import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
 import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
-// import SendMail from "./Inscription/SendMail";
-// import MsgSuccess from "./Inscription/MsgSuccess";
 import Panier from "./Panier/Panier";
+import Ventes from "./Ventes/Ventes";
 import Footer from "./Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
@@ -130,7 +129,10 @@ function App() {
             <Route path="employe" element={<Employes />} />
             <Route path="users" element={<ListeUtilisateur />} />
             <Route path="dashboard" element={<Admin />} />
-            <Route path="ventes" element={<PlatsVendus />} />
+            <Route path="/admin/ventes" element={<Ventes />} />
+            <Route path="/admin/commande" element={<Commande />} />
+            <Route path="/admin/utilisateurs" element={<Users />} />
+
             <Route path="plats" element={<Plats />} />
           </Route>
           {/* FIN ADMIN */}

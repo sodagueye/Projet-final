@@ -14,11 +14,7 @@ export default function ProductDetail() {
       try {
         console.log(`Fetching product details for ID: ${id}`);
         const response = await fetch(
-          `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${id}`
-        );
-        if (!response.ok) {
-          throw new Error(`Error fetching product: ${response.statusText}`);
-        }
+          `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${id}`)
         const resultat = await response.json();
         setProduct(resultat);
         setLoading(false);

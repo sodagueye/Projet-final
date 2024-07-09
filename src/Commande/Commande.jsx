@@ -3,7 +3,7 @@ import weave from "../Footer-img/weave.png";
 import "../Commande/commande.css";
 import { useState } from "react";
 
-export function Commande() {
+export default function Commande() {
     const tabHistoriqueCommende = [
         {
             date: '12/03/2019',
@@ -140,7 +140,7 @@ export function Commande() {
 
     return (
         <div className="container vente pb-5 my-4">
-            <h6 className="ms-2 py-2">Historique des ventes</h6>
+            <h6 className="text-start ms-2 py-2">Historique des ventes</h6>
             <div style={{ borderTop: "2px solid gray" }}></div>
             <div className="d-flex justify-content-end">
                 <div className="d-flex py-2">

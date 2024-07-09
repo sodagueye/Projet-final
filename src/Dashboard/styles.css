@@ -25,7 +25,7 @@
     background-color: hsl(24, 22%, 47%);
 }
 
-.sidebar a:active {
+/* .sidebar a:active {
     color: red
 }
 
@@ -39,11 +39,11 @@
     height: 100vh;
     position: fixed;
     width: 16.67%;
-}
+} */
 
-.sidebar div:hover {
+/* .sidebar div:hover {
     cursor: pointer;
-}
+} */
 
 .carte {
     border-left: 3px solid #91725d;

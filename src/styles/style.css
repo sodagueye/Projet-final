@@ -10,16 +10,9 @@
     font-size: 15px;
 }
 
-img {
+.img {
     width: 100%;
 }
-
-.sidebar {
-    height: 100vh;
-    background-color: s !important;
-    color: #fff;
-}
-
 .trait {
     background-color: gray;
     width: 100%;

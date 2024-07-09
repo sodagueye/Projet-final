@@ -8,10 +8,11 @@ import "./Cards.css";
 // import "../styles/style.css"
 export default function Card() {
   const [plat, setPlat] = useState("");
+  const [users, setUsers] = useState("");
   async function Plats() {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
+        "https://tache-de-validition-nodejs-61fk.onrender.com/"
       );
       const resultat = await response.data;
       setPlat(resultat.length);
@@ -19,8 +20,20 @@ export default function Card() {
       console.log(e);
     }
   }
+  async function Users() {
+    try {
+      const response = await axios.get(
+        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register/getting"
+      );
+      const data = await response.data;
+      setUsers(data.utilisateur.length);
+    } catch (e) {
+      console.log(e);
+    }
+  }
   useEffect(() => {
     Plats();
+    Users();
   }, []);
 
   return (
@@ -41,8 +54,8 @@ export default function Card() {
         <div className="col-lg-3">
           <div class="card shadow cartes p-2">
             <div class="card-body d-flex flex-row align-items-center">
-              <h3 class="card-text">Utilisateurs</h3>
-              <p className="fs-2">
+              <p class="card-text">{users} Utilisateurs</p>
+              <p className="fs-3">
                 <FiUsers />
               </p>
             </div>

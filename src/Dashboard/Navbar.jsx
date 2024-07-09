@@ -35,11 +35,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className="container-fluid p-0">
-      <nav class="navbar navbar-expand-lg bg-white shadow ">
+    <div className="container-fluid p-0 Navbar">
+      <nav class="navbar navbar-expand-lg bg-white shadow">
         <div class="container-fluid">
           <div className="col-12 col-md-2">
-            <img src={logo} alt="logo" className="img-fluid" />
+            <img src={logo} alt="logo" style={{ width: "80px" }} />
           </div>
 
           <button
