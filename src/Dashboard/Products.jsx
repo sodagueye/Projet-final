@@ -13,7 +13,7 @@ export default function Home() {
     async function getData() {
       try {
         const response = await fetch(
-          "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
+          "https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits"
         );
         const resultat = await response.json();
         setData(resultat);
@@ -31,7 +31,7 @@ export default function Home() {
     if (conf) {
       try {
         await axios.delete(
-          `https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits/${id}`
+          `https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits/${id}`
         );
         alert("Deleted successfully");
         setData(data.filter((item) => item._id !== id));
