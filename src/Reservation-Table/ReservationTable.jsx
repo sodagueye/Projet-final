@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import  Footer  from "../Footer/Footer";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,15 +24,10 @@ const ReservationTable = () => {
   useEffect(() => {
     const fetchReservedTables = async () => {
       try {
-        const response = await axios.get(
-          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/reserved-tables"
-        );
+        const response = await axios.get("https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation-table/reserved-tables");
         setReservedTables(response.data);
       } catch (error) {
-        console.error(
-          "Une erreur s'est produite lors de la récupération des tables réservées!",
-          error
-        );
+        console.error("Une erreur s'est produite lors de la récupération des tables réservées!", error);
       }
     };
 
@@ -54,7 +50,7 @@ const ReservationTable = () => {
     }
   };
 
-  const handlePass = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isTableReserved) {
       toast.error("Cette table a déjà été réservée.");
@@ -74,7 +70,7 @@ const ReservationTable = () => {
 
       try {
         const response = await axios.post(
-          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/tablereserved",
+          "https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation-table/tablereserved",
           formData
         );
         toast.success(
@@ -82,22 +78,19 @@ const ReservationTable = () => {
         );
         navigate("/redirection-confirmation", { state: formData });
       } catch (error) {
-        console.error(
-          "Une erreur s'est produite lors de la réservation !",
-          error
-        );
-        toast.error("Cette table a déjà été réservée.");
+        console.error("Une erreur s'est produite lors de la réservation !", error);
+          toast.error("Cette table a déjà été réservée.");
       }
     }
   };
 
   return (
-    <section id="reservation-table ">
+    <section id="reservation-table">
       <ToastContainer />
       <div>
-        <div className="container mt-5 bg-img">
+        <div className="container mt-5">
           <div className="row">
-            <h3 className="reservation-table-body-text text-header text-write">
+            <h3 className="reservation-table-body-text text-header">
               Tables reservations
             </h3>
             <div className="reservation-table-body">
@@ -120,7 +113,7 @@ const ReservationTable = () => {
                   {`Nombre d'invités: ${invites}`}
                 </p>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="personnal-details">
                   <h5 className="reservation-table-body-text">
                     Personnal details
@@ -151,7 +144,7 @@ const ReservationTable = () => {
                     <input
                       type="email"
                       className="form-control"
-                      id="floatingInput" name ={firstName}
+                      id="floatingInput"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -186,6 +179,18 @@ const ReservationTable = () => {
                         <option value="Salle 8">Salle 8</option>
                         <option value="Salle 9">Salle 9</option>
                         <option value="Salle 10">Salle 10</option>
+                        <option value="Salle 11">Salle 11</option>
+                        <option value="Salle 12">Salle 12</option>
+                        <option value="Salle 13">Salle 13</option>
+                        <option value="Salle 14">Salle 14</option>
+                        <option value="Salle 15">Salle 15</option>
+                        <option value="Salle 16">Salle 16</option>
+                        <option value="Salle 17">Salle 17</option>
+                        <option value="Salle 18">Salle 18</option>
+                        <option value="Salle 19">Salle 19</option>
+                        <option value="Salle 20">Salle 20</option>
+
+                        
                       </select>
                       <label>Salles</label>
                     </div>
@@ -208,6 +213,17 @@ const ReservationTable = () => {
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+
                       </select>
                       <label>Tables</label>
                     </div>
@@ -222,7 +238,7 @@ const ReservationTable = () => {
                       className="reservation-table-body-text text-muted"
                       htmlFor="floatingTextarea2"
                     >
-                      Commentaires
+                     Commentaires
                     </label>
                     <textarea
                       className="form-control"
@@ -233,18 +249,21 @@ const ReservationTable = () => {
                   </div>
                 </div>
                 <p className="reservation-table-body-text text-muted mt-3 fs-6">
-                  En continuant, vous acceptez les conditions d'utilisation et
-                  la politique de confidentialité.!
+                En continuant, vous acceptez les conditions d'utilisation et la politique de confidentialité.!
                 </p>
                 <button
                   type="submit"
                   className="btn btnsend"
-                  onClick={handlePass}
                 >
                   Réserver
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <Footer />
           </div>
         </div>
       </div>

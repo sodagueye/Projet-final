@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import des icônes
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 import "./modifier.css";
 import "./inscrire.css";
 
@@ -11,7 +11,7 @@ import "./inscrire.css";
 function ModifierPassword() {
   const { token } = useParams();
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] =useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function ModifierPassword() {
 
     try {
       const response = await axios.post(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/reset-password/${token}`,
+        `https://tache-de-validition-nodejs-61fk.onrender.com/api/reset-password/${token}`,
         { password, confirmPassword },
         {
           headers: {

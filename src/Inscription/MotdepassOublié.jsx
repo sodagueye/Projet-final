@@ -15,7 +15,7 @@ function MotdepassOublié() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://tache-de-validition-nodejs-6.onrender.com/api/forgot-password', { email });
+      await axios.post('https://tache-de-validition-nodejs-61fk.onrender.com/api/forgot-password', { email });
       
       toast.success(`Un mail avec lien de confirmation est envoyé sur votre compte ${email}`);
       setTimeout(()=>{
