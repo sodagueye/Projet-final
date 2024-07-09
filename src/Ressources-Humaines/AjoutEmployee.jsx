@@ -60,7 +60,7 @@
 //   };
 
 //   return (
-//     <form onSubmit={handleSubmit} className="shadow p-3 mx-auto my-3 text-center container"> 
+//     <form onSubmit={handleSubmit} className="shadow p-3 mx-auto my-3 text-center container">
 //       <div className="row mb-3">
 //         <div className="col-md-6">
 //           <label className="form-label" htmlFor="name">Nom :</label>
@@ -139,7 +139,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) => {
+const EmployeeForm = ({
+  onEmployeeAdded,
+  onEmployeeUpdated,
+  employeeToEdit,
+}) => {
   const [nom, setNom] = useState("");
   const [poste, setPoste] = useState("");
   const [salaire, setSalaire] = useState(0);
@@ -183,14 +187,14 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
       let response;
       if (isEditing) {
         response = await axios.patch(
-          `https://tache-de-validition-nodejs-6.onrender.com/api/employes/update/${employeeToEdit._id}`,
+          `https://tache-de-validition-nodejs-1-lhb5.onrender.com/update/${employeeToEdit._id}`,
           employeeData
         );
         console.log("Employee updated:", response.data);
         onEmployeeUpdated(response.data);
       } else {
         response = await axios.post(
-          `https://tache-de-validition-nodejs-6.onrender.com/api/employes`,
+          `https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/employes`,
 
           employeeData
         );
@@ -205,10 +209,15 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
   };
 
   return (
-    <form onSubmit={handleSubmit} className="shadow p-3 mx-auto my-3 text-center container"> 
+    <form
+      onSubmit={handleSubmit}
+      className="shadow p-3 mx-auto my-3 text-center container"
+    >
       <div className="row mb-3">
         <div className="col-md-6">
-          <label className="form-label" htmlFor="name">Nom :</label>
+          <label className="form-label" htmlFor="name">
+            Nom :
+          </label>
           <input
             className="form-control input"
             type="text"
@@ -220,7 +229,9 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
           />
         </div>
         <div className="col-md-6">
-          <label className="form-label" htmlFor="poste">Poste :</label>
+          <label className="form-label" htmlFor="poste">
+            Poste :
+          </label>
           <input
             className="form-control input"
             type="text"
@@ -235,7 +246,9 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
 
       <div className="row mb-3">
         <div className="col-md-6">
-          <label className="form-label" htmlFor="salary">Salaire :</label>
+          <label className="form-label" htmlFor="salary">
+            Salaire :
+          </label>
           <input
             className="form-control input"
             type="number"
@@ -247,7 +260,9 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
           />
         </div>
         <div className="col-md-6">
-          <label className="form-label" htmlFor="workHours">Horaire :</label>
+          <label className="form-label" htmlFor="workHours">
+            Horaire :
+          </label>
           <input
             className="form-control input"
             type="number"
@@ -261,7 +276,9 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
       </div>
 
       <div className="mb-4">
-        <label className="form-label" htmlFor="monthlySalary">Mensualité :</label>
+        <label className="form-label" htmlFor="monthlySalary">
+          Mensualité :
+        </label>
         <input
           className="form-control input"
           type="text"
@@ -280,4 +297,3 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
 };
 
 export default EmployeeForm;
-
