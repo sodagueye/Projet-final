@@ -3,7 +3,7 @@ import MenuBtn from "./MenuBtn";
 import "./Menu.css";
 export default function Menu() {
   return (
-    <div className="container mt-5 p-5">
+    <div className="container p-5">
       <div className="row mt-5">
         <MenuBtn />
       </div>

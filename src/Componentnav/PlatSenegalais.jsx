@@ -30,8 +30,8 @@ export default function PlatSenegalais() {
 
 
   return (
-    <div>
-          <div className='row'>
+    <div className='container'>
+          <div className='row justify-content-center'>
             {filteredProducts.map((item) => (
              <div key={item.id} className="col-lg-4 mt-4 scale-image">
                <Link to={`/detail/${item._id}`}>

@@ -22,7 +22,7 @@ export default function Tout() {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row d-flex justify-content-center">
         {loading ? (
           <div>
             <div

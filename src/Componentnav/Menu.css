@@ -4,10 +4,14 @@
     padding: 5px;
     margin-left: 12px;
     border-radius: 5px;
-
+    margin-top: 5%;
 }
 
 .navmenu a.active {
     background-color: #fff !important;
     color: #fff;
 }
+
+/* .scale-image{
+    width: 27%;
+} */
