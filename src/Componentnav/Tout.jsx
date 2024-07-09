@@ -1,12 +1,16 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../Accueil/Presentation.css";
+import { Context } from "../Components";
+import MenuBtn from "./MenuBtn";
 
 export default function Tout() {
   const [plats, setPlats] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { handleAddToCart } = useContext(Context);
+
   async function getProducts() {
     const resultat = await axios.get(
       "https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits"
@@ -21,7 +25,7 @@ export default function Tout() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className="row">
         {loading ? (
           <div>
@@ -41,15 +45,30 @@ export default function Tout() {
             </div>
           </div>
         ) : (
-          plats.map((item) => (
-            <div key={item.id} className="col-lg-4 mt-4 scale-image">
-              <Link to={`/detail/${item._id}`}>
-                <div className="card border-0 carte shadow">
-                  <img src={item.image} className="" alt="..." />
+          <div className="row mt-4">
+            {plats.map((item) => (
+              <div key={item.id} className="col-lg-4 mt-5">
+                <div class="card border-0 shadow">
+                  <img
+                    src={item.image}
+                    class=""
+                    style={{ height: "300px", objectFit: "cover" }}
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{item.name}</h5>
+                    <p class="card-text">{item.description}</p>
+                    <button
+                      className="border-0 btn-add text-white rounded shadow p-2"
+                      onClick={() => handleAddToCart(item)}
+                    >
+                      Ajouter au panier
+                    </button>
+                  </div>
                 </div>
-              </Link>
-            </div>
-          ))
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

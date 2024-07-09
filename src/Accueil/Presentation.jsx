@@ -57,7 +57,7 @@ export default function Presentation() {
           <Portfolio />
         </div>
         <h2 style={{marginTop:"60px", color:"#91725d" , fontFamily:"sans-serif",fontStyle:"normal" }}>
-          Temoignages de Quelques Clients</h2>
+          Temoignages </h2>
       </div>
     </div>
   );

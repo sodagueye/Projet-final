@@ -10,9 +10,8 @@
     font-size: 15px;
 }
 
-img,
-.div-img {
-    width: 100px;
+img {
+    width: 100%;
 }
 
 .sidebar {
