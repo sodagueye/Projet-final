@@ -30,9 +30,9 @@ function Signup() {
 
   return (
     <div>
-      <div className="backCConnexion shadow d-flex justify-content-center mt-5">
+      <div className="backCConnexion shadow d-flex justify-content-center my-5">
         <form className="form" onSubmit={submit}>
-          <img src={logoMaron} className="fs-2 logoMaron" alt="" />
+          <img src={logoMaron} className="logoMaron w-50" alt="" />
           <div className="color m-0 fw-bold">
             <h3>Créez votre compte</h3>
           </div>
@@ -97,7 +97,7 @@ function Signup() {
               {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
             </span>
           </div>
-          <div className="d-flex">
+          <div className="d-flex mb-5">
             <button
               type="submit"
               className="creer liens fs-5 fw-bold mt-5 connect border-0 "

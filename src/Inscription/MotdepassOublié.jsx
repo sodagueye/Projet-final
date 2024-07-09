@@ -33,7 +33,7 @@ function MotdepassOublié() {
       <ToastContainer/>
       <div className='shadow d-flex justify-content-center align-items-center backCConnexion mt-5 pb-5'>
         <form onSubmit={handleSubmit} className='form align-items-center'>
-          <img src={logoMaron} className="fs-2 logoMaron" alt="" />
+          <img src={logoMaron} className=" logoMaron w-50" alt="" />
           <h2 className='text-center'>Réinitialisation mot de passe</h2>
           <div className='inscript1 align-items-center'>
             <input
@@ -45,7 +45,7 @@ function MotdepassOublié() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className='creer d-flex'>
+          <div className='creer d-flex mt-3'>
             <button type='submit' className='liens align-items-center m-auto  connect fs-5 fw-bold border-0'>Envoyer</button></div>
           {/* <div className='text-center my-4'></div> */}
         </form>

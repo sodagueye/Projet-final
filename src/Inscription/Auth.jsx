@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { Contexte } from './AuthProvider'
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,7 +16,7 @@ import logoMaron from "../assets/logoMaron.png";
   return (
     <div><div className="backCConnexion shadow mt-5">
     <form className="form align-items-center" onSubmit={login}>
-      <img src={logoMaron} className="fs-2 logoMaron" alt="" />
+      <img src={logoMaron} className=" logoMaron w-50" alt="" />
       <h2 className="text-center fw-bold fs-2 color">Connecter</h2>
 
       <div className="inscript1 ">
