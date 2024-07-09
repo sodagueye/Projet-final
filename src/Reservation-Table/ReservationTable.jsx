@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ReservationTable.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import  Footer  from "../Footer/Footer";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,15 +24,10 @@ const ReservationTable = () => {
   useEffect(() => {
     const fetchReservedTables = async () => {
       try {
-        const response = await axios.get(
-          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/reserved-tables"
-        );
+        const response = await axios.get("https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation-table/reserved-tables");
         setReservedTables(response.data);
       } catch (error) {
-        console.error(
-          "Une erreur s'est produite lors de la récupération des tables réservées!",
-          error
-        );
+        console.error("Une erreur s'est produite lors de la récupération des tables réservées!", error);
       }
     };
 
@@ -74,7 +70,7 @@ const ReservationTable = () => {
 
       try {
         const response = await axios.post(
-          "https://tache-de-validition-nodejs-6.onrender.com/api/reservation-table/tablereserved",
+          "https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation-table/tablereserved",
           formData
         );
         toast.success(
@@ -82,22 +78,19 @@ const ReservationTable = () => {
         );
         navigate("/redirection-confirmation", { state: formData });
       } catch (error) {
-        console.error(
-          "Une erreur s'est produite lors de la réservation !",
-          error
-        );
-        toast.error("Cette table a déjà été réservée.");
+        console.error("Une erreur s'est produite lors de la réservation !", error);
+          toast.error("Cette table a déjà été réservée.");
       }
     }
   };
 
   return (
-    <section id="reservation-table ">
+    <section id="reservation-table">
       <ToastContainer />
       <div>
-        <div className="container mt-5 bg-img">
+        <div className="container mt-5">
           <div className="row">
-            <h3 className="reservation-table-body-text text-header text-write">
+            <h3 className="reservation-table-body-text text-header">
               Tables reservations
             </h3>
             <div className="reservation-table-body">
@@ -151,7 +144,7 @@ const ReservationTable = () => {
                     <input
                       type="email"
                       className="form-control"
-                      id="floatingInput" name ={firstName}
+                      id="floatingInput"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -186,8 +179,6 @@ const ReservationTable = () => {
                         <option value="Salle 8">Salle 8</option>
                         <option value="Salle 9">Salle 9</option>
                         <option value="Salle 10">Salle 10</option>
-<<<<<<< HEAD
-=======
                         <option value="Salle 11">Salle 11</option>
                         <option value="Salle 12">Salle 12</option>
                         <option value="Salle 13">Salle 13</option>
@@ -200,7 +191,6 @@ const ReservationTable = () => {
                         <option value="Salle 20">Salle 20</option>
 
                         
->>>>>>> 8b3d091c953be5eaa6cb76d120194d57bc2bb989
                       </select>
                       <label>Salles</label>
                     </div>
@@ -248,7 +238,7 @@ const ReservationTable = () => {
                       className="reservation-table-body-text text-muted"
                       htmlFor="floatingTextarea2"
                     >
-                      Commentaires
+                     Commentaires
                     </label>
                     <textarea
                       className="form-control"
@@ -259,8 +249,7 @@ const ReservationTable = () => {
                   </div>
                 </div>
                 <p className="reservation-table-body-text text-muted mt-3 fs-6">
-                  En continuant, vous acceptez les conditions d'utilisation et
-                  la politique de confidentialité.!
+                En continuant, vous acceptez les conditions d'utilisation et la politique de confidentialité.!
                 </p>
                 <button
                   type="submit"
@@ -270,6 +259,11 @@ const ReservationTable = () => {
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <Footer />
           </div>
         </div>
       </div>
