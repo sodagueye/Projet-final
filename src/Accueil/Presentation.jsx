@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Portfolio from "./Portfolio";
+
 export default function Presentation() {
   const [plats, setPlats] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -55,7 +56,7 @@ export default function Presentation() {
         <div>
           <Portfolio />
         </div>
-        <h2 style={{marginTop:"50px", color:"#91725d" , fontFamily:'serif', }}>
+        <h2 style={{marginTop:"60px", color:"#91725d" , fontFamily:"sans-serif",fontStyle:"normal" }}>
           Temoignages de Quelques Clients</h2>
       </div>
     </div>
