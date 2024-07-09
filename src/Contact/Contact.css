@@ -8,13 +8,17 @@
     height: 130px;
     padding: 5px;
 }
+.contact input , .contact textarea{
+    width: 100%;
+    background-color: white;
+}
 .contact .row .one{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.contact i{
+.contact .icons{
     font-size: 20px;
     font-weight: bold;
 }
@@ -23,7 +27,7 @@
     font-family: Georgia, serif;
 }
 p{
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     flex-wrap: wrap;
 }

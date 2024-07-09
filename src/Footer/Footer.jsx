@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../Footer/Footer.css";
+import { FaFacebook , FaWhatsapp , FaTiktok  , FaInstagram } from "react-icons/fa";
 import logo from "../Footer-img/log-remove.png";
 import { Link } from "react-router-dom";
 
@@ -84,29 +85,17 @@ export default function Footer() {
             <div className="d-flex flex-column align-items-center">
               <h6>RETROUVEZ-NOUS SUR</h6>
               <div className="d-flex gap-3">
-                <a
-                  href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 "
-                  target="_blank"
-                >
-                  <i class="bi bi-whatsapp"></i>
+                <a href="https://chat.whatsapp.com/LvHkLHkFx8V6JgjuXSqXQ5 " target="_blank">
+                  <FaWhatsapp/>
                 </a>
-                <a
-                  href="https://www.tiktok.com/@nom_utilisateur"
-                  target="_blank"
-                >
-                  <i class="bi bi-tiktok"></i>
+                <a href="https://www.tiktok.com/@nom_utilisateur" target="_blank" >
+                  <FaTiktok/>
                 </a>
-                <a
-                  href="https://www.facebook.com/nom_utilisateur"
-                  target="_blank"
-                >
-                  <i class="bi bi-facebook"></i>
+                <a href="https://www.facebook.com/nom_utilisateur" target="_blank">
+                  <FaFacebook/>
                 </a>
-                <a
-                  href="https://www.instagram.com/nom_utilisateur"
-                  target="_blank"
-                >
-                  <i class="bi bi-instagram"></i>
+                <a href="https://www.instagram.com/nom_utilisateur" target="_blank" >
+                  <FaInstagram/>
                 </a>
               </div>
             </div>
@@ -126,7 +115,6 @@ export default function Footer() {
                   className="rounded-5 form-control"
                   value={email}
                   onChange={handleChange}
-                  // style={{ height: 40, }}
                 />
                 <button type="submit" className="rounded-5 border-0 px-2">
                   Abonnez-vous

@@ -43,6 +43,10 @@ import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
+import Condition from "./cond-ut/condition";
+import Politique from "./pol-conf/politique";
+import Contact from "./Contact/Contact";
+import Localisation from "./localisation/localisation";
 // parentProvider
 
 const AppLayout = () => {
@@ -91,6 +95,7 @@ function App() {
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="detail/:id" element={<Details />} />
             <Route path="table" element={<ReservationTable />} />
+
             {/* MENU */}
             <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="tout" />} />
@@ -101,6 +106,10 @@ function App() {
               <Route path="desserts" element={<Desserts />} />
               <Route path="burgers" element={<Burgers />} />
             </Route>
+            <Route path="/Localisation" element={<Localisation/>} />
+            <Route path="/Contact" element={<Contact/>} />
+            <Route path="/politique-de-confidentialite" element={<Politique/>}/>
+            <Route path="/conditions-utilisation" element={<Condition />} />
             {/* FIN MENU */}
           </Route>
 

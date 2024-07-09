@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../Contact/Contact.css";
+import { FaPhone , FaMobile  } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
 
 export default function Contact() {
     const [nom , setNom] = useState()
@@ -21,14 +24,14 @@ export default function Contact() {
                     <div className="row">
                         <div className="col-6">
                             <div className="d-flex flex-column align-items-center bg-white p-2 card">
-                                <i class="bi bi-geo-alt-fill"></i>
+                                <FaLocationDot className="icons"/>
                                 <h6>Siege</h6>
                                 <p>Kounoune ,Keur Massar</p>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="d-flex flex-column align-items-center bg-white p-2 card">
-                               <i class="bi bi-telephone"></i>
+                               <FaPhone className="icons"/>
                                 <h6>Telephone</h6>
                                 <p>77-5-43-67-89</p>
                             </div>
@@ -39,14 +42,14 @@ export default function Contact() {
                     <div className="row">
                         <div className="col-6">
                             <div className="d-flex flex-column align-items-center bg-white p-2 card">
-                                <i class="bi bi-phone-vibrate"></i>
+                                <FaMobile className="icons"/>
                                 <h6>Fax</h6>
                                 <p>33-3-43-56-78</p>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="d-flex flex-column align-items-center bg-white p-2 card">
-                                <i class="bi bi-envelope"></i>
+                                <MdOutlineMail className="icons"/>
                                 <h6>Email</h6>
                                 <p>yayesoda@gmail.com</p>
                             </div>

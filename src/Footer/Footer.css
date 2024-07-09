@@ -28,10 +28,13 @@ footer button {
 }
 footer input {
     border: 1px solid #fff !important;
-    /* outline: none; */
+    outline: none; 
+}
+footer input::placeholder{
+    color: white;
 }
 footer ul li {
-    font-size: 13px;
+    font-size: 14px;
     list-style: none;
     white-space: nowrap;
 }
@@ -48,7 +51,7 @@ footer a i:hover {
 }
 
 footer h6 {
-    font-size: 12px;
+    font-size: 18px;
     font-family: Georgia, serif;
     flex-wrap: nowrap;
 }
