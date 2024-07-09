@@ -28,7 +28,7 @@ function AuthProvider({ children }) {
 
     try {
       const res = await axios.post(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register",
+        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/register",
         {
           firstName,
           lastName,
