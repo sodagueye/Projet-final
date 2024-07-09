@@ -3,15 +3,19 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import des icônes
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 import "./modifier.css";
+<<<<<<< HEAD
 import "./inscrire.css";
 
+=======
+// Soda doit récupérer celui qui s'est connecté dans localStorage pour que moi je puis filtrer ça et le récupérer les données de l'utilisateur dans tt l'application 
+>>>>>>> 8b3d091c953be5eaa6cb76d120194d57bc2bb989
 
 function ModifierPassword() {
   const { token } = useParams();
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] =useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();

@@ -20,18 +20,32 @@ function ReservationPage() {
 
   const fetchAvailableHours = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get("https://tache-de-validition-nodejs-6.onrender.com/api/reservation/hours");
       const { heures_disponibles } = response.data;
       setHours(heures_disponibles);
     } catch (error) {
       console.error(error);
+=======
+      const formattedDate = date.toISOString().split('T')[0]; 
+      const response = await axios.get(`http://localhost:8080/api/reservation/hours/${formattedDate}`);
+      console.log(response.data);
+      const { heures_disponibles } = response.data;
+      setHours(heures_disponibles);
+    } catch (err) {
+      console.error(err);
+>>>>>>> 8b3d091c953be5eaa6cb76d120194d57bc2bb989
       toast.error("Erreur lors du chargement des heures disponibles");
     }
   };
 
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> 8b3d091c953be5eaa6cb76d120194d57bc2bb989
 
   const handleSubmit = async (e) => {
     e.preventDefault();
