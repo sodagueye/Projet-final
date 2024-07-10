@@ -19,8 +19,6 @@ import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
 import PlatsVendus from "./Dashboard/PlatsVendus";
 import PageNotFound from "./PageNotFound";
-import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
-import TrackReservation from "./Track-reservation/TrackReservation";
 import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
 import SendMail from "./Inscription/SendMail";
@@ -125,13 +123,8 @@ function App() {
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="table" element={<ReservationTable />} />
-            <Route
-              path="/redirection-confirmation"
-              element={<PageRedirection />}
-            />
           </Route>
           {/*  */}
-          <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
           {/* ADMIN */}
           <Route path="/admin" element={<Dashboard />}>
