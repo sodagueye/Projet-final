@@ -14,36 +14,19 @@
     justify-content: space-around;
     align-items: start;
 }
-.das:hover{
+
+.das:hover {
     background-color: #91725d;
-    color: black;   
+    color: black;
 }
 
-    
-
-/* .sidbar a {
-    color: #91725d;
-    width: 100%;
-    font-weight: bold;
-} */
-
-/* .sidbar a:hover {
-    background-color: #91725d;
-     color: black; 
-} */
-
-/* .active {
-     /* background-color: #91725d;   */
-     /* color: black;   */
-/* }  */ 
 .sidbar a:hover {
-    background-color: #91725d; /* Couleur de fond au survol */
-    color: black; /* Couleur du texte au survol */
-    width: 200px;
-  }
-  
-  /* Style pour les liens actifs */
-  .sidbar a.active {
-    background-color: transparent; /* Couleur de fond pour le lien actif */
-    color: black; /* Couleur du texte pour le lien actif */
-  }
+    background-color: #91725d;
+    color: black;
+     width: 200px;
+}
+.sidbar a.active {
+    background-color: transparent;
+    /* color: black; */
+    
+}
