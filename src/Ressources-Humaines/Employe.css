@@ -18,19 +18,20 @@ form{
     width: 60%;
     margin: auto;
 }
-.input{
-    gap: 5;
-    width: 70%;
-    border: none;
-    background-color: #f3faff;
-    border-bottom: 1px solid #91725d;
-    border-right: 1px solid #91725d;
-    box-shadow: 2px 2px 0.1em gray;
-}
+.inputs{
+     display: flex;
+    width: 70%; 
+     margin: 10px;
+     border: 2px solid #91725d;  
+     background-color: #f3faff; 
+     margin: auto;
+   
+ }
+ 
 
-.input:focus{
+/* .input:focus{
     outline: none;
-}
+} */
 .btn{
     color: #FFF;
     background-color:#91725d;
@@ -51,3 +52,47 @@ form{
     background-color: #f4e6d9;
     color: #91725d;
 } 
+/*  */
+
+/* EmployeeForm.css */
+
+/* Style pour le formulaire */
+.form-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .inputs {
+    /* border: 2px solid #ced4da; */
+    /* border-radius: 0.25rem; */
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+  }
+  
+  /* Style pour les boutons */
+  .btn-submit {
+    background-color: #91725d;
+    color: #fff;
+    border: none;
+  }
+  .agrandir .modal-dialog {
+    max-width: 40%;
+    margin: 1.75rem auto;
+  }
+  
+  .agrandir .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .btn-submit:hover {
+    background-color: #91725d;
+  }
+  
+  /* Ajouter des marges pour le formulaire */
+  .form-container {
+    margin: 20px;
+  }
+  .annuler{
+    background-color:#0056b3 ;
+  }
+  

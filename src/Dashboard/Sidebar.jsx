@@ -5,48 +5,83 @@ import { GiHotMeal, GiHumanTarget } from "react-icons/gi";
 import { IoIosListBox } from "react-icons/io";
 import { FaSellsy } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import "../Dashboard/Sidbar.css"
-
+import "../Dashboard/Sidbar.css";
+import logo from "../Dashboard/logoMaron.png";
 
 export default function Sidebar() {
-  return <div className="sidbar shadow text-white">
-    <div className="d-flex flex-column justify-content-around align-items-start fs-5 div">
-      <NavLink to="/admin" className={({ isActive }) => (isActive ? "active" : "")}>
-        <div className="d-flex justify-content-start align-items-center py-2 ms-2">
-          <AiFillDashboard />
-          <span>Dashboard</span>
+  return (
+    <div className="sidbar shadow text-white">
+      <div className="d-flex flex-column justify-content-around align-items-start  div">
+        <div>
+          <img src={logo} alt="" style={{ width: "80px" }} />
         </div>
-      </NavLink>
-      <NavLink to="/admin/utilisateurs" className={({ isActive }) => (isActive ? "active" : "")}>
-        <div className="d-flex justify-content-start align-items-center ms-2">
-          <CiUser />
-          <span>Utilisateurs</span>
-        </div>
-      </NavLink>
-      <NavLink to="/admin/plats" className={({ isActive }) => (isActive ? "active" : "")}>
-        <div className="d-flex justify-content-start align-items-center  ms-2">
-          <GiHotMeal />
-          <span> Plats</span>
-        </div>
-      </NavLink>
-      <NavLink to="/admin/employe" className={({ isActive }) => (isActive ? "active" : "")}>
-        <div className="d-flex justify-content-start align-items-center  ms-2">
-          <GiHumanTarget />
-          <span>R_H</span>
-        </div>
-      </NavLink>
-      <NavLink to="/admin/ventes" className={({ isActive }) => (isActive ? "active" : "")}>
-        <div className="d-flex justify-content-start align-items-center  ms-2">
-          <FaSellsy />
-          <span>Ventes</span>
-        </div>
-      </NavLink>
-      <NavLink to="/admin/commande" className={({ isActive }) => (isActive ? "active" : "")}>
-        <div className="d-flex justify-content-start align-items-center  ms-2">
-          <FaSellsy />
-          <span>Commande</span>
-        </div>
-      </NavLink>
+        <NavLink
+          to="/admin/dashboard"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <div className="d-flex justify-content-start align-items-center mt-2  das gap-2 m-0">
+            <span className="fs-4">
+              <AiFillDashboard />
+            </span>
+            <span className="das">Dashboard</span>
+          </div>
+        </NavLink>
+        <NavLink
+          to="/admin/utilisateurs"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <div className="d-flex justify-content-start align-items-center  das gap-2 m-0">
+            <span className="fs-4">
+              <CiUser />
+            </span>
+            <span>Utilisateurs</span>
+          </div>
+        </NavLink>
+        <NavLink
+          to="/admin/plats"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <div className="d-flex justify-content-start align-items-center   das gap-2 m-0">
+            <span className="fs-4">
+              <GiHotMeal />
+            </span>
+            <span>Plats</span>
+          </div>
+        </NavLink>
+        <NavLink
+          to="/admin/employe"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <div className="d-flex justify-content-start align-items-center   gap-2 ">
+            <span className="fs-4">
+              <GiHumanTarget />
+            </span>
+            <span>RH</span>
+          </div>
+        </NavLink>
+        <NavLink
+          to="/admin/ventes"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <div className="d-flex justify-content-start align-items-center  das gap-2 m-0">
+            <span className="fs-4">
+              <FaSellsy />
+            </span>
+            <span className="">Ventes</span>
+          </div>
+        </NavLink>
+        <NavLink
+          to="/admin/commande"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <div className="d-flex justify-content-start align-items-center   das gap-2">
+            <span className="fs-4">
+              <FaSellsy />
+            </span>
+            <span>Commande</span>
+          </div>
+        </NavLink>
+      </div>
     </div>
-  </div>
+  );
 }

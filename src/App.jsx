@@ -79,6 +79,7 @@ function App() {
   console.log("hello");
   return (
     <div className="App">
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
@@ -107,9 +108,6 @@ function App() {
             <Route path="/inscription" element={<Signup />} />
             <Route path="/connexion" element={<Auth />} />
             <Route path="/panier/connexion" element={<Auth />} />
-
-            {/* <Route path="/msgsuccess" element={<MsgSuccess />} /> */}
-            {/* <Route path="/sendmail" element={<SendMail />} /> */}
             <Route
               path="/reset-password/:token"
               element={<ModifierPassword />}

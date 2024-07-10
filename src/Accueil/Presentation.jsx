@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Portfolio from "./Portfolio";
+// import { Bubble } from "@typebot.io/react";
 export default function Presentation() {
   const [plats, setPlats] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ export default function Presentation() {
   console.log(plats);
   return (
     <div className="container p-5">
+    
       <div className="row">
         {loading ? (
           <div>

@@ -7,7 +7,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "../Components";
 import { Contexte } from "../Inscription/AuthProvider";
-import logo from "../Dashboard/logoMaron.png";
 import axios from "axios";
 export default function Navbar() {
   const { cartItems, cartQuantity } = useContext(Context);
@@ -38,10 +37,6 @@ export default function Navbar() {
     <div className="container-fluid p-0 Navbar">
       <nav class="navbar navbar-expand-lg bg-white shadow">
         <div class="container-fluid">
-          <div className="col-12 col-md-2">
-            <img src={logo} alt="logo" style={{ width: "80px" }} />
-          </div>
-
           <button
             className="navbar-toggler"
             type="button"

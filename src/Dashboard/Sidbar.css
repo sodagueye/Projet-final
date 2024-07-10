@@ -15,18 +15,20 @@
     align-items: start;
 }
 
-.sidbar a {
-    color: #91725d;
-    width: 100%;
-    font-weight: bold;
-}
-
 .sidbar a:hover {
     background-color: #91725d;
-    color: white;
+    color: #fff;
+    width: 100%;
 }
 
-.sidbar .active {
+.sidbar a.active {
     background-color: #91725d;
-    color: white;
+    color: #fff !important;
+    width: 100%;
 }
+
+/* 
+.sidbar a.active {
+    background-color: transparent;
+
+} */

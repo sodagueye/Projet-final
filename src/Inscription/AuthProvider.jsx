@@ -1,7 +1,7 @@
 import React from "react";
 import { createContext, useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router-dom";
 
 export const Contexte = createContext();
