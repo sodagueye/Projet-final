@@ -6,7 +6,6 @@ import Portfolio from "./Portfolio";
 export default function Presentation() {
   const [plats, setPlats] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     async function getProducts() {
       try {
