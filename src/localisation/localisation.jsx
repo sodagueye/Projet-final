@@ -1,33 +1,40 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
-import Footer  from "../Footer/Footer";
+import React from 'react';
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
-export default function Localisation(){
-    const [localisation, setLocalisation] = useState({latitude:null , longitude:null});
+const libraries = ['places'];
+const mapContainerStyle = {
+  width: '90vw', 
+  height: '90vh', 
+};
+const center = {
+  lat: 14.7437625,
+  lng: -17.4557196,
+};
 
-    useEffect(()=>{
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(response => {
-            const {latitude , longitude} = response.data
-            setLocalisation({latitude , longitude})
-        })
-        .catch(error => {
-            console.error('Une erreur est survenue :', error);
-        });
-    },[])
-
-    return <div className="container localisaton" style={{height:"100vh"}}>
-        <div style={{height:"70vh"}}>
-          {localisation.latitude && localisation.longitude ? (
-                    <div>
-                        <p>Latitude: {localisation.latitude}</p>
-                        <p>Longitude: {localisation.longitude}</p>
-                        {/* Vous pouvez aussi intégrer une carte ici, par exemple avec Google Maps ou Leaflet */}
-                    </div>
-                ) : (
-                    'Chargement de la localisation...'
-                )}
+const Localisation = () => {
+    const { isLoaded, loadError } = useLoadScript({
+      googleMapsApiKey: 'AIzaSyAdKwjLzJuWDo3edxGodSjvsu1vMrfckfY',
+      libraries,
+    });
+  
+    if (loadError) {
+      return <div>Error loading maps</div>;
+    }
+  
+    if (!isLoaded) {
+      return <div>Loading maps</div>;
+    }
+  
+    return (
+        <div className='maps mt-5 mx-5'>
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            zoom={10}
+            center={center}
+          >
+            <Marker position={center} />
+          </GoogleMap>
         </div>
-        <Footer/>
-    </div>
-}
+      );
+    };
+    export default Localisation;

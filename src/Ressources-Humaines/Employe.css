@@ -1,91 +1,97 @@
- body{
-    text-align: center;
-}
-.table{
-    width: 80%;
-    margin:0px auto;
-}
-
-th, td{
-    width: 200px;
-    height: 50px;
-    padding: 2px;
-    text-align: center;
-    border: 1px solid #91725d;
-}
-
-form{
-    width: 60%;
-    margin: auto;
-}
-.inputs{
-     display: flex;
-    width: 70%; 
-     margin: 10px;
-     border: 2px solid #91725d;  
-     background-color: #f3faff; 
-     margin: auto;
-   
+ /* body {
+   text-align: center;
  }
- 
+
+ .table {
+   width: 80%;
+   margin: 0px auto;
+ }
+
+ th,
+ td {
+   width: 200px;
+   height: 50px;
+   padding: 2px;
+   text-align: center;
+   border: 1px solid #91725d;
+ }
+
+ form {
+   width: 60%;
+   margin: auto;
+ }
+
+ .inputs {
+   display: flex;
+   width: 70%;
+   margin: 10px;
+   border: 2px solid #91725d;
+   background-color: #f3faff; 
+   margin: auto;
+
+ }
 
 
-.btn{
-    color: #FFF;
-    background-color:#91725d;
-    font-size: 18px;
-}
-.btn:hover{
-    background-color: #f4e6d9;
-    color: #91725d;
-}
-.btn-submit{
-    background-color: #91725d;
-    color: #FFF;
-    border: none;
-    font-size: 20px;
-}
 
-.btn-submit:hover{
-    background-color: #f4e6d9;
-    color: #91725d;
-} 
+ .btn {
+   color: #FFF;
+   background-color: #91725d;
+   font-size: 18px;
+ }
 
-.form-label {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .inputs {
-   
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-  } 
-  
-  /* Style pour les boutons */
-   .btn-submit {
-    background-color: #91725d;
-    color: #fff;
-    border: none;
-  }
-  .agrandir .modal-dialog {
-    max-width: 40%;
-    margin: 1.75rem auto;
-  }
-  
-  .agrandir .modal-content {
-    padding: 1.5rem;
-  }
-  
-  .btn-submit:hover {
-    background-color: #91725d;
-  }
-  
- 
-  .form-container {
-    margin: 20px;
-  }
-  .annuler{
+ .btn:hover {
+   background-color: #f4e6d9;
+   color: #91725d;
+ }
+
+ .btn-submit {
+   background-color: #91725d;
+   color: #FFF;
+   border: none;
+   font-size: 20px;
+ }
+
+ .btn-submit:hover {
+   background-color: #f4e6d9;
+   color: #91725d;
+ }
+
+ .form-label {
+   font-weight: bold;
+   color: #333;
+ }
+
+ .inputs {
+
+   padding: 0.375rem 0.75rem;
+   font-size: 1rem;
+ } */
+
+ /* Style pour les boutons */
+ /* .btn-submit {
+   background-color: #91725d;
+   color: #fff;
+   border: none;
+ }
+
+ .agrandir .modal-dialog {
+   max-width: 40%;
+   margin: 1.75rem auto;
+ }
+
+ .agrandir .modal-content {
+   padding: 1.5rem;
+ }
+
+ .btn-submit:hover {
+   background-color: #91725d;
+ }
+
+
+ .form-container {
+   margin: 20px;
+ }
+
+ .annuler{
     background-color:#0056b3 ;
-  }
-  
+  }  */

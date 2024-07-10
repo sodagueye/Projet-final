@@ -64,9 +64,9 @@ const CustomNavbar = () => {
       </Offcanvas> */}
       <nav class="navbar navbar-expand-lg mb-5 fixed-top w-100 bg-white shadow ">
         <div class="container-fluid ">
-          <div className="col-12 col-md-2">
-            <NavLink to="/">
-              <img src={logo} alt="logo" style={{ width: "80px" }} />
+          <div className="col-12 col-md-2 w-25 ">
+            <NavLink to="/" >
+              <img src={logo} alt="logo" className="w-25" style={{ width: "80px" }} />
             </NavLink>
           </div>
           <button

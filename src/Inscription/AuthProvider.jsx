@@ -2,7 +2,7 @@ import React from "react";
 import { createContext, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Contexte = createContext();
 function AuthProvider({ children }) {
@@ -16,10 +16,11 @@ function AuthProvider({ children }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   // const [user, setUser] = useState([]);
- 
 
-//TEST
-  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")) || null);
+  //TEST
+  const [user, setUser] = useState(
+    JSON.parse(sessionStorage.getItem("user")) || null
+  );
 
   // parie inscription
   async function submit(e) {
@@ -39,8 +40,6 @@ function AuthProvider({ children }) {
         password,
         confirmPassword,
       });
-      // setUser({ res });
-      // console.log(res);
 
       if (res.status === 201) {
         setFirstName("");
@@ -62,50 +61,15 @@ function AuthProvider({ children }) {
       console.error(error);
     }
   }
-  // fin
 
-  // partie connexion
-  // async function login(e) {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios.post("http://localhost:8080/api/auth", {
-  //       email,
-  //       password,
-  //     });
-  //     const loggedInUser = {
-  //       firstName: res.data.firstName,
-  //       lastName: res.data.lastName,
-  //       email: email,
-  //     };
-
-  //     setUser(loggedInUser);
-  //     console.log(loggedInUser);
-  //     if (res.status === 201) {
-  //       setEmail("");
-  //       setPassword("");
-  //       toast.success("Connexion réussie.");
-
-  //       // Vérification si l'utilisateur est administrateur
-  //       if (email === "admin1@gmail.com") {
-  //         navigate("/admin");
-  //         return;
-  //       } else {
-  //         navigate("/");
-  //       }
-  //     } else {
-  //       toast.error(res.data.errors[0].msg);
-  //     }
-  //   } catch (error) {
-  //     toast.error("Erreur lors de la connexion");
-  //     console.error(error);
-  //   }
-  // }
-
-//TEST CONNEXION
+  //TEST CONNEXION
   const login = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/auth", { email, password });
+      const res = await axios.post("http://localhost:8080/api/auth", {
+        email,
+        password,
+      });
       if (res.status === 201) {
         sessionStorage.setItem("user", JSON.stringify(res.data));
         setUser(res.data);
@@ -118,14 +82,12 @@ function AuthProvider({ children }) {
     }
   };
 
-//TEST DECONNEXION
+  //TEST DECONNEXION
   const logout = () => {
     sessionStorage.removeItem("user");
     setUser(null);
     navigate("/");
   };
-
-
 
   // fin
   console.log(user);
@@ -154,7 +116,7 @@ function AuthProvider({ children }) {
           submit,
           login,
           //TEST
-          logout
+          logout,
         }}
       >
         {children}

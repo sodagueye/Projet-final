@@ -32,84 +32,68 @@ export default function Commande() {
     setBtnActive(i);
   };
 
-  return (
-    <div className="container vente pb-5 my-4">
-      <h6 className="text-start ms-2 py-2">Historique des Commandes</h6>
-      <div style={{ borderTop: "2px solid gray" }}></div>
-      <div className="d-flex justify-content-end">
-        <div className="d-flex py-2">
-          <input
-            placeholder="Search..."
-            type="text"
-            className="rounded"
-            style={{ height: 30 }}
-            onChange={(e) => setRecherche(e.target.value)}
-          />
-        </div>
-      </div>
-
-      {/* <table className="table mt-4 shadow">
-        <thead>
-          <tr style={{ backgroundColor: "#eee" }}>
-            <th scope="col">ID</th>
-            <th scope="col">Produits</th>
-            <th scope="col">Montant</th>
-          </tr>
-        </thead>
-        <tbody>
-          {values.map((item, index) => (
-            <tr key={index}>
-              <td>{item._id}</td>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
-      <table className="table shadow table-hover mt-5 ">
-        <thead>
-          <tr>
-            <th
-              style={{ backgroundColor: "#91725d", color: "white" }}
-              scope="col"
-            >
-              ID
-            </th>
-            <th
-              style={{ backgroundColor: "#91725d", color: "white" }}
-              scope="col"
-            >
-              Produits
-            </th>
-            <th
-              style={{ backgroundColor: "#91725d", color: "white" }}
-              scope="col"
-            >
-              Prix
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {cartItems.map((item) => (
-            <tr key={item._id}>
-              <td>{item._id}</td>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="d-flex justify-content-end boutons">
-        {buttonCount.map((btn) => (
-          <button
-            key={btn}
-            onClick={() => handleClick(btn)}
-            className={btn === btnActive ? "active" : ""}
-          >
-            {btn}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <div className="container vente pb-5 my-4">
+            <h6 className="text-start ms-2 py-2">Historique des ventes</h6>
+            <div style={{ borderTop: "2px solid gray" }}></div>
+            <div className="d-flex justify-content-end">
+                <div className="d-flex py-2">
+                    <p>Recherche:</p>
+                    <input
+                        type="text"
+                        className="rounded"
+                        style={{ height: 30 }}
+                        onChange={(e) => setRecherche(e.target.value)}
+                    />
+                </div>
+            </div>
+<table className="table">
+                <thead>
+                    <tr style={{ backgroundColor: "#eee" }}>
+                        <th scope="col">Date</th>
+                        <th scope="col">Nombre d'article</th>
+                        <th scope="col">Montant</th>
+                        <th scope="col">Paiment</th>
+                        <th scope="col">Livraison</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {values.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.date}</td>
+                            <td>{item.nbArticle}</td>
+                            <td>{item.montant}</td>
+                            <td>
+                                <img
+                                    src={item.paiment}
+                                    alt="mode de paiment"
+                                    style={{
+                                        width: 20,
+                                        height: 20,
+                                        borderRadius: 100,
+                                    }}
+                                />
+                            </td>
+                            <td>{item.livraison}</td>
+                            <td>
+                                <i className="bi bi-eye-fill"></i>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <div className="d-flex justify-content-end boutons">
+                {buttonCount.map((btn) => (
+                    <button
+                        key={btn}
+                        onClick={() => handleClick(btn)}
+                        className={btn === btnActive ? "active" : ""}
+                    >
+                        {btn}
+                    </button>
+                ))}
+            </div>
+        </div> 
+    );
 }

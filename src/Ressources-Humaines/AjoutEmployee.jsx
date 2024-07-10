@@ -78,22 +78,38 @@ const EmployeeForm = ({
 
   return (
     <>
-    <div className="d-flex justify-content-center">
-      <Button className="border-0" style={{ backgroundColor: "#91725d" }} onClick={handleShowModal}>
-        {isEditing ? "Modifier" : "Ajouter"}
-      </Button>
-    </div>
-      <Modal show={showModal} onHide={handleCloseModal} centered className="agrandir">
+      <div className="d-flex justify-content-center">
+        <Button
+          className="border-0"
+          style={{ backgroundColor: "#91725d" }}
+          onClick={handleShowModal}
+        >
+          {isEditing ? "Modifier" : "Ajouter"}
+        </Button>
+      </div>
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        centered
+        className="agrandir"
+      >
         <Modal.Header closeButton>
-          <Modal.Title>{isEditing ? "Modifier l'employé" : "Ajouter un employé"}</Modal.Title>
+          <Modal.Title>
+            {isEditing ? "Modifier l'employé" : "Ajouter un employé"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={handleSubmit} className=" p-3 mx-auto my-3 text-center container form-container">
+          <form
+            onSubmit={handleSubmit}
+            className=" p-3  my-3 container form-container"
+          >
             <div className="">
-              <div className="">
-                <label className="form-label pt-3 posts" htmlFor="name">Nom :</label>
+              <div>
+                <label className="form-label pt-3 ms-5 fs-5" htmlFor="name">
+                  Nom 
+                </label>
                 <input
-                  className=" inputs"
+                  className=" inputs bg-transparent py-2 rounded-2"
                   type="text"
                   id="name"
                   name="name"
@@ -103,9 +119,11 @@ const EmployeeForm = ({
                 />
               </div>
               <div className="">
-                <label className="form-label posts" htmlFor="poste pt-3">Poste :</label>
+                <label className="form-label ms-5 fs-5" htmlFor="poste pt-3">
+                  Poste
+                </label>
                 <input
-                  className=" inputs"
+                  className=" inputs bg-transparent py-2 rounded-2"
                   type="text"
                   id="poste"
                   name="poste"
@@ -118,9 +136,11 @@ const EmployeeForm = ({
 
             <div className="row mb-3">
               <div className="">
-                <label className="form-label posts" htmlFor="salary">Salaire :</label>
+                <label className="form-label ms-5 fs-5" htmlFor="salary">
+                  Salaire
+                </label>
                 <input
-                  className=" inputs"
+                  className=" inputs bg-transparent py-2 rounded-2"
                   type="number"
                   id="salary"
                   name="salary"
@@ -130,9 +150,11 @@ const EmployeeForm = ({
                 />
               </div>
               <div className="">
-                <label className="form-label posts" htmlFor="workHours">Horaire :</label>
+                <label className="form-label ms-5 fs-5" htmlFor="workHours">
+                  Horaire
+                </label>
                 <input
-                  className=" inputs"
+                  className=" inputs bg-transparent py-2 rounded-2"
                   type="number"
                   id="workHours"
                   name="workHours"
@@ -144,9 +166,11 @@ const EmployeeForm = ({
             </div>
 
             <div className="mb-4">
-              <label className="form-label posts" htmlFor="monthlySalary">Mensualité :</label>
+              <label className="form-label ms-5 fs-5 fs-5" htmlFor="monthlySalary">
+                Mensualité
+              </label>
               <input
-                className=" inputs"
+                className=" inputs bg-transparent py-2 rounded-2"
                 type="text"
                 id="monthlySalary"
                 name="monthlySalary"
@@ -155,13 +179,21 @@ const EmployeeForm = ({
                 required
               />
             </div>
-         <div className="d-flex justify-content-around">
-            <Button variant="secondary" onClick={handleCloseModal} className="me-2 annuler">
-              Annuler
-            </Button>
-            <Button className=" btn-submit border-0" style={{ backgroundColor: "#91725d" }} onClick={handleShowModal}>
-        {isEditing ? "Modifier" : "Ajouter"}
-      </Button>
+            <div className="d-flex justify-content-around">
+              <Button
+                variant="secondary"
+                onClick={handleCloseModal}
+                className="me-2 annuler"
+              >
+                Annuler
+              </Button>
+              <Button
+                className=" btn-submit border-0"
+                style={{ backgroundColor: "#91725d" }}
+                onClick={handleShowModal}
+              >
+                {isEditing ? "Modifier" : "Ajouter"}
+              </Button>
             </div>
           </form>
         </Modal.Body>

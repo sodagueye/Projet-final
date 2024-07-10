@@ -23,7 +23,6 @@ import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
 import Admin from "./Dashboard/Admin";
 import Panier from "./Panier/Panier";
-import Ventes from "./Ventes/Ventes";
 import Footer from "./Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
@@ -41,6 +40,7 @@ import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
+import Vente from "./Ventes/Ventes";
 import Products from "./Dashboard/Products";
 // parentProvider
 import Condition from "./cond-ut/condition";
@@ -123,10 +123,10 @@ function App() {
               element={<PageRedirection />}
             />
           </Route>
-          <Route path="/Localisation" element={<Localisation/>} />
-            <Route path="/Contact" element={<Contact/>} />
-            <Route path="/politique-de-confidentialite" element={<Politique/>}/>
-            <Route path="/conditions-utilisation" element={<Condition />} />
+          <Route path="/Localisation" element={<Localisation />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/politique-de-confidentialite" element={<Politique />} />
+          <Route path="/conditions-utilisation" element={<Condition />} />
           {/*  */}
           <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
@@ -136,7 +136,8 @@ function App() {
             <Route path="employe" element={<Employes />} />
             <Route path="users" element={<ListeUtilisateur />} />
             <Route path="dashboard" element={<Admin />} />
-            <Route path="/admin/ventes" element={<Ventes />} />
+            {/* <Route path="/admin/ventes" element={<Ventes />} /> */}
+            <Route path="/admin/ventes" element={<Vente />} />
             <Route path="/admin/commande" element={<Commande />} />
             <Route path="/admin/utilisateurs" element={<Users />} />
             <Route path="/admin/Products" element={<Products />} />
