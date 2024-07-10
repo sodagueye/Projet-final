@@ -14,7 +14,7 @@ export default function ProductDetail() {
       try {
         console.log(`Fetching product details for ID: ${id}`);
         const response = await fetch(
-          `/admin/liste-produits/${id}`
+          `http://localhost:8080/admin/liste-produits/${id}`
         );
         const resultat = await response.json();
         setProduct(resultat);

@@ -6,7 +6,7 @@ export default function PlatSenegalais() {
   const [products, setProducts] = useState([]);
   const [filterCategory] = useState("plats senegalais");
   const [loading, setLoading] = useState(true);
-  const {handleAddToCart} = useContext(Context);
+  const { handleAddToCart } = useContext(Context);
 
   useEffect(() => {
     fetchProducts();
@@ -14,9 +14,7 @@ export default function PlatSenegalais() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(
-        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits"
-      );
+      const res = await axios.get("http://localhost:8080/admin/liste-produits");
       setProducts(res.data);
       setLoading(false);
     } catch (err) {
