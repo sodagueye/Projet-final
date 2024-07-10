@@ -42,6 +42,7 @@ import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
+ import ProduitAjout from "./ProduitAjout/ProduitAjout";
 // parentProvider
 
 const AppLayout = () => {
@@ -99,6 +100,8 @@ function App() {
               <Route path="cuisineAilleurs" element={<CuisineAilleurs />} />
               <Route path="desserts" element={<Desserts />} />
               <Route path="burgers" element={<Burgers />} />
+              
+
             </Route>
             {/* FIN MENU */}
           </Route>
@@ -134,6 +137,7 @@ function App() {
             <Route path="/admin/ventes" element={<Ventes />} />
             <Route path="/admin/commande" element={<Commande />} />
             <Route path="/admin/utilisateurs" element={<Users />} />
+            <Route path="/admin/ProduitAjout" element={<ProduitAjout />} />
 
             <Route path="plats" element={<Plats />} />
           </Route>

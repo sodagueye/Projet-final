@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { Modal, Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 // import './AppAjout.css'
 
 
@@ -14,6 +16,7 @@ function ImageUpload() {
   const [products, setProducts] = useState([]);
   const [filterCategory, setFilterCategory] = useState("");
   const [editingProductId, setEditingProductId] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetchProducts();
@@ -58,13 +61,13 @@ function ImageUpload() {
     try {
       if (editingProductId) {
         await axios.patch(
-          `https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits/${editingProductId}`,
+          `http://localhost:8080/admin/liste-produits/${editingProductId}`,
           productData
         );
         setEditingProductId(null);
       } else {
         await axios.post(
-          "https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits",
+          "http://localhost:8080/admin/liste-produits",
           productData
         );
       }
@@ -74,6 +77,7 @@ function ImageUpload() {
       setImage(null);
       setCategory("");
       fetchProducts();
+      setShowModal(false);
     } catch (err) {
       console.error(err);
     }
@@ -83,7 +87,7 @@ function ImageUpload() {
 
 const fetchProducts = async () => {
     try {
-      const res = await axios.get("https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits");
+      const res = await axios.get("/admin/liste-produits");
       setProducts(res.data);
     } catch (err) {
       console.error(err);
@@ -98,12 +102,13 @@ const fetchProducts = async () => {
     setPrice(product.price);
     setCategory(product.category);
     setEditingProductId(product._id);
+    setShowModal(true);
   };
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits/${id}`
+        `http://localhost:8080/admin/liste-produits/${id}`
       );
       fetchProducts();
     } catch (err) {
@@ -121,9 +126,103 @@ const fetchProducts = async () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nom du produit:</label>
+       <div className="">
+        <div className="d-flex justify-content-end mt-3">
+          <Button
+            style={{ backgroundColor: "#91725d" }}
+            className="border-0"
+            onClick={() => setShowModal(true)}
+          >
+            Ajouter Produit
+          </Button>
+        </div>
+
+        <Modal show={showModal} onHide={() => setShowModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              {editingProductId ? "Modifier Produit" : "Ajouter Produit"}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group>
+                <Form.Label>Nom du produit</Form.Label>
+                <Form.Control
+                  className="inpputControl"
+                  style={{ border: "3px, solid #91725d" }}
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Description</Form.Label>
+                <Form.Control
+                  className="inpputControl"
+                  style={{ border:"3px, solid #91725d"}}
+                  type="text"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Prix</Form.Label>
+                <Form.Control
+                  className="inpputControl"
+                  style={{ border: "3px, solid #91725d" }}
+                  type="number"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                  className="inputControl"
+                  style={{ border: "3px, solid #91725d" }}
+                  type="file"
+                  onChange={handleImageChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Catégorie</Form.Label>
+                <Form.Control
+                  className="inputControl"
+                  style={{ border: "3px, solid #91725d" }}
+                  as="select"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  required
+                >
+                  <option value="">Sélectionnez une catégorie</option>
+                  <option value="plats senegalais">Plats Sénégalais</option>
+                  <option value="fastfood">Fastfood</option>
+                  <option value="boissons">Boissons</option>
+                  <option value="desserts">Desserts</option>
+                  <option value="cuisine d'ailleurs">Cuisine d'ailleurs</option>
+                </Form.Control>
+              </Form.Group>
+              <div className="d-flex justify-content-center mb-5">
+                <Button
+                  style={{ backgroundColor: "#91725d" }}
+                  className="border-0 mt-3"
+                  type="submit"
+                >
+                  {editingProductId ? "Modifier Produit" : "Ajouter Produit"}
+                </Button>
+              </div>
+            </Form>
+          </Modal.Body>
+        </Modal>
+      </div>
+      {/* <form onSubmit={handleSubmit}>
+        <div className="class1 d-flex justify-content-center align-items-center my-5 gap-2">
+        <div className="d-flex flex-column text-start">
+          <label >Nom du produit</label>
           <input
             type="text"
             value={name}
@@ -131,8 +230,8 @@ const fetchProducts = async () => {
             required
           />
         </div>
-        <div>
-          <label>Description:</label>
+        <div className="d-flex flex-column text-start">
+          <label>Description</label>
           <input
             type="text"
             value={description}
@@ -140,21 +239,29 @@ const fetchProducts = async () => {
             required
           />
         </div>
-        <div>
-          <label>Prix:</label>
+        </div>
+        <div className="class2 d-flex justify-content-center align-items-center gap-2">
+        <div className="d-flex flex-column text-start">
+          <label>Prix</label>
           <input
             type="number"
             value={price}
+        
             onChange={(e) => setPrice(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>Image:</label>
-          <input type="file" onChange={handleImageChange} required />
+        <div className="d-flex flex-column text-start">
+          <label>Image</label>
+          <input
+           type="file" 
+           onChange={handleImageChange} 
+           required />
         </div>
-        <div>
-          <label>Catégorie:</label>
+        </div>
+        <div className="class2 d-flex justify-content-center align-items-center">
+        <div className="class3 d-flex flex-column text-start">
+          <label>Catégorie</label>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
@@ -171,9 +278,10 @@ const fetchProducts = async () => {
         <button type="submit">
           {editingProductId ? "Modifier Produit" : "Ajouter Produit"}
         </button>
-      </form>
+        </div>
+      </form> */}
 
-      <h2>Liste des Produits</h2>
+       {/* <h2>Liste des Produits</h2>
       <div>
         <label>Filtrer par catégorie:</label>
         <select value={filterCategory} onChange={handleCategoryFilterChange}>
@@ -184,16 +292,16 @@ const fetchProducts = async () => {
           <option value="desserts">Desserts</option>
           <option value="cuisine d'ailleurs">Cuisine d'ailleurs</option>
         </select>
-      </div>
+      </div> */}
       <table>
-        <thead>
+         <thead>
           <tr>
-            <th>Nom</th>
-            <th>Description</th>
-            <th>Prix</th>
-            <th>Image</th> 
-            <th>Catégorie</th>
-            <th>Actions</th>
+            <th style={{ backgroundColor: "#91725d" }}>Nom</th>
+            <th style={{ backgroundColor: "#91725d" }}>Description</th>
+            <th style={{ backgroundColor: "#91725d" }}>Prix</th>
+            <th style={{ backgroundColor: "#91725d" }}>Image</th>
+            <th style={{ backgroundColor: "#91725d" }}>Catégorie</th>
+            <th style={{ backgroundColor: "#91725d" }}>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -217,7 +325,7 @@ const fetchProducts = async () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> 
     </div>
   );
 }
