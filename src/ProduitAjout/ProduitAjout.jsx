@@ -568,11 +568,11 @@ function ProduitAjout() {
               </td>
               <td>{product.category}</td>
               <td>
-                <button onClick={() => handleEdit(product)} className="border-0 mx-2 bg-warning text-light p-2 rounded-2">
-                  <MdEdit />
+                <button onClick={() => handleEdit(product)} className="border-0 mx-2   p-2 rounded-2 bg-transparent">
+                  <MdEdit className="text-warning " />
                 </button>
-                <button onClick={() => handleDeleteClick(product._id)} className="border-0 bg-danger text-light p-2 rounded-2">
-                  <MdDelete />
+                <button onClick={() => handleDeleteClick(product._id)} className="border-0  p-2 rounded-2 bg-transparent">
+                  <MdDelete className="text-danger"/>
                 </button>
               </td>
             </tr>
@@ -595,7 +595,7 @@ function ProduitAjout() {
         <Button
           disabled={currentPage === totalPages}
           style={{ backgroundColor: "#91725d" }}
-            className="border-0"
+            // className="border-0"
           onClick={() => setCurrentPage(currentPage + 1)}
         >
           Suivant
