@@ -47,6 +47,11 @@ const Panier = () => {
                           >
                             <MdOutlineDelete />
                           </div>
+                          {/* <div>
+                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">+</button>
+                            <span>{1}</span>
+                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">-</button>
+                          </div> */}
                         </div>
                       </div>
 

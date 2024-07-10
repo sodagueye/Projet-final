@@ -43,6 +43,10 @@ import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
 import Products from "./Dashboard/Products";
 // parentProvider
+import Condition from "./cond-ut/condition";
+import Politique from "./pol-conf/politique";
+import Contact from "./Contact/Contact";
+import Localisation from "./localisation/localisation";
 
 const AppLayout = () => {
   return (
@@ -119,6 +123,10 @@ function App() {
               element={<PageRedirection />}
             />
           </Route>
+          <Route path="/Localisation" element={<Localisation/>} />
+            <Route path="/Contact" element={<Contact/>} />
+            <Route path="/politique-de-confidentialite" element={<Politique/>}/>
+            <Route path="/conditions-utilisation" element={<Condition />} />
           {/*  */}
           <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />

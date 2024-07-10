@@ -17,6 +17,9 @@ const CustomNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const handleClose = () => setShowOffcanvas(false);
 
+//TEST
+  const { user, logout } = useContext(Contexte);
+
   return (
     <>
       {/* <Offcanvas show={showOffcanvas} onHide={handleClose} placement="end">
@@ -112,7 +115,7 @@ const CustomNavbar = () => {
                   <NavLink to="reservation">RESERVATION</NavLink>
                 </span>
               </li>
-              <li className="nav-item d-flex align-items-center ms-3">
+              {/* <li className="nav-item d-flex align-items-center ms-3">
                 <p className="fs-5 mt-2 icon-nav">
                   <FaUser />
                 </p>
@@ -126,6 +129,30 @@ const CustomNavbar = () => {
                       <span className="ms-1">Connexion</span>
                     )}
                   </NavLink>
+                </span>
+              </li> */}
+              {/* //TEST */}
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <FaUser />
+                </p>
+                <span className="ms-1">
+                  {user ? (
+                    <div className="dropdown">
+                      <span className="dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {user.firstName} {user.lastName}
+                      </span>
+                      <ul className="dropdown-menu" aria-labelledby="userDropdown">
+                        <li>
+                          <button className="dropdown-item" onClick={logout}>
+                            Déconnexion
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    <NavLink to="/connexion">Connexion</NavLink>
+                  )}
                 </span>
               </li>
               <li className="nav-item cart d-flex align-items-center ms-3">
