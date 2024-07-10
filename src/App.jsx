@@ -43,6 +43,7 @@ import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
+import AnnulationReserve from "./Reservation-Table/AnnulationReserve";
 // parentProvider
 
 const AppLayout = () => {
@@ -82,6 +83,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+        <Route path="/cancel-reservation/:token" element={<AnnulationReserve />} />
           <Route path="/" element={<AppLayout />}>
             <Route path="categorie/:nom" element={<Categorie />} />
             <Route path="" element={<Accueil />} />

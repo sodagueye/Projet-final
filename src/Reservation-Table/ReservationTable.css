@@ -10,13 +10,43 @@
 .reservation-table-body {
   width: 80%;
   margin: 50px auto;
-  /* background-color: #fff; */
 }
 
-.text-header {
-  margin-bottom: -40px;
-  margin-left: 100px;
+.table-reservation {
+  margin-bottom: -50px;
   margin-top: 50px;
+}
+.formulaire{
+  margin-top: 50px;
+}
+.personal{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  font-size: 17px;
+
+}
+.commentaire{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  font-size: 17px;
+
+}
+.commentaire2{
+  margin-top: 15px;
+}
+.floating{
+  margin-top: 100px;
+
+}
+.bodycomme{
+  display: flex;
+  justify-content: flex-start;
+}
+.reserve{
+  margin-top: 100px;
 }
 
 #floatingTextarea2 {
@@ -45,9 +75,6 @@
 .form-floating input::placeholder {
   background-color: transparent;
 }
-
-/* .reservation-table-body .form-floating::placeholder {
-} */
 
 
 .form-x {
@@ -82,4 +109,13 @@
   background-color: #91725d;
   font-size: 20px;
   font-weight: 600;
+}
+.btnsend:hover{
+  color: black;
+}
+.btnsend2{
+  margin-top: 30px;
+}
+.bas{
+  margin-top: 34px;
 }

@@ -16,7 +16,7 @@ export default function PlatSenegalais() {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/admin/liste-produits"
+        "http://localhost:8080/admin/liste-produits"
       );
       setProducts(res.data);
       setLoading(false);

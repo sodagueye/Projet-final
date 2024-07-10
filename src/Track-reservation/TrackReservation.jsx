@@ -13,7 +13,7 @@ const TrackReservation = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.post('https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation/cancelReservation', { invites, date, hour });
+      const response = await axios.post('http://localhost:8080/api/reservation/cancelReservation', { invites, date, hour });
       if (response.status === 200) {
         toast.success("Vous avez annulé avec succès votre réservation");
         setTimeout(() => {
