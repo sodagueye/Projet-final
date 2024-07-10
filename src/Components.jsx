@@ -13,7 +13,7 @@ export default function PanierProvider({ children }) {
       setCartItems(updatedCart);
       setCartQuantity(cartQuantity + 1);
       localStorage.setItem("cartItems", JSON.stringify(updatedCart));
-      toast.success("Produit ajouté avec succès !");
+      toast.success("Produit ajouté avec succès !", { autoClose: 1000 });
     } else {
       console.error(
         "L'élément ajouté au panier n'est pas un objet valide :",
@@ -28,21 +28,29 @@ export default function PanierProvider({ children }) {
     setCartQuantity(savedCartItems.length);
   }, []);
 
-//  localStorage.clear()
-const totalPrix = cartItems.reduce((total, item) => {
-  return total + (item.price || 0);
-}, 0);
-const handleClick = () => {
-  if (totalPrix === 0) {
-    toast.error("Veuillez choisir des plats");
-  } else {
-    toast.success("Commande validée avec succès");
-  }
-};
+  //  localStorage.clear()
+  const totalPrix = cartItems.reduce((total, item) => {
+    return total + (item.price || 0);
+  }, 0);
+  const handleClick = () => {
+    if (totalPrix === 0) {
+      toast.error("Veuillez choisir des plats");
+    } else {
+      toast.success("Commande validée avec succès", { autoClose: 1000 });
+    }
+  };
 
   return (
     <Context.Provider
-      value={{ cartQuantity, totalPrix,handleClick, handleAddToCart, cartItems, setCartItems , setCartQuantity}}
+      value={{
+        cartQuantity,
+        totalPrix,
+        handleClick,
+        handleAddToCart,
+        cartItems,
+        setCartItems,
+        setCartQuantity,
+      }}
     >
       {children}
     </Context.Provider>

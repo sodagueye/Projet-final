@@ -10,17 +10,9 @@
     font-size: 15px;
 }
 
-img,
-.div-img {
-    width: 100px;
+.img {
+    width: 100%;
 }
-
-.sidebar {
-    height: 100vh;
-    background-color: #91725d !important;
-    color: #fff;
-}
-
 .trait {
     background-color: gray;
     width: 100%;

@@ -1,37 +1,84 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+
+.portfolio {
+    font-family: "Ga Maamli", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #91725d;
 }
-.mycard{
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+.btn-add{
+    background-color: #91725d;
 }
-.mycard a{
-    text-decoration: none;
-    color: white;
+.container-text {
+    position: relative;
 }
-.mycard div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.myrow div{
-    border-radius: 20px 20px 20px 20px;
-}
-.myrow div img{
-    border-radius: 20px 20px 0px 0px;
-}
-.mycard img{
-    width: 80%;
-    height: 200px;
+
+.carte,
+.carte img {
+    height: 300px;
     object-fit: cover;
 }
- @media screen and (max-width:300px){
-    .myrow{
+/* .btn-add{
+    width: 100px;
+} */
+
+/* ImageScaleAnimation.css */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.scale-image {
+    /* width: 50%; */
+    transition: transform 0.5s ease-in-out;
+}
+
+.scale-image:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Carroussel.css */
+.zoom {
+    animation: zoomEffect 10s infinite;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container-fluid h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media screen and (max-width:300px) {
+    .myrow {
         display: flex;
         flex-direction: column;
     }
-    .myrow .mycol{
+
+    .myrow .mycol {
         width: 100%;
     }
- }
+}

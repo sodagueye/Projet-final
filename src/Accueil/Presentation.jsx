@@ -1,39 +1,55 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Portfolio from "./Portfolio";
+
 export default function Presentation() {
   const [plats, setPlats] = useState([]);
-  async function getProducts() {
-    const resultat = await axios.get(
-      "https://tache-de-validition-nodejs-6.onrender.com/admin/liste-produits"
-    );
-    const response = await resultat.data;
-    setPlats(response);
-  }
-  getProducts();
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    async function getProducts() {
+      try {
+        const resultat = await axios.get("http://localhost:8080/admin/liste-produits");
+        const response = await resultat.data;
+        setPlats(response);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        setLoading(false);
+      }
+    }
     getProducts();
-  }, []);
+  }, []); 
+
   return (
-    <div className="container py-3">
+    <div className="container p-5">
+    
       <div className="row">
-        {plats.map((item) => (
-          <div key={item.id} className="col-lg-3">
-            <Link to={`/detail/${item._id}`}>
-            <div class="card border-0">
-             <img src={`https://tache-de-validition-nodejs-6.onrender.com/${item.image}`} class="card-img-top" alt="..." />
-              <div class="card-body text-center">
-                <h5 class="card-title">{item.name}</h5>
-                <p class="card-text">{item.description}</p>
-                <p class="card-text">{item.price}</p>
-                {/* <a href="#" class="btn btn-primary">
-                  Go somewhere
-                </a> */}
-              </div>
-            </div></Link>
-          
+        {loading ? (
+          <div>
+            <div className="spinner-border" style={{ width: "3rem", height: "3rem" }} role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+            <div className="spinner-grow" style={{ width: "3rem", height: "3rem" }} role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
           </div>
-        ))}
+        ) : (
+          plats.map((item) => (
+            <div key={item.id} className="col-lg-4 mt-4 scale-image">
+              <Link to={`/detail/${item._id}`}>
+                <div className="card border-0 carte shadow">
+                  <img src={item.image} className="card-img-top " alt="..." />
+                </div>
+              </Link>
+            </div>
+          ))
+        )}
+      </div>
+      <div className="row">
+        <div>
+          <Portfolio />
+        </div>
       </div>
     </div>
   );

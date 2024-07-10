@@ -3,14 +3,15 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import des icônes
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 import "./modifier.css";
+import "./inscrire.css";
 
 
 function ModifierPassword() {
   const { token } = useParams();
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] =useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function ModifierPassword() {
 
     try {
       const response = await axios.post(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/reset-password/${token}`,
+        `https://tache-de-validition-nodejs-61fk.onrender.com/api/reset-password/${token}`,
         { password, confirmPassword },
         {
           headers: {
@@ -38,7 +39,7 @@ function ModifierPassword() {
       );
 
       console.log(response.data);
-      navigate("/msgsuccess");
+      navigate("/connexion");
     } catch (error) {
       console.error("Erreur lors de la mise à jour du mot de passe:", error);
       toast.error("Erreur lors de la mise à jour du mot de passe");
@@ -50,7 +51,7 @@ function ModifierPassword() {
       <ToastContainer />
       <div className="backCConnexion shadow d-flex justify-content-center align-items-center mt-5">
         <form onSubmit={handleSubmit} className="form align-items-center">
-          <h2 className="text-center fw-bold fs-2 color">Récupération de compte</h2>
+          <h2 className="text-center fw-bold fs-2 color">Recupération de compte</h2>
           <div className="inscript1">
             <div className="password-container my-2">
               <input
@@ -61,8 +62,8 @@ function ModifierPassword() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <span onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              <span onClick={() => setShowPassword(!showPassword)} className="eyes oublie ">
+                {showPassword ? <FaEye />: <FaEyeSlash /> }
               </span>
             </div>
             <div className="password-container my-2">
@@ -74,15 +75,15 @@ function ModifierPassword() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              <span onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
-                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+              <span onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="eyes oublie ">
+                {showConfirmPassword ? <FaEye />: <FaEyeSlash /> }
               </span>
             </div>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <button
               type="submit"
-              className="liens d-flex justify-content-center align-items-center creer fs-5 fw-bold mt-5 connect"
+              className="liens d-flex justify-content-center align-items-center creer fs-5 fw-bold mt-5 connect border-0"
             >
               Envoyer
             </button>

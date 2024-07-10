@@ -2,25 +2,27 @@
     outline: none;
 }
 
-#reservationPage {
-    background-color: #f5f5f5;
-}
-
-#reservationPage h1 {
-    font-size: 30px;
-    text-align: left;
-    margin-left: -15px;
-    margin-top: 50px;
-}
 
 #reservationPage .reservationPage-body {
     width: 75%;
     margin: 50px auto;
+
 }
 
+/* .reservationPage-body {
+    background-image: url("asset24.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+
+#reservationPage {
+    padding: 70px;
+}
 
 #reservationPage form {
-    background-color: #FFF;
+    /* background-color: #FFF; */
 }
 
 #reservationPage .form-head {
@@ -142,6 +144,11 @@
     font-size: 20px;
     font-weight: 600;
 }
+#reservationPage .btnsend:hover{
+    color: black;
+    background-color: #91725d;
+
+}
 
 #reservationPage .secondaire {
     height: 35px;
@@ -152,20 +159,21 @@
 }
 
 #reservation .secondaire:focus {
-    background-color: #91725d;
+   background-color: #91725d; 
+
     border: none;
     color: #fff;
 }
 
 @media screen and (max-width: 769px) {
-    #reservationPage .reservationPage-body h1{
+    #reservationPage .reservationPage-body h1 {
         font-size: 100%;
         text-align: left;
         margin-left: -5%;
         margin-top: 15%;
         font-weight: 600;
     }
-    
+
     #reservationPage .form-head {
         display: grid;
     }

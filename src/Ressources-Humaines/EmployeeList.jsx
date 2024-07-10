@@ -15,7 +15,7 @@ const EmployeeList = () => {
   const getEmployees = async () => {
     try {
       const response = await axios.get(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/getting`
+        `https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/employes/getting`
       );
       setEmployees(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ const EmployeeList = () => {
   const handleDeleteEmployee = async (_id) => {
     try {
       await axios.delete(
-        `https://tache-de-validition-nodejs-6.onrender.com/api/employes/delete/${_id}`
+        `https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/employes/delete/${_id}`
       );
       setEmployees((prevEmployees) =>
         prevEmployees.filter((employee) => employee._id !== _id)
@@ -62,48 +62,47 @@ const EmployeeList = () => {
         employeeToEdit={employeeToEdit}
       />
       <h1>Liste des employés</h1>
-       <div className="table-responsive">
-      <table className="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Poste</th>
-            <th>Salaire</th>
-            <th>Heures de travail</th>
-            <th>Mensualité</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees.map((employee) => (
-            <tr key={employee._id}>
-              <td>{employee.nom}</td>
-              <td>{employee.poste}</td>
-              <td>{employee.salaire}</td>
-              <td>{employee.horaire}</td>
-              <td>{employee.mensualite}</td>
-              <td>
-                <button
-                  onClick={() => handleDeleteEmployee(employee._id)}
-                  className="btn btn me-2"
-                >
-                  <MdDelete />
-                </button>
-                <button
-                  onClick={() => handleEditEmployee(employee)}
-                  className="btn btn"
-                >
-                  <FaPen />
-                </button>
-              </td>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Poste</th>
+              <th>Salaire</th>
+              <th>Heures de travail</th>
+              <th>Mensualité</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {employees.map((employee) => (
+              <tr key={employee._id}>
+                <td>{employee.nom}</td>
+                <td>{employee.poste}</td>
+                <td>{employee.salaire}</td>
+                <td>{employee.horaire}</td>
+                <td>{employee.mensualite}</td>
+                <td>
+                  <button
+                    onClick={() => handleDeleteEmployee(employee._id)}
+                    className="btn btn me-2"
+                  >
+                    <MdDelete />
+                  </button>
+                  <button
+                    onClick={() => handleEditEmployee(employee)}
+                    className="btn btn"
+                  >
+                    <FaPen />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
 
 export default EmployeeList;
-

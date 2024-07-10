@@ -1,87 +1,25 @@
 import React, { useState, useContext } from "react";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Container,
-  Offcanvas,
-  Dropdown,
-  Button,
-} from "react-bootstrap";
+import { FaHome } from "react-icons/fa";
+import { MdDashboard } from "react-icons/md";
 import { Context } from "../Components";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
+import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { PiWarningCircleLight } from "react-icons/pi";
 import "./Navbar.css";
-import soda from "../assets/soda.png";
+import logo from "../Componentnav/logoMaron.png";
+import { Contexte } from "../Inscription/AuthProvider";
 
 const CustomNavbar = () => {
   const { cartQuantity } = useContext(Context);
+  const { firstName, lastName } = useContext(Contexte);
+  console.log(firstName, lastName);
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-
   const handleClose = () => setShowOffcanvas(false);
-  const handleShow = () => setShowOffcanvas(true);
 
   return (
     <>
-      <Navbar
-        bg="custom"
-        variant="dark"
-        expand="lg"
-        className="navbar-custom fixed-top mb-5"
-      >
-        <Container fluid style={{ color: "#111" }}>
-          <NavLink to="/" style={{ color: "#fff" }}>
-            <img
-              src={soda}
-              alt="Burger 1"
-              className="me-2 logonav"
-              // style={{ width: "180px" }} 
-            />
-          </NavLink>
-          <Button
-            className="hamburger-button btn btn-light"
-            onClick={handleShow}
-          >
-            ☰
-          </Button>
-
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto navbar-nav" style={{ color: "#111" }}>
-              <NavLink className="text-white ms-2" to="/menu">
-                Menu
-              </NavLink>
-              <NavLink className="text-white ms-2" to="/reservation">
-                Reservation
-              </NavLink>
-              <NavLink className="text-white ms-2" to="/About">
-                A propos
-              </NavLink>
-                <Dropdown alignRight>
-        <Dropdown.Toggle variant="link" id="dropdown-custom-link">
-        <NavLink className="text-white ms-2" to="">
-          <FaUser className="user" style={{ fontSize: "19px" }} />
-          </NavLink> 
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-        <Dropdown.Item as={NavLink} to="/connexion">Connexion</Dropdown.Item>
-        <Dropdown.Item as={NavLink} to="/connexion">Déconnexion</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-              <NavLink className="text-white panier" to="/panier">
-                <span className="fs-4">
-                  <AiOutlineShoppingCart />
-                </span>
-                <p className="bg-white ajout">{cartQuantity}</p>
-              </NavLink>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="end">
+      {/* <Offcanvas show={showOffcanvas} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
@@ -105,12 +43,12 @@ const CustomNavbar = () => {
               Reservation
             </Nav.Link>
             <Nav.Link href="about" className="text-dark fs-4">
-              About
+             About
             </Nav.Link>
-            <Nav.Link  href="connexion">
-            <div>
-              <FaUser className="user" style={{ fontSize: "19px" }} />
-            </div>
+            <Nav.Link href="connexion">
+              <div>
+                <FaUser className="user" style={{ fontSize: "19px" }} />
+              </div>
             </Nav.Link>
 
             <Nav.Link href="panier">
@@ -120,7 +58,89 @@ const CustomNavbar = () => {
             </Nav.Link>
           </Nav>
         </Offcanvas.Body>
-      </Offcanvas>
+      </Offcanvas> */}
+      <nav class="navbar navbar-expand-lg mb-5 fixed-top w-100 bg-white shadow ">
+        <div class="container-fluid ">
+          <div className="col-12 col-md-2">
+            <NavLink to="/">
+              <img src={logo} alt="logo" style={{ width: "80px" }} />
+            </NavLink>
+          </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item d-flex align-items-center me-2 ">
+                <p className="fs-5 mt-2 icon-nav">
+                  <FaHome />
+                </p>
+                <span className="ms-2">
+                  <NavLink to="/">ACCUEIL</NavLink>
+                </span>
+              </li>
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <MdOutlineRestaurantMenu />
+                </p>
+                <span className="ms-1">
+                  <NavLink to="menu">MENU</NavLink>
+                </span>
+              </li>
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-4 mt-2 icon-nav">
+                  <PiWarningCircleLight />
+                </p>
+                <span className="ms-1">
+                  <NavLink to="about">A PROPOS</NavLink>
+                </span>
+              </li>
+
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <MdDashboard />
+                </p>
+                <span className="ms-1">
+                  <NavLink to="reservation">RESERVATION</NavLink>
+                </span>
+              </li>
+              <li className="nav-item d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <FaUser />
+                </p>
+                <span className="ms-1">
+                  <NavLink to="connexion">
+                    {firstName && lastName ? (
+                      <span className="ms-1">
+                        CONNEXION {firstName} {lastName}
+                      </span>
+                    ) : (
+                      <span className="ms-1">Connexion</span>
+                    )}
+                  </NavLink>
+                </span>
+              </li>
+              <li className="nav-item cart d-flex align-items-center ms-3">
+                <p className="fs-5 mt-2 icon-nav">
+                  <FaShoppingCart />
+                </p>
+                <span className="ajout">{cartQuantity}</span>
+                <span className="ms-1">
+                  <NavLink to="panier">PANIER</NavLink>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </>
   );
 };
