@@ -1,11 +1,13 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Components";
+// import { Contexte } from "../Inscription/AuthProvider";
 import { MdOutlineDelete } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 
 const Panier = () => {
+  // const { cart, setCart } = useContext(Contexte);
   const { cartItems, setCartItems, setCartQuantity, totalPrix, handleClick } =
     useContext(Context);
 

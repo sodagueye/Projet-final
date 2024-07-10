@@ -13,7 +13,7 @@ export default function Tout() {
 
   async function getProducts() {
     const resultat = await axios.get(
-      "https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits"
+      "http://localhost:8080/admin/liste-produits"
     );
     const response = await resultat.data;
     setPlats(response);

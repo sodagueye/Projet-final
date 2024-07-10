@@ -14,8 +14,7 @@ export default function ProductDetail() {
       try {
         console.log(`Fetching product details for ID: ${id}`);
         const response = await fetch(
-          `https://tache-de-validition-nodejs-1-lhb5.onrender.com/admin/liste-produits/${id}`
-        );
+          `http://localhost:8080/admin/liste-produits/${id}`)
         const resultat = await response.json();
         setProduct(resultat);
         setLoading(false);

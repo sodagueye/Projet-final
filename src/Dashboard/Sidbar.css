@@ -15,18 +15,20 @@
     align-items: start;
 }
 
-.das:hover {
-    background-color: #91725d;
-    color: black;
-}
-
 .sidbar a:hover {
     background-color: #91725d;
-    color: black;
-     width: 200px;
+    color: #fff;
+    width: 100%;
 }
+
+.sidbar a.active {
+    background-color: #91725d;
+    color: #fff !important;
+    width: 100%;
+}
+
+/* 
 .sidbar a.active {
     background-color: transparent;
-    /* color: black; */
-    
-}
+
+} */

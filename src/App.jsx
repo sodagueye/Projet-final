@@ -21,7 +21,6 @@ import Plats from "./Dashboard/Plats";
 import PageNotFound from "./PageNotFound";
 import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
 import TrackReservation from "./Track-reservation/TrackReservation";
-import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
 import Panier from "./Panier/Panier";
 import Footer from "./Footer/Footer";
@@ -43,6 +42,12 @@ import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
 import Vente from "./Ventes/Ventes";
 // parentProvider
+import Condition from "./cond-ut/condition";
+import Politique from "./pol-conf/politique";
+import Contact from "./Contact/Contact";
+import Localisation from "./localisation/localisation";
+import Products from "./Dashboard/Products"
+
 
 const AppLayout = () => {
   return (
@@ -79,7 +84,6 @@ function App() {
   console.log("hello");
   return (
     <div className="App">
-      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
@@ -109,9 +113,6 @@ function App() {
             <Route path="/inscription" element={<Signup />} />
             <Route path="/connexion" element={<Auth />} />
             <Route path="/panier/connexion" element={<Auth />} />
-
-            {/* <Route path="/msgsuccess" element={<MsgSuccess />} /> */}
-            {/* <Route path="/sendmail" element={<SendMail />} /> */}
             <Route
               path="/reset-password/:token"
               element={<ModifierPassword />}
@@ -124,6 +125,10 @@ function App() {
               element={<PageRedirection />}
             />
           </Route>
+          <Route path="/Localisation" element={<Localisation/>} />
+            <Route path="/Contact" element={<Contact/>} />
+            <Route path="/politique-de-confidentialite" element={<Politique/>}/>
+            <Route path="/conditions-utilisation" element={<Condition />} />
           {/*  */}
           <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
@@ -137,12 +142,13 @@ function App() {
             <Route path="/admin/ventes" element={<Vente />} />
             <Route path="/admin/commande" element={<Commande />} />
             <Route path="/admin/utilisateurs" element={<Users />} />
+            <Route path="/admin/Products" element={<Products />} />
 
             <Route path="plats" element={<Plats />} />
           </Route>
           {/* FIN ADMIN */}
           <Route path="/update/:id" element={<Update />} />
-          <Route path="/ajout" element={<AppAjout />} />
+          {/* <Route path="/ajout" element={<AppAjout />} /> */}
           <Route path="About" element={<About />} />
           {/* PAGE NOT FOUND */}
           <Route path="*" element={<PageNotFound />} />

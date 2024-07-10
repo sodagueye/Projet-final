@@ -3,7 +3,11 @@ import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 import "./Employe.css"; // Importez votre fichier CSS de style
 
-const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) => {
+const EmployeeForm = ({
+  onEmployeeAdded,
+  onEmployeeUpdated,
+  employeeToEdit,
+}) => {
   const [nom, setNom] = useState("");
   const [poste, setPoste] = useState("");
   const [salaire, setSalaire] = useState(0);
@@ -48,7 +52,7 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
       let response;
       if (isEditing) {
         response = await axios.patch(
-          `https://tache-de-validition-nodejs-6.onrender.com/api/employes/update/${employeeToEdit._id}`,
+          `https://tache-de-validition-nodejs-1-lhb5.onrender.com/update/${employeeToEdit._id}`,
           employeeData
         );
         console.log("Employee updated:", response.data);
@@ -74,9 +78,11 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
 
   return (
     <>
-      <Button variant="primary" onClick={handleShowModal}>
+    <div className="d-flex justify-content-center">
+      <Button className="border-0" style={{ backgroundColor: "#91725d" }} onClick={handleShowModal}>
         {isEditing ? "Modifier" : "Ajouter"}
       </Button>
+    </div>
       <Modal show={showModal} onHide={handleCloseModal} centered className="agrandir">
         <Modal.Header closeButton>
           <Modal.Title>{isEditing ? "Modifier l'employé" : "Ajouter un employé"}</Modal.Title>
@@ -153,9 +159,9 @@ const EmployeeForm = ({ onEmployeeAdded, onEmployeeUpdated, employeeToEdit }) =>
             <Button variant="secondary" onClick={handleCloseModal} className="me-2 annuler">
               Annuler
             </Button>
-            <Button variant="primary" type="submit" className="btn-submit">
-              {isEditing ? "Modifier" : "Ajouter"}
-            </Button>
+            <Button className=" btn-submit border-0" style={{ backgroundColor: "#91725d" }} onClick={handleShowModal}>
+        {isEditing ? "Modifier" : "Ajouter"}
+      </Button>
             </div>
           </form>
         </Modal.Body>
