@@ -27,17 +27,14 @@ function AuthProvider({ children }) {
     }
 
     try {
-      const res = await axios.post(
-        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/register",
-        {
-          firstName,
-          lastName,
-          email,
-          number,
-          password,
-          confirmPassword,
-        }
-      );
+      const res = await axios.post("http://localhost:8080/api/register", {
+        firstName,
+        lastName,
+        email,
+        number,
+        password,
+        confirmPassword,
+      });
       // setUser({ res });
       // console.log(res);
 
@@ -67,13 +64,10 @@ function AuthProvider({ children }) {
   async function login(e) {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/auth",
-        {
-          email,
-          password,
-        }
-      );
+      const res = await axios.post("http://localhost:8080/api/auth", {
+        email,
+        password,
+      });
       const loggedInUser = {
         firstName: res.data.firstName,
         lastName: res.data.lastName,

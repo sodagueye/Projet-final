@@ -1,17 +1,18 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Components";
+import { Contexte } from "../Inscription/AuthProvider";
 import { MdOutlineDelete } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 
 const Panier = () => {
-  const { cartItems, setCartItems, setCartQuantity, totalPrix, handleClick } =
-    useContext(Context);
+  const { cart, setCart } = useContext(Contexte);
+  const { setCartQuantity, totalPrix, handleClick } = useContext(Context);
 
   const handleDelete = (id) => {
-    const newCartItems = cartItems.filter((item) => item._id !== id);
-    setCartItems(newCartItems);
+    const newCartItems = cart.filter((item) => item._id !== id);
+    setCart(newCartItems);
     toast.success("Le produit a été retiré du panier", { autoClose: 1000 });
     setCartQuantity(newCartItems.length);
     localStorage.setItem("cartItems", JSON.stringify(newCartItems));
@@ -20,19 +21,19 @@ const Panier = () => {
   useEffect(() => {
     const savedCartItems = JSON.parse(localStorage.getItem("cartItems"));
     if (savedCartItems) {
-      setCartItems(savedCartItems);
+      setCart(savedCartItems);
     }
-  }, [setCartItems]);
+  }, [setCart]);
 
   return (
     <div className="container-fluid test">
       <div className="row">
         <div className="col-lg-9 bg-body shadow rounded p-4">
-          {cartItems.length > 0 ? (
+          {cart.length > 0 ? (
             <div>
-              <h3 className="text-start">Panier ({cartItems.length})</h3>
+              <h3 className="text-start">Panier ({cart.length})</h3>
               <hr />
-              {cartItems.map((item) => (
+              {cart.map((item) => (
                 <div key={item.id}>
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="d-flex justify-content-center align-items-center">
@@ -45,11 +46,6 @@ const Panier = () => {
                           >
                             <MdOutlineDelete />
                           </div>
-                          {/* <div>
-                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">+</button>
-                            <span>{1}</span>
-                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">-</button>
-                          </div> */}
                         </div>
                       </div>
 

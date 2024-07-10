@@ -14,7 +14,9 @@ export default function PlatSenegalais() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/admin/liste-produits");
+      const res = await axios.get(
+        "http://localhost:8080/admin/liste-produits"
+      );
       setProducts(res.data);
       setLoading(false);
     } catch (err) {

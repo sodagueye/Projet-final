@@ -17,6 +17,7 @@
     "@typebot.io/react": "^0.3.3",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
+    "buffer": "^6.0.3",
     "carousel": "^0.0.3",
     "cors": "^2.8.5",
     "express": "^4.19.2",

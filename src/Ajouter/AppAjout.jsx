@@ -83,7 +83,7 @@ function ImageUpload() {
 
 const fetchProducts = async () => {
     try {
-      const res = await axios.get("https://localhost:8080/admin/liste-produits");
+      const res = await axios.get("http://localhost:8080/admin/liste-produits");
       setProducts(res.data);
     } catch (err) {
       console.error(err);
