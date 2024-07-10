@@ -78,9 +78,11 @@ const EmployeeForm = ({
 
   return (
     <>
-      <Button variant="primary" onClick={handleShowModal}>
+    <div className="d-flex justify-content-center">
+      <Button className="border-0" style={{ backgroundColor: "#91725d" }} onClick={handleShowModal}>
         {isEditing ? "Modifier" : "Ajouter"}
       </Button>
+    </div>
       <Modal show={showModal} onHide={handleCloseModal} centered className="agrandir">
         <Modal.Header closeButton>
           <Modal.Title>{isEditing ? "Modifier l'employé" : "Ajouter un employé"}</Modal.Title>
@@ -157,9 +159,9 @@ const EmployeeForm = ({
             <Button variant="secondary" onClick={handleCloseModal} className="me-2 annuler">
               Annuler
             </Button>
-            <Button variant="primary" type="submit" className="btn-submit">
-              {isEditing ? "Modifier" : "Ajouter"}
-            </Button>
+            <Button className=" btn-submit border-0" style={{ backgroundColor: "#91725d" }} onClick={handleShowModal}>
+        {isEditing ? "Modifier" : "Ajouter"}
+      </Button>
             </div>
           </form>
         </Modal.Body>
