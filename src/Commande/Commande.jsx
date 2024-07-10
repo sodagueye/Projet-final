@@ -153,8 +153,7 @@ export default function Commande() {
                     />
                 </div>
             </div>
-
-            <table className="table">
+<table className="table">
                 <thead>
                     <tr style={{ backgroundColor: "#eee" }}>
                         <th scope="col">Date</th>

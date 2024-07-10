@@ -21,3 +21,25 @@
     color: white;
     
 }
+.inputs{
+  
+        display: flex;
+       width: 70%; 
+        margin: 10px;
+        border: 2px solid #91725d;  
+        background-color: #f3faff; 
+        margin: auto;
+      
+  
+}
+.inputs ::placeholder{
+    background-color: #ccc;
+    color: black;
+}
+.boutons button{
+    background-color: #91725d;
+    color: white;
+    padding: 5px;
+    border: none;
+    margin: 0 2px;
+}

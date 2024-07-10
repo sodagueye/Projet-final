@@ -24,7 +24,6 @@ import TrackReservation from "./Track-reservation/TrackReservation";
 import AppAjout from "./Ajouter/AppAjout";
 import Admin from "./Dashboard/Admin";
 import Panier from "./Panier/Panier";
-import Ventes from "./Ventes/Ventes";
 import Footer from "./Footer/Footer";
 import CustomNavbar from "./Componentnav/CustomNavbar";
 import PanierProvider from "./Components";
@@ -42,6 +41,7 @@ import Auth from "./Inscription/Auth";
 import AuthProvider from "./Inscription/AuthProvider";
 import Signup from "./Inscription/signup";
 import Tout from "./Componentnav/Tout";
+import Vente from "./Ventes/Ventes";
 // parentProvider
 
 const AppLayout = () => {
@@ -102,6 +102,7 @@ function App() {
               <Route path="burgers" element={<Burgers />} />
             </Route>
             {/* FIN MENU */}
+
           </Route>
 
           <Route path="/" element={<AuthentificationProvider />}>
@@ -132,7 +133,8 @@ function App() {
             <Route path="employe" element={<Employes />} />
             <Route path="users" element={<ListeUtilisateur />} />
             <Route path="dashboard" element={<Admin />} />
-            <Route path="/admin/ventes" element={<Ventes />} />
+            {/* <Route path="/admin/ventes" element={<Ventes />} /> */}
+            <Route path="/admin/ventes" element={<Vente />} />
             <Route path="/admin/commande" element={<Commande />} />
             <Route path="/admin/utilisateurs" element={<Users />} />
 
