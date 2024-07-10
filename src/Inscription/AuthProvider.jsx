@@ -1,138 +1,66 @@
-import React from "react";
-import { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Contexte = createContext();
-function AuthProvider({ children }) {
+
+const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")) || null);
   const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [user, setUser] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cartItems")) || []);
 
-  // parie inscription
-  async function submit(e) {
-    e.preventDefault();
-
-    if (password !== confirmPassword) {
-      toast.error("Les mots de passe ne correspondent pas");
-      return;
+  useEffect(() => {
+    if (user) {
+      setCart(JSON.parse(localStorage.getItem("cartItems")) || []);
     }
+  }, [user]);
 
-    try {
-      const res = await axios.post(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/api/register",
-        {
-          firstName,
-          lastName,
-          email,
-          number,
-          password,
-          confirmPassword,
-        }
-      );
-      // setUser({ res });
-      // console.log(res);
-
-      if (res.status === 201) {
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setNumber("");
-        setPassword("");
-        setConfirmPassword("");
-        toast.success("Inscription réussie.");
-
-        setTimeout(() => {
-          navigate("/connexion");
-        }, 3000);
-      } else {
-        toast.error(res.data.errors[0].msg);
-      }
-    } catch (error) {
-      toast.error("Erreur lors de l'inscription");
-      console.error(error);
-    }
-  }
-  // fin
-
-  // partie connexion
-  async function login(e) {
+  const login = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://tache-de-validition-nodejs-61fk.onrender.com/api/auth",
-        {
-          email,
-          password,
-        }
-      );
-      const loggedInUser = {
-        firstName: res.data.firstName,
-        lastName: res.data.lastName,
-        email: email,
-      };
-
-      setUser(loggedInUser);
-      console.log(loggedInUser);
+      const res = await axios.post("http://localhost:8080/api/auth", { email, password });
       if (res.status === 201) {
-        setEmail("");
-        setPassword("");
-        toast.success("Connexion réussie.");
-
-        // Vérification si l'utilisateur est administrateur
-        if (email === "admin1@gmail.com") {
-          navigate("/admin");
-          return;
-        } else {
-          navigate("/");
-        }
+        sessionStorage.setItem("user", JSON.stringify(res.data));
+        setUser(res.data);
+        navigate("/");
       } else {
-        toast.error(res.data.errors[0].msg);
+        console.log("Erreur lors de la connexion :", res.data.errors[0].msg);
       }
     } catch (error) {
-      toast.error("Erreur lors de la connexion");
-      console.error(error);
+      console.error("Erreur lors de la connexion :", error);
     }
-  }
-  // fin
-  console.log(user);
+  };
+
+  const logout = () => {
+    sessionStorage.removeItem("user");
+    localStorage.removeItem("cartItems"); // Vider le panier
+    setUser(null);
+    setCart([]);
+    navigate("/");
+  };
+
   return (
-    <div>
-      <Contexte.Provider
-        value={{
-          firstName,
-          setFirstName,
-          lastName,
-          setLastName,
-          email,
-          setEmail,
-          number,
-          user,
-          setUser,
-          setNumber,
-          password,
-          setPassword,
-          confirmPassword,
-          setConfirmPassword,
-          showPassword,
-          setShowPassword,
-          showConfirmPassword,
-          setShowConfirmPassword,
-          submit,
-          login,
-        }}
-      >
-        {children}
-      </Contexte.Provider>
-    </div>
+    <Contexte.Provider
+      value={{
+        user,
+        email,
+        setEmail,
+        password,
+        setPassword,
+        showPassword,
+        setShowPassword,
+        login,
+        logout,
+        cart,
+        setCart
+      }}
+    >
+      {children}
+    </Contexte.Provider>
   );
-}
+};
+
 export default AuthProvider;
