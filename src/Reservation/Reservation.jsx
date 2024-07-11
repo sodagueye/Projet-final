@@ -1,13 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./Reservation.css";
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-  // import { Contexte } from '../Inscription/AuthProvider'; 
 
 function ReservationPage() {
-//  const { email, password } = useContext(Contexte); // Accès aux valeurs fournies par le contexte
   const [invites, setInvites] = useState(1);
   const [date, setDate] = useState(new Date());
   const [hour, setHour] = useState("");
@@ -21,19 +20,6 @@ function ReservationPage() {
   const fetchAvailableHours = async () => {
     try {
       const formattedDate = date.toISOString().split('T')[0]; 
-      const response = await axios.get(`https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation/hours/${formattedDate}`);
-      console.log(response.data);
-      const { heures_disponibles } = response.data;
-      setHours(heures_disponibles);
-    } catch (err) {
-      console.error(err);
-      toast.error("Erreur lors du chargement des heures disponibles");
-    }
-  };
-
-  const Hours = async () => {
-    try {
-      const formattedDate = date.toISOString().split('T')[0]; 
       const response = await axios.get(`http://localhost:8080/api/reservation/hours/${formattedDate}`);
       console.log(response.data);
       const { heures_disponibles } = response.data;
@@ -44,21 +30,13 @@ function ReservationPage() {
     }
   };
 
+
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-// conneion
-    // if (!email || !password) { // Vérifier si l'utilisateur est connecté
-    //   toast.error("Veuillez vous connecter pour faire une réservation.");
-    //   setTimeout(() => {
-    //     navigate("/connexion"); // Redirection vers la page de connexion
-    //  }, 2000);
-      
-    //   return;
-    // }
 
     if (!hour) {
       toast.error("Veuillez sélectionner une heure.");
@@ -72,7 +50,7 @@ function ReservationPage() {
     };
 
     try {
-      const res = await axios.post("https://tache-de-validition-nodejs-61fk.onrender.com/api/reservation", formData);
+      const res = await axios.post("http://localhost:8080/api/reservation", formData);
       navigate('/table', { state: formData });
     } catch (error) {
       console.error(error);
@@ -101,7 +79,7 @@ function ReservationPage() {
   return (
     <section id="reservationPage">
       <ToastContainer />
-      <div className="row reservationPage-body mt-5">
+      <div className="row reservationPage-body mt-5 pt-5">
         <h1>Table de réservations</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between">
@@ -157,9 +135,11 @@ function ReservationPage() {
             </div>
           </label>
           <br />
+          <div className='data'>
           <button className="btn btnsend" type="submit">
             Continuer
           </button>
+          </div>
         </form>
       </div>
       <div className="container-fluid">

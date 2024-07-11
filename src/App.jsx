@@ -19,8 +19,8 @@ import Employes from "./Dashboard/Employes";
 import ReservationTable from "./Reservation-Table/ReservationTable";
 import Plats from "./Dashboard/Plats";
 import PageNotFound from "./PageNotFound";
-import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
-import TrackReservation from "./Track-reservation/TrackReservation";
+// import PageRedirection from "./Redirection-after-confirmation/Page-redirect";
+// import TrackReservation from "./Track-reservation/TrackReservation";
 import Admin from "./Dashboard/Admin";
 import Panier from "./Panier/Panier";
 import Footer from "./Footer/Footer";
@@ -94,6 +94,7 @@ function App() {
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="detail/:id" element={<Details />} />
             <Route path="table" element={<ReservationTable />} />
+
             {/* MENU */}
             <Route path="menu/" element={<MenuLayout />}>
               <Route index element={<Navigate replace to="tout" />} />
@@ -104,6 +105,10 @@ function App() {
               <Route path="desserts" element={<Desserts />} />
               <Route path="burgers" element={<Burgers />} />
             </Route>
+            <Route path="/Localisation" element={<Localisation/>} />
+            <Route path="/Contact" element={<Contact/>} />
+            <Route path="/politique-de-confidentialite" element={<Politique/>}/>
+            <Route path="/conditions-utilisation" element={<Condition />} />
             {/* FIN MENU */}
           </Route>
 
@@ -118,17 +123,12 @@ function App() {
             <Route path="/reinitialiser" element={<MotdepassOublié />} />
             <Route path="reservation" element={<ReservationPage />} />
             <Route path="table" element={<ReservationTable />} />
-            <Route
-              path="/redirection-confirmation"
-              element={<PageRedirection />}
-            />
           </Route>
           <Route path="/Localisation" element={<Localisation />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/politique-de-confidentialite" element={<Politique />} />
           <Route path="/conditions-utilisation" element={<Condition />} />
           {/*  */}
-          <Route path="/trackResevation" element={<TrackReservation />} />
           <Route path="/utilisateur" element={<Users />} />
           {/* ADMIN */}
           <Route path="/admin" element={<Dashboard />}>
