@@ -13,7 +13,7 @@ export default function Update() {
   useEffect(() => {
     axios
       .get(
-        `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`
+        `https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits/${id}`
       )
       .then((res) => {
         console.log("Data retrieved:", res.data); // Vérifiez les données reçues
@@ -43,7 +43,7 @@ export default function Update() {
     console.log("Submitting values:", values);
     axios
       .patch(
-        `https://tache-de-validition-nodejs-1p19n5070.vercel.app/admin/liste-produits/${id}`,
+        `${id}`,
         values
       )
       .then((res) => {

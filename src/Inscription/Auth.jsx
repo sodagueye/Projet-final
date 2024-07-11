@@ -6,14 +6,23 @@ import "react-toastify/dist/ReactToastify.css";
 import logoMaron from "../assets/logoMaron.png";
 
 function Auth() {
-  const { email, setEmail, password, setPassword, showPassword, setShowPassword, login } = useContext(Contexte);
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    showPassword,
+    setShowPassword,
+    login,
+  } = useContext(Contexte);
 
   return (
     <div className="backCConnexion shadow mt-5">
       <form className="form align-items-center" onSubmit={login}>
-        <img src={logoMaron} className="logoMaron w-50" alt="" />
+        <div className=" d-flex justify-content-center align-items-center">
+          <img src={logoMaron} className="logoMaron w-25" alt="" />
+        </div>
         <h2 className="text-center fw-bold fs-2 color">Connecter</h2>
-
         <div className="inscript1">
           <input
             className="nom email"
@@ -32,7 +41,10 @@ function Auth() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span onClick={() => setShowPassword(!showPassword)} className="eyes oublie">
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="eyes oublie"
+            >
               {showPassword ? <FaEye /> : <FaEyeSlash />}
             </span>
           </div>
@@ -44,13 +56,16 @@ function Auth() {
           </Link>
         </div>
 
-        <div className="creer d-flex">
-          <button type="submit" className="liens align-items-center connect fs-5 fw-bold border-0">
+        <div className="creer d-flex justify-content-center align-items-center">
+          <button
+            type="submit"
+            className="liens align-items-center connect fs-5 fw-bold border-0"
+          >
             Se connecter
           </button>
         </div>
 
-        <div className="d-flex gap-1 py-3">
+        <div className="d-flex justify-content-center align-items-center gap-1 py-3">
           <p className="">Vous n'avez pas de compte ?</p>
           <Link to="/inscription" className="oublie">
             s'inscrire

@@ -13,7 +13,7 @@ export default function Tout() {
 
   async function getProducts() {
     const resultat = await axios.get(
-      "http://localhost:8080/admin/liste-produits"
+      "https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits"
     );
     const response = await resultat.data;
     setPlats(response);
@@ -56,14 +56,16 @@ export default function Tout() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{item.name}</h5>
-                    <p class="card-text">{item.description}</p>
-                    <button
-                      className="border-0 btn-add text-white rounded shadow p-2"
-                      onClick={() => handleAddToCart(item)}
-                    >
-                      Ajouter au panier
-                    </button>
+                    <h5 class="card-title text-center">{item.name}</h5>
+                    <p class="card-text text-center">{item.description}</p>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button
+                        className="border-0 btn-add text-white rounded shadow p-2"
+                        onClick={() => handleAddToCart(item)}
+                      >
+                        Ajouter au panier
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

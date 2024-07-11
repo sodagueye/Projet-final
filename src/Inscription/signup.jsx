@@ -32,7 +32,7 @@ function Signup() {
     <div>
       <div className="backCConnexion shadow d-flex justify-content-center my-5">
         <form className="form" onSubmit={submit}>
-          <img src={logoMaron} className="logoMaron w-50" alt="" />
+          <img src={logoMaron} className="img-marron" alt="" />
           <div className="color m-0 fw-bold">
             <h3>Créez votre compte</h3>
           </div>

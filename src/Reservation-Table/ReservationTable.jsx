@@ -22,7 +22,7 @@ const ReservationTable = () => {
   useEffect(() => {
     const fetchReservedTables = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/reservation-table/reserved-tables");
+        const response = await axios.get("https://tache-de-validition-nodejs-7.onrender.com/api/reservation-table/reserved-tables");
         setReservedTables(response.data);
       } catch (error) {
         console.error("Une erreur s'est produite lors de la récupération des tables réservées!", error);
@@ -78,7 +78,7 @@ const ReservationTable = () => {
   
       try {
         const response = await axios.post(
-          "http://localhost:8080/api/reservation-table/tablereserved",
+          "https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits",
           formData
         );
         toast.success(
@@ -273,11 +273,7 @@ const ReservationTable = () => {
             </div>
           </div>
         </div>
-        <div className="container-fluid">
-          <div className="row">
-            {/* <Footer /> */}
-          </div>
-        </div>
+    
       </div>
     </section>
   );

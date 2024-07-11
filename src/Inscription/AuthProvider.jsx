@@ -15,7 +15,6 @@ function AuthProvider({ children }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  // const [user, setUser] = useState([]);
 
   //TEST
   const [user, setUser] = useState(
@@ -32,14 +31,17 @@ function AuthProvider({ children }) {
     }
 
     try {
-      const res = await axios.post("http://localhost:8080/api/register", {
-        firstName,
-        lastName,
-        email,
-        number,
-        password,
-        confirmPassword,
-      });
+      const res = await axios.post(
+        "https://tache-de-validition-nodejs-7.onrender.com/api/register",
+        {
+          firstName,
+          lastName,
+          email,
+          number,
+          password,
+          confirmPassword,
+        }
+      );
 
       if (res.status === 201) {
         setFirstName("");
@@ -66,10 +68,13 @@ function AuthProvider({ children }) {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/auth", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://tache-de-validition-nodejs-7.onrender.com/api/auth",
+        {
+          email,
+          password,
+        }
+      );
       if (res.status === 201) {
         sessionStorage.setItem("user", JSON.stringify(res.data));
         setUser(res.data);

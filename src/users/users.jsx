@@ -18,7 +18,7 @@ export default function Users() {
   useEffect(() => {
     axios
       .get(
-        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/register/getting"
+        "https://tache-de-validition-nodejs-7.onrender.com/api/register/getting"
       )
       .then((response) => {
         console.log(response);
@@ -62,7 +62,7 @@ export default function Users() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `https://tache-de-validition-nodejs-3.onrender.com/api/register/delete/${id}`
+        `https://tache-de-validition-nodejs-7.onrender.com/api/register/delete/${id}`
       );
       if (response.status === 200) {
         setUsers(users.filter((item) => item._id !== id));
