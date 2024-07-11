@@ -78,7 +78,7 @@ const ReservationTable = () => {
   
       try {
         const response = await axios.post(
-          "https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits",
+          "https://tache-de-validition-nodejs-7.onrender.com/reservation-table/tablereserved",
           formData
         );
         toast.success(

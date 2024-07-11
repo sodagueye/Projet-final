@@ -1,10 +1,9 @@
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Reservation.css";
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ReservationPage() {
   const [invites, setInvites] = useState(1);
@@ -19,8 +18,10 @@ function ReservationPage() {
 
   const fetchAvailableHours = async () => {
     try {
-      const formattedDate = date.toISOString().split('T')[0]; 
-      const response = await axios.get(`${formattedDate}`);
+      const formattedDate = date.toISOString().split("T")[0];
+      const response = await axios.get(
+        `https://tache-de-validition-nodejs-7.onrender.com/api/reservation/hours/${formattedDate}`
+      );
       console.log(response.data);
       const { heures_disponibles } = response.data;
       setHours(heures_disponibles);
@@ -30,10 +31,9 @@ function ReservationPage() {
     }
   };
 
-
   const handleDateChange = (event) => {
     setDate(new Date(event.target.value));
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,8 +50,8 @@ function ReservationPage() {
     };
 
     try {
-      const res = await axios.post("", formData);
-      navigate('/table', { state: formData });
+      const res = await axios.post("https://tache-de-validition-nodejs-7.onrender.com/api/reservation", formData);
+      navigate("/table", { state: formData });
     } catch (error) {
       console.error(error);
       toast.error("Erreur lors de la demande de réservation");
@@ -80,14 +80,15 @@ function ReservationPage() {
     <section id="reservationPage">
       <ToastContainer />
       <div className="row reservationPage-body mt-5 pt-5">
-        <h1 className='text-center mb-3'>Reservez une table</h1>
+        <h1 className="text-center mb-3">Reservez une table</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-head justify-space-between mt-4">
             <div className="form-floating col col-md-4 mx-2 my-3">
               <select
                 className="form-select"
                 value={invites}
-                onChange={(e) => setInvites(Number(e.target.value))}>
+                onChange={(e) => setInvites(Number(e.target.value))}
+              >
                 {[...Array(8).keys()].map((i) => (
                   <option className="option-back" key={i + 1} value={i + 1}>
                     {i + 1}
@@ -99,13 +100,19 @@ function ReservationPage() {
             <div className="form-floating col-md-4 mx-2 my-3">
               <select
                 className="form-select"
-                value={date.toISOString().split('T')[0]}
+                value={date.toISOString().split("T")[0]}
                 onChange={handleDateChange}
               >
                 {Array.from({ length: 7 }, (_, i) => {
-                  const newDate = new Date(Date.now() + i * 24 * 60 * 60 * 1000);
+                  const newDate = new Date(
+                    Date.now() + i * 24 * 60 * 60 * 1000
+                  );
                   return (
-                    <option className="option-back" key={i} value={newDate.toISOString().split('T')[0]}>
+                    <option
+                      className="option-back"
+                      key={i}
+                      value={newDate.toISOString().split("T")[0]}
+                    >
                       {newDate.toLocaleDateString("fr-FR", {
                         weekday: "short",
                         day: "2-digit",
@@ -135,14 +142,13 @@ function ReservationPage() {
             </div>
           </label>
           <br />
-          <div className='data'>
-          <button className="btn btnsend text-white" type="submit">
-            Continuer
-          </button>
+          <div className="data">
+            <button className="btn btnsend text-white" type="submit">
+              Continuer
+            </button>
           </div>
         </form>
       </div>
-   
     </section>
   );
 }
