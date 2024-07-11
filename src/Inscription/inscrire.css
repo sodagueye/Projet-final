@@ -1,22 +1,25 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-::placeholder{
+::placeholder {
     font-size: 15px;
 }
 
+.img-marron {
+    width: 40px;
+}
 
 .nom {
-    background-color: transparent; 
+    background-color: transparent;
     margin: 10px;
     width: 200px;
     outline: none;
     border: none;
     border-bottom: 2px solid #91725d;
-    
+
 }
 
 /* #E7272D */
@@ -40,60 +43,64 @@
 }
 
 .oublie {
-    color: #91725d; 
-    cursor: pointer;   
+    color: #91725d;
+    cursor: pointer;
 }
 
 .email {
-    width: 350px; 
-   
+    width: 350px;
+
 }
 
 
- .liens {
+.liens {
     color: white;
     background-color: #91725d;
     text-decoration: none;
     border-radius: 30px;
     padding: 4px;
-   width: 350px;
+    width: 350px;
 
-} 
-.liens:hover{
-    background-color:#bbaca1;
 }
 
-.eyes{
-  position: relative;
- right: 20px;
+.liens:hover {
+    background-color: #bbaca1;
 }
- .postis{
- display: flex;
- }
+
+.eyes {
+    position: relative;
+    right: 20px;
+}
+
+.postis {
+    display: flex;
+}
 
 
- @media screen and (max-width:768px) {
+@media screen and (max-width:768px) {
     .auth {
         flex-direction: column;
     }
 
-    .eyes{
-      display: none;
-      }
-       .postis{
-       display: flex;
-       }
+    .eyes {
+        display: none;
+    }
+
+    .postis {
+        display: flex;
+    }
 
     .input {
         width: 300px;
     }
 
-  
-    .backCConnexion{
+
+    .backCConnexion {
         width: 100%;
         height: 650px;
-       
-    }  
 
-} 
+    }
+
+}
+
 /* #502314 */

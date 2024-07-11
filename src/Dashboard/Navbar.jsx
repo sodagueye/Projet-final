@@ -35,10 +35,7 @@ export default function Navbar() {
 
   return (
     <div className="container-fluid p-0 Navbar">
-      <nav
-        // style={{ boxShadow: "0 0 0px 0px #fff" }}
-        class="navbar navbar-expand-lg shadow p-3 bg-white "
-      >
+      <nav class="navbar navbar-expand-lg shadow p-3 bg-white ">
         <div class="container-fluid">
           <button
             className="navbar-toggler"
@@ -66,13 +63,13 @@ export default function Navbar() {
                   <FaBell />
                 </span>
                 <div
-                  className={`toast position-absolute top-0 end-0 m-3 ${
+                  className={`toast position-absolute   top-0 end-0 m-3 ${
                     notification ? "show" : "hide"
                   }`}
                   role="alert"
                   aria-live="assertive"
                   aria-atomic="true"
-                  style={{ minWidth: "250px" }}
+                  style={{ minWidth: "250px", zIndex: "3000" }}
                 >
                   <div class="toast-header">
                     <strong class="me-auto">Commande</strong>

@@ -15,7 +15,7 @@ export default function PlatSenegalais() {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8080/admin/liste-produits"
+        "https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits"
       );
       setProducts(res.data);
       setLoading(false);
@@ -29,21 +29,6 @@ export default function PlatSenegalais() {
     : products;
 
   return (
-    // <div>
-    //       <div className='row'>
-    //         {filteredProducts.map((item) => (
-    //          <div key={item.id} className="col-lg-4 mt-4 scale-image">
-    //            <Link to={`/detail/${item._id}`}>
-    //              <div className="card border-0 carte shadow">
-    //                <img src={item.image} className="card-img-top" alt="..."/>
-    //                {/* <h3>{item.name}</h3>              */}
-    //              </div>
-    //            </Link>
-    //          </div>
-    //        ))
-    //       }
-    //       </div>
-    //   </div>
     <div className="container">
       <div className="row">
         {loading ? (
@@ -75,14 +60,16 @@ export default function PlatSenegalais() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{item.name}</h5>
-                    <p class="card-text">{item.description}</p>
-                    <button
-                      className="border-0 btn-add text-white rounded shadow p-2"
-                      onClick={() => handleAddToCart(item)}
-                    >
-                      Ajouter au panier
-                    </button>
+                    <h5 class="card-title text-center">{item.name}</h5>
+                    <p class="card-text text-center">{item.description}</p>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button
+                        className="border-0 btn-add text-white rounded shadow p-2"
+                        onClick={() => handleAddToCart(item)}
+                      >
+                        Ajouter au panier
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -29,7 +29,7 @@ const tab = [
 export default function Portfolio() {
   return (
     <div className="pt-5">
-      <h1 className="mt-5 portfolio">Portfolio Keur Yaay Soda</h1>
+      <h1 className="mt-5 portfolio text-center">Portfolio Keur Yaay Soda</h1>
       <div className="row mt-5">
         {tab.map((item) => (
           <div key={item.id} className="col-lg-4 mt-4 scale-image">

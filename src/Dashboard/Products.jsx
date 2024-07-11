@@ -193,13 +193,13 @@ function ProduitAjout() {
     try {
       if (editingProductId) {
         await axios.patch(
-          `http://localhost:8080/admin/liste-produits/${editingProductId}`,
+          `https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits/${editingProductId}`,
           productData
         );
         setEditingProductId(null);
       } else {
         await axios.post(
-          "http://localhost:8080/admin/liste-produits",
+          "https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits",
           productData
         );
       }
@@ -217,7 +217,7 @@ function ProduitAjout() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/admin/liste-produits");
+      const res = await axios.get("https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits");
       setProducts(res.data);
     } catch (err) {
       console.error(err);
@@ -241,7 +241,7 @@ function ProduitAjout() {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:8080/admin/liste-produits/${productToDelete}`
+        `https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits/${productToDelete}`
       );
       fetchProducts();
       setShowDeleteModal(false);

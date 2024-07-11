@@ -9,7 +9,7 @@ export default function Presentation() {
   useEffect(() => {
     async function getProducts() {
       try {
-        const resultat = await axios.get("http://localhost:8080/admin/liste-produits");
+        const resultat = await axios.get("https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits");
         const response = await resultat.data;
         setPlats(response);
         setLoading(false);
@@ -23,7 +23,6 @@ export default function Presentation() {
 
   return (
     <div className="container p-5">
-    
       <div className="row">
         {loading ? (
           <div>

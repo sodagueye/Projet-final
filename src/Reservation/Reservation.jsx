@@ -20,7 +20,7 @@ function ReservationPage() {
   const fetchAvailableHours = async () => {
     try {
       const formattedDate = date.toISOString().split('T')[0]; 
-      const response = await axios.get(`http://localhost:8080/api/reservation/hours/${formattedDate}`);
+      const response = await axios.get(`${formattedDate}`);
       console.log(response.data);
       const { heures_disponibles } = response.data;
       setHours(heures_disponibles);
@@ -50,7 +50,7 @@ function ReservationPage() {
     };
 
     try {
-      const res = await axios.post("http://localhost:8080/api/reservation", formData);
+      const res = await axios.post("", formData);
       navigate('/table', { state: formData });
     } catch (error) {
       console.error(error);

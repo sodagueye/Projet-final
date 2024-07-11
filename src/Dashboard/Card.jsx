@@ -5,14 +5,13 @@ import { FaSellsy } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 import { BiSolidDish } from "react-icons/bi";
 import "./Cards.css";
-// import "../styles/style.css"
 export default function Card() {
   const [plat, setPlat] = useState("");
   const [users, setUsers] = useState("");
   async function Plats() {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/"
+        "https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits"
       );
       const resultat = await response.data;
       setPlat(resultat.length);
@@ -23,7 +22,7 @@ export default function Card() {
   async function Users() {
     try {
       const response = await axios.get(
-        "https://tache-de-validition-nodejs-1-lhb5.onrender.com/api/register/getting"
+        "https://tache-de-validition-nodejs-7.onrender.com/api/register/getting"
       );
       const data = await response.data;
       setUsers(data.utilisateur.length);
@@ -43,7 +42,7 @@ export default function Card() {
           <div class="card shadow cartes p-2">
             <div class="card-body d-flex align-items-center flex-row">
               <div>
-                <p >{plat} plats</p>
+                <p>{plat} plats</p>
               </div>
               <p className="fs-2">
                 <BiSolidDish />

@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { Context } from '../Components';
+import { Context } from "../Components";
 
 export default function PlatSenegalais() {
-
-   const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [filterCategory] = useState("desserts");
-  const {handleAddToCart} = useContext(Context)
-  const [loading,setLoading] = useState(true)
+  const { handleAddToCart } = useContext(Context);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchProducts();
@@ -16,21 +15,17 @@ export default function PlatSenegalais() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/admin/liste-produits");
+      const res = await axios.get("https://tache-de-validition-nodejs-7.onrender.com/admin/liste-produits");
       setProducts(res.data);
-      setLoading(false)
+      setLoading(false);
     } catch (err) {
       console.error(err);
     }
   };
 
-
   const filteredProducts = filterCategory
-    ? products.filter(product => product.category === filterCategory)
+    ? products.filter((product) => product.category === filterCategory)
     : products;
-
-
-
 
   return (
     <div className="container mt-5">
@@ -64,14 +59,16 @@ export default function PlatSenegalais() {
                     alt="..."
                   />
                   <div class="card-body">
-                    <h5 class="card-title">{item.name}</h5>
-                    <p class="card-text">{item.description}</p>
-                    <button
-                      className="border-0 btn-add text-white rounded shadow p-2"
-                      onClick={() => handleAddToCart(item)}
-                    >
-                      Ajouter au panier
-                    </button>
+                    <h5 class="card-title text-center">{item.name}</h5>
+                    <p class="card-text text-center">{item.description}</p>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button
+                        className="border-0 btn-add text-white rounded shadow p-2"
+                        onClick={() => handleAddToCart(item)}
+                      >
+                        Ajouter au panier
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -80,5 +77,5 @@ export default function PlatSenegalais() {
         )}
       </div>
     </div>
-  )
+  );
 }
