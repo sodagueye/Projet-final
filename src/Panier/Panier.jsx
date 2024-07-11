@@ -1,13 +1,11 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Components";
-// import { Contexte } from "../Inscription/AuthProvider";
 import { MdOutlineDelete } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 
 const Panier = () => {
-  // const { cart, setCart } = useContext(Contexte);
   const { cartItems, setCartItems, setCartQuantity, totalPrix, handleClick } =
     useContext(Context);
 
@@ -27,7 +25,7 @@ const Panier = () => {
   }, [setCartItems]);
 
   return (
-    <div className="container-fluid test">
+    <div className="container test">
       <div className="row">
         <div className="col-lg-9 bg-body shadow rounded p-4">
           {cartItems.length > 0 ? (
@@ -47,11 +45,6 @@ const Panier = () => {
                           >
                             <MdOutlineDelete />
                           </div>
-                          {/* <div>
-                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">+</button>
-                            <span>{1}</span>
-                            <button style={{backgroundColor: "#91725d",width: "100px"}} className="btn button">-</button>
-                          </div> */}
                         </div>
                       </div>
 
@@ -79,10 +72,11 @@ const Panier = () => {
                 <h6>{totalPrix} FCFA</h6>
               </div>
               <button
+                style={{ backgroundColor: "#91725d", color:"white" }}
                 onClick={handleClick}
-                className="btn w-100 btn-commande text-white shadow"
+                className="btn w-100  shadow"
               >
-                <Link to="connexion">Commander ({totalPrix} FCFA)</Link>
+                <Link to="connexion" className="text-white">Commander ({totalPrix} FCFA)</Link>
               </button>
             </div>
           </div>

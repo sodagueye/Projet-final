@@ -19,7 +19,7 @@ function About() {
           </div>
           <div className="col-12 col-md-10">
             <h4 className="text-start">Quelques mots sur Keur Yaay Soda</h4>
-            <div className="text-start">
+            <div className="text-start fs-5">
               Bienvenue chez Keur Yaay Soda, une oasis culinaire au cœur de
               Grand Yoff. Notre restaurant est bien plus qu'un simple lieu de
               repas ; c'est une célébration de la culture et des saveurs
@@ -43,7 +43,7 @@ function About() {
             <IoLocationOutline className="fs-2 ms-5" />
           </div>
           <div className="col-12 col-md-10 ">
-            <h4 className="text-start">Addresse</h4>
+            <h4 className="text-start fs-5">Addresse</h4>
             <p className="text-start">
               2810 South Figueroa Street, Los Angeles, CA, USA
             </p>
@@ -51,10 +51,10 @@ function About() {
         </div>
         <div className="row mt-3">
           <div className="col-12 col-md-2 text-start">
-            <HiOutlineClock className="fs-2 ms-5 " />
+            <HiOutlineClock className="fs-2 ms-5"/>
           </div>
           <div className="col-12 col-md-10">
-            <h4 className="text-start">Horaires d'ouvertures</h4>
+            <h4 className="text-start fs-5">Horaires d'ouvertures</h4>
             <div className="">
               <select
                 className="form-select border-0"
@@ -92,8 +92,8 @@ function About() {
             <GrGallery className="fs-2 ms-5" />
           </div>
           <div className="col-12 col-md-10">
-            <h4 className="text-start">Gallery</h4>
-            <div className="img  text-start ">
+            <h4 className="text-start fs-5">Gallery</h4>
+            <div className="img text-start">
               <div className="">
                 <img src={about3} className="p-2 rounded-4 col-12 col-md-3" alt="" />
                 <img src={about2} className="p-2 rounded-4 col-12 col-md-3" alt="" />

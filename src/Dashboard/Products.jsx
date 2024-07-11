@@ -270,7 +270,7 @@ function ProduitAjout() {
         <div className="d-flex justify-content-end mt-3">
           <Button
             style={{ backgroundColor: "#91725d" }}
-            className="border-0"
+            className="border-0 mt-3"
             onClick={() => setShowModal(true)}
           >
             Ajouter Produit
@@ -380,7 +380,7 @@ function ProduitAjout() {
         </Modal>
       </div>
 
-      <table>
+      <table className="mt-5">
         <thead style={{ backgroundColor: "#91725d" }}>
           <tr>
             <th style={{ backgroundColor: "#91725d" }}>Nom</th>

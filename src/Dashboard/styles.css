@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-.bg-test {
-    /* background-image: url("asset1.jpeg"); */
-}
-
 .test {
     padding: 100px;
 }
@@ -25,40 +21,11 @@
     background-color: hsl(24, 22%, 47%);
 }
 
-/* .sidebar a:active {
-    color: red
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.sidebar {
-    background-color: #91725d;
-    height: 100vh;
-    position: fixed;
-    width: 16.67%;
-} */
-
-/* .sidebar div:hover {
-    cursor: pointer;
-} */
 
 .carte {
     border-left: 3px solid #91725d;
 }
 
-.input-research {
-    width: 300px;
-    border: 0;
-    height: 40px;
-}
-
-.input-research::placeholder {
-    background-color: #dddddd;
-    padding: 25px;
-}
 
 .fabelle,
 .send,

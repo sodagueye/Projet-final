@@ -35,7 +35,10 @@ export default function Navbar() {
 
   return (
     <div className="container-fluid p-0 Navbar">
-      <nav class="navbar navbar-expand-lg bg-white shadow">
+      <nav
+        // style={{ boxShadow: "0 0 0px 0px #fff" }}
+        class="navbar navbar-expand-lg shadow p-3 bg-white "
+      >
         <div class="container-fluid">
           <button
             className="navbar-toggler"

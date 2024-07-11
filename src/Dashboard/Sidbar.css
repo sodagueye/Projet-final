@@ -1,11 +1,12 @@
 .sidbar {
-    width: 16.62%;
+    width: 16.65%;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     background-color: white;
 }
+
 
 .sidbar .div {
     height: 100%;
@@ -26,9 +27,3 @@
     color: #fff !important;
     width: 100%;
 }
-
-/* 
-.sidbar a.active {
-    background-color: transparent;
-
-} */

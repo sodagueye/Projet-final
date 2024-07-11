@@ -13,14 +13,14 @@ export default function Sidebar() {
     <div className="sidbar shadow text-white">
       <div className="d-flex flex-column justify-content-around align-items-start  div">
         <div>
-          <img src={logo} alt="" style={{ width: "80px" }} />
+          <img src={logo} alt="" style={{ width: "120px" }} />
         </div>
         <NavLink
           to="/admin/dashboard"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div className="d-flex justify-content-start align-items-center mt-2  das gap-2 m-0">
-            <span className="fs-4">
+            <span className="fs-3">
               <AiFillDashboard />
             </span>
             <span className="das">Dashboard</span>
@@ -31,7 +31,7 @@ export default function Sidebar() {
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div className="d-flex justify-content-start align-items-center  das gap-2 m-0">
-            <span className="fs-4">
+            <span className="fs-3">
               <CiUser />
             </span>
             <span>Utilisateurs</span>
@@ -42,7 +42,7 @@ export default function Sidebar() {
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div className="d-flex justify-content-start align-items-center   das gap-2 m-0">
-            <span className="fs-4">
+            <span className="fs-3">
               <GiHotMeal />
             </span>
             <span>Plats</span>
@@ -53,7 +53,7 @@ export default function Sidebar() {
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div className="d-flex justify-content-start align-items-center   gap-2 ">
-            <span className="fs-4">
+            <span className="fs-3">
               <GiHumanTarget />
             </span>
             <span>RH</span>
@@ -64,7 +64,7 @@ export default function Sidebar() {
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div className="d-flex justify-content-start align-items-center  das gap-2 m-0">
-            <span className="fs-4">
+            <span className="fs-3">
               <FaSellsy />
             </span>
             <span className="">Ventes</span>
@@ -75,7 +75,7 @@ export default function Sidebar() {
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div className="d-flex justify-content-start align-items-center   das gap-2">
-            <span className="fs-4">
+            <span className="fs-3">
               <FaSellsy />
             </span>
             <span>Commande</span>

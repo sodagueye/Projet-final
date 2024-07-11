@@ -81,7 +81,7 @@ export default function Users() {
     setShowModal(false);
   };
   return (
-    <div className="container users pb-5 my-4">
+    <div className="container users">
       <h3 className="text-start ms-2 py-2 ">{users.length} Utilisateurs</h3>
       <div style={{ borderTop: "2px solid gray" }}></div>
       <div className="d-flex justify-content-end">
@@ -96,7 +96,7 @@ export default function Users() {
         </div>
       </div>
 
-      <table className="table">
+      <table className="table p-3">
         <thead>
           <tr style={{ backgroundColor: "#eee" }}>
             <th scope="col">Prenom</th>

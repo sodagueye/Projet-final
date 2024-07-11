@@ -43,7 +43,7 @@ export default function Card() {
           <div class="card shadow cartes p-2">
             <div class="card-body d-flex align-items-center flex-row">
               <div>
-                <p className="fs-4">{plat} plats</p>
+                <p >{plat} plats</p>
               </div>
               <p className="fs-2">
                 <BiSolidDish />
@@ -55,7 +55,7 @@ export default function Card() {
           <div class="card shadow cartes p-2">
             <div class="card-body d-flex flex-row align-items-center">
               <p class="card-text">{users} Utilisateurs</p>
-              <p className="fs-3">
+              <p className="fs-2">
                 <FiUsers />
               </p>
             </div>

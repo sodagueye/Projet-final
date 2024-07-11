@@ -80,9 +80,9 @@ function ReservationPage() {
     <section id="reservationPage">
       <ToastContainer />
       <div className="row reservationPage-body mt-5 pt-5">
-        <h1>Table de réservations</h1>
+        <h1 className='text-center mb-3'>Reservez une table</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-head justify-space-between">
+          <div className="form-head justify-space-between mt-4">
             <div className="form-floating col col-md-4 mx-2 my-3">
               <select
                 className="form-select"
@@ -136,17 +136,13 @@ function ReservationPage() {
           </label>
           <br />
           <div className='data'>
-          <button className="btn btnsend" type="submit">
+          <button className="btn btnsend text-white" type="submit">
             Continuer
           </button>
           </div>
         </form>
       </div>
-      <div className="container-fluid">
-        <div className="row">
-          {/* <Footer /> */}
-        </div>
-      </div>
+   
     </section>
   );
 }

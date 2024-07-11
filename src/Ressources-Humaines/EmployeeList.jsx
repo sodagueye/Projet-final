@@ -61,8 +61,7 @@ const EmployeeList = () => {
         onEmployeeUpdated={handleEmployeeUpdated}
         employeeToEdit={employeeToEdit}
       />
-      <h1>Liste des employés</h1>
-      <div className="table-responsive">
+      {/* <div className="table-responsive p-3">
         <table className="table table-striped table-hover">
           <thead>
             <tr>
@@ -74,6 +73,86 @@ const EmployeeList = () => {
               <th>Actions</th>
             </tr>
           </thead>
+          <tbody>
+            {employees.map((employee) => (
+              <tr key={employee._id}>
+                <td>{employee.nom}</td>
+                <td>{employee.poste}</td>
+                <td>{employee.salaire}</td>
+                <td>{employee.horaire}</td>
+                <td>{employee.mensualite}</td>
+                <td>
+                  <button
+                    onClick={() => handleDeleteEmployee(employee._id)}
+                    className="btn btn me-2"
+                  >
+                    <MdDelete />
+                  </button>
+                  <button
+                    onClick={() => handleEditEmployee(employee)}
+                    className="btn btn"
+                  >
+                    <FaPen />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div> */}
+      <div className="table-responsive p-3">
+        <table className="table table-striped table-hover">
+          <thead style={{ backgroundColor: "#91725d" }}>
+            <tr>
+              <th style={{ backgroundColor: "#91725d", color: "white" }}>
+                Nom
+              </th>
+              <th style={{ backgroundColor: "#91725d", color: "white" }}>
+                Poste
+              </th>
+              <th style={{ backgroundColor: "#91725d", color: "white" }}>
+                Salaire
+              </th>
+              <th style={{ backgroundColor: "#91725d", color: "white" }}>
+                Heures de Travail
+              </th>
+              <th style={{ backgroundColor: "#91725d", color: "white" }}>
+                Mensualité
+              </th>
+              <th style={{ backgroundColor: "#91725d", color: "white" }}>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          {/* <tbody>
+          {currentProducts.map((product) => (
+            <tr key={product._id}>
+              <td>{product.name}</td>
+              <td>{product.description}</td>
+              <td>{product.price}</td>
+              <td>
+                {product.image && (
+                  <img src={product.image} alt={product.name} width="100" />
+                )}
+              </td>
+              <td>{product.category}</td>
+              <td>
+                <button
+                  onClick={() => handleEdit(product)}
+                  className="border-0 mx-2   p-2 rounded-2 bg-transparent"
+                >
+                  <MdEdit className="text-warning " />
+                </button>
+                <button
+                  onClick={() => handleDeleteClick(product._id)}
+                  className="border-0  p-2 rounded-2 bg-transparent"
+                >
+                  <MdDelete className="text-danger" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody> */}
           <tbody>
             {employees.map((employee) => (
               <tr key={employee._id}>
